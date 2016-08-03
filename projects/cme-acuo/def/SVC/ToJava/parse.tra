@@ -1,0 +1,26 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Service Operation Form</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>02/08/2016 12:47:44</Timestamp>
+        <Checksum>a342a72c</Checksum>
+    </LastModification>
+</Prolog>
+<ExposedServiceOperation name="parse" serviceName="ToJava" operationType="OneToOneMapping">
+    <Property name="InputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
+    <ServiceOperationTargetChoice>
+        <ServiceOperationMappingTarget group="Map:CMEtoMarkit">
+            <Mapping>CMEEntryToMarkitSwap</Mapping>
+        </ServiceOperationMappingTarget>
+    </ServiceOperationTargetChoice>
+</ExposedServiceOperation>

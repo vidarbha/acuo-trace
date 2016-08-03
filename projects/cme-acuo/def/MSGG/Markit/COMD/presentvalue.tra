@@ -1,0 +1,1219 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Schema Import</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>01/08/2016 10:44:56</Timestamp>
+        <Checksum>e53bcb6</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponent name="presentvalue" group="Markit">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="timezone">
+                        <TypeSpecification>
+                            <NamedType type="timezone"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="valuationdate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="valuationcurrency">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="submittedbymarkit">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <DefaultValue>
+                            <DefaultConstant>false</DefaultConstant>
+                        </DefaultValue>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_choice1">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="data">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child
+                                    minOccurs="1" maxOccurs="UNBOUNDED">
+
+                                    <LocalComponent name="_choice1">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+
+                                    <ComplexContent Compositor="CHOICE">
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cds">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cds-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="credindex">
+                                    <TypeSpecification>
+
+                                    <NamedType type="credindex-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="irswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swap-info-with-defaults"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="credindextranche">
+                                    <TypeSpecification>
+
+                                    <NamedType type="credindextranche-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="crossccyswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="inflationswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="swaption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swaption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="callableswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="callableswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="exoticswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="exoticswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="flexcashflow">
+                                    <TypeSpecification>
+
+                                    <NamedType type="flexcashflow-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="irswapcustomaccrual">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swapcustomaccrual-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="exoticcapfloor">
+                                    <TypeSpecification>
+
+                                    <NamedType type="exoticcapfloor-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="exoticrangeaccrual">
+                                    <TypeSpecification>
+
+                                    <NamedType type="exoticrangeaccrual-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="prdc">
+                                    <TypeSpecification>
+
+                                    <NamedType type="prdc-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="capfloor">
+                                    <TypeSpecification>
+
+                                    <NamedType type="capfloor-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="inflationcapfloor">
+                                    <TypeSpecification>
+
+                                    <NamedType type="capfloor-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fx">
+                                    <TypeSpecification>
+
+                                    <NamedType type="fxforward-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fxswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="fxswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fxoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="fxoption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="credswaption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="credswaption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="creditswapbasket">
+                                    <TypeSpecification>
+
+                                    <NamedType type="creditswapbasket-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cdotranche">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cdotranche-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cdototemtranche">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cdototemtranche-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cdoportfolio">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cdoportfolio-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="exotic">
+                                    <TypeSpecification>
+
+                                    <NamedType type="exotic-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="bond">
+                                    <TypeSpecification>
+
+                                    <NamedType type="instrument-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="security">
+                                    <TypeSpecification>
+
+                                    <NamedType type="instrument-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="pricelock">
+                                    <TypeSpecification>
+
+                                    <NamedType type="pricelock-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="tba">
+                                    <TypeSpecification>
+
+                                    <NamedType type="tba-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="ratelock">
+                                    <TypeSpecification>
+
+                                    <NamedType type="ratelock-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="spreadlock">
+                                    <TypeSpecification>
+
+                                    <NamedType type="spreadlock-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="loan">
+                                    <TypeSpecification>
+
+                                    <NamedType type="instrument-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="listedoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="instrument-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="future">
+                                    <TypeSpecification>
+
+                                    <NamedType type="instrument-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cln">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cln-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="modelbond">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cln-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="equitycfd">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="equityswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="basketswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="eqvarswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="varianceswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="eqvolswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="varianceswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fxvarswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="varianceswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fxvolswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="varianceswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fxvarvolswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="varianceswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fxvarbudget">
+                                    <TypeSpecification>
+
+                                    <NamedType type="fxvarbudget-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fxcorrelationswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="fxcorrswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="eqvaroption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="varianceoption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="equityoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="equity-option-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="eqcliquet">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cliquet-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="correlationswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="corrswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="basketoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="option-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="equityforward">
+                                    <TypeSpecification>
+
+                                    <NamedType type="equityforward-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="hybridcredindextranche">
+                                    <TypeSpecification>
+
+                                    <NamedType type="hybridcredindextranche-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="lcds">
+                                    <TypeSpecification>
+
+                                    <NamedType type="lcds-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="structfinindex">
+                                    <TypeSpecification>
+
+                                    <NamedType type="structfinindex-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="basket">
+                                    <TypeSpecification>
+
+                                    <NamedType type="basket-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="loancdsindex">
+                                    <TypeSpecification>
+
+                                    <NamedType type="loancdsindex-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="abcds">
+                                    <TypeSpecification>
+
+                                    <NamedType type="abcds-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cmsspreadoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="cmsspreadoption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cmscapfloor">
+                                    <TypeSpecification>
+
+                                    <NamedType type="capfloor-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="cmsswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="swap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="commodityoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="commodityoption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="commodityforward">
+                                    <TypeSpecification>
+
+                                    <NamedType type="commodityforward-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="commodityswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="commodityswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="commodityvarswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="varianceswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="commodityswaption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="commodityswaption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="structproduct">
+                                    <TypeSpecification>
+
+                                    <NamedType type="structproduct-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="structir">
+                                    <TypeSpecification>
+
+                                    <NamedType type="structir-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="equitycash">
+                                    <TypeSpecification>
+
+                                    <NamedType type="equitycash-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="parentinterest">
+                                    <TypeSpecification>
+
+                                    <NamedType type="parent-interest-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="fixedincomeatt">
+                                    <TypeSpecification>
+
+                                    <NamedType type="fixedIncomeAttributionInfo"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="recoverylock">
+                                    <TypeSpecification>
+
+                                    <NamedType type="recoverylock-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="ios">
+                                    <TypeSpecification>
+
+                                    <NamedType type="ios-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="bondoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="bondoption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="trx">
+                                    <TypeSpecification>
+
+                                    <NamedType type="trx-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="perfectassetswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="perfectassetswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="bondtotalreturnswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="bondtotalreturnswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="basketdefinition">
+                                    <TypeSpecification>
+
+                                    <NamedType type="basketdefinition-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="loantrs">
+                                    <TypeSpecification>
+
+                                    <NamedType type="loantrs-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="eqvolidxoption">
+                                    <TypeSpecification>
+
+                                    <NamedType type="eqvolidxoption-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="iboxxtrs">
+                                    <TypeSpecification>
+
+                                    <NamedType type="iboxxtrs-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="inflationlinkedbondassetswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="inflationlinkedbondassetswap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="contingentcmscapfloor">
+                                    <TypeSpecification>
+
+                                    <NamedType type="contingentcmscapfloor-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="ascot">
+                                    <TypeSpecification>
+
+                                    <NamedType type="ascot-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="genericswap">
+                                    <TypeSpecification>
+
+                                    <NamedType type="generic-swap-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="genericbond">
+                                    <TypeSpecification>
+
+                                    <NamedType type="generic-bond-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+</NamedComponent>

@@ -1,0 +1,38 @@
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '1.6'
+}
+
+group 'com.acuo'
+version '1.0-SNAPSHOT'
+
+apply from: "$rootDir/gradle/java-plugins.gradle"
+apply from: "$rootDir/gradle/dependencies.gradle"
+apply from: "$rootDir/gradle/integration-test.gradle"
+
+sourceCompatibility = 1.5
+
+ext.versions += [
+        common     : '1.0.0-SNAPSHOT',
+        transformer : '3.5.5',
+        currencylib : '1.0.3'
+]
+
+repositories {
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile (
+            "com.tracegroup.transformer:transformer-runtime-complete:${versions.transformer}",
+            "com.tracegroup.transformer:transformer-designtime:${versions.transformer}",
+            "com.tracegroup.transformer:currencylib:${versions.currencylib}",
+            "com.acuo.collateral:common:${versions.common}"
+    )
+    compile files('libs/cme-1.0.jar', 'libs/services-0.0.1.jar')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile (
+            "com.acuo.collateral:common:${versions.common}:tests"
+    )
+}
