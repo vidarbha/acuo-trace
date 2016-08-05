@@ -21,6 +21,9 @@ repositories {
     jcenter()
     mavenLocal()
     mavenCentral()
+    maven {
+        url "http://192.168.1.70:8081/repository/maven-public/"
+    }
 }
 
 dependencies {
@@ -30,7 +33,8 @@ dependencies {
             "com.tracegroup.transformer:currencylib:${versions.currencylib}",
             "com.acuo.collateral:common:${versions.common}"
     )
-    compile files('libs/cme-1.0.jar', 'libs/services-0.0.1.jar')
+    //compile files('libs/cme-1.0.jar', 'libs/services-0.0.1.jar')
+    compile fileTree(dir: 'libs', include: '*.jar')
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile (
             "com.acuo.collateral:common:${versions.common}:tests"

@@ -6,9 +6,9 @@
             <BuildNumber>194</BuildNumber>
         </Transformer>
         <User>hicham</User>
-        <Host>dev-box</Host>
-        <Timestamp>03/08/2016 13:32:12</Timestamp>
-        <Checksum>28e47998</Checksum>
+        <Host>Win7-VM</Host>
+        <Timestamp>04/08/2016 16:05:23</Timestamp>
+        <Checksum>5ab012a4</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="IrSwapLegPayDates" group="com.acuo.collateral.trace.beans">
@@ -16,21 +16,10 @@
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="StartDate">
+                    <LocalComponent name="Eom">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Frequency">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
+                                <BusinessObjectType>Boolean</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -60,6 +49,17 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Frequency">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Adjust">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -71,10 +71,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Eom">
+                    <LocalComponent name="StartDate">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Boolean</BusinessObjectType>
+                                <BusinessObjectType>DateTime</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>

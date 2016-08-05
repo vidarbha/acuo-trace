@@ -1,9 +1,7 @@
 package com.acuo.collateral.trace.services;
 
-import com.acuo.common.util.ResourceFile;
 import com.acuo.collateral.trace.beans.Swaps;
-import com.acuo.trace.services.CmeToAcuo;
-import com.acuo.trace.services.ParseOutputWrapper;
+import com.acuo.common.util.ResourceFile;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
