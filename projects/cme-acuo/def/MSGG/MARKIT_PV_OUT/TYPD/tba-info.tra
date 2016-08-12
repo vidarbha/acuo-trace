@@ -1,0 +1,62 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:29:14</Timestamp>
+        <Checksum>af9cd9d0</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="tba-info" group="MARKIT_PV_OUT">
+    <TypeSpecification>
+        <NamedType type="trade-date-info">
+            <ComplexTypeXsdExtension Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>_group_tba-header</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="idtype">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="enumeration" type="enumerationFacet">
+                                <Value>
+                                    <List>
+                                    <Enumeration>ISIN</Enumeration>
+                                    <Enumeration>CUSIP</Enumeration>
+                                    <Enumeration>RED</Enumeration>
+                                    <Enumeration>COMMON</Enumeration>
+                                    <Enumeration>FONDS</Enumeration>
+                                    <Enumeration>SEDOL</Enumeration>
+                                    <Enumeration>Comstock</Enumeration>
+                                    <Enumeration>LoanXID</Enumeration>
+                                    <Enumeration>RIC</Enumeration>
+                                    <Enumeration>VALOREN</Enumeration>
+                                    <Enumeration>SICOVAM</Enumeration>
+                                    <Enumeration>DaDD</Enumeration>
+                                    <Enumeration>DaDDIndex</Enumeration>
+                                    <Enumeration>WPK</Enumeration>
+                                    <Enumeration>Private</Enumeration>
+                                    </List>
+                                </Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>_group_tba-footer</NamedComponent>
+                </Child>
+            </ComplexTypeXsdExtension>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

@@ -1527,7 +1527,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-	<!-- Equity swaps may also be ATS-like which can be terminated by either party
+	<!-- Equity trades may also be ATS-like which can be terminated by either party
 					  after a given notice period-->
 	<!--
 			  A swaption is basically just a wrapper round a swap, with additional
@@ -1535,7 +1535,7 @@
 			  in the schema, the system requires that the tradeid and book elements on
 			  the underlying swap be the same as on the swaption.
 
-			  Also note that for now we only support underlying swaps where the fixed
+			  Also note that for now we only support underlying trades where the fixed
 			  and floating leg currencies are the same.
 			 -->
 	<xs:complexType name="swaption-info">

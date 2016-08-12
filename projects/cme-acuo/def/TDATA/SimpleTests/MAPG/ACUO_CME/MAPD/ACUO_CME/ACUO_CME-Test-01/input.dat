@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<IrSwap xmlns="com.acuo.collateral.trace.beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Currency>AUD</Currency>
+    <TradeDate>2011-12-05T00:00:00</TradeDate>
+    <TradeStatus>CLEARED</TradeStatus>
+    <Book>11811123</Book>
+    <TradeId>11811123</TradeId>
+    <ProductType>SWAP</ProductType>
+    <ClearedTradeId>455123</ClearedTradeId>
+    <ClearedTradeDate>2013-11-27T00:00:00</ClearedTradeDate>
+    <Leg>
+        <Id>1</Id>
+        <Type>FIXED</Type>
+        <Currency>AUD</Currency>
+        <Notional>10000000.0</Notional>
+        <Daycount>A365F</Daycount>
+        <Rate>1.25</Rate>
+        <Paydates>
+            <RollCode>MODFOLL</RollCode>
+            <Enddate>2016-12-05T00:00:00</Enddate>
+            <Frequency>6M</Frequency>
+            <StartDate>2011-12-05T00:00:00</StartDate>
+        </Paydates>
+    </Leg>
+    <Leg>
+        <Id>2</Id>
+        <Type>FLOAT</Type>
+        <Currency>AUD</Currency>
+        <Notional>10000000.0</Notional>
+        <Fixing>
+            <Name>AUD-BBR-BBSW</Name>
+            <Term>6M</Term>
+            <Arrears>false</Arrears>
+        </Fixing>
+        <Daycount>A365F</Daycount>
+        <Paydates>
+            <RollCode>MODFOLL</RollCode>
+            <Enddate>2016-12-05T00:00:00</Enddate>
+            <Frequency>6M</Frequency>
+            <StartDate>2011-12-05T00:00:00</StartDate>
+        </Paydates>
+    </Leg>
+</IrSwap>
+---
+<?xml version="1.0"?>
+<Request xmlns="com.acuo.collateral.trace.beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ValueDate>2016-08-11T00:00:00</ValueDate>
+</Request>

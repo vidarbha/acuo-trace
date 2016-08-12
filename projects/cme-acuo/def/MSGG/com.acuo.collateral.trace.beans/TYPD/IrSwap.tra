@@ -7,58 +7,25 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>04/08/2016 16:05:23</Timestamp>
-        <Checksum>162f1447</Checksum>
+        <Timestamp>11/08/2016 14:15:10</Timestamp>
+        <Checksum>3d5d0f01</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="IrSwap" group="com.acuo.collateral.trace.beans">
     <TypeSpecification>
-        <TypeDefinition>
-            <ComplexContent Compositor="ALL">
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="TradeId">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="TradeDate">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Book">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
+        <NamedType type="BaseTrade">
+            <ComplexTypeXsdExtension Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="UNBOUNDED">
                     <LocalComponent name="Leg">
                         <TypeSpecification>
-                            <NamedType type="IrSwapLeg"/>
+                            <NamedType type="IrSwap.IrSwapLeg"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-            </ComplexContent>
-        </TypeDefinition>
+            </ComplexTypeXsdExtension>
+        </NamedType>
     </TypeSpecification>
     <FormatSpecifications/>
     <SchemaEquivalent>TYPE</SchemaEquivalent>

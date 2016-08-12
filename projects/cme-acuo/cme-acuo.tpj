@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>04/08/2016 15:20:07</Timestamp>
-        <Checksum>8a60aa84</Checksum>
+        <Timestamp>11/08/2016 13:31:37</Timestamp>
+        <Checksum>f481a6fd</Checksum>
     </LastModification>
 </Prolog>
 <ProjectProperties>
@@ -57,12 +57,7 @@
     </Property>
     <Property name="schemaLocations" type="lookuptable">
         <Value>
-            <LookupTable inLabel="Message Definition Group" outLabel="Schema Location">
-                <TableEntry>
-                    <In>Markit</In>
-                    <Out>Markit.xsd</Out>
-                </TableEntry>
-            </LookupTable>
+            <LookupTable inLabel="Message Definition Group" outLabel="Schema Location"/>
         </Value>
     </Property>
     <Property name="externalLibraries" type="lookuptable">
@@ -90,10 +85,17 @@
                     </MetaProperty>
                 </OutputDefinition>
                 <TableEntry>
-                    <In>acuo</In>
+                    <In>main</In>
                     <Out>
                         <DiskFilePropertyValue
                             parent="Project Root Directory" path="..\..\..\build\classes\main"/>
+                    </Out>
+                </TableEntry>
+                <TableEntry>
+                    <In>all</In>
+                    <Out>
+                        <DiskFilePropertyValue
+                            parent="Project Root Directory" path="..\..\..\build\libs\com.acuo.collateral.trace-all-1.0-SNAPSHOT.jar"/>
                     </Out>
                 </TableEntry>
             </LookupTable>

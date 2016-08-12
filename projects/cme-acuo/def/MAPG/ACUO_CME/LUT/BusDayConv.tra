@@ -1,0 +1,36 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Named Lookup Table</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>10/08/2016 14:45:26</Timestamp>
+        <Checksum>3e679f68</Checksum>
+    </LastModification>
+</Prolog>
+<NamedLookupTable name="BusDayConv" group="Map:ACUO_CME">
+    <Description>Business Day Convention from ACUO (Markit) to CME</Description>
+    <LookupProvider>
+        <LookupTable inLabel="In" outLabel="Out">
+            <TableEntry>
+                <In>FOLLOW</In>
+                <Out>FOLLOWING</Out>
+            </TableEntry>
+            <TableEntry>
+                <In>MODFOLL</In>
+                <Out>MODFOLLOWING</Out>
+            </TableEntry>
+            <TableEntry>
+                <In>PREV</In>
+                <Out>PRECEDING</Out>
+            </TableEntry>
+            <TableEntry>
+                <In>MODPREV</In>
+                <Out>MODPRECEDING</Out>
+            </TableEntry>
+        </LookupTable>
+    </LookupProvider>
+</NamedLookupTable>
