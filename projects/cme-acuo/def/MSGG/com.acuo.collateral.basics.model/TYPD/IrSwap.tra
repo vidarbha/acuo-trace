@@ -1,0 +1,32 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>External Object Import</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>12/08/2016 11:47:37</Timestamp>
+        <Checksum>79d35e4f</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="IrSwap" group="com.acuo.collateral.basics.model">
+    <TypeSpecification>
+        <NamedType type="BaseTrade">
+            <ComplexTypeXsdExtension Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="Leg">
+                        <TypeSpecification>
+                            <NamedType type="IrSwap.IrSwapLeg"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexTypeXsdExtension>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>
