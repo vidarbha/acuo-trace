@@ -1,16 +1,50 @@
 package com.acuo.collateral.trace.beans;
 
+import com.opengamma.strata.basics.currency.Currency;
+import com.opengamma.strata.basics.date.DayCount;
+import com.opengamma.strata.basics.date.DayCounts;
+import com.opengamma.strata.basics.schedule.Frequency;
+import com.opengamma.strata.basics.schedule.RollConvention;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 import java.util.Set;
 
 @Data
-public class IrSwap {
+@EqualsAndHashCode(callSuper = false)
+public class IrSwap extends BaseTrade {
 
-    private String tradeId;
-    private LocalDate tradeDate;
-    private String book;
     private Set<IrSwapLeg> legs;
 
+    @Data
+    public static class IrSwapLeg {
+        private int id;
+        private Currency currency;
+        private IrSwapLegFixing fixing;
+        private Double spread;
+        private Double rate;
+        private String type;
+        private DayCount daycount;
+        private Double notional;
+        private String notionalxg;
+        private IrSwapLegPayDates paydates;
+    }
+
+    @Data
+    public static class IrSwapLegFixing {
+        private String name;
+        private String term;
+        private boolean arrears;
+    }
+
+    @Data
+    public static class IrSwapLegPayDates {
+        private LocalDate startDate;
+        private Frequency frequency;
+        private LocalDate enddate;
+        private RollConvention rollCode;
+        private boolean adjust;
+        private boolean eom;
+    }
 }
