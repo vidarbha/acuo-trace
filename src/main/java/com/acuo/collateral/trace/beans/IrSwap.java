@@ -1,6 +1,7 @@
 package com.acuo.collateral.trace.beans;
 
 import com.opengamma.strata.basics.currency.Currency;
+import com.opengamma.strata.basics.date.BusinessDayConvention;
 import com.opengamma.strata.basics.date.DayCount;
 import com.opengamma.strata.basics.date.DayCounts;
 import com.opengamma.strata.basics.schedule.Frequency;
@@ -43,7 +44,7 @@ public class IrSwap extends BaseTrade {
         private LocalDate startDate;
         private Frequency frequency;
         private LocalDate enddate;
-        private RollConvention rollCode;
+        private BusinessDayConvention businessDayConvention;
         private boolean adjust;
         private boolean eom;
     }
