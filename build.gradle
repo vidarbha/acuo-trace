@@ -32,7 +32,8 @@ dependencies {
             "com.tracegroup.transformer:transformer-runtime-complete:${versions.transformer}",
             "com.tracegroup.transformer:transformer-designtime:${versions.transformer}",
             "com.tracegroup.transformer:currencylib:${versions.currencylib}",
-            "com.acuo.collateral:common:${versions.common}"
+            "com.acuo.collateral:common:${versions.common}",
+            "com.opengamma.strata:strata-basics:1.0.0"
     )
     //compile files('libs/cme-1.0.jar', 'libs/services-0.0.1.jar')
     compile fileTree(dir: 'libs', include: '*.jar')
@@ -40,4 +41,20 @@ dependencies {
     testCompile (
             "com.acuo.collateral:common:${versions.common}:tests"
     )
+}
+
+task copyRuntimeLibs(type: Copy) {
+    into "projects/cme-acuo/libs"
+    from configurations.runtime
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Implementation-Version': version,
+                'Main-Class': 'com.mkyong.DateUtils'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
