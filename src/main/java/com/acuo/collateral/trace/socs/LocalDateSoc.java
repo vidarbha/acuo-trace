@@ -16,7 +16,8 @@ public class LocalDateSoc extends DateTimeBOT<LocalDate> {
     }
 
     public Object transformerFromExternalObject(LocalDate externalObject) {
-        return externalObject;
+        Instant instant = externalObject.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant();
+        return new DateTime(instant.toEpochMilli());
     }
 
     public LocalDate externalObjectFromTransformer(DateTime transformerObject) {
