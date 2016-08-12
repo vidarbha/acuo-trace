@@ -1,4 +1,4 @@
-package com.acuo.collateral.trace.beans;
+package com.acuo.collateral.basics.model;
 
 import com.opengamma.strata.basics.currency.Currency;
 import lombok.Data;

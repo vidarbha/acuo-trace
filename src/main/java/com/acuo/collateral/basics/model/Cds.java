@@ -1,4 +1,4 @@
-package com.acuo.collateral.trace.beans;
+package com.acuo.collateral.basics.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

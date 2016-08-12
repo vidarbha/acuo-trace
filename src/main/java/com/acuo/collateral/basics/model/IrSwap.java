@@ -1,11 +1,9 @@
-package com.acuo.collateral.trace.beans;
+package com.acuo.collateral.basics.model;
 
 import com.opengamma.strata.basics.currency.Currency;
 import com.opengamma.strata.basics.date.BusinessDayConvention;
 import com.opengamma.strata.basics.date.DayCount;
-import com.opengamma.strata.basics.date.DayCounts;
 import com.opengamma.strata.basics.schedule.Frequency;
-import com.opengamma.strata.basics.schedule.RollConvention;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
