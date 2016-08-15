@@ -23,9 +23,6 @@ public class TraceDataMapperTest {
     @Rule
     public ResourceFile itrs43 = new ResourceFile("/cme/ITRS-43.csv");
 
-    @Rule
-    public ResourceFile itrs100 = new ResourceFile("/cme/ITRS-100.csv");
-
     DataMapper mapper;
 
     @Before
@@ -34,25 +31,11 @@ public class TraceDataMapperTest {
     }
 
     @Test
-    @Ignore
     public void testCmeToAcuoAndBack() throws IOException {
         List<IrSwap> trades = mapper.fromCmeFile(itrs43.getContent());
         assertThat(trades.size()).isEqualTo(43);
 
         String file = mapper.toCmeFile(trades,LocalDate.now());
         assertThat(file).isEqualTo(itrs43.getContent());
-
-    }
-
-    @Test
-    public void testCmeToAcuo100() throws IOException {
-        List<IrSwap> trades = mapper.fromCmeFile(itrs100.getContent());
-        assertThat(trades.size()).isEqualTo(100);
-    }
-
-    @Test
-    public void testCmeToAcuo101() throws IOException {
-        List<IrSwap> trades = mapper.fromCmeFile(itrs100.getContent());
-        assertThat(trades.size()).isEqualTo(100);
     }
 }
