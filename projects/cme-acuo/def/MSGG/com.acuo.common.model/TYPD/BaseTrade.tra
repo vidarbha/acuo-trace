@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>15/08/2016 08:29:20</Timestamp>
-        <Checksum>f500d404</Checksum>
+        <Timestamp>15/08/2016 18:44:14</Timestamp>
+        <Checksum>c8761404</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="BaseTrade" group="com.acuo.common.model"
@@ -17,10 +17,41 @@
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="TradeStatus">
+                        <TypeSpecification>
+                            <NamedType type="TradeStatus"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Currency">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Currency</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ClearedTradeDate">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>DateTime</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ClearedTradeId">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -64,37 +95,6 @@
                     <LocalComponent name="ProductType">
                         <TypeSpecification>
                             <NamedType type="ProductType"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="TradeStatus">
-                        <TypeSpecification>
-                            <NamedType type="TradeStatus"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ClearedTradeId">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ClearedTradeDate">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
-                            </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
