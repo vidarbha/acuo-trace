@@ -1,4 +1,4 @@
-package com.acuo.collateral.trace.socs;
+package com.acuo.collateral.transform.trace.socs;
 
 import com.tracegroup.transformer.externalobjects.socs.SOCImplementingTBean;
 import com.tracegroup.transformer.mom.DataException;

@@ -1,4 +1,4 @@
-package com.acuo.collateral.trace.generators;
+package com.acuo.collateral.transform.trace.generators;
 
 import com.tracegroup.transformer.tbeans.ValueGenerator;
 

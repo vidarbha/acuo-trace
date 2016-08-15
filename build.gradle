@@ -10,6 +10,25 @@ apply from: "$rootDir/gradle/dependencies.gradle"
 apply from: "$rootDir/gradle/integration-test.gradle"
 apply from: "$rootDir/gradle/deployment.gradle"
 
+
+repositories {
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "http://192.168.1.70:8081/repository/maven-public/"
+    }
+}
+
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+}
+
 sourceCompatibility = 1.8
 
 ext {
@@ -19,15 +38,6 @@ ext {
             design : '3.5.5',
             currencylib : '1.0.3'
     ]
-}
-
-repositories {
-    jcenter()
-    mavenLocal()
-    mavenCentral()
-    maven {
-        url "http://192.168.1.70:8081/repository/maven-public/"
-    }
 }
 
 dependencies {

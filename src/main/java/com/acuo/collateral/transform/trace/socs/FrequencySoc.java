@@ -1,4 +1,4 @@
-package com.acuo.collateral.trace.socs;
+package com.acuo.collateral.transform.trace.socs;
 
 import com.opengamma.strata.basics.schedule.Frequency;
 import com.tracegroup.transformer.externalobjects.socs.StringBOT;
