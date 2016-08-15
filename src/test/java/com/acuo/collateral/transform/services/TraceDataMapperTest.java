@@ -39,9 +39,7 @@ public class TraceDataMapperTest {
         List<IrSwap> trades = mapper.fromCmeFile(itrs43.getContent());
         assertThat(trades.size()).isEqualTo(43);
 
-        Request request = new Request();
-        request.setValueDate(LocalDate.now());
-        String file = mapper.toCmeFile(trades,request);
+        String file = mapper.toCmeFile(trades,LocalDate.now());
         assertThat(file).isEqualTo(itrs43.getContent());
 
     }

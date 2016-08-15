@@ -12,6 +12,7 @@ import com.tracegroup.transformer.exposedservices.UnrecognizedMessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -52,13 +53,15 @@ public class TraceDataMapper implements DataMapper {
     }
 
     @Override
-    public String toCmeFile(List<IrSwap> swaps, Request request) {
+    public String toCmeFile(List<IrSwap> swaps, LocalDate valueDate) {
         ArgChecker.notEmpty(swaps, "swaps");
-        ArgChecker.notNull(request, "request");
+        ArgChecker.notNull(valueDate, "valueDate");
         try {
+            Request request = new Request();
+            request.setValueDate(valueDate);
             return mapper.toCmeFile(swaps.toArray(),request).getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
-            String msg = String.format("error occurred while mapping the list {} and request {} to cme file", swaps, request);
+            String msg = String.format("error occurred while mapping the list {} and value date {} to cme file", swaps, valueDate);
             LOG.error(msg, e);
             throw new RuntimeException(msg, e);
         }

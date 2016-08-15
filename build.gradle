@@ -34,6 +34,7 @@ sourceCompatibility = 1.8
 ext {
     versions += [
             common     : '0.0.1-SNAPSHOT',
+            trasnformer     : '0.0.1-SNAPSHOT',
             runtime : '3.5.6',
             design : '3.5.5',
             currencylib : '1.0.3'
@@ -46,10 +47,9 @@ dependencies {
             "com.tracegroup.transformer:transformer-designtime:${versions.design}",
             "com.tracegroup.transformer:currencylib:${versions.currencylib}",
             "com.acuo.collateral:common:${versions.common}",
+            "com.acuo.collateral:transformer-services:${versions.trasnformer}",
             "com.opengamma.strata:strata-basics:1.0.0"
     )
-    //compile files('libs/cme-1.0.jar', 'libs/services-0.0.1.jar')
-    compile fileTree(dir: 'libs', include: '*.jar')
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile (
             "com.acuo.collateral:common:${versions.common}:tests"
