@@ -1,0 +1,31 @@
+apply plugin: 'maven'
+
+group 'com.acuo.collateral'
+version = '0.0.1-SNAPSHOT'
+
+ext {
+    // location of external files relative to this build.gradle file
+    extFiles = [
+            main:       'transformer-services.jar',
+            // sources:    'api/extlib-src.zip',
+            // javadoc:    'api/extlib-doc.zip'
+    ]
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.project {
+            name 'Transformer Exposed Services jar'
+            organization {
+                name 'Trace Financial'
+            }
+        }
+        repository(url: "${nexusUrl}/repository/maven-snapshots/") {
+            authentication(userName: nexusUsername, password: nexusPassword)
+        }
+    }
+}
+
+artifacts {
+    archives file: file( extFiles.main ), type: 'jar'
+}
