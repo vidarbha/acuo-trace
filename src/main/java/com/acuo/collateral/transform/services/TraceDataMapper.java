@@ -1,7 +1,7 @@
 package com.acuo.collateral.transform.services;
 
-import com.acuo.collateral.trace.services.FromCmeFileOutputWrapper;
-import com.acuo.collateral.trace.services.Trace;
+import com.acuo.collateral.transform.trace.services.FromCmeFileOutputWrapper;
+import com.acuo.collateral.transform.trace.services.Trace;
 import com.acuo.common.model.IrSwap;
 import com.acuo.common.model.Request;
 import com.acuo.common.util.ArgChecker;
