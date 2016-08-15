@@ -40,6 +40,7 @@ public class TraceDataMapper implements DataMapper {
     @Override
     public List<IrSwap> fromCmeFile(String data) {
         ArgChecker.notNull(data, "data");
+        data = replaceNewLineToWindows(data);
         try {
             FromCmeFileOutputWrapper output = mapper.fromCmeFile(data);
             return Arrays.stream(output.getSwap()).map(IrSwap.class::cast).collect(Collectors.toList());
@@ -61,5 +62,13 @@ public class TraceDataMapper implements DataMapper {
             LOG.error(msg, e);
             throw new RuntimeException(msg, e);
         }
+    }
+
+    private final String DOS = "\r\n", NIX = "\n", MAC = "\r";
+
+    private String replaceNewLineToWindows(String original) {
+        return original.replace(DOS, NIX)
+                .replace(MAC, NIX)
+                .replace(NIX, DOS);
     }
 }
