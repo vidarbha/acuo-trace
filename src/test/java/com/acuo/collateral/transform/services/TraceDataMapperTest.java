@@ -35,7 +35,7 @@ public class TraceDataMapperTest {
     @Test
     public void testCmeToAcuoAndBackWithOne() throws IOException {
         List<IrSwap> trades = mapper.fromCmeFile(itrsOne.getContent());
-        assertThat(trades.size()).isEqualTo(1);
+        assertThat(trades.size()).isEqualTo(2);
 
         String file = mapper.toCmeFile(trades,LocalDate.of(2016,8,15));
         assertThat(file).isEqualTo(itrsOne.getContent());

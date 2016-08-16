@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 09:13:19</Timestamp>
-        <Checksum>5caf8a04</Checksum>
+        <Timestamp>16/08/2016 12:15:18</Timestamp>
+        <Checksum>f500d404</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="BaseTrade" group="com.acuo.common.model"
@@ -16,6 +16,17 @@
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Currency">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Currency</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="TradeId">
                         <TypeSpecification>
@@ -68,10 +79,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Currency">
+                    <LocalComponent name="ClearedTradeId">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Currency</BusinessObjectType>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -83,17 +94,6 @@
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>DateTime</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ClearedTradeId">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
