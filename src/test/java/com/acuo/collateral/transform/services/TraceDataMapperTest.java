@@ -7,6 +7,7 @@ import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
 import com.tracegroup.transformer.exposedservices.UnrecognizedMessageException;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -41,6 +42,7 @@ public class TraceDataMapperTest {
     }
 
     @Test
+    @Ignore
     public void testCmeToAcuoAndBackWith43() throws IOException {
         List<IrSwap> trades = mapper.fromCmeFile(itrs43.getContent());
         assertThat(trades.size()).isEqualTo(43);
