@@ -67,6 +67,21 @@ public class TraceDataMapper implements DataMapper {
         }
     }
 
+    @Override
+    public String toMarkitPvRequest(List<IrSwap> swaps, LocalDate valueDate) {
+        ArgChecker.notEmpty(swaps, "swaps");
+        ArgChecker.notNull(valueDate, "valueDate");
+        try {
+            Request request = new Request();
+            request.setValueDate(valueDate);
+            return mapper.toMarkitPvRequest(swaps.toArray(),request).getOutput();
+        } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
+            String msg = String.format("error occurred while mapping the list {} and value date {} to markit pv request", swaps, valueDate);
+            LOG.error(msg, e);
+            throw new RuntimeException(msg, e);
+        }
+    }
+
     private final String DOS = "\r\n", NIX = "\n", MAC = "\r";
 
     private String replaceNewLineToWindows(String original) {

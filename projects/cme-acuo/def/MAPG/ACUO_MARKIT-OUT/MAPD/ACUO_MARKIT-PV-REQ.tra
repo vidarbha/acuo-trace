@@ -7,17 +7,18 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 08:22:59</Timestamp>
-        <Checksum>be9c629e</Checksum>
+        <Timestamp>16/08/2016 09:20:40</Timestamp>
+        <Checksum>23689b8c</Checksum>
     </LastModification>
 </Prolog>
-<MappingDefinition name="CME_MARKIT-PV-REQ" group="Map:CME_MARKIT-OUT">
+<MappingDefinition name="ACUO_MARKIT-PV-REQ" group="Map:ACUO_MARKIT-OUT">
     <ActionStep>
         <FunctionCall>
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <ValueGeneratorReference>DateNow</ValueGeneratorReference>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Request" pathString="ValueDate"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -60,7 +61,8 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Body[Counter1]/ClearedTradeID"/>
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="ClearedTradeId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -72,7 +74,7 @@
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Mapper>IntegerToText</Mapper>
+                    <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
@@ -81,7 +83,8 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Body[Counter1]/EffectiveDate"/>
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="TradeDate"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -102,7 +105,8 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Body[Counter1]/ClientID"/>
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Book"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -118,57 +122,56 @@
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Body[Counter1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/leg[1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <MappingDefinitionInvocation>Leg1_SwapLeg</MappingDefinitionInvocation>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Body[Counter1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/leg[2]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <MappingDefinitionInvocation>Leg2_SwapLeg</MappingDefinitionInvocation>
-                </FunctionCall>
+                <RepeatAction repeatCounter="Counter2">
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/leg[Out2]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <MappingDefinitionInvocation>Leg_SwapLeg</MappingDefinitionInvocation>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ScopeB specType="TO_DATA" contextName="Output"
+                        pathString="data/_choice1[Out1]/irswap/leg[]" outputPosnSpecifier="Out2"/>
+                    <RepeatLimit>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input"
+                            contextPosnSpec="Counter1" pathString="Leg[#]"/>
+                    </RepeatLimit>
+                    <ScopeA specType="FROM_DATA" contextName="Input"
+                        contextPosnSpec="Counter1" pathString="Leg[]"/>
+                </RepeatAction>
             </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"
                 pathString="data/_choice1[]" outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="Body[#]"/>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input"
+                    contextPosnSpec="[#]" pathString="."/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input" pathString="Body[]"/>
+            <ScopeA specType="FROM_DATA" contextName="Input"
+                contextPosnSpec="[]" pathString="."/>
         </RepeatAction>
     </ActionStep>
-    <InputDefinition name="Input" optional="false" repeating="false">
-        <Message>ITRS</Message>
+    <InputDefinition name="Input" optional="false" repeating="true">
+        <Type>IrSwap</Type>
+    </InputDefinition>
+    <InputDefinition name="Request" optional="false" repeating="false">
+        <Type>Request</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Component>presentvalue</Component>

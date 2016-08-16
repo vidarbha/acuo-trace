@@ -42,6 +42,15 @@ public class TraceDataMapperTest {
     }
 
     @Test
+    public void testCmeToAcuoToMarkit() throws IOException {
+        List<IrSwap> trades = mapper.fromCmeFile(itrsOne.getContent());
+        assertThat(trades.size()).isEqualTo(2);
+
+        String request = mapper.toMarkitPvRequest(trades, LocalDate.now());
+        assertThat(request).isNotEmpty();
+    }
+
+    @Test
     @Ignore
     public void testCmeToAcuoAndBackWith43() throws IOException {
         List<IrSwap> trades = mapper.fromCmeFile(itrs43.getContent());

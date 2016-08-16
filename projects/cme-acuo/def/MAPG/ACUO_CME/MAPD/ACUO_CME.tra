@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>15/08/2016 14:48:46</Timestamp>
-        <Checksum>8a396994</Checksum>
+        <Timestamp>16/08/2016 10:21:43</Timestamp>
+        <Checksum>23a6ace5</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME" group="Map:ACUO_CME">
@@ -355,6 +355,53 @@
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[Counter3]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>,</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1PAYADJCAL"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Append</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <RepeatLimit>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[]"/>
+                                    </RepeatAction>
+                                </ActionStep>
+                                <ActionStep>
                                     <FunctionCall>
                                     <Property name="Input" type="nodespec">
                                     <Value>
@@ -680,6 +727,53 @@
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[Counter3]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>,</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2PAYADJCAL"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Append</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <RepeatLimit>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[]"/>
+                                    </RepeatAction>
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
