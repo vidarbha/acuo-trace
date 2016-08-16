@@ -1,22 +1,23 @@
 package com.acuo.collateral.transform.trace.socs;
 
+import com.acuo.common.model.DayCountProxy;
 import com.opengamma.strata.basics.date.DayCount;
 import com.tracegroup.transformer.externalobjects.socs.StringBOT;
 import com.tracegroup.transformer.mom.DataException;
 
-public class DayCountSoc extends StringBOT<DayCount> {
+public class DayCountSoc extends StringBOT<DayCountProxy> {
     @Override
-    public Object transformerFromExternalObject(DayCount dayCount) throws DataException {
+    public Object transformerFromExternalObject(DayCountProxy dayCount) throws DataException {
         return dayCount.getName();
     }
 
     @Override
-    public DayCount externalObjectFromTransformer(String name) throws DataException {
-        return DayCount.of(name);
+    public DayCountProxy externalObjectFromTransformer(String name) throws DataException {
+        return new DayCountProxy(DayCount.of(name));
     }
 
     @Override
-    public Class<DayCount> getExternalObjectClass() {
-        return DayCount.class;
+    public Class<DayCountProxy> getExternalObjectClass() {
+        return DayCountProxy.class;
     }
 }
