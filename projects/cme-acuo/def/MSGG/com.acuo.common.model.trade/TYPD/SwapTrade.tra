@@ -7,42 +7,36 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 12:15:18</Timestamp>
-        <Checksum>97f0337c</Checksum>
+        <Timestamp>17/08/2016 15:46:08</Timestamp>
+        <Checksum>5ec379d6</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="IrSwap.IrSwapLegFixing" group="com.acuo.common.model">
+<NamedComponentType name="SwapTrade" group="com.acuo.common.model.trade">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Name">
+                    <LocalComponent name="Type">
                         <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
+                            <NamedType type="ProductType"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Arrears">
+                    <LocalComponent name="Info">
                         <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Boolean</BusinessObjectType>
-                            </TypeDefinition>
+                            <NamedType type="TradeInfo"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Term">
+                    <LocalComponent name="Product">
                         <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
+                            <NamedType type="product:Swap"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>

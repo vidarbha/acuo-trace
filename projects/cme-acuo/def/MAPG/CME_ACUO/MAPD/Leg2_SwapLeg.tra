@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 10:10:42</Timestamp>
-        <Checksum>8c17bd78</Checksum>
+        <Timestamp>17/08/2016 18:20:28</Timestamp>
+        <Checksum>78e02d47</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg2_SwapLeg" group="Map:CME_ACUO" category="Advanced Actions">
@@ -325,6 +325,55 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2ROLLCONV"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="RollConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>PayReceive</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2DIRECTION"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PayReceive"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>-------------------- Start Date -----------------------</Description>
+        <ActionComment/>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
                             contextName="Input" pathString="LEG2STARTDATE"/>
                     </NodeSpec>
                 </Value>
@@ -333,12 +382,43 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Paydates/StartDate"/>
+                            contextName="Output" pathString="StartDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
             <Copy></Copy>
         </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>BusDayConv</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2STARTDATEADJBUSDAYCONV"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="StartDate/Adjustment/BusinessDayConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="NoEntryOption" type="option">
+                <Value>Skip Operation</Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>-------------------- Maturity Date --------------------</Description>
+        <ActionComment/>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
@@ -354,7 +434,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Paydates/Enddate"/>
+                            contextName="Output" pathString="MaturityDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -363,11 +443,14 @@
     </ActionStep>
     <ActionStep>
         <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>BusDayConv</Value>
+            </Property>
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="LEG2PAYFREQ"/>
+                            contextName="Input" pathString="LEG2MATDATEADJBUSDAYCONV"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -375,11 +458,67 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Paydates/Frequency"/>
+                            contextName="Output" pathString="MaturityDate/Adjustment/BusinessDayConvention"/>
                     </NodeSpec>
                 </Value>
             </Property>
-            <Copy></Copy>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2MATDATEADJCAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Separator" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>,</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="MaturityDate/Adjustment/Holiday[]"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>Split</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>-------------------- Payment --------------------</Description>
+        <ActionComment/>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>BusDayConv</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2PAYADJBUSDAYCONV"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -403,12 +542,37 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Paydates/HolidayCalendarId[]"/>
+                            contextName="Output" pathString="PaymentSchedule/Adjustment/Holiday[]"/>
                     </NodeSpec>
                 </Value>
             </Property>
             <Mapper>Split</Mapper>
         </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2PAYFREQ"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentSchedule/Frequency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>-------------------- Calculation Period --------------------</Description>
+        <ActionComment/>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
@@ -419,7 +583,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="LEG2PAYADJBUSDAYCONV"/>
+                            contextName="Input" pathString="LEG2CALCPERADJBUSDAYCONV"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -427,18 +591,67 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Paydates/BusinessDayConvention"/>
+                            contextName="Output" pathString="CalculationSchedule/Adjustment/BusinessDayConvention"/>
                     </NodeSpec>
                 </Value>
             </Property>
             <Mapper>NamedTableLookup</Mapper>
         </FunctionCall>
     </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2CALCPERADJCAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Separator" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>,</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="CalculationSchedule/Adjustment/Holiday[]"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>Split</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2CALCFREQ"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="CalculationSchedule/Frequency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
         <Component>Body</Component>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
-        <Type>IrSwap.IrSwapLeg</Type>
+        <Type>product:Swap.SwapLeg</Type>
     </OutputDefinition>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>

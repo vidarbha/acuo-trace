@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 09:20:40</Timestamp>
-        <Checksum>23689b8c</Checksum>
+        <Timestamp>17/08/2016 15:59:26</Timestamp>
+        <Checksum>27e1f7a3</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_MARKIT-PV-REQ" group="Map:ACUO_MARKIT-OUT">
@@ -62,7 +62,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="ClearedTradeId"/>
+                                    contextPosnSpec="Counter1" pathString="Info/ClearedTradeId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -84,7 +84,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="TradeDate"/>
+                                    contextPosnSpec="Counter1" pathString="Info/TradeDate"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -106,7 +106,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Book"/>
+                                    contextPosnSpec="Counter1" pathString="Info/Book"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -139,7 +139,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -151,10 +151,10 @@
                     <RepeatLimit>
                         <PathNodeSpec specType="FROM_DATA"
                             contextName="Input"
-                            contextPosnSpec="Counter1" pathString="Leg[#]"/>
+                            contextPosnSpec="Counter1" pathString="Product/Leg[#]"/>
                     </RepeatLimit>
                     <ScopeA specType="FROM_DATA" contextName="Input"
-                        contextPosnSpec="Counter1" pathString="Leg[]"/>
+                        contextPosnSpec="Counter1" pathString="Product/Leg[]"/>
                 </RepeatAction>
             </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"
@@ -168,10 +168,10 @@
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="true">
-        <Type>IrSwap</Type>
+        <Type>SwapTrade</Type>
     </InputDefinition>
     <InputDefinition name="Request" optional="false" repeating="false">
-        <Type>Request</Type>
+        <Type>model:Request</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Component>presentvalue</Component>

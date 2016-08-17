@@ -1,6 +1,6 @@
 package com.acuo.collateral.transform.trace.socs;
 
-import com.acuo.common.model.DayCountProxy;
+import com.acuo.common.model.proxy.DayCountProxy;
 import com.opengamma.strata.basics.date.DayCount;
 import com.tracegroup.transformer.externalobjects.socs.StringBOT;
 import com.tracegroup.transformer.mom.DataException;

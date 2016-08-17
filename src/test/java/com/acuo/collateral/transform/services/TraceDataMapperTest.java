@@ -1,6 +1,6 @@
 package com.acuo.collateral.transform.services;
 
-import com.acuo.common.model.IrSwap;
+import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.ResourceFile;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -34,16 +34,16 @@ public class TraceDataMapperTest {
 
     @Test
     public void testCmeToAcuoAndBackWithOne() throws IOException {
-        List<IrSwap> trades = mapper.fromCmeFile(itrsOne.getContent());
-        assertThat(trades.size()).isEqualTo(2);
+        List<SwapTrade> trades = mapper.fromCmeFile(itrsOne.getContent());
+        assertThat(trades.size()).isEqualTo(1);
 
-        String file = mapper.toCmeFile(trades,LocalDate.of(2016,8,15));
+        String file = mapper.toCmeFile(trades,LocalDate.of(2016,8,16));
         assertThat(file).isEqualTo(itrsOne.getContent());
     }
 
     @Test
     public void testCmeToAcuoToMarkit() throws IOException {
-        List<IrSwap> trades = mapper.fromCmeFile(itrsOne.getContent());
+        List<SwapTrade> trades = mapper.fromCmeFile(itrsOne.getContent());
         assertThat(trades.size()).isEqualTo(2);
 
         String request = mapper.toMarkitPvRequest(trades, LocalDate.now());
@@ -53,10 +53,10 @@ public class TraceDataMapperTest {
     @Test
     @Ignore
     public void testCmeToAcuoAndBackWith43() throws IOException {
-        List<IrSwap> trades = mapper.fromCmeFile(itrs43.getContent());
+        List<SwapTrade> trades = mapper.fromCmeFile(itrs43.getContent());
         assertThat(trades.size()).isEqualTo(43);
 
-        String file = mapper.toCmeFile(trades,LocalDate.of(2016,8,15));
+        String file = mapper.toCmeFile(trades,LocalDate.of(2016,8,16));
         assertThat(file).isEqualTo(itrs43.getContent());
     }
 }

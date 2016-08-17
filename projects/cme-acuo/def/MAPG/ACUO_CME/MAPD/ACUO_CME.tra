@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 10:21:43</Timestamp>
-        <Checksum>23a6ace5</Checksum>
+        <Timestamp>17/08/2016 19:14:07</Timestamp>
+        <Checksum>165f5166</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME" group="Map:ACUO_CME">
@@ -34,6 +34,26 @@
     </ActionStep>
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/ORIGIN"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>HOUS</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
             <ActionStep>
                 <FunctionCall>
                     <Property name="Input" type="nodespec">
@@ -62,7 +82,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="TradeStatus"/>
+                                    contextPosnSpec="Counter1" pathString="Info/TradeStatus"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -84,7 +104,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="ProductType"/>
+                                    contextPosnSpec="Counter1" pathString="Type"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -99,7 +119,7 @@
                     <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
                 <FunctionCall>
                     <Property name="Input" type="nodespec">
                         <Value>
@@ -128,7 +148,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="ClearedTradeId"/>
+                                    contextPosnSpec="Counter1" pathString="Info/ClearedTradeId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -150,7 +170,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="ClearedTradeDate"/>
+                                    contextPosnSpec="Counter1" pathString="Info/ClearedTradeDate"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -172,7 +192,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="TradeDate"/>
+                                    contextPosnSpec="Counter1" pathString="Info/TradeDate"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -194,7 +214,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="TradeId"/>
+                                    contextPosnSpec="Counter1" pathString="Info/TradeId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -202,7 +222,28 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="Body[Out1]/ClientID"/>
+                                    contextName="Output" pathString="Body[Out1]/PositionAccountID"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/ClearedTradeID"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/ClearedTradeID"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -229,13 +270,64 @@
                             <ThenAction>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>PayReceive</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Currency"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PayReceive"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1DIRECTION"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/RollConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1ROLLCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Currency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -259,7 +351,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Notional"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Notional"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -290,7 +382,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/StartDate"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Date"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -308,13 +400,40 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/Enddate"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1STARTDATEADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Date"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -332,13 +451,87 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/Frequency"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1MATDATEADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Holiday[Counter3]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>,</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1MATDATEADJCAL"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Append</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <RepeatLimit>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Holiday[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Holiday[]"/>
+                                    </RepeatAction>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Frequency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -355,6 +548,33 @@
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1PAYADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
                                     <RepeatAction repeatCounter="Counter3">
                                     <ActionStep>
                                     <FunctionCall>
@@ -365,7 +585,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[Counter3]"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Holiday[Counter3]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -394,11 +614,11 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[#]"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Holiday[#]"/>
                                     </RepeatLimit>
                                     <ScopeA specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[]"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Holiday[]"/>
                                     </RepeatAction>
                                 </ActionStep>
                                 <ActionStep>
@@ -409,7 +629,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Rate"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Rate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -442,7 +662,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Type"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Type"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -460,7 +680,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Daycount"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Daycount"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -478,40 +698,13 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
-                                    <Property name="Table" type="namedlookuptable">
-                                    <Value>BusDayConv</Value>
-                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/BusinessDayConvention"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output" pathString="Body[Out1]/LEG1PAYADJBUSDAYCONV"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Mapper>NamedTableLookup</Mapper>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Fixing/Name"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/Name"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -535,7 +728,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Fixing/Term"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/Term"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -559,7 +752,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Spread"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Spread"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -592,7 +785,105 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Type"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Type"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1CALCPERADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Holiday[Counter3]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>,</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1CALCPERADJCAL"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Append</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <RepeatLimit>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Holiday[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Holiday[]"/>
+                                    </RepeatAction>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Frequency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG1CALCFREQ"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -603,13 +894,64 @@
                             <ElseAction>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>PayReceive</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Currency"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PayReceive"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2DIRECTION"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/RollConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2ROLLCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Currency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -633,7 +975,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Notional"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Notional"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -664,7 +1006,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/StartDate"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Date"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -682,13 +1024,40 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/Enddate"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2STARTDATEADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Date"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -706,13 +1075,87 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/Frequency"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2MATDATEADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Holiday[Counter3]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>,</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2MATDATEADJCAL"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Append</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <RepeatLimit>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Holiday[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Holiday[]"/>
+                                    </RepeatAction>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Frequency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -729,6 +1172,33 @@
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2PAYADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
                                     <RepeatAction repeatCounter="Counter3">
                                     <ActionStep>
                                     <FunctionCall>
@@ -739,7 +1209,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[Counter3]"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Holiday[Counter3]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -768,11 +1238,11 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[#]"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Holiday[#]"/>
                                     </RepeatLimit>
                                     <ScopeA specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/HolidayCalendarId[]"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Holiday[]"/>
                                     </RepeatAction>
                                 </ActionStep>
                                 <ActionStep>
@@ -792,7 +1262,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Rate"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Rate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -816,7 +1286,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Type"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Type"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -834,7 +1304,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Daycount"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Daycount"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -861,7 +1331,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Paydates/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/BusinessDayConvention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -870,7 +1340,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="Body[Out1]/LEG1PAYADJBUSDAYCONV"/>
+                                    contextName="Output" pathString="Body[Out1]/LEG2PAYADJBUSDAYCONV"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -885,7 +1355,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Fixing/Name"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/Name"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -909,7 +1379,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Fixing/Term"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/Term"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -933,7 +1403,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Spread"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Spread"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -966,7 +1436,105 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Leg[Counter2]/Type"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Type"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>BusDayConv</Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/BusinessDayConvention"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2CALCPERADJBUSDAYCONV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Holiday[Counter3]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>,</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2CALCPERADJCAL"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Append</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <RepeatLimit>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Holiday[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Holiday[]"/>
+                                    </RepeatAction>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Frequency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2CALCFREQ"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -979,10 +1547,10 @@
                     <RepeatLimit>
                         <PathNodeSpec specType="FROM_DATA"
                             contextName="Input"
-                            contextPosnSpec="Counter1" pathString="Leg[#]"/>
+                            contextPosnSpec="Counter1" pathString="Product/Leg[#]"/>
                     </RepeatLimit>
                     <ScopeA specType="FROM_DATA" contextName="Input"
-                        contextPosnSpec="Counter1" pathString="Leg[]"/>
+                        contextPosnSpec="Counter1" pathString="Product/Leg[]"/>
                 </RepeatAction>
             </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"
@@ -996,10 +1564,10 @@
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="true">
-        <Type>IrSwap</Type>
+        <Type>SwapTrade</Type>
     </InputDefinition>
     <InputDefinition name="Request" optional="false" repeating="false">
-        <Type>Request</Type>
+        <Type>model:Request</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Message>ITRS</Message>

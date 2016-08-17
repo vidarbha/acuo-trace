@@ -1,15 +1,15 @@
 package com.acuo.collateral.transform.services;
 
-import com.acuo.common.model.IrSwap;
+import com.acuo.common.model.trade.SwapTrade;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public interface DataMapper {
 
-    List<IrSwap> fromCmeFile(String data);
+    List<SwapTrade> fromCmeFile(String data);
 
-    String toCmeFile(List<IrSwap> swaps, LocalDate valueDate);
+    String toCmeFile(List<SwapTrade> swaps, LocalDate valueDate);
 
-    String toMarkitPvRequest(List<IrSwap> swaps, LocalDate valueDate);
+    String toMarkitPvRequest(List<SwapTrade> swaps, LocalDate valueDate);
 }

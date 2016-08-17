@@ -7,20 +7,18 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>17/08/2016 15:47:24</Timestamp>
-        <Checksum>d62fc869</Checksum>
+        <Timestamp>17/08/2016 17:35:42</Timestamp>
+        <Checksum>1ceac132</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="Request" group="com.acuo.common.model">
+<NamedComponentType name="Swap" group="com.acuo.common.model.product">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ValueDate">
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="Leg">
                         <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
-                            </TypeDefinition>
+                            <NamedType type="Swap.SwapLeg"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>

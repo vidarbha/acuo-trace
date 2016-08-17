@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.5.5</VersionNumber>
             <BuildNumber>194</BuildNumber>
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>08/08/2016 07:50:05</Timestamp>
-        <Checksum>fb5b02bd</Checksum>
+        <Timestamp>17/08/2016 19:52:05</Timestamp>
+        <Checksum>127aa54</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg1_SwapLeg" group="Map:CME_MARKIT-OUT" category="Advanced Actions">
@@ -150,25 +150,68 @@
                     </FunctionCall>
                 </ActionStep>
                 <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
+                    <IfAction>
+                        <Condition>
+                            <Comparison>
+                                <FirstTerm>
                                     <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input" pathString="LEG1INDEXTENOR"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                </FirstTerm>
+                                <Operator>EQ</Operator>
+                                <SecondTerm>
+                                    <NullValue></NullValue>
+                                </SecondTerm>
+                            </Comparison>
+                        </Condition>
+                        <ThenAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>1D</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output" pathString="fixing/term"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Copy></Copy>
-                    </FunctionCall>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ThenAction>
+                        <ElseAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG1INDEXTENOR"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/term"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ElseAction>
+                    </IfAction>
                 </ActionStep>
                 <ActionStep>
                     <FunctionCall>

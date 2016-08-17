@@ -2,8 +2,8 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.trace.services.FromCmeFileOutputWrapper;
 import com.acuo.collateral.transform.trace.services.Trace;
-import com.acuo.common.model.IrSwap;
 import com.acuo.common.model.Request;
+import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.ArgChecker;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -39,12 +39,12 @@ public class TraceDataMapper implements DataMapper {
     }
 
     @Override
-    public List<IrSwap> fromCmeFile(String data) {
+    public List<SwapTrade> fromCmeFile(String data) {
         ArgChecker.notNull(data, "data");
         data = replaceNewLineToWindows(data);
         try {
             FromCmeFileOutputWrapper output = mapper.fromCmeFile(data);
-            return Arrays.stream(output.getSwap()).map(IrSwap.class::cast).collect(Collectors.toList());
+            return Arrays.stream(output.getSwap()).map(SwapTrade.class::cast).collect(Collectors.toList());
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of swaps", data);
             LOG.error(msg, e);
@@ -53,7 +53,7 @@ public class TraceDataMapper implements DataMapper {
     }
 
     @Override
-    public String toCmeFile(List<IrSwap> swaps, LocalDate valueDate) {
+    public String toCmeFile(List<SwapTrade> swaps, LocalDate valueDate) {
         ArgChecker.notEmpty(swaps, "swaps");
         ArgChecker.notNull(valueDate, "valueDate");
         try {
@@ -68,7 +68,7 @@ public class TraceDataMapper implements DataMapper {
     }
 
     @Override
-    public String toMarkitPvRequest(List<IrSwap> swaps, LocalDate valueDate) {
+    public String toMarkitPvRequest(List<SwapTrade> swaps, LocalDate valueDate) {
         ArgChecker.notEmpty(swaps, "swaps");
         ArgChecker.notNull(valueDate, "valueDate");
         try {

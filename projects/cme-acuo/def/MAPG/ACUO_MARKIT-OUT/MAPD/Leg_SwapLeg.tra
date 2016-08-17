@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 09:33:45</Timestamp>
-        <Checksum>a5958ded</Checksum>
+        <Timestamp>17/08/2016 19:26:59</Timestamp>
+        <Checksum>380c6c4f</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
@@ -248,7 +248,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Paydates/StartDate"/>
+                            contextName="Input" pathString="StartDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -269,7 +269,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Paydates/Enddate"/>
+                            contextName="Input" pathString="MaturityDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -290,7 +290,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Paydates/Frequency"/>
+                            contextName="Input" pathString="PaymentSchedule/Frequency"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -314,7 +314,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Paydates/BusinessDayConvention"/>
+                            contextName="Input" pathString="PaymentSchedule/Adjustment/BusinessDayConvention"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -337,7 +337,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Paydates/HolidayCalendarId[Counter1]"/>
+                                    contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[Counter1]"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -355,13 +355,13 @@
             <ScopeB specType="TO_DATA" contextName="Output"
                 pathString="paydates/holidays/code[]" outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="Paydates/HolidayCalendarId[#]"/>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[#]"/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input" pathString="Paydates/HolidayCalendarId[]"/>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[]"/>
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Type>IrSwap.IrSwapLeg</Type>
+        <Type>product:Swap.SwapLeg</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Type>swapleg</Type>

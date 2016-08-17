@@ -1,8 +1,7 @@
 package com.acuo.collateral.transform.trace.socs;
 
-import com.acuo.common.model.BusinessDayConventionProxy;
+import com.acuo.common.model.proxy.BusinessDayConventionProxy;
 import com.opengamma.strata.basics.date.BusinessDayConvention;
-import com.opengamma.strata.basics.date.DayCount;
 import com.tracegroup.transformer.externalobjects.socs.StringBOT;
 import com.tracegroup.transformer.mom.DataException;
 

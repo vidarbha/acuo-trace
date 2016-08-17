@@ -7,11 +7,11 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 12:15:18</Timestamp>
-        <Checksum>46384639</Checksum>
+        <Timestamp>17/08/2016 17:35:42</Timestamp>
+        <Checksum>62a7eaa9</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="IrSwap.IrSwapLeg" group="com.acuo.common.model">
+<NamedComponentType name="Swap.SwapLeg" group="com.acuo.common.model.product">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
@@ -49,9 +49,56 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="PaymentSchedule">
+                        <TypeSpecification>
+                            <NamedType type="model:AdjustableSchedule"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="CalculationSchedule">
+                        <TypeSpecification>
+                            <NamedType type="model:AdjustableSchedule"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="RollConvention">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="MaturityDate">
+                        <TypeSpecification>
+                            <NamedType type="model:AdjustableDate"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="PayReceive">
+                        <TypeSpecification>
+                            <NamedType type="model:PayReceive"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Fixing">
                         <TypeSpecification>
-                            <NamedType type="IrSwap.IrSwapLegFixing"/>
+                            <NamedType type="Swap.SwapLegFixing"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
@@ -113,9 +160,9 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Paydates">
+                    <LocalComponent name="StartDate">
                         <TypeSpecification>
-                            <NamedType type="IrSwap.IrSwapLegPayDates"/>
+                            <NamedType type="model:AdjustableDate"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
