@@ -6,7 +6,8 @@ version = '0.0.1-SNAPSHOT'
 ext {
     // location of external files relative to this build.gradle file
     extFiles = [
-            main:       'transformer-services.jar',
+            valuations:   'transformer-valuations.jar',
+            margin:       'transformer-margin.jar'
             // sources:    'api/extlib-src.zip',
             // javadoc:    'api/extlib-doc.zip'
     ]
@@ -23,9 +24,16 @@ uploadArchives {
         repository(url: "${nexusUrl}/repository/maven-snapshots/") {
             authentication(userName: nexusUsername, password: nexusPassword)
         }
+        addFilter('transformer-valuations') {artifact, file ->
+            artifact.name == 'transformer-valuations'
+        }
+        addFilter('transformer-margin') {artifact, file ->
+            artifact.name == 'transformer-margin'
+        }
     }
 }
 
 artifacts {
-    archives file: file( extFiles.main ), type: 'jar'
+    archives file: file( extFiles.valuations), name: 'transformer-valuations', type: 'jar'
+    archives file: file( extFiles.margin ), name: 'transformer-margin', type: 'jar'
 }
