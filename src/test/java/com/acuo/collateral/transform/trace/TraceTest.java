@@ -1,8 +1,8 @@
 package com.acuo.collateral.transform.trace;
 
+import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.trace.services.Trace;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
-import com.acuo.common.model.Request;
 import com.acuo.common.util.ResourceFile;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -28,12 +28,12 @@ public class TraceTest {
 
     Trace trace = new Trace();
 
-    Request request = null;
+    TransformerContext context = null;
 
     @Before
     public void setup() {
-        request = new Request();
-        request.setValueDate(LocalDate.of(2016, 8, 16));
+        context = new TransformerContext();
+        context.setValueDate(LocalDate.of(2016, 8, 16));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class TraceTest {
         Object[] trades = trace.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        String output = trace.toCmeFile(trades, request).getOutput();
+        String output = trace.toCmeFile(trades, context).getOutput();
         assertThat(output).isNotEmpty();
     }
 
@@ -52,7 +52,7 @@ public class TraceTest {
         Object[] trades = trace.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        String output = trace.toMarkitPvRequest(trades, request).getOutput();
+        String output = trace.toMarkitPvRequest(trades, context).getOutput();
         assertThat(output).isNotEmpty();
     }
 
@@ -63,7 +63,7 @@ public class TraceTest {
         Object[] trades = trace.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(43);
 
-        String output = trace.toCmeFile(trades, request).getOutput();
+        String output = trace.toCmeFile(trades, context).getOutput();
         assertThat(output).isEqualTo(itrs43.getContent());
     }
 }
