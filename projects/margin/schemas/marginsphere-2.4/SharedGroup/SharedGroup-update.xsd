@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="update.sharedgroup.api.acadiasoft.com" xmlns:tns="update.sharedgroup.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="sharedGroups" type="tns:AcadiaSoft.Shared.Group.Update.List"/>
+
+  <xs:complexType name="AcadiaSoft.Shared.Group.Update.List">
+    <xs:sequence>
+      <xs:element name="sharedGroup" type="tns:AcadiaSoft.Shared.Group.Update" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Shared.Group.Update">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="groupName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="groupPurpose" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

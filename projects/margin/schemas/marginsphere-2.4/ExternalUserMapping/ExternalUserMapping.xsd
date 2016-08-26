@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="detail.externalusermapping.api.acadiasoft.com" xmlns:tns="detail.externalusermapping.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="externalUserMappings" type="tns:AcadiaSoft.ExternalUserMapping.List"/>
+
+  <xs:complexType name="AcadiaSoft.ExternalUserMapping.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUserMapping" type="tns:AcadiaSoft.ExternalUserMapping" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.ExternalUserMapping">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalSystem" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUuid" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="usernameAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

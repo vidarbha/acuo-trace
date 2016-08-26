@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="amperror.api.acadiasoft.com" xmlns:tns="amperror.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ampErrors" type="tns:AcadiaSoft.AMPError.List"/>
+
+  <xs:complexType name="AcadiaSoft.AMPError.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="ampError" type="tns:AcadiaSoft.AMPError" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.AMPError">
+    <xs:all>
+      <xs:element name="errorCode" type="xs:int" form="qualified"/>
+      <xs:element name="errorDescription" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

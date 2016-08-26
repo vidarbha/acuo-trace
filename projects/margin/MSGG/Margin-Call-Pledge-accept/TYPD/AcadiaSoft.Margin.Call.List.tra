@@ -1,0 +1,59 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Schema Import</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>24/08/2016 06:26:30</Timestamp>
+        <Checksum>800230dd</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="AcadiaSoft.Margin.Call.List" group="Margin-Call-Pledge-accept">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="skip" xmlNameForm="qualified">
+                        <TypeSpecification>
+                            <NamedType type="xsd:int"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="max" xmlNameForm="qualified">
+                        <TypeSpecification>
+                            <NamedType type="xsd:int"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="totalCount" xmlNameForm="qualified">
+                        <TypeSpecification>
+                            <NamedType type="xsd:int"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="marginCall" xmlNameForm="qualified">
+                        <TypeSpecification>
+                            <NamedType type="AcadiaSoft.Margin.Call"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

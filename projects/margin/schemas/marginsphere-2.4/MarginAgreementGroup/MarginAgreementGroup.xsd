@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="detail.marginagreementgroup.api.acadiasoft.com" xmlns:tns="detail.marginagreementgroup.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="marginAgreementGroups" type="tns:AcadiaSoft.Margin.Agreement.Group.Detail.List"/>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Group.Detail.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementGroup" type="tns:AcadiaSoft.Margin.Agreement.Group.Detail" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Group.Detail">
+    <xs:all>
+      <xs:element name="agreementGroupDescription" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="agreementGroupName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="apiOptions" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="apiOption" type="tns:AcadiaSoft.Organization.Api.Option" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="emailEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="emailList" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="inactivityMonitorThreshold" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="agreementMappings" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="mappings" type="tns:AcadiaSoft.Margin.Agreement.Group.Mapping" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationName" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Organization.Api.Option">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="blockNewMarginCalls" type="xs:boolean" form="qualified"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="dailyRunHour" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="dailyRunMinutes" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="dailyRunTimeZone" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="exceptForReturnPledges" type="xs:boolean" form="qualified"/>
+      <xs:element name="exceptForTodayPledges" type="xs:boolean" form="qualified"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="filterApiRequests" type="xs:boolean" form="qualified"/>
+      <xs:element name="marginAgreementGroupAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="targetOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Group.Mapping">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementGroupAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementGroupName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementShortName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

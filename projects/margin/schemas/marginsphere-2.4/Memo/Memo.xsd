@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="detail.memo.api.acadiasoft.com" xmlns:tns="detail.memo.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="memos" type="tns:AcadiaSoft.Memo.Detail.List"/>
+
+  <xs:complexType name="AcadiaSoft.Memo.Detail.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="memo" type="tns:AcadiaSoft.Memo.Detail" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Memo.Detail">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="lastModifiedOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="lastModifiedOrganizationName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginCallAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationBAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationBName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="replyMemoAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="state" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="threadAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="valuationDate" type="tns:AcadiaSoft.Memo.Detail.Date.Only" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Memo.Detail.Date.Only">
+    <xs:all>
+      <xs:element name="day" type="xs:int" form="qualified"/>
+      <xs:element name="month" type="xs:int" form="qualified"/>
+      <xs:element name="year" type="xs:int" form="qualified"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+
