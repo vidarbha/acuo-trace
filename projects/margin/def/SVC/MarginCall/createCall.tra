@@ -7,21 +7,20 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 09:42:13</Timestamp>
-        <Checksum>fa0057c7</Checksum>
+        <Timestamp>29/08/2016 11:08:39</Timestamp>
+        <Checksum>ac78aa4a</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="toMarkitPvRequest" serviceName="Trace" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="createCall" serviceName="MarginCall" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>External Object</Value>
     </Property>
     <Property name="OutputParameterType" type="option">
         <Value>String</Value>
     </Property>
-    <Description>transform a list of IrSwap into a Markit PV Request</Description>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:ACUO_MARKIT-OUT">
-            <Mapping>ACUO_MARKIT-PV-REQ</Mapping>
+        <ServiceOperationMappingTarget group="Map:ACUO_MS">
+            <Mapping>MarginCall-Create</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

@@ -1,0 +1,52 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Copy File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>26/08/2016 16:46:42</Timestamp>
+        <Checksum>8eafdd7a</Checksum>
+    </LastModification>
+</Prolog>
+<ActionInfo name="DateToYear" group="Global" category="Date Actions" javaClassType="ConverterToText">
+    <PropertyDefinition name="Input" type="nodespec">
+        <Description>The value to be converted to Text.</Description>
+        <MetaProperty name="Label" type="string">
+            <Value>Date</Value>
+        </MetaProperty>
+        <MetaProperty name="Type" type="nodetype">
+            <Value>
+                <NodeType>
+                    <Bot>Date</Bot>
+                </NodeType>
+            </Value>
+        </MetaProperty>
+    </PropertyDefinition>
+    <PropertyDefinition name="Format" type="string">
+        <Description>The format in which the Input is to be returned.</Description>
+        <MetaProperty name="ToolTip" type="string">
+            <Value>Enter a format pattern, e.g., yyyyMMdd</Value>
+        </MetaProperty>
+    </PropertyDefinition>
+    <PropertyDefinition name="Output" type="nodespec">
+        <Description>The destination for the converted Date value.</Description>
+        <MetaProperty name="Label" type="string">
+            <Value>Text</Value>
+        </MetaProperty>
+        <MetaProperty name="isDestination" type="boolean">
+            <Value>true</Value>
+        </MetaProperty>
+        <MetaProperty name="Type" type="nodetype">
+            <Value>
+                <NodeType>
+                    <Bot>String</Bot>
+                </NodeType>
+            </Value>
+        </MetaProperty>
+    </PropertyDefinition>
+    <Description>Returns the Input Date value as a Text result.</Description>
+    <JavaClassName>com.tracegroup.transformer.tbeans.converters.GenericDateConverter</JavaClassName>
+</ActionInfo>
