@@ -1,9 +1,9 @@
 package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.trace.services.FromCmeFileOutputWrapper;
-import com.acuo.collateral.transform.trace.services.ToCmeFileOutputWrapper;
-import com.acuo.collateral.transform.trace.services.Trace;
+import com.acuo.collateral.transform.trace.transformer_valuations.FromCmeFileOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
+import com.acuo.collateral.transform.trace.transformer_valuations.ToCmeFileOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.common.util.ArgChecker;
 import com.google.common.collect.ImmutableList;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class ClarusTransformer<T> extends BaseTransformer<T> {
 
-    public ClarusTransformer(Trace mapper) {
+    public ClarusTransformer(Mapper mapper) {
         super(mapper);
     }
 

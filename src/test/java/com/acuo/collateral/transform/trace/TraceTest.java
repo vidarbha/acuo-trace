@@ -1,7 +1,7 @@
 package com.acuo.collateral.transform.trace;
 
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.trace.services.Trace;
+import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.common.util.ResourceFile;
 import com.tracegroup.transformer.exposedservices.MomException;
@@ -26,7 +26,7 @@ public class TraceTest {
     @Rule
     public ResourceFile itrs43 = new ResourceFile("/cme/IRSTR-43.csv");
 
-    Trace trace = new Trace();
+    Mapper trace = new Mapper();
 
     TransformerContext context = null;
 
