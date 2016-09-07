@@ -3,7 +3,7 @@ package com.acuo.collateral.transform.services;
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
-import com.acuo.collateral.transform.trace.utils.SwapHelper;
+import com.acuo.common.model.product.SwapHelper;
 import com.acuo.common.model.trade.SwapTrade;
 import com.google.common.collect.ImmutableList;
 import org.junit.Before;

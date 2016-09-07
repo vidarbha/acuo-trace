@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="detail.client.callback.api.acadiasoft.com" xmlns:tns="detail.client.callback.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="clientCallbacks" type="tns:AcadiaSoft.Client.Callback.List"/>
+
+  <xs:complexType name="AcadiaSoft.Client.Callback.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="clientCallback" type="tns:AcadiaSoft.Client.Callback" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Client.Callback">
+    <xs:all>
+      <xs:element name="affectedCounterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="affectedOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="callbackType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyContactEmail" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyContactInfo" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyContactName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="fields" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="field" type="tns:AcadiaSoft.Client.Callback.Field.Pair" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lastAttemptedDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="lastFailureDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="lastSuccessfulDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="minChangesThreshold" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="minSecondsThreshold" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="owningOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="schemaVersion" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="targetType" type="tns:AcadiaSoft.Client.Callback.Target.Type" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Client.Callback.Field.Pair">
+    <xs:all>
+      <xs:element name="name" type="xs:string" form="qualified"/>
+      <xs:element name="value" type="xs:string" form="qualified"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="AcadiaSoft.Client.Callback.Target.Type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="COUNTERPARTY"/>
+      <xs:enumeration value="COUNTERPARTY_WHITELIST"/>
+      <xs:enumeration value="EXPECTED_MARGIN_CALL"/>
+      <xs:enumeration value="INTEREST_STATEMENT"/>
+      <xs:enumeration value="MARGIN_AGREEMENT"/>
+      <xs:enumeration value="MARGIN_CALL"/>
+      <xs:enumeration value="MEMO"/>
+      <xs:enumeration value="ORGANIZATION"/>
+      <xs:enumeration value="PENDING_MARGIN_CALL"/>
+      <xs:enumeration value="SUBSTITUTION"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="delete.isocurrency.api.acadiasoft.com" xmlns:tns="delete.isocurrency.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="isoCurrencies" type="tns:AcadiaSoft.IsoCurrency.List"/>
+
+  <xs:complexType name="AcadiaSoft.IsoCurrency.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="isoCurrency" type="tns:AcadiaSoft.IsoCurrency" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.IsoCurrency">
+    <xs:sequence>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
+

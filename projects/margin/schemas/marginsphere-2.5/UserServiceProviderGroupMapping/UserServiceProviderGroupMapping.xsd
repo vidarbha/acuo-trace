@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="userserviceprovidergroupmapping.api.acadiasoft.com" xmlns:tns="userserviceprovidergroupmapping.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="userServiceProviderGroupMappings" type="tns:AcadiaSoft.User.ServiceProviderGroup.Mapping.List"/>
+
+  <xs:complexType name="AcadiaSoft.User.ServiceProviderGroup.Mapping.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="userServiceProviderGroupMapping" type="tns:AcadiaSoft.User.ServiceProviderGroup.Mapping" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.User.ServiceProviderGroup.Mapping">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="serviceProviderGroupAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="serviceProviderGroupName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="userAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="username" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

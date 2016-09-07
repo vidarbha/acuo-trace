@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="accept.intereststatement.api.acadiasoft.com" xmlns:tns="accept.intereststatement.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="interestStatements" type="tns:AcadiaSoft.Interest.Statement.List"/>
+
+  <xs:complexType name="AcadiaSoft.Interest.Statement.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="interestStatement" type="tns:AcadiaSoft.Interest.Statement" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Interest.Statement">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="version" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyLabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="temporaryExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+
