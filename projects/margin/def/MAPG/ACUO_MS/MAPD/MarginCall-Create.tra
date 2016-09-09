@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.5.5</VersionNumber>
             <BuildNumber>194</BuildNumber>
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>29/08/2016 11:01:45</Timestamp>
-        <Checksum>ce42201</Checksum>
+        <Timestamp>31/08/2016 06:33:16</Timestamp>
+        <Checksum>9609fa5a</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Create" group="Map:ACUO_MS">
@@ -109,28 +109,6 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="MinimumTransferAmount"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginCall[Out1]/minimumTransferAmount"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input"
                                     contextPosnSpec="Counter1" pathString="PendingCollateral"/>
                             </NodeSpec>
                         </Value>
@@ -153,7 +131,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="RoundingAmount"/>
+                                    contextPosnSpec="Counter1" pathString="ReturnAmount"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -161,11 +139,49 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginCall[Out1]/roundingAmount"/>
+                                    contextName="Output" pathString="marginCall[Out1]/returnAmount"/>
                             </NodeSpec>
                         </Value>
                     </Property>
                     <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="SettlementDate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Day" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/settlementDate/day"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Month" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/settlementDate/month"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Year" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/settlementDate/year"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <MappingDefinitionInvocation>DateToInteger</MappingDefinitionInvocation>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
@@ -219,19 +235,35 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="ExternalUsername"/>
+                                    contextPosnSpec="Counter1" pathString="ValuationDate"/>
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Property name="Output" type="nodespec">
+                    <Property name="Day" type="nodespec">
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginCall[Out1]/externalUsername"/>
+                                    contextName="Output" pathString="marginCall[Out1]/valuationDate/day"/>
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Copy></Copy>
+                    <Property name="Month" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/valuationDate/month"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Year" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/valuationDate/year"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <MappingDefinitionInvocation>DateToInteger</MappingDefinitionInvocation>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
@@ -241,7 +273,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="LocalCounterpartyLabel"/>
+                                    contextPosnSpec="Counter1" pathString="ExternalReference"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -249,7 +281,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginCall[Out1]/localCounterpartyLabel"/>
+                                    contextName="Output" pathString="marginCall[Out1]/externalReference"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -278,7 +310,95 @@
                     <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="MinimumTransferAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/minimumTransferAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="RoundingAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/roundingAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="ExternalUsername"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/externalUsername"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="LocalCounterpartyLabel"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/localCounterpartyLabel"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
                 <FunctionCall>
                     <Property name="Input" type="nodespec">
                         <Value>
@@ -298,6 +418,44 @@
                         </Value>
                     </Property>
                     <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="CallDate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Day" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/callDate/day"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Month" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/callDate/month"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Year" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/callDate/year"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <MappingDefinitionInvocation>DateToInteger</MappingDefinitionInvocation>
                 </FunctionCall>
             </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"

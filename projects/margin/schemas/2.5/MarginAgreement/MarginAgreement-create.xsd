@@ -1,0 +1,336 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="create.marginagreement.api.acadiasoft.com" xmlns:tns="create.marginagreement.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="marginAgreements" type="tns:AcadiaSoft.Margin.Agreement.List"/>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreement" type="tns:AcadiaSoft.Margin.Agreement" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement">
+    <xs:all>
+      <xs:element name="accountBaseCurrency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="accountOperatingCurrency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="activeDate" type="tns:AcadiaSoft.Margin.Agreement.Date.Only" form="qualified"/>
+      <xs:element name="description" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="agreementDisclaimer" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="longName" type="xs:string" form="qualified"/>
+      <xs:element name="agreementShortName" type="xs:string" form="qualified"/>
+      <xs:element name="agreementType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="allowMultipleCallsPerDay" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="autoCreateMarginCallFromNotification" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="autoCreateMarginCallFromStatement" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="autoCreateMarginNotificationFromStatement" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="clearedConfigurationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyABrokerDeliverySettlementModelAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyABrokerDeliverySettlementModelName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAContingentPledgeAccept" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyACustodySettlementModelAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyACustodySettlementModelName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAEmailList" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAExpectedCallTypeMatching" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAHeldSettlementModelAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAHeldSettlementModelName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAMovementEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAPledgedSettlementModelAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAPledgedSettlementModelName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyASwiftMessageEmailNotifications" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyATransportCurrency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyATriPartySettlementModelAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyATriPartySettlementModelName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyLabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="cpaCreditValuationEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="cpbCreditValuationEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="bilateralDetails" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="bilateralDetail" type="tns:AcadiaSoft.Margin.Agreement.Bilateral.Detail.Create" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defaultValues" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="defaultValue" type="tns:AcadiaSoft.Margin.Agreement.Default.Value.Create" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="localDetails" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="localDetail" type="tns:AcadiaSoft.Margin.Agreement.Local.Detail.Create" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="interestStatementCurrencyThresholds" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="interestStatementCurrencyThreshold" type="tns:AcadiaSoft.Margin.Agreement.IS.CCY.Threshold" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="jurisdiction" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="otherJurisdictions" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="otherJurisdiction" type="xs:string" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="referenceMappings" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="referenceMapping" type="tns:AcadiaSoft.Margin.Agreement.Reference.Mapping" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="stpConfigurations" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="stpConfiguration" type="tns:AcadiaSoft.Margin.Agreement.STP.Configuration" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="creditCallsEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="initialCallsEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="interestBenchmarks" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="interestBenchmark" type="tns:AcadiaSoft.Interest.Benchmark" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="interestStatementEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyLabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="groupMappings" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="groupMapping" type="tns:AcadiaSoft.Margin.Agreement.Group.Mapping" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="marginCallEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="nettingCallTypes" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nettingCallType" type="xs:string" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="productCodes" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="productCode" type="xs:string" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestedAllowMultipleCallsPerDay" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="requestedTradingPartyBAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="requestedTradingPartyBName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="separateCallsForInitialVariation" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="separateInitialCallsByCurrency" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="separateVariationCallsByCurrency" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementServiceProviderAmpIds" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="settlementServiceProviderAmpId" type="xs:string" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="soleCalculation" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="substitutionEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="temporaryExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="threshold" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="timeZone" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="valuationAgentAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="variationCallsEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Date.Only">
+    <xs:all>
+      <xs:element name="day" type="xs:int" form="qualified"/>
+      <xs:element name="month" type="xs:int" form="qualified"/>
+      <xs:element name="year" type="xs:int" form="qualified"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Bilateral.Detail.Create">
+    <xs:all>
+      <xs:element name="accountBaseCurrency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="agreementType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="imRole" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermDeliverMinimumTransferAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermDeliverRoundingAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermDeliverRoundingMethod" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermEndDate" type="tns:AcadiaSoft.Margin.Agreement.Date.Only" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermExposureCalculationCurrency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermNotificationTime" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermNotificationTimezone" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermReturnMinimumTransferAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermReturnRoundingAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermReturnRoundingMethod" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermStartDate" type="tns:AcadiaSoft.Margin.Agreement.Date.Only" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermThresholdAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermThresholdTreatment" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="notAgreedToleranceAge" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="notAgreedToleranceAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="notAgreedTolerancePercentage" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="notAgreedToleranceRule" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Default.Value.Create">
+    <xs:all>
+      <xs:element name="autoAgreeLowerTotalCallAmount" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="autoAgreeWithinTolerance" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="autoFullDisputeForNoAction" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="autoPartialDisputeMismatched" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="autoPledgeTolerancePercentage" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="currency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="deliverMinimumTransferAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="deliverRoundingAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyLabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementShortName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="returnMinimumTransferAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="returnRoundingAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementDateModifierCash" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementDateModifierSecurity" type="xs:int" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Local.Detail.Create">
+    <xs:all>
+      <xs:element name="agreementType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceDataQualityCheck" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceFinalCallStateCheck" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceManual" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceMultipleCallsPerDayCheck" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceNoMaterialChangeCheck" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceNonFinalCallStateCheck" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceOwnVsCptyTolerance" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuancePrimaryToValidatorTolerance" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="callIssuanceSchedule" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="imRole" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermCalculationType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginTermPrimary" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.IS.CCY.Threshold">
+    <xs:all>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="currency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="threshold" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Reference.Mapping">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="imRole" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.STP.Configuration">
+    <xs:all>
+      <xs:element name="agreementType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="stpOptions" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="stpOption" type="tns:AcadiaSoft.Margin.Agreement.STP.Option" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="imRole" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="stpAction" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.STP.Option">
+    <xs:all>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="stpConfigurationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="stpOptionName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="stpOptionValue" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Interest.Benchmark">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="benchmarkName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="currency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Agreement.Group.Mapping">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementGroupAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementGroupName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementShortName" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

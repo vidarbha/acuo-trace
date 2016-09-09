@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="delete.sharedgroupmember.api.acadiasoft.com" xmlns:tns="delete.sharedgroupmember.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="sharedGroupMembers" type="tns:AcadiaSoft.Shared.Group.Member.Delete.List"/>
+
+  <xs:complexType name="AcadiaSoft.Shared.Group.Member.Delete.List">
+    <xs:sequence>
+      <xs:element name="sharedGroupMember" type="tns:AcadiaSoft.Shared.Group.Member.Delete" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Shared.Group.Member.Delete">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

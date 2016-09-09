@@ -7,15 +7,15 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>24/08/2016 06:26:31</Timestamp>
-        <Checksum>bd64c176</Checksum>
+        <Timestamp>31/08/2016 06:14:25</Timestamp>
+        <Checksum>4aeba6c5</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="AcadiaSoft.Dispute.Resolution" group="Margin-Call-dr-add-adjustment">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
-                <Child minOccurs="0" maxOccurs="1">
+                <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent
                         name="adjustedMarginRequirementAmount" xmlNameForm="qualified">
                         <TypeSpecification>
@@ -25,7 +25,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="0" maxOccurs="1">
+                <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent
                         name="adjustedMarginRequirementDeliveryType" xmlNameForm="qualified">
                         <TypeSpecification>
@@ -35,9 +35,18 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="0" maxOccurs="1">
+                <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent
                         name="adjustedMarginRequirementReceivingParty" xmlNameForm="qualified">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ampId" xmlNameForm="qualified">
                         <TypeSpecification>
                             <NamedType type="xsd:string"/>
                         </TypeSpecification>

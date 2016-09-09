@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>24/08/2016 06:26:32</Timestamp>
-        <Checksum>b35c727</Checksum>
+        <Timestamp>31/08/2016 06:14:40</Timestamp>
+        <Checksum>2a839c52</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="AcadiaSoft.Margin.Call.Silo" group="Margin-Call">
@@ -53,6 +53,24 @@
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="agreedAmount" xmlNameForm="qualified">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="agreedDeliverAmount" xmlNameForm="qualified">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="agreedReturnAmount" xmlNameForm="qualified">
                         <TypeSpecification>
                             <NamedType type="xsd:decimal"/>
                         </TypeSpecification>

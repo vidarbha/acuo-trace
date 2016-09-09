@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="detail.organization.api.acadiasoft.com" xmlns:tns="detail.organization.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="organizations" type="tns:AcadiaSoft.Organization.List"/>
+
+  <xs:complexType name="AcadiaSoft.Organization.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="organization" type="tns:AcadiaSoft.Organization" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Organization">
+    <xs:all>
+      <xs:element name="allowAgreeCancels" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="allowPledgeActionsOnAccepted" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="allowServiceProviderPendingAssigned" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="autoAcceptPendingAssigned" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="defaultAllowIntracompanyAgreements" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="disputeResolutionWorkflowEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="dtccEnabled" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="emailList" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="hidden" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="hideMarginCallFields" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="managingOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="managingOrganizationName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="serviceProvider" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="serviceProviderType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="swiftMessageEmailNotifications" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="twoVersusOneFirstPrecedence" type="xs:boolean" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

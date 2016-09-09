@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="error.api.acadiasoft.com" xmlns:tns="error.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="webServiceError" type="tns:AcadiaSoft.Web.Service.Error"/>
+
+  <xs:complexType name="AcadiaSoft.Web.Service.Error" final="extension restriction">
+    <xs:all>
+      <xs:element name="ampErrorCode" type="xs:int" form="qualified"/>
+      <xs:element name="ampErrorDescription" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="errorMessage" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="httpStatusCode" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="httpStatusDescription" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

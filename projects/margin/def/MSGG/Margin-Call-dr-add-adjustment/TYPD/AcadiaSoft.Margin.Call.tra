@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>24/08/2016 06:26:31</Timestamp>
-        <Checksum>b3fa1021</Checksum>
+        <Timestamp>31/08/2016 06:14:25</Timestamp>
+        <Checksum>65c48338</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="AcadiaSoft.Margin.Call" group="Margin-Call-dr-add-adjustment">
@@ -34,9 +34,22 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="disputeResolution" xmlNameForm="qualified">
+                    <LocalComponent name="disputeResolutions" xmlNameForm="qualified">
                         <TypeSpecification>
-                            <NamedType type="AcadiaSoft.Dispute.Resolution"/>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent
+                                    name="disputeResolution" xmlNameForm="qualified">
+                                    <TypeSpecification>
+                                    <NamedType type="AcadiaSoft.Dispute.Resolution"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>

@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="update.margincalltype.api.acadiasoft.com" xmlns:tns="update.margincalltype.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="marginCallTypes" type="tns:AcadiaSoft.MarginCallType.List"/>
+
+  <xs:complexType name="AcadiaSoft.MarginCallType.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="marginCallType" type="tns:AcadiaSoft.MarginCallType" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.MarginCallType">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified"/>
+      <xs:element name="type" type="xs:string" form="qualified"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+
