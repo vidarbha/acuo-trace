@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>08/09/2016 12:07:07</Timestamp>
-        <Checksum>c15cf5b6</Checksum>
+        <Timestamp>12/09/2016 09:59:07</Timestamp>
+        <Checksum>82ee2410</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
@@ -138,7 +138,7 @@
                             <Value>
                                 <NodeSpec>
                                     <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Fixing/Term"/>
+                                    contextName="Input" pathString="Fixing/Frequency"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -154,24 +154,66 @@
                     </FunctionCall>
                 </ActionStep>
                 <ActionStep>
-                    <FunctionCall>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                    <IfAction>
+                        <Condition>
+                            <Comparison>
+                                <FirstTerm>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Fixing/FixingRelativeTo"/>
+                                </FirstTerm>
+                                <Operator>EQ</Operator>
+                                <SecondTerm>
+                                    <Literal>PeriodStart</Literal>
+                                </SecondTerm>
+                            </Comparison>
+                        </Condition>
+                        <ThenAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output" pathString="fixing/arrears"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
                                     <Literal>false</Literal>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Copy></Copy>
-                    </FunctionCall>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ThenAction>
+                        <ElseAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/arrears"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>true</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ElseAction>
+                    </IfAction>
                 </ActionStep>
             </ThenAction>
         </IfAction>

@@ -17,6 +17,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>AUD</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -32,6 +38,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>1.25</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -39,21 +49,17 @@
                     <model:Holiday>AUSY</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>1.25</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>AUD</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -69,6 +75,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>AUD-BBR-BBSW</product:Name>
+                <product:Currency>AUD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -76,20 +91,6 @@
                     <model:Holiday>AUSY</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>AUD-BBR-BBSW</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -113,6 +114,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>AUD</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-04T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -128,6 +135,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>4</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>AUD-BBR-BBSW</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00005</product:Spread>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2022-12-04T00:00:00</model:Date>
                 <model:Adjustment>
@@ -135,26 +151,17 @@
                     <model:Holiday>AUSY</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>AUD-BBR-BBSW</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00005</product:Spread>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-04T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>AUD</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-04T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -170,6 +177,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>4</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>AUD-BBR-BBSW</product:Name>
+                <product:Currency>AUD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2022-12-04T00:00:00</model:Date>
                 <model:Adjustment>
@@ -177,20 +193,6 @@
                     <model:Holiday>AUSY</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>AUD-BBR-BBSW</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-04T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -214,6 +216,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -229,6 +237,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00005</product:Spread>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2036-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -236,26 +253,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00005</product:Spread>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -271,6 +279,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2036-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -278,20 +295,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -315,6 +318,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -330,6 +339,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00005</product:Spread>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2036-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -337,26 +355,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00005</product:Spread>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -372,6 +381,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2036-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -379,20 +397,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -416,6 +420,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-27T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -431,6 +441,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>27</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00004</product:Spread>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2053-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -438,26 +457,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00004</product:Spread>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-27T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-27T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -473,6 +483,16 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>27</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:Currency>GBP</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00002</product:Spread>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2053-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -480,21 +500,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00002</product:Spread>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-27T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -518,6 +523,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-27T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -533,6 +544,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>27</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00004</product:Spread>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2053-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -540,26 +560,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00004</product:Spread>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-27T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-27T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -575,6 +586,16 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>27</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:Currency>GBP</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00002</product:Spread>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2053-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -582,21 +603,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00002</product:Spread>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-27T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -620,6 +626,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-03T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -635,6 +647,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>3</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00004</product:Spread>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-12-03T00:00:00</model:Date>
                 <model:Adjustment>
@@ -642,26 +663,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00004</product:Spread>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-03T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-03T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -677,6 +689,16 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>3</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:Currency>GBP</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00001</product:Spread>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-12-03T00:00:00</model:Date>
                 <model:Adjustment>
@@ -684,21 +706,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00001</product:Spread>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-03T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -722,6 +729,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -739,6 +752,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>JPY-LIBOR-BBA</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00005</product:Spread>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2022-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -747,26 +769,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>JPY-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00005</product:Spread>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -784,6 +797,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>JPY-LIBOR-BBA</product:Name>
+                <product:Currency>JPY</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2022-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -792,20 +814,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>JPY-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -829,6 +837,12 @@
             <product:Id>1</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -846,6 +860,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>JPY-LIBOR-BBA</product:Name>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Spread>0.00005</product:Spread>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2022-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -854,26 +877,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>JPY-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Spread>0.00005</product:Spread>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -891,6 +905,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>JPY-LIBOR-BBA</product:Name>
+                <product:Currency>JPY</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2022-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -899,20 +922,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>JPY-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -936,6 +945,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>CAD</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-13T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -951,6 +966,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>13</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>2.0</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>3000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2021-12-13T00:00:00</model:Date>
                 <model:Adjustment>
@@ -958,21 +977,17 @@
                     <model:Holiday>CATO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>2.0</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>3000000.0</product:Notional>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:Currency>CAD</product:Currency>
             <product:StartDate>
                 <model:Date>2011-12-13T00:00:00</model:Date>
                 <model:Adjustment>
                     <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:StartDate>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>CAD</product:Currency>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -988,6 +1003,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>13</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>CAD-BA-CDOR</product:Name>
+                <product:Currency>CAD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>3000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2021-12-13T00:00:00</model:Date>
                 <model:Adjustment>
@@ -995,20 +1019,6 @@
                     <model:Holiday>CATO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>CAD-BA-CDOR</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>3000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-13T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1032,6 +1042,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>CHF</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-15T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1047,6 +1063,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>15</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>3.0</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>11000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-05-15T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1054,21 +1074,17 @@
                     <model:Holiday>CHZU</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>3.0</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>11000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-15T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>CHF</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-15T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1084,6 +1100,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>15</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>CHF-LIBOR-BBA</product:Name>
+                <product:Currency>CHF</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>11000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-05-15T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1091,20 +1116,6 @@
                     <model:Holiday>CHZU</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>CHF-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>11000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-15T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1128,6 +1139,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>CHF</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-15T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1143,6 +1160,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>15</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>3.0</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>11000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-05-15T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1150,21 +1171,17 @@
                     <model:Holiday>CHZU</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>3.0</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>11000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-15T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>CHF</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-15T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1180,6 +1197,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>15</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>CHF-LIBOR-BBA</product:Name>
+                <product:Currency>CHF</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>11000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-05-15T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1187,20 +1213,6 @@
                     <model:Holiday>CHZU</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>CHF-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>11000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-15T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1224,6 +1236,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1239,6 +1257,10 @@
                 <model:Frequency>1M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>2.34</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2020-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1246,21 +1268,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>2.34</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1276,6 +1294,15 @@
                 <model:Frequency>1M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>1M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2020-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1283,20 +1310,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>1M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1320,6 +1333,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1335,6 +1354,10 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>1.0</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>14000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2043-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1342,21 +1365,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>1.0</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>14000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1372,6 +1391,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>14000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2043-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1379,20 +1407,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>14000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1416,6 +1430,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-13T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1431,6 +1451,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>13</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>1.1</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>35000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-13T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1438,21 +1462,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>1.1</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>35000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-13T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-13T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1468,6 +1488,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>13</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:Currency>GBP</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>35000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-13T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1475,20 +1504,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>35000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-13T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1512,6 +1527,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>CZK</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-12T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1527,6 +1548,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>12</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>5.67</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>3000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2021-12-12T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1534,21 +1559,17 @@
                     <model:Holiday>CZPR</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>5.67</product:Rate>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>3000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-12T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>CZK</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-12T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1564,6 +1585,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>12</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>CZK-PRIBOR-PRBO</product:Name>
+                <product:Currency>CZK</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>3000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2021-12-12T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1571,20 +1601,6 @@
                     <model:Holiday>CZPR</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>CZK-PRIBOR-PRBO</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>3000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-12T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1608,6 +1624,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>CZK</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-12T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1623,6 +1645,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>12</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>5.67</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>3000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2021-12-12T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1630,21 +1656,17 @@
                     <model:Holiday>CZPR</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>5.67</product:Rate>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>3000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-12T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>CZK</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-12T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1660,6 +1682,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>12</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>CZK-PRIBOR-PRBO</product:Name>
+                <product:Currency>CZK</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>3000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2021-12-12T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1667,20 +1698,6 @@
                     <model:Holiday>CZPR</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>CZK-PRIBOR-PRBO</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>3000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-12T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1704,6 +1721,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>DKK</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1719,6 +1742,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>3.1</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2020-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1726,21 +1753,17 @@
                     <model:Holiday>DKCO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>3.1</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>DKK</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1756,6 +1779,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>DKK-CIBOR2-DKNA13</product:Name>
+                <product:Currency>DKK</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2020-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1763,20 +1795,6 @@
                     <model:Holiday>DKCO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>DKK-CIBOR2-DKNA13</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1800,6 +1818,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>HKD</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1815,6 +1839,10 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>2.9</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2018-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1822,21 +1850,17 @@
                     <model:Holiday>HKHK</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>2.9</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>HKD</product:Currency>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1852,6 +1876,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>HKD-HIBOR-HKAB</product:Name>
+                <product:Currency>HKD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2018-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1859,20 +1892,6 @@
                     <model:Holiday>HKHK</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>HKD-HIBOR-HKAB</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1896,6 +1915,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>NOK</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-07T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1911,6 +1936,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>7</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>4.45</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-07T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1918,21 +1947,17 @@
                     <model:Holiday>NOOS</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>4.45</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-07T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>NOK</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-07T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -1948,6 +1973,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>7</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>NOK-NIBOR-NIBR</product:Name>
+                <product:Currency>NOK</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-07T00:00:00</model:Date>
                 <model:Adjustment>
@@ -1955,20 +1989,6 @@
                     <model:Holiday>NOOS</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>NOK-NIBOR-NIBR</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-07T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -1992,6 +2012,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>NZD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2009,6 +2035,10 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>3.35</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2028-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2017,21 +2047,17 @@
                     <model:Holiday>NZAU</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>3.35</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>NZD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2049,6 +2075,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>NZD-BBR-FRA</product:Name>
+                <product:Currency>NZD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2028-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2057,20 +2092,6 @@
                     <model:Holiday>NZAU</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>NZD-BBR-FRA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2094,6 +2115,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>PLN</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-07T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2109,6 +2136,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>7</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>2.333</product:Rate>
+            <product:Daycount>Act/Act ISDA</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-12-07T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2116,21 +2147,17 @@
                     <model:Holiday>PLWA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>2.333</product:Rate>
-            <product:Daycount>Act/Act ISDA</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-07T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>PLN</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-07T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2146,6 +2173,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>7</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>PLN-WIBOR-WIBO</product:Name>
+                <product:Currency>PLN</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-12-07T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2153,20 +2189,6 @@
                     <model:Holiday>PLWA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>PLN-WIBOR-WIBO</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-07T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2190,6 +2212,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>PLN</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-07T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2205,6 +2233,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>7</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>2.333</product:Rate>
+            <product:Daycount>Act/Act ISDA</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-12-07T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2212,21 +2244,17 @@
                     <model:Holiday>PLWA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>2.333</product:Rate>
-            <product:Daycount>Act/Act ISDA</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-07T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>PLN</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-07T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2242,6 +2270,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>7</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>PLN-WIBOR-WIBO</product:Name>
+                <product:Currency>PLN</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-12-07T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2249,20 +2286,6 @@
                     <model:Holiday>PLWA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>PLN-WIBOR-WIBO</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-07T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2286,6 +2309,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>SEK</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-10T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2301,6 +2330,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>10</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>0.65</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>55000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-10T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2308,21 +2341,17 @@
                     <model:Holiday>SEST</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>0.65</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>55000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>SEK</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-10T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2338,6 +2367,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>10</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>SEK-STIBOR-SIDE</product:Name>
+                <product:Currency>SEK</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>55000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-10T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2345,20 +2383,6 @@
                     <model:Holiday>SEST</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>SEK-STIBOR-SIDE</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>55000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2382,6 +2406,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>SGD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2397,6 +2427,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>1.1</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2020-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2404,21 +2438,17 @@
                     <model:Holiday>SGSI</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>1.1</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>SGD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2434,6 +2464,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>SGD-SOR-VWAP</product:Name>
+                <product:Currency>SGD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2020-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2441,20 +2480,6 @@
                     <model:Holiday>SGSI</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>SGD-SOR-VWAP</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2478,6 +2503,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>ZAR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-27T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2493,6 +2524,10 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>27</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>2.5</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2019-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2500,21 +2535,17 @@
                     <model:Holiday>ZAJO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>2.5</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-27T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>ZAR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-27T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2530,6 +2561,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>27</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>ZAR-JIBAR-SAFEX</product:Name>
+                <product:Currency>ZAR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2019-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2537,20 +2577,6 @@
                     <model:Holiday>ZAJO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>ZAR-JIBAR-SAFEX</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-27T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2574,6 +2600,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2591,6 +2623,10 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>1.5</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2599,21 +2635,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>1.5</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2631,6 +2663,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>JPY-LIBOR-BBA</product:Name>
+                <product:Currency>JPY</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2015-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2639,20 +2680,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>JPY-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2676,6 +2703,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2693,6 +2726,10 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>7.12</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>12000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2023-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2701,21 +2738,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>7.12</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>12000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2733,6 +2766,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>JPY-LIBOR-BBA</product:Name>
+                <product:Currency>JPY</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>12000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2023-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2741,20 +2783,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>JPY-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>12000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2778,6 +2806,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-28T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2793,6 +2827,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>28</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>1.77</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-05-28T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2800,21 +2838,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>1.77</product:Rate>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-28T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-28T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2830,6 +2864,14 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>28</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EONIA-OIS-COMPOUND</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-05-28T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2837,19 +2879,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EONIA-OIS-COMPOUND</product:Name>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-28T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2873,6 +2902,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-28T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2888,6 +2923,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>28</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>1.77</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-05-28T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2895,21 +2934,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>1.77</product:Rate>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-28T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-28T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2925,6 +2960,14 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>28</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EONIA-OIS-COMPOUND</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-05-28T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2932,19 +2975,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EONIA-OIS-COMPOUND</product:Name>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-28T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -2968,6 +2998,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-28T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -2983,6 +3019,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>28</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>4.8</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-05-28T00:00:00</model:Date>
                 <model:Adjustment>
@@ -2990,21 +3030,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>4.8</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-28T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-05-28T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3020,6 +3056,14 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>28</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-WMBA-SONIA-COMPOUND</product:Name>
+                <product:Currency>GBP</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2016-05-28T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3027,19 +3071,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-WMBA-SONIA-COMPOUND</product:Name>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-05-28T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -3063,6 +3094,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-03T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3078,6 +3115,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>3</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>0.1</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>400000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-03T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3085,21 +3126,17 @@
                     <model:Holiday>JPTO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>0.1</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>400000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-03T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2012-12-03T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3115,6 +3152,14 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>3</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>JPY-TONA-OIS-COMPOUND</product:Name>
+                <product:Currency>JPY</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>400000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2017-12-03T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3122,19 +3167,6 @@
                     <model:Holiday>JPTO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>JPY-TONA-OIS-COMPOUND</product:Name>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>400000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2012-12-03T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -3158,6 +3190,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>USD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3173,6 +3211,10 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>1.0</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2014-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3180,21 +3222,17 @@
                     <model:Holiday>USNY</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>1.0</product:Rate>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>USD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-05T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3210,6 +3248,14 @@
                 <model:Frequency>1Y</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>5</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>USD-Federal Funds-H.15-OIS-COMPOUND</product:Name>
+                <product:Currency>USD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2014-12-05T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3217,19 +3263,6 @@
                     <model:Holiday>USNY</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>USD-Federal Funds-H.15-OIS-COMPOUND</product:Name>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>10000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-05T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -3253,6 +3286,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>USD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-10T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3270,6 +3309,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>10</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>2.5</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>150000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2023-12-10T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3278,21 +3321,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>2.5</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>150000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
         <product:Leg>
             <product:Id>2</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:Currency>USD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-12-10T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3310,6 +3349,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>10</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>USD-LIBOR-BBA</product:Name>
+                <product:Currency>USD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>150000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2023-12-10T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3318,20 +3366,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>USD-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>150000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -3355,6 +3389,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2010-11-25T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3370,6 +3410,10 @@
                 <model:Frequency>1T</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>NONE</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>0.88</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>500000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2025-11-25T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3377,21 +3421,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>0.88</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>500000.0</product:Notional>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:Currency>EUR</product:Currency>
             <product:StartDate>
                 <model:Date>2010-11-25T00:00:00</model:Date>
                 <model:Adjustment>
                     <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:StartDate>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>EUR</product:Currency>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3407,6 +3447,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>25</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>500000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2025-11-25T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3414,20 +3463,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>500000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2010-11-25T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -3451,6 +3486,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>EUR</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-08-22T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3466,6 +3507,10 @@
                 <model:Frequency>1T</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>NONE</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>0.68</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2014-08-22T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3473,21 +3518,17 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>0.68</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:Currency>EUR</product:Currency>
             <product:StartDate>
                 <model:Date>2013-08-22T00:00:00</model:Date>
                 <model:Adjustment>
                     <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:StartDate>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>EUR</product:Currency>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3503,6 +3544,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>22</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>EUR-EURIBOR-Reuters</product:Name>
+                <product:Currency>EUR</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2014-08-22T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3510,20 +3560,6 @@
                     <model:Holiday>EUTA</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>EUR-EURIBOR-Reuters</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-08-22T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -3547,6 +3583,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>GBP</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-27T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3562,6 +3604,10 @@
                 <model:Frequency>1T</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>NONE</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>0.98</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2018-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3569,21 +3615,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>0.98</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:Currency>GBP</product:Currency>
             <product:StartDate>
                 <model:Date>2013-11-27T00:00:00</model:Date>
                 <model:Adjustment>
                     <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:StartDate>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>GBP</product:Currency>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3599,6 +3641,15 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>27</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Name>GBP-LIBOR-BBA</product:Name>
+                <product:Currency>GBP</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>6M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2018-11-27T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3606,20 +3657,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:Name>GBP-LIBOR-BBA</product:Name>
-                <product:Term>6M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-27T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>
@@ -3643,6 +3680,12 @@
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>USD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3660,6 +3703,10 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>1.23</product:Rate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2025-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3668,21 +3715,17 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>1.23</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:Currency>USD</product:Currency>
             <product:StartDate>
                 <model:Date>2013-11-29T00:00:00</model:Date>
                 <model:Adjustment>
                     <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:StartDate>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>USD</product:Currency>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -3700,6 +3743,15 @@
                 <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Name>USD-LIBOR-BBA</product:Name>
+                <product:Currency>USD</product:Currency>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Frequency>3M</product:Frequency>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2025-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -3708,20 +3760,6 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Fixing>
-                <product:Name>USD-LIBOR-BBA</product:Name>
-                <product:Term>3M</product:Term>
-                <product:Arrears>false</product:Arrears>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
         </product:Leg>
     </Product>
 </SwapTrade>

@@ -1,21 +1,17 @@
-package com.acuo.collateral.tools;
+package com.acuo.collateral.transform.trace.tools;
 
-import com.acuo.collateral.transform.experiment.FixedConvention;
-import com.acuo.collateral.transform.experiment.FixedIborConvention;
-import com.acuo.collateral.transform.experiment.FloatConvention;
-import com.acuo.collateral.transform.experiment.SwapTrade;
+import com.acuo.common.model.trade.SwapTrade;
 import com.tracegroup.transformer.actionrequests.ReqExternalObjectImport;
 import com.tracegroup.transformer.tools.CmdLineProgressMeter;
-import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class ExternalObjectImport {
 
-    Class[] classes = {SwapTrade.class, FixedConvention.class, FixedIborConvention.class, FloatConvention.class};
-    @Test
-    public void importClass() {
+    private static Class[] classes = {SwapTrade.class/*, FixedConvention.class, FixedIborConvention.class, FloatConvention.class*/};
+
+    public static void main(String[] args) {
         ReqExternalObjectImport req = new ReqExternalObjectImport ("External Import");
         req.setTpjFileName("./projects/valuation/valuation.tpj");
         req.setExternalObjectManagerDefinitionName("AcuoExternalObjectManager");

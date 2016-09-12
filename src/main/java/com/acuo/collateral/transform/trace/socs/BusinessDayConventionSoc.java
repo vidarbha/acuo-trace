@@ -1,23 +1,22 @@
 package com.acuo.collateral.transform.trace.socs;
 
-import com.acuo.common.model.proxy.BusinessDayConventionProxy;
 import com.opengamma.strata.basics.date.BusinessDayConvention;
 import com.tracegroup.transformer.externalobjects.socs.StringBOT;
 import com.tracegroup.transformer.mom.DataException;
 
-public class BusinessDayConventionSoc extends StringBOT<BusinessDayConventionProxy> {
+public class BusinessDayConventionSoc extends StringBOT<BusinessDayConvention> {
     @Override
-    public Object transformerFromExternalObject(BusinessDayConventionProxy businessDayConvention) throws DataException {
+    public Object transformerFromExternalObject(BusinessDayConvention businessDayConvention) throws DataException {
         return businessDayConvention.getName();
     }
 
     @Override
-    public BusinessDayConventionProxy externalObjectFromTransformer(String name) throws DataException {
-        return new BusinessDayConventionProxy(BusinessDayConvention.of(name));
+    public BusinessDayConvention externalObjectFromTransformer(String name) throws DataException {
+        return BusinessDayConvention.of(name);
     }
 
     @Override
-    public Class<BusinessDayConventionProxy> getExternalObjectClass() {
-        return BusinessDayConventionProxy.class;
+    public Class<BusinessDayConvention> getExternalObjectClass() {
+        return BusinessDayConvention.class;
     }
 }

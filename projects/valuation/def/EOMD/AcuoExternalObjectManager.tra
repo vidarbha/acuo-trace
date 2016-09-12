@@ -7,11 +7,14 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>16/08/2016 09:04:37</Timestamp>
-        <Checksum>c885f108</Checksum>
+        <Timestamp>12/09/2016 12:15:28</Timestamp>
+        <Checksum>14918106</Checksum>
     </LastModification>
 </Prolog>
 <ExternalObjectManagerDefinition name="AcuoExternalObjectManager">
+    <Description>Acuo External Object Manager.
+
+EnumName SOC should always be inserted at the end of the Simple Object Converter list as Transformer doesnt handle Strata's Enum e.g. PayReceive, FixingRealtiveTom etc.</Description>
     <FieldDiscoverer>NonPrivateSetAndGetWithCollections</FieldDiscoverer>
     <GroupNamer>BasicGroupNamer</GroupNamer>
     <ComponentTypeNamer>BasicComponentTypeNamer</ComponentTypeNamer>
@@ -36,7 +39,6 @@
     <SimpleObjectConverter>Short</SimpleObjectConverter>
     <SimpleObjectConverter>SqlTimestamp</SimpleObjectConverter>
     <SimpleObjectConverter>String</SimpleObjectConverter>
-    <SimpleObjectConverter>EnumName</SimpleObjectConverter>
     <SimpleObjectConverter>LocalDate</SimpleObjectConverter>
     <SimpleObjectConverter>Currency</SimpleObjectConverter>
     <SimpleObjectConverter>DayCount</SimpleObjectConverter>
@@ -44,4 +46,8 @@
     <SimpleObjectConverter>RollConvention</SimpleObjectConverter>
     <SimpleObjectConverter>BusinessDayConvention</SimpleObjectConverter>
     <SimpleObjectConverter>HolidayCalendarId</SimpleObjectConverter>
+    <SimpleObjectConverter>FixingRelativeTo</SimpleObjectConverter>
+    <SimpleObjectConverter>PayReceive</SimpleObjectConverter>
+    <SimpleObjectConverter>BuySell</SimpleObjectConverter>
+    <SimpleObjectConverter>EnumName</SimpleObjectConverter>
 </ExternalObjectManagerDefinition>

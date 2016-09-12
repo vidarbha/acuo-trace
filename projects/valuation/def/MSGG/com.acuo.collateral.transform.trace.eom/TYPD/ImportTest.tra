@@ -7,11 +7,11 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>17/08/2016 16:58:39</Timestamp>
-        <Checksum>9bb4e47f</Checksum>
+        <Timestamp>12/09/2016 07:17:02</Timestamp>
+        <Checksum>f48100df</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="Swap.SwapLegPayDates" group="com.acuo.common.model.product">
+<NamedComponentType name="ImportTest" group="com.acuo.collateral.transform.trace.eom">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
@@ -26,7 +26,18 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="FixingRelativeTo">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="HolidayCalendarId">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -38,10 +49,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Enddate">
+                    <LocalComponent name="RollConvention">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -49,10 +60,21 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="StartDate">
+                    <LocalComponent name="Currency">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
+                                <BusinessObjectType>Currency</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="DayCount">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -71,10 +93,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Adjust">
+                    <LocalComponent name="LocalDate">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Boolean</BusinessObjectType>
+                                <BusinessObjectType>DateTime</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -82,10 +104,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Eom">
+                    <LocalComponent name="PayReceive">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Boolean</BusinessObjectType>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>

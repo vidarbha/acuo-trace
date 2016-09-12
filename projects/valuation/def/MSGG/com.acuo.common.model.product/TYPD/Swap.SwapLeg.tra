@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>17/08/2016 17:35:42</Timestamp>
-        <Checksum>62a7eaa9</Checksum>
+        <Timestamp>12/09/2016 12:32:23</Timestamp>
+        <Checksum>1ae1e561</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Swap.SwapLeg" group="com.acuo.common.model.product">
@@ -49,6 +49,15 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="StartDate">
+                        <TypeSpecification>
+                            <NamedType type="model:AdjustableDate"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="PaymentSchedule">
                         <TypeSpecification>
                             <NamedType type="model:AdjustableSchedule"/>
@@ -78,18 +87,11 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="MaturityDate">
-                        <TypeSpecification>
-                            <NamedType type="model:AdjustableDate"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="PayReceive">
                         <TypeSpecification>
-                            <NamedType type="model:PayReceive"/>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
@@ -160,7 +162,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="StartDate">
+                    <LocalComponent name="MaturityDate">
                         <TypeSpecification>
                             <NamedType type="model:AdjustableDate"/>
                         </TypeSpecification>
