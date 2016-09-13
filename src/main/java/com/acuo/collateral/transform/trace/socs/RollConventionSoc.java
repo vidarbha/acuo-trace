@@ -30,4 +30,9 @@ public class RollConventionSoc extends StringBOT<RollConvention> {
     public Class<RollConvention> getExternalObjectClass() {
         return RollConvention.class;
     }
+
+    @Override
+    public boolean canProvideSOCForClass(Class clazz) {
+        return RollConvention.class.isAssignableFrom(clazz);
+    }
 }
