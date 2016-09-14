@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>14/09/2016 07:17:07</Timestamp>
-        <Checksum>8ec03771</Checksum>
+        <Timestamp>14/09/2016 07:27:51</Timestamp>
+        <Checksum>c8819428</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Fixing" group="Map:ACUO_MARKIT-OUT" category="Apply Rules">
@@ -33,7 +33,7 @@
             <Copy></Copy>
         </FunctionCall>
     </ActionStep>
-    <ActionStep disabled="true">
+    <ActionStep>
         <FunctionCall>
             <Property name="Table" type="namedlookuptable">
                 <Value>MarkitFloatingRateName</Value>
@@ -54,10 +54,13 @@
                     </NodeSpec>
                 </Value>
             </Property>
+            <Property name="NoEntryOption" type="option">
+                <Value>Copy Input to Output</Value>
+            </Property>
             <Mapper>NamedTableLookup</Mapper>
         </FunctionCall>
     </ActionStep>
-    <ActionStep>
+    <ActionStep disabled="true">
         <FunctionCall>
             <Property name="Input" type="nodespec">
                 <Value>
