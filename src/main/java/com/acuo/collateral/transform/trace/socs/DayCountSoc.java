@@ -19,4 +19,9 @@ public class DayCountSoc extends StringBOT<DayCount> {
     public Class<DayCount> getExternalObjectClass() {
         return DayCount.class;
     }
+
+    @Override
+    public boolean canProvideSOCForClass(Class clazz) {
+        return DayCount.class.isAssignableFrom(clazz);
+    }
 }

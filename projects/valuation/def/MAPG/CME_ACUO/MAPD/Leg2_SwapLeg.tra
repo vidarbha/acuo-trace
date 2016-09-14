@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>12/09/2016 10:06:46</Timestamp>
-        <Checksum>578c2a02</Checksum>
+        <Timestamp>14/09/2016 06:43:07</Timestamp>
+        <Checksum>7c443a93</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg2_SwapLeg" group="Map:CME_ACUO" category="Advanced Actions">
@@ -142,7 +142,7 @@
                             <Value>
                                 <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="Fixing/Name"/>
+                                    contextName="Output" pathString="Fixing/FloatingRateName"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -163,7 +163,7 @@
                             <Value>
                                 <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="Fixing/Frequency"/>
+                                    contextName="Output" pathString="Fixing/Tenor"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -230,30 +230,6 @@
                             </Value>
                         </Property>
                         <Copy></Copy>
-                    </FunctionCall>
-                </ActionStep>
-                <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="LEG2INDEX"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Pattern" type="string">
-                            <Value>^.{0,3}</Value>
-                        </Property>
-                        <Property name="Match" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="Fixing/Currency"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Mapper>Regex</Mapper>
                     </FunctionCall>
                 </ActionStep>
             </ThenAction>

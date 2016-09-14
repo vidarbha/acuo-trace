@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>12/09/2016 09:59:07</Timestamp>
-        <Checksum>82ee2410</Checksum>
+        <Timestamp>14/09/2016 06:37:23</Timestamp>
+        <Checksum>268cb79e</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
@@ -111,13 +111,16 @@
                 </Comparison>
             </Condition>
             <ThenAction>
-                <ActionStep>
+                <ActionStep disabled="true">
                     <FunctionCall>
+                        <Property name="Table" type="namedlookuptable">
+                            <Value>MarkitFloatingRateName</Value>
+                        </Property>
                         <Property name="Input" type="nodespec">
                             <Value>
                                 <NodeSpec>
                                     <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Fixing/Name"/>
+                                    contextName="Input" pathString="Fixing/FloatingRateName"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -129,16 +132,16 @@
                                 </NodeSpec>
                             </Value>
                         </Property>
-                        <Copy></Copy>
+                        <Mapper>NamedTableLookup</Mapper>
                     </FunctionCall>
                 </ActionStep>
-                <ActionStep>
+                <ActionStep disabled="true">
                     <FunctionCall>
                         <Property name="Input" type="nodespec">
                             <Value>
                                 <NodeSpec>
                                     <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Fixing/Frequency"/>
+                                    contextName="Input" pathString="Fixing/Tenor"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -153,7 +156,7 @@
                         <Copy></Copy>
                     </FunctionCall>
                 </ActionStep>
-                <ActionStep>
+                <ActionStep disabled="true">
                     <IfAction>
                         <Condition>
                             <Comparison>
@@ -214,6 +217,27 @@
                             </ActionStep>
                         </ElseAction>
                     </IfAction>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="fixing"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Fixing"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <MappingDefinitionInvocation>Fixing</MappingDefinitionInvocation>
+                    </FunctionCall>
                 </ActionStep>
             </ThenAction>
         </IfAction>
