@@ -6,17 +6,34 @@
     <Type>SWAP</Type>
     <Info>
         <ClearedTradeId>455161</ClearedTradeId>
+        <ClearedTradeDate>2013-12-06T00:00:00</ClearedTradeDate>
         <TradeId>11811161</TradeId>
         <TradeDate>2013-12-10T00:00:00</TradeDate>
-        <Book>11811161</Book>
         <TradeStatus>CLEARED</TradeStatus>
-        <ClearedTradeDate>2013-12-06T00:00:00</ClearedTradeDate>
+        <Book>11811161</Book>
     </Info>
     <Product>
         <product:Leg>
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
             <product:Currency>USD</product:Currency>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>USNY</model:Holiday>
+                    <model:Holiday>GBLO</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>6M</model:Frequency>
+            </product:PaymentSchedule>
+            <product:CalculationSchedule>
+                <model:Adjustment>
+                    <model:Holiday>USNY</model:Holiday>
+                    <model:Holiday>GBLO</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>6M</model:Frequency>
+            </product:CalculationSchedule>
+            <product:RollConvention>10</product:RollConvention>
             <product:StartDate>
                 <model:Date>2013-12-10T00:00:00</model:Date>
                 <model:Adjustment>
@@ -35,13 +52,18 @@
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:MaturityDate>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:Currency>USD</product:Currency>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:Holiday>USNY</model:Holiday>
                     <model:Holiday>GBLO</model:Holiday>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
-                <model:Frequency>6M</model:Frequency>
+                <model:Frequency>3M</model:Frequency>
             </product:PaymentSchedule>
             <product:CalculationSchedule>
                 <model:Adjustment>
@@ -49,14 +71,9 @@
                     <model:Holiday>GBLO</model:Holiday>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
-                <model:Frequency>6M</model:Frequency>
+                <model:Frequency>3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>10</product:RollConvention>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>USD</product:Currency>
             <product:StartDate>
                 <model:Date>2013-12-10T00:00:00</model:Date>
                 <model:Adjustment>
@@ -65,9 +82,9 @@
             </product:StartDate>
             <product:PayReceive>RECEIVE</product:PayReceive>
             <product:Fixing>
-                <product:Tenor>3M</product:Tenor>
-                <product:FloatingRateName>USD-LIBOR</product:FloatingRateName>
+                <product:FloatingRateName>USD-LIBOR-BBA</product:FloatingRateName>
                 <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Tenor>3M</product:Tenor>
             </product:Fixing>
             <product:Daycount>Act/360</product:Daycount>
             <product:Notional>150000000.0</product:Notional>
@@ -79,23 +96,6 @@
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:PaymentSchedule>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
-                <model:Frequency>3M</model:Frequency>
-            </product:PaymentSchedule>
-            <product:CalculationSchedule>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
-                <model:Frequency>3M</model:Frequency>
-            </product:CalculationSchedule>
-            <product:RollConvention>10</product:RollConvention>
         </product:Leg>
     </Product>
 </SwapTrade>
