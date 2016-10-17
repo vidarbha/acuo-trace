@@ -2,67 +2,43 @@ plugins {
     id 'io.franzbecker.gradle-lombok' version '1.6'
 }
 
+apply from: "$rootDir/gradle/root/gradle-wrapper.gradle"
+apply from: "$rootDir/gradle/root/idea-provided.gradle"
+apply from: "$rootDir/gradle/root/test-reports.gradle"
+
+apply from: "$rootDir/gradle/projects/java-plugins.gradle"
+apply from: "$rootDir/gradle/projects/dependencies.gradle"
+apply from: "$rootDir/gradle/projects/integration-test.gradle"
+apply from: "$rootDir/gradle/projects/deployment.gradle"
+apply from: "$rootDir/gradle/projects/sonarqube.gradle"
+
 group 'com.acuo.collateral'
 version '0.0.1-SNAPSHOT'
 
-apply from: "$rootDir/gradle/java-plugins.gradle"
-apply from: "$rootDir/gradle/dependencies.gradle"
-apply from: "$rootDir/gradle/integration-test.gradle"
-apply from: "$rootDir/gradle/deployment.gradle"
-
-
-repositories {
-    mavenLocal()
-    maven {
-        url "${nexusUrl}/repository/maven-public/"
-    }
-    jcenter()
-    mavenCentral()
-}
-
-configurations.all {
-    // check for updates every build
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.14'
-}
-
-sourceCompatibility = 1.8
-
 ext {
     versions += [
-            common     : '0.0.1-SNAPSHOT',
-            trasnformer     : '0.0.1-SNAPSHOT',
-            runtime : '3.5.6',
-            design : '3.5.5',
-            currencylib : '1.0.3'
+        common     : '0.0.1-SNAPSHOT',
+        trasnformer     : '0.0.1-SNAPSHOT',
+        runtime : '3.5.6',
+        design : '3.5.5',
+        currencylib : '1.0.3'
     ]
 }
 
 dependencies {
-    /*compile ( group: "com.acuo.collateral", name:"transformer-services", version:"${versions.trasnformer}") {
-        changing = true
-    }*/
     compile (
-            "com.acuo.collateral:transformer-valuations:${versions.trasnformer}",
-            "com.acuo.collateral:transformer-margin:${versions.trasnformer}",
-            "com.acuo.collateral:common:${versions.common}",
-            "com.tracegroup.transformer:transformer-runtime-complete:${versions.runtime}",
-            "com.tracegroup.transformer:transformer-designtime:${versions.design}",
-            "com.tracegroup.transformer:currencylib:${versions.currencylib}",
-            "com.opengamma.strata:strata-basics:1.0.0"
+        "com.acuo.collateral:transformer-valuations:${versions.trasnformer}",
+        "com.acuo.collateral:transformer-margin:${versions.trasnformer}",
+        "com.acuo.collateral:common:${versions.common}",
+        "com.tracegroup.transformer:transformer-runtime-complete:${versions.runtime}",
+        "com.tracegroup.transformer:transformer-designtime:${versions.design}",
+        "com.tracegroup.transformer:currencylib:${versions.currencylib}",
+        "com.opengamma.strata:strata-basics:1.0.0"
     )
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile (
-            "com.acuo.collateral:common:${versions.common}:tests"
+        "com.acuo.collateral:common:${versions.common}:tests"
     )
-}
-
-task copyRuntimeLibs(type: Copy) {
-    into "projects/cme-acuo/libs"
-    from configurations.runtime
 }
 
 task fatJar(type: Jar) {
@@ -74,24 +50,4 @@ task fatJar(type: Jar) {
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
-}
-
-task testReport(type: TestReport) {
-    destinationDir = file("$buildDir/reports/allTests")
-    // Include the results from the `test` task in all subprojects
-    reportOn test
-}
-
-jacocoTestReport {
-    reports {
-        html.enabled true
-        xml.enabled false
-        csv.enabled false
-        html.destination "${buildDir}/reports/jacoco"
-    }
-}
-
-task build {
-    dependsOn tasks.jacocoTestReport
-    dependsOn tasks.testReport
 }
