@@ -20,7 +20,7 @@ uploadArchives {
                 name 'Trace Financial'
             }
         }
-        repository(url: "${nexusUrl}/repository/maven-snapshots/") {
+        repository(url: "${nexusUrl}/repository/maven-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}") {
             authentication(userName: nexusUsername, password: nexusPassword)
         }
         addFilter('transformer-valuations') {artifact, file ->
