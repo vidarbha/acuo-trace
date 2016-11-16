@@ -1,11 +1,13 @@
-apply plugin: 'java'
+//apply plugin: 'java'
 apply plugin:'jacoco'
 
 // Disable the test report for the individual test task
-subprojects {
-    apply plugin:'jacoco'
-    test {
-        reports.html.enabled = false
+subprojects { project ->
+    plugins.withType(JavaPlugin) {
+        apply plugin: 'jacoco'
+        test {
+            reports.html.enabled = false
+        }
     }
 }
 

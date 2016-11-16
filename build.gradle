@@ -3,8 +3,8 @@ plugins {
 }
 
 apply from: "$rootDir/gradle/root/gradle-wrapper.gradle"
-apply from: "$rootDir/gradle/root/idea-provided.gradle"
-apply from: "$rootDir/gradle/root/test-reports.gradle"
+//apply from: "$rootDir/gradle/root/idea-provided.gradle"
+//apply from: "$rootDir/gradle/root/test-reports.gradle"
 
 apply from: "$rootDir/gradle/projects/java-plugins.gradle"
 apply from: "$rootDir/gradle/projects/dependencies.gradle"
@@ -13,14 +13,13 @@ apply from: "$rootDir/gradle/projects/deployment.gradle"
 apply from: "$rootDir/gradle/projects/sonarqube.gradle"
 
 group 'com.acuo.collateral'
-version '0.0.1-SNAPSHOT'
 
 ext {
     versions += [
-        common     : '0.0.1-SNAPSHOT',
-        trasnformer     : '0.0.1-SNAPSHOT',
-        runtime : '3.6.1',
-        design : '3.6.1',
+        common      : '0.2.1',
+        trasnformer : '0.0.1-SNAPSHOT',
+        runtime     : '3.6.1',
+        design      : '3.6.1',
         currencylib : '1.0.5'
     ]
 }
