@@ -1,18 +1,15 @@
-plugins {
-    id 'io.franzbecker.gradle-lombok' version '1.6'
-}
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/root/buildscript.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/root/gradle-wrapper.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/root/profiles-config.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/root/deployment.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/root/test-reports.gradle"
 
-apply from: "$rootDir/gradle/root/gradle-wrapper.gradle"
-//apply from: "$rootDir/gradle/root/idea-provided.gradle"
-//apply from: "$rootDir/gradle/root/test-reports.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/java/java-plugins.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/java/dependencies.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/java/integration-test.gradle"
+apply from: "https://raw.githubusercontent.com/anaxo-io/gradle-plugins/master/java/sonarqube.gradle"
 
-apply from: "$rootDir/gradle/projects/java-plugins.gradle"
-apply from: "$rootDir/gradle/projects/dependencies.gradle"
-apply from: "$rootDir/gradle/projects/integration-test.gradle"
-apply from: "$rootDir/gradle/projects/deployment.gradle"
-apply from: "$rootDir/gradle/projects/sonarqube.gradle"
-
-group 'com.acuo.collateral'
+group = 'com.acuo.collateral'
 
 ext {
     versions += [
