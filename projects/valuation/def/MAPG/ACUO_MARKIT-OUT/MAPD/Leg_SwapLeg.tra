@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.5.5</VersionNumber>
-            <BuildNumber>194</BuildNumber>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>14/09/2016 07:35:28</Timestamp>
-        <Checksum>1e23cafc</Checksum>
+        <Timestamp>21/12/2016 02:23:35</Timestamp>
+        <Checksum>5c26fc2d</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
@@ -304,6 +304,12 @@
                             contextName="Output" pathString="notional"/>
                     </NodeSpec>
                 </Value>
+            </Property>
+            <Property name="SignPosition" type="option">
+                <Value>Leading</Value>
+            </Property>
+            <Property name="NegativeSign" type="string">
+                <Value>-</Value>
             </Property>
             <Mapper>DecimalToText</Mapper>
         </FunctionCall>
