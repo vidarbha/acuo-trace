@@ -1,0 +1,28 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/01/2017 01:21:04</Timestamp>
+        <Checksum>ed7e94f2</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="MarginCall-agree" group="Map:ACUO_MS">
+    <InputDefinition name="Input" optional="false" repeating="true">
+        <Type>MarginCall</Type>
+    </InputDefinition>
+    <OutputDefinition name="marginCalls" optional="false" repeating="false">
+        <Component>Margin-Call-agree:marginCalls</Component>
+    </OutputDefinition>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>
