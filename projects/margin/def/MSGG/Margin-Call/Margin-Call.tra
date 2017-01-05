@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Schema Import</Program>
-            <VersionNumber>3.5.5</VersionNumber>
-            <BuildNumber>194</BuildNumber>
+            <Program>Message Definition Group Dialog</Program>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>31/08/2016 06:14:39</Timestamp>
-        <Checksum>4999822c</Checksum>
+        <Timestamp>05/01/2017 01:16:04</Timestamp>
+        <Checksum>a90f0bf8</Checksum>
     </LastModification>
 </Prolog>
 <MessageDefinitionGroup name="Margin-Call" namespacePrefix="tns" template="XML">
@@ -28,6 +28,8 @@
         <Value>true</Value>
     </Property>
     <Description></Description>
+    <NamespaceReference namespacePrefix="Margin-Call-create" group="Margin-Call-create"/>
+    <NamespaceReference namespacePrefix="Margin-Call-agree" group="Margin-Call-agree"/>
     <DefaultConverter botReference="Code" converterReference="DescribedCodeConverter"/>
     <DefaultConverter botReference="Code" converterReference="DescribedCodeConverter"/>
     <DefaultParser/>
