@@ -1,0 +1,27 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Service Operation Form</Program>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
+        </Transformer>
+        <User>user</User>
+        <Host>Dell-pc</Host>
+        <Timestamp>05/01/2017 10:08:10</Timestamp>
+        <Checksum>3524e2f4</Checksum>
+    </LastModification>
+</Prolog>
+<ExposedServiceOperation name="agreeCall" serviceName="MarginCall" operationType="ManyToManyMapping">
+    <Property name="InputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
+    <Description>Operation to agree a call</Description>
+    <ServiceOperationTargetChoice>
+        <ServiceOperationMappingTarget group="Map:ACUO_MS">
+            <Mapping>MarginCall-agree</Mapping>
+        </ServiceOperationMappingTarget>
+    </ServiceOperationTargetChoice>
+</ExposedServiceOperation>
