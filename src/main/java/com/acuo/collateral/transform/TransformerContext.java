@@ -7,4 +7,6 @@ import java.time.LocalDate;
 @Data
 public class TransformerContext {
     private LocalDate valueDate;
+
+    private Types.MarginCallType marginCallType;
 }
