@@ -6,7 +6,6 @@ import com.acuo.collateral.transform.Types;
 import com.acuo.collateral.transform.trace.transformer_margin.AgreeCallOutputWrapper;
 import com.acuo.collateral.transform.trace.transformer_margin.CreateCallOutputWrapper;
 import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
-import com.acuo.collateral.transform.trace.transformer_valuations.ToMarkitPvRequestOutputWrapper;
 import com.google.common.collect.ImmutableList;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
