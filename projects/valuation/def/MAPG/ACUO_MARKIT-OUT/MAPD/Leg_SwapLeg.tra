@@ -5,10 +5,10 @@
             <VersionNumber>3.6.1</VersionNumber>
             <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>21/12/2016 02:23:35</Timestamp>
-        <Checksum>5c26fc2d</Checksum>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>01/02/2017 10:57:59</Timestamp>
+        <Checksum>e0831dca</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
@@ -406,27 +406,6 @@
     </ActionStep>
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[Counter1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="paydates/holidays/code[Out1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
             <ActionStep>
                 <FunctionCall>
                     <Property name="Table" type="namedlookuptable">
