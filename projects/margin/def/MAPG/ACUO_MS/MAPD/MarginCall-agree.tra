@@ -5,10 +5,10 @@
             <VersionNumber>3.6.1</VersionNumber>
             <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>user</User>
-        <Host>Dell-pc</Host>
-        <Timestamp>05/01/2017 09:52:27</Timestamp>
-        <Checksum>a46cad43</Checksum>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>01/02/2017 19:25:01</Timestamp>
+        <Checksum>87d35f2e</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-agree" group="Map:ACUO_MS">
@@ -83,11 +83,11 @@
             <ScopeB specType="TO_DATA" contextName="marginCalls"
                 pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input"
-                    contextPosnSpec="[#]" pathString="."/>
+                <PathNodeSpec specType="TO_DATA"
+                    contextName="marginCalls" contextPosnSpec="[#]" pathString="."/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input"
-                contextPosnSpec="[]" pathString="."/>
+            <ScopeA specType="TO_DATA" contextName="marginCalls"
+                contextPosnSpec="[#]" pathString="."/>
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="true">
