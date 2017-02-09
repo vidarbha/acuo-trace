@@ -13,7 +13,7 @@ group = 'com.acuo.collateral'
 
 ext {
     versions += [
-        common      : '0.2.1',
+        common      : '0.4.0-SNAPSHOT',
         trasnformer : '0.2.1-SNAPSHOT',
         runtime     : '3.6.1',
         design      : '3.6.1',
@@ -25,7 +25,7 @@ dependencies {
     compile (
         "com.acuo.collateral:transformer-valuations:${versions.trasnformer}",
         "com.acuo.collateral:transformer-margin:${versions.trasnformer}",
-        "com.acuo.collateral:common:${versions.common}",
+        "com.acuo.collateral:acuo-common:${versions.common}",
         "com.tracegroup.transformer:transformer-runtime-complete:${versions.runtime}",
         "com.tracegroup.transformer:transformer-designtime:${versions.design}",
         "com.tracegroup.transformer:currencylib:${versions.currencylib}",
