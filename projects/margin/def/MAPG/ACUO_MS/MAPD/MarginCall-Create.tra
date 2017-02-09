@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>03/02/2017 18:52:57</Timestamp>
-        <Checksum>d88f702f</Checksum>
+        <Timestamp>09/02/2017 12:44:13</Timestamp>
+        <Checksum>a7533031</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Create" group="Map:ACUO_MS">
@@ -317,6 +317,28 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
+                                    contextPosnSpec="1" pathString="MarginAgreementType"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[1]/marginAgreementType"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
                                     contextPosnSpec="Counter1" pathString="MarginAgreementAmpId"/>
                             </NodeSpec>
                         </Value>
@@ -527,27 +549,6 @@
             <ScopeA specType="FROM_DATA" contextName="Input"
                 contextPosnSpec="[]" pathString="."/>
         </RepeatAction>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" contextPosnSpec="1" pathString="MarginAgreementType"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="marginCall[1]/marginAgreementType"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="true">
         <Type>MarginCall</Type>
