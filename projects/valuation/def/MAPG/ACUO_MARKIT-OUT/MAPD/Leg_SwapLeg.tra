@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>01/02/2017 10:57:59</Timestamp>
-        <Checksum>e0831dca</Checksum>
+        <Timestamp>10/02/2017 17:17:24</Timestamp>
+        <Checksum>9d34ff7a</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
@@ -358,11 +358,14 @@
     </ActionStep>
     <ActionStep>
         <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>MarkitFreq</Value>
+            </Property>
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="PaymentSchedule/Frequency"/>
+                            contextName="Input" pathString="CalculationSchedule/Frequency"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -374,7 +377,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Copy></Copy>
+            <Mapper>NamedTableLookup</Mapper>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
