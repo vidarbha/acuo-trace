@@ -8,9 +8,11 @@ public class FrequencySoc extends StringBOT<Frequency> {
     @Override
     public Object transformerFromExternalObject(Frequency frequency) throws DataException {
         if (Frequency.TERM.equals(frequency)) return "1T";
-        String toParse = frequency.getPeriod().toString();
-        String unprefixed = toParse.startsWith("P") ? toParse.substring(1) : toParse;
-        return unprefixed;
+        if (frequency.getPeriod() != null) {
+            return frequency.getPeriod().toString();
+        } else {
+            throw new RuntimeException("period undefined for " + frequency);
+        }
     }
 
     /**
