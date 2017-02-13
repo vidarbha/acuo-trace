@@ -2,36 +2,80 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.5.5</VersionNumber>
-            <BuildNumber>194</BuildNumber>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>14/09/2016 07:27:51</Timestamp>
-        <Checksum>c8819428</Checksum>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>10/02/2017 19:11:32</Timestamp>
+        <Checksum>68b0e72b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Fixing" group="Map:ACUO_MARKIT-OUT" category="Apply Rules">
     <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
+        <IfAction>
+            <Condition>
+                <Comparison>
+                    <FirstTerm>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Tenor"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="term"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
+                            contextName="Input" pathString="FloatingRateName"/>
+                    </FirstTerm>
+                    <Operator>EQ</Operator>
+                    <SecondTerm>
+                        <Literal>MXN-TIIE-Banxico</Literal>
+                    </SecondTerm>
+                </Comparison>
+            </Condition>
+            <ThenAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Table" type="namedlookuptable">
+                            <Value>MarkitTenorMexico</Value>
+                        </Property>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Tenor"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="term"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Mapper>NamedTableLookup</Mapper>
+                    </FunctionCall>
+                </ActionStep>
+            </ThenAction>
+            <ElseAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Tenor"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="term"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+            </ElseAction>
+        </IfAction>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
