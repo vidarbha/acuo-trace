@@ -1,8 +1,5 @@
 package com.acuo.collateral.learning;
 
-import com.acuo.common.util.ResourceFile;
-import org.eclipse.persistence.internal.helper.SerializationHelper;
-import org.junit.Rule;
 import org.junit.Test;
 
 import javax.xml.transform.stream.StreamSource;
