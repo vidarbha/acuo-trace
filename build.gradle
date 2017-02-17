@@ -13,7 +13,7 @@ group = 'com.acuo.collateral'
 
 ext {
     versions += [
-        common      : '0.4.0-SNAPSHOT',
+        common      : '0.3.1',
         transformer : '0.2.1-SNAPSHOT',
         runtime     : '3.6.1',
         design      : '3.6.1',
@@ -33,7 +33,7 @@ dependencies {
     )
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile (
-        "com.acuo.collateral:common:${versions.common}:tests"
+        "com.acuo.collateral:acuo-common:${versions.common}:tests"
     )
 }
 
