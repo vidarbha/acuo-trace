@@ -1,0 +1,26 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Service Operation Form</Program>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>17/02/2017 16:35:42</Timestamp>
+        <Checksum>d71e4723</Checksum>
+    </LastModification>
+</Prolog>
+<ExposedServiceOperation name="parseCalls" serviceName="MarginCall" operationType="ManyToManyMapping">
+    <Property name="InputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
+    <ServiceOperationTargetChoice>
+        <ServiceOperationMappingTarget group="Map:MS_ACUO">
+            <Mapping>MarginCreate-Response</Mapping>
+        </ServiceOperationMappingTarget>
+    </ServiceOperationTargetChoice>
+</ExposedServiceOperation>
