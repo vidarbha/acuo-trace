@@ -7,14 +7,25 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>13/02/2017 18:46:22</Timestamp>
-        <Checksum>6f2179ee</Checksum>
+        <Timestamp>20/02/2017 19:09:02</Timestamp>
+        <Checksum>8dcf9db0</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Swap.SwapLegFixing" group="com.acuo.common.model.product">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Tenor">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="FloatingRateName">
                         <TypeSpecification>
@@ -28,17 +39,6 @@
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="FixingRelativeTo">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Tenor">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>

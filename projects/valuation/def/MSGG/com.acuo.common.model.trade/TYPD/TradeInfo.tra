@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>External Object Import</Program>
-            <VersionNumber>3.5.5</VersionNumber>
-            <BuildNumber>194</BuildNumber>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>14/09/2016 06:39:58</Timestamp>
-        <Checksum>369319c8</Checksum>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>20/02/2017 19:09:02</Timestamp>
+        <Checksum>4b3398a5</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="TradeInfo" group="com.acuo.common.model.trade">
@@ -16,21 +16,10 @@
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ClearedTradeId">
+                    <LocalComponent name="Book">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ClearedTradeDate">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -69,10 +58,32 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Book">
+                    <LocalComponent name="TradingAccountId">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ClearedTradeId">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ClearedTradeDate">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>DateTime</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
