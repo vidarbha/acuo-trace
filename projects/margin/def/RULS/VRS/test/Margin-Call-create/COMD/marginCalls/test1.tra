@@ -1,0 +1,34 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Validation Rule Form</Program>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>06/02/2017 15:57:19</Timestamp>
+        <Checksum>7d3454f7</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="test1" group="Msg:Margin-Call-create"
+    ruleSet="test" disable="false">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="marginCall[1]/currency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>marginCalls</Component>
+    </InputDefinition>
+    <ExceptionMessage>Error</ExceptionMessage>
+    <ErrorCode>1111</ErrorCode>
+</ValidationRule>
