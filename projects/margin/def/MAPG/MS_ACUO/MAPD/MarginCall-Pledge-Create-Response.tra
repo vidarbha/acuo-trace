@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>22/02/2017 11:09:58</Timestamp>
-        <Checksum>d28e06e0</Checksum>
+        <Timestamp>22/02/2017 15:14:19</Timestamp>
+        <Checksum>3842ddb5</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Pledge-Create-Response" group="Map:MS_ACUO">
@@ -99,6 +99,29 @@
                                     <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="Pledge[Out2]/PledgeAmpId"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/pledges/pledge[Counter2]/version"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Pledge[Out2]/Version"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>

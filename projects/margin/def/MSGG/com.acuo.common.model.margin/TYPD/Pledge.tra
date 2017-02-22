@@ -7,14 +7,36 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>22/02/2017 10:39:09</Timestamp>
-        <Checksum>5509bc62</Checksum>
+        <Timestamp>22/02/2017 15:03:49</Timestamp>
+        <Checksum>90e6da0b</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Pledge" group="com.acuo.common.model.margin">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Price">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Version">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Integer</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="SettlementDate">
                         <TypeSpecification>
@@ -62,17 +84,6 @@
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Integer</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Price">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
