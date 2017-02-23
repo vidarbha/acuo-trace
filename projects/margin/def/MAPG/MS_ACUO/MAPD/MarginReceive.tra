@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>21/02/2017 17:02:10</Timestamp>
-        <Checksum>390c78bb</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>23/02/2017 15:19:50</Timestamp>
+        <Checksum>5ddbccc8</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginReceive" group="Map:MS_ACUO">
@@ -187,7 +187,21 @@
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Copy></Copy>
+                    <Property name="What" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal> </Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="With" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>_</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Replace</Mapper>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>

@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>23/02/2017 13:13:34</Timestamp>
-        <Checksum>16c0db84</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>23/02/2017 15:09:15</Timestamp>
+        <Checksum>1cba0991</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Partial-Dispute-Response" group="Map:MS_ACUO">
@@ -371,25 +371,21 @@
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Property name="Table" type="lookuptable">
+                    <Property name="What" type="nodespec">
                         <Value>
-                            <LookupTable inLabel="In" outLabel="Out">
-                                <TableEntry>
-                                    <In>Partial Agreed</In>
-                                    <Out>Partial_Agreed</Out>
-                                </TableEntry>
-                                <TableEntry>
-                                    <In>Partial Disputed</In>
-                                    <Out>Partial_Disputed</Out>
-                                </TableEntry>
-                                <TableEntry>
-                                    <In>Partial</In>
-                                    <Out>Partial</Out>
-                                </TableEntry>
-                            </LookupTable>
+                            <NodeSpec>
+                                <Literal> </Literal>
+                            </NodeSpec>
                         </Value>
                     </Property>
-                    <Mapper>LocalTableLookup</Mapper>
+                    <Property name="With" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>_</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Replace</Mapper>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
