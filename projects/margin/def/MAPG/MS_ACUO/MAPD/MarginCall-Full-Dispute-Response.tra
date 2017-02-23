@@ -7,11 +7,11 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/02/2017 10:21:50</Timestamp>
-        <Checksum>20cd0fed</Checksum>
+        <Timestamp>23/02/2017 10:26:42</Timestamp>
+        <Checksum>c2e75a98</Checksum>
     </LastModification>
 </Prolog>
-<MappingDefinition name="MarginCall-Agree-Response" group="Map:MS_ACUO">
+<MappingDefinition name="MarginCall-Full-Dispute-Response" group="Map:MS_ACUO">
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
             <ActionStep>
@@ -64,28 +64,6 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/agreedAmount"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AgreedAmount"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input" pathString="marginCall[Counter1]/businessState"/>
                             </NodeSpec>
                         </Value>
@@ -110,8 +88,6 @@
             <ScopeA specType="FROM_DATA" contextName="Input" pathString="marginCall[]"/>
         </RepeatAction>
     </ActionStep>
-    <Description>
-</Description>
     <InputDefinition name="Input" optional="false" repeating="false">
         <Component>marginCalls</Component>
     </InputDefinition>
