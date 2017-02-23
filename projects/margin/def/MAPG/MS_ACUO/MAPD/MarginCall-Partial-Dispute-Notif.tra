@@ -7,257 +7,270 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/02/2017 16:00:22</Timestamp>
-        <Checksum>cf5ba711</Checksum>
+        <Timestamp>23/02/2017 18:48:52</Timestamp>
+        <Checksum>81670618</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Partial-Dispute-Notif" group="Map:MS_ACUO">
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
             <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/ampId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="AmpId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/version"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Version"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/agreedAmount"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="AgreedAmount"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                <IfAction>
+                    <Condition>
+                        <CompoundCondition operator="OR">
+                            <Condition>
+                                <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input" pathString="marginCall[Counter1]/businessState"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Partial Agreed</Literal>
+                                    </SecondTerm>
+                                </Comparison>
+                            </Condition>
+                            <Condition>
+                                <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/businessState"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Partial Disputed</Literal>
+                                    </SecondTerm>
+                                </Comparison>
+                            </Condition>
+                        </CompoundCondition>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/ampId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="BusinessState"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Table" type="lookuptable">
-                        <Value>
-                            <LookupTable inLabel="In" outLabel="Out">
-                                <TableEntry>
+                                    contextPosnSpec="Out1" pathString="AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/businessState"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BusinessState"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Table" type="lookuptable">
+                                    <Value>
+                                    <LookupTable inLabel="In" outLabel="Out">
+                                    <TableEntry>
                                     <In>Partial Agreed</In>
                                     <Out>Partial_Agreed</Out>
-                                </TableEntry>
-                                <TableEntry>
+                                    </TableEntry>
+                                    <TableEntry>
                                     <In>Partial Disputed</In>
                                     <Out>Partial_Disputed</Out>
-                                </TableEntry>
-                                <TableEntry>
+                                    </TableEntry>
+                                    <TableEntry>
                                     <In>Partial</In>
                                     <Out>Partial</Out>
-                                </TableEntry>
-                            </LookupTable>
-                        </Value>
-                    </Property>
-                    <Mapper>LocalTableLookup</Mapper>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <RepeatAction repeatCounter="Counter2">
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
+                                    </TableEntry>
+                                    </LookupTable>
+                                    </Value>
+                                </Property>
+                                <Mapper>LocalTableLookup</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/agreedAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AgreedAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <RepeatAction repeatCounter="Counter2">
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[Counter2]"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/DisputeReasonCode[Counter2]"/>
+                                    contextPosnSpec="Out1" pathString="Dispute/DisputeReasonCode[Counter2]"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ScopeB specType="TO_DATA" contextName="Output"
-                        contextPosnSpec="Counter1"
-                        pathString="Dispute/DisputeReasonCode[]" outputPosnSpecifier="Out1"/>
-                    <RepeatLimit>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[#]"/>
-                    </RepeatLimit>
-                    <ScopeA specType="FROM_DATA" contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes"/>
-                </RepeatAction>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ScopeB specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1"
+                                    pathString="Dispute/DisputeReasonCode[]" outputPosnSpecifier="Out2"/>
+                                <RepeatLimit>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[#]"/>
+                                </RepeatLimit>
+                                <ScopeA specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes"/>
+                            </RepeatAction>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input" pathString="marginCall[Counter1]/counterpartyCollateralBalance"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/CounterpartyCollateralBalance"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                                    contextPosnSpec="Out1" pathString="Dispute/CounterpartyCollateralBalance"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input" pathString="marginCall[Counter1]/counterpartyInitialMargin"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/CounterpartyIM"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                                    contextPosnSpec="Out1" pathString="Dispute/CounterpartyIM"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input" pathString="marginCall[Counter1]/counterpartyMarkToMarket"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/CounterpartyMtM"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                                    contextPosnSpec="Out1" pathString="Dispute/CounterpartyMtM"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input" pathString="marginCall[Counter1]/disputeComments"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/DisputeComment"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <IfAction>
-                    <Condition>
-                        <Comparison>
-                            <FirstTerm>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/child"/>
-                            </FirstTerm>
-                            <Operator>EQ</Operator>
-                            <SecondTerm>
-                                <Literal>true</Literal>
-                            </SecondTerm>
-                        </Comparison>
-                    </Condition>
-                    <ThenAction>
+                                    contextPosnSpec="Out1" pathString="Dispute/DisputeComment"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
                         <ActionStep>
                             <FunctionCall>
                                 <Property name="Input" type="nodespec">
@@ -275,7 +288,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/ParentVersion"/>
+                                    contextPosnSpec="Out1" pathString="Dispute/ParentVersion"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -299,7 +312,79 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Currency"/>
+                                    contextPosnSpec="Out1" pathString="Currency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/callType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="CallType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/direction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Direction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/parentAmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Dispute/ParentAmpId"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -341,7 +426,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="ValuationDate"/>
+                                    contextPosnSpec="Out1" pathString="ValuationDate"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -355,7 +440,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/callType"/>
+                                    contextName="Input" pathString="marginCall[Counter1]/child"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -365,7 +450,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="CallType"/>
+                                    contextPosnSpec="Out1" pathString="Dispute/Child"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -379,7 +464,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/direction"/>
+                                    contextName="Input" pathString="marginCall[Counter1]/state"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -389,7 +474,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Direction"/>
+                                    contextPosnSpec="Out1" pathString="Dispute/State"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -403,7 +488,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/parentAmpId"/>
+                                    contextName="Input" pathString="marginCall[Counter1]/version"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -413,7 +498,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/ParentAmpId"/>
+                                    contextPosnSpec="Out1" pathString="Version"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -423,74 +508,8 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/child"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/Child"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/parent"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/Parent"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/state"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="Dispute/State"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"
-                contextPosnSpec="[]" pathString="."/>
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
                 <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="marginCall[#]"/>
             </RepeatLimit>
