@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/02/2017 11:15:44</Timestamp>
-        <Checksum>fa839c51</Checksum>
+        <Timestamp>24/02/2017 15:48:51</Timestamp>
+        <Checksum>fca39b6b</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Pledge" group="com.acuo.common.model.margin">
@@ -17,6 +17,81 @@
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Version">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Integer</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="AdjustedCollateralValue">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Price">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="SettlementDate">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>DateTime</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ExternalUsername">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="SecurityIdType">
+                        <TypeSpecification>
+                            <NamedType type="Types.SecurityIdType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="CurrentMarketValue">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="RejectReasonCode">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Integer</BusinessObjectType>
@@ -105,81 +180,6 @@
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Haircut">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="AdjustedCollateralValue">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="SettlementDate">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>DateTime</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ExternalUsername">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="SecurityIdType">
-                        <TypeSpecification>
-                            <NamedType type="Types.SecurityIdType"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="CurrentMarketValue">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="RejectReasonCode">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Integer</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Price">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>

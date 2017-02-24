@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/02/2017 11:15:44</Timestamp>
-        <Checksum>1b85e68b</Checksum>
+        <Timestamp>24/02/2017 15:48:51</Timestamp>
+        <Checksum>afdf117f</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="MarginCall" group="com.acuo.common.model.margin">
@@ -38,10 +38,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="AgreedAmount">
+                    <LocalComponent name="Direction">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -49,16 +49,58 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="PledgeFxRates">
+                    <LocalComponent name="Currency">
                         <TypeSpecification>
-                            <NamedType type="MarginCall.PledgeFxRates"/>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications converterReference="CurrencyConverter"/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="LocalCounterpartyLabel">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ValuationDate">
+                    <LocalComponent name="MarginAgreementShortName">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="Pledge">
+                        <TypeSpecification>
+                            <NamedType type="Pledge"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="BusinessState">
+                        <TypeSpecification>
+                            <NamedType type="Types.BusinessState"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="CallDate">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>DateTime</BusinessObjectType>
@@ -80,9 +122,11 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="CallType">
+                    <LocalComponent name="Exposure">
                         <TypeSpecification>
-                            <NamedType type="Types.CallType"/>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
@@ -100,7 +144,16 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="CallDate">
+                    <LocalComponent name="CallType">
+                        <TypeSpecification>
+                            <NamedType type="Types.CallType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ValuationDate">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>DateTime</BusinessObjectType>
@@ -111,16 +164,16 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Dispute">
+                    <LocalComponent name="PledgeFxRates">
                         <TypeSpecification>
-                            <NamedType type="Dispute"/>
+                            <NamedType type="MarginCall.PledgeFxRates"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Exposure">
+                    <LocalComponent name="AgreedAmount">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>
@@ -131,62 +184,9 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="BusinessState">
+                    <LocalComponent name="Dispute">
                         <TypeSpecification>
-                            <NamedType type="Types.BusinessState"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="UNBOUNDED">
-                    <LocalComponent name="Pledge">
-                        <TypeSpecification>
-                            <NamedType type="Pledge"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Currency">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications converterReference="CurrencyConverter"/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Direction">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="MarginAgreementShortName">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="LocalCounterpartyLabel">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
+                            <NamedType type="Dispute"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
