@@ -49,5 +49,6 @@ task fatJar(type: Jar) {
 }
 
 gradle.projectsEvaluated {
-    compileJava.dependsOn(":libs:uploadArchives")
+  generatePomFileForNebulaPublication.dependsOn(":libs:uploadArchives")
+  compileJava.dependsOn(":libs:uploadArchives")
 }
