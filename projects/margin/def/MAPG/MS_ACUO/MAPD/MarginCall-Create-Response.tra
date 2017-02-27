@@ -2,16 +2,16 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.1</VersionNumber>
-            <BuildNumber>16052</BuildNumber>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>06/02/2017 12:59:52</Timestamp>
-        <Checksum>92efa34</Checksum>
+        <Timestamp>22/02/2017 15:06:53</Timestamp>
+        <Checksum>e0791cce</Checksum>
     </LastModification>
 </Prolog>
-<MappingDefinition name="MarginCreate-Response" group="Map:MS_ACUO">
+<MappingDefinition name="MarginCall-Create-Response" group="Map:MS_ACUO">
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
             <ActionStep>
@@ -20,7 +20,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[1]/ampId"/>
+                                    contextName="Input" pathString="marginCall[Counter1]/ampId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -30,6 +30,50 @@
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="AmpId"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/version"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Version"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/direction"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Direction"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -61,11 +105,9 @@
             <ScopeB specType="TO_DATA" contextName="Output"
                 contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input"
-                    contextPosnSpec="[#]" pathString="."/>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="marginCall[#]"/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input"
-                contextPosnSpec="[#]" pathString="."/>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="marginCall[]"/>
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">

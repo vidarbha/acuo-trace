@@ -2,18 +2,44 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.1</VersionNumber>
-            <BuildNumber>16052</BuildNumber>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>01/02/2017 19:25:01</Timestamp>
-        <Checksum>87d35f2e</Checksum>
+        <Timestamp>21/02/2017 13:22:33</Timestamp>
+        <Checksum>b8dba30b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-agree" group="Map:ACUO_MS">
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input1" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="count"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input2" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>1</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="count"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Sum</Mapper>
+                </FunctionCall>
+            </ActionStep>
             <ActionStep>
                 <FunctionCall>
                     <Property name="Input" type="nodespec">
@@ -29,7 +55,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="marginCalls" pathString="marginCall[1]/ampId"/>
+                                    contextName="marginCalls" pathString="marginCall[Out1]/ampId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -51,7 +77,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="marginCalls" pathString="marginCall[1]/version"/>
+                                    contextName="marginCalls" pathString="marginCall[Out1]/version"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -73,7 +99,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="marginCalls" pathString="marginCall[1]/externalReference"/>
+                                    contextName="marginCalls" pathString="marginCall[Out1]/externalReference"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -81,14 +107,34 @@
                 </FunctionCall>
             </ActionStep>
             <ScopeB specType="TO_DATA" contextName="marginCalls"
-                pathString="." outputPosnSpecifier="Out1"/>
+                contextPosnSpec="1" pathString="marginCall[]" outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="TO_DATA"
-                    contextName="marginCalls" contextPosnSpec="[#]" pathString="."/>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input"
+                    contextPosnSpec="[#]" pathString="."/>
             </RepeatLimit>
-            <ScopeA specType="TO_DATA" contextName="marginCalls"
-                contextPosnSpec="[#]" pathString="."/>
+            <ScopeA specType="FROM_DATA" contextName="Input"
+                contextPosnSpec="[]" pathString="."/>
         </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="count"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="marginCalls" pathString="totalCount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="true">
         <Type>MarginCall</Type>
@@ -96,6 +142,9 @@
     <OutputDefinition name="marginCalls" optional="false" repeating="false">
         <Component>Margin-Call-agree:marginCalls</Component>
     </OutputDefinition>
+    <TempVariable name="count" optional="true" repeating="false">
+        <Bot>Integer</Bot>
+    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>
