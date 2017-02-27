@@ -14,7 +14,7 @@ group = 'com.acuo.collateral'
 ext {
     versions += [
         common      : '0.3.1',
-        transformer : '0.2.2-SNAPSHOT',
+        transformer : "${project.version}",
         runtime     : '3.6.1',
         design      : '3.6.1',
         currencylib : '1.0.5'
@@ -46,4 +46,8 @@ task fatJar(type: Jar) {
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
+}
+
+gradle.projectsEvaluated {
+    compileJava.dependsOn(":libs:uploadArchives")
 }
