@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>20/02/2017 19:11:19</Timestamp>
-        <Checksum>23ce4156</Checksum>
+        <Timestamp>27/02/2017 17:01:52</Timestamp>
+        <Checksum>1488befc</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportIrsCleared" group="Map:ImportPortfolio">
@@ -65,6 +65,28 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="irscleared" pathString="BodyIRS[Counter1]/PortfolioID"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/Portfolio"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="irscleared" pathString="BodyIRS[Counter1]/Book"/>
                             </NodeSpec>
                         </Value>
                     </Property>

@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>20/02/2017 19:12:48</Timestamp>
-        <Checksum>5adb20c1</Checksum>
+        <Timestamp>27/02/2017 16:48:11</Timestamp>
+        <Checksum>16d5744b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportIrsBilateral" group="Map:ImportPortfolio">
@@ -65,6 +65,28 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input" pathString="BodyIRSB[Counter1]/PortfolioID"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/Portfolio"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="BodyIRSB[Counter1]/Book"/>
                             </NodeSpec>
                         </Value>
                     </Property>
