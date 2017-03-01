@@ -8,10 +8,10 @@
         <User>IEUser</User>
         <Host>IE11Win7</Host>
         <Timestamp>01/03/2017 11:44:16</Timestamp>
-        <Checksum>55346f5f</Checksum>
+        <Checksum>fb29392b</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="Pledge" group="com.acuo.common.model.margin">
+<NamedComponentType name="Recall" group="com.acuo.common.model.margin">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
@@ -113,6 +113,17 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="RecallAmpId">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="SecurityId">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -172,17 +183,6 @@
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="PledgeAmpId">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>

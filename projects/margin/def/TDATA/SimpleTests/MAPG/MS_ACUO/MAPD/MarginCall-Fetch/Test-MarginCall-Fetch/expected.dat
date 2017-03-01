@@ -1,26 +1,27 @@
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <Direction>Incoming</Direction>
     <Currency>USD</Currency>
+    <Direction>Incoming</Direction>
+    <CollateralValue>10000000.0</CollateralValue>
+    <TotalCallAmount>1000000.0</TotalCallAmount>
+    <MarginAgreementAmpId>m100020170472a1uhv</MarginAgreementAmpId>
+    <MarginAgreementType>CSA</MarginAgreementType>
+    <AmpId>m100020170482ad81e</AmpId>
     <MarginAgreementShortName>a1</MarginAgreementShortName>
     <BusinessState>Received</BusinessState>
     <CallDate>2017-02-17T00:00:00</CallDate>
     <Exposure>10000000.0</Exposure>
     <CallType>Variation</CallType>
     <ValuationDate>2017-02-16T00:00:00</ValuationDate>
-    <CollateralValue>10000000.0</CollateralValue>
-    <TotalCallAmount>1000000.0</TotalCallAmount>
-    <MarginAgreementAmpId>m100020170472a1uhv</MarginAgreementAmpId>
-    <MarginAgreementType>CSA</MarginAgreementType>
-    <AmpId>m100020170482ad81e</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <Direction>Outgoing</Direction>
     <Currency>USD</Currency>
+    <Direction>Outgoing</Direction>
+    <AmpId>m100020170542bl3p1</AmpId>
     <BusinessState>Partial_Agreed</BusinessState>
     <CallType>Variation</CallType>
     <ValuationDate>2017-02-22T00:00:00</ValuationDate>
@@ -31,14 +32,14 @@
         <ParentAmpId>m100020170542bl3f3</ParentAmpId>
         <ParentVersion>2</ParentVersion>
     </Dispute>
-    <AmpId>m100020170542bl3p1</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <Direction>Outgoing</Direction>
     <Currency>USD</Currency>
+    <Direction>Outgoing</Direction>
+    <AmpId>m100020170542bl3p2</AmpId>
     <BusinessState>Partial_Disputed</BusinessState>
     <CallType>Variation</CallType>
     <ValuationDate>2017-02-22T00:00:00</ValuationDate>
@@ -46,32 +47,31 @@
     <Dispute>
         <State>Received</State>
         <Child>true</Child>
-        <CounterpartyCollateralBalance>950000.0</CounterpartyCollateralBalance>
         <DisputeReasonCode>9003</DisputeReasonCode>
         <CounterpartyMtM>1000000.0</CounterpartyMtM>
         <CounterpartyIM>0.0</CounterpartyIM>
         <DisputeComment>test</DisputeComment>
+        <CounterpartyCollateralBalance>950000.0</CounterpartyCollateralBalance>
         <ParentAmpId>m100020170542bl3f3</ParentAmpId>
         <ParentVersion>2</ParentVersion>
     </Dispute>
-    <AmpId>m100020170542bl3p2</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>2</Version>
+    <AmpId>m100020170542bldei</AmpId>
     <BusinessState>Agreed</BusinessState>
     <AgreedAmount>70000.0</AgreedAmount>
-    <AmpId>m100020170542bldei</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>2</Version>
+    <AmpId>m100020170542blg4n</AmpId>
     <BusinessState>Disputed</BusinessState>
     <AgreedAmount>0.0</AgreedAmount>
     <Dispute>
-        <CounterpartyCollateralBalance>950000.0</CounterpartyCollateralBalance>
         <DisputeReasonCode>9007</DisputeReasonCode>
         <DisputeReasonCode>9008</DisputeReasonCode>
         <DisputeReasonCode>9004</DisputeReasonCode>
@@ -79,40 +79,40 @@
         <CounterpartyMtM>950000.0</CounterpartyMtM>
         <CounterpartyIM>0.0</CounterpartyIM>
         <DisputeComment>No.</DisputeComment>
+        <CounterpartyCollateralBalance>950000.0</CounterpartyCollateralBalance>
     </Dispute>
-    <AmpId>m100020170542blg4n</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>3</Version>
+    <AmpId>m100020170552bssz1</AmpId>
     <Pledge>
         <Version>1</Version>
-        <AdjustedCollateralValue>50000.4</AdjustedCollateralValue>
         <SecurityIdType>CASH</SecurityIdType>
         <CurrentMarketValue>55556.0</CurrentMarketValue>
-        <PledgeAmpId>m100020170552bt0rb</PledgeAmpId>
+        <AdjustedCollateralValue>50000.4</AdjustedCollateralValue>
         <SecurityId>CASH</SecurityId>
         <DeliveryType>Deliver</DeliveryType>
         <Quantity>55556.0</Quantity>
         <FXCurrency>EUR</FXCurrency>
         <FXRate>1.0</FXRate>
         <Haircut>0.1</Haircut>
+        <PledgeAmpId>m100020170552bt0rb</PledgeAmpId>
     </Pledge>
     <Pledge>
         <Version>1</Version>
-        <AdjustedCollateralValue>100000.0</AdjustedCollateralValue>
         <SecurityIdType>CASH</SecurityIdType>
         <CurrentMarketValue>100000.0</CurrentMarketValue>
-        <PledgeAmpId>m100020170552bt0ra</PledgeAmpId>
+        <AdjustedCollateralValue>100000.0</AdjustedCollateralValue>
         <SecurityId>CASH</SecurityId>
         <DeliveryType>Deliver</DeliveryType>
         <Quantity>100000.0</Quantity>
         <FXCurrency>USD</FXCurrency>
         <FXRate>1.0</FXRate>
         <Haircut>0.0</Haircut>
+        <PledgeAmpId>m100020170552bt0ra</PledgeAmpId>
     </Pledge>
     <BusinessState>Pledged</BusinessState>
     <AgreedAmount>150000.0</AgreedAmount>
-    <AmpId>m100020170552bssz1</AmpId>
 </MarginCall>
