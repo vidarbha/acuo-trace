@@ -1,0 +1,180 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>17/03/2017 11:23:22</Timestamp>
+        <Checksum>d0dfbbc2</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="StringToBondOutput" group="Msg:Reuters" category="Reuters">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="Opaque-In"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>Parse</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="Opaque-In/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="BondOutputs"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="BondOutputs/Object/member[Counter1]/JsonValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="tempBond"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Format</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <Comparison>
+                            <FirstTerm>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="BondOutputs/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;priceStatus&quot;]/JsonValue/String"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>OK</Literal>
+                            </SecondTerm>
+                        </Comparison>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempBond"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="OK[Out1]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Parse</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <OutputScope specType="TO_DATA"
+                                    contextName="Output"
+                                    pathString="OK[]" outputPosnSpecifier="Out1"/>
+                            </NewOutputRepetition>
+                        </ActionStep>
+                    </ThenAction>
+                    <ElseAction>
+                        <ActionStep>
+                            <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempBond"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="NOK[Out2]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Parse</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <OutputScope specType="TO_DATA"
+                                    contextName="Output"
+                                    pathString="NOK[]" outputPosnSpecifier="Out2"/>
+                            </NewOutputRepetition>
+                        </ActionStep>
+                    </ElseAction>
+                </IfAction>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="TEMP_VAR" pathString="BondOutputs/Object/member[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="TEMP_VAR" pathString="BondOutputs/Object/member[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Bot>String</Bot>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Component>bondOutputs</Component>
+    </OutputDefinition>
+    <TempVariable name="Opaque-In" optional="true" repeating="false">
+        <Type>tk:JsonValue</Type>
+    </TempVariable>
+    <TempVariable name="BondOutputs" optional="true" repeating="false">
+        <Type>tk:JsonValue</Type>
+    </TempVariable>
+    <TempVariable name="tempBond" optional="true" repeating="false">
+        <Bot>String</Bot>
+    </TempVariable>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>

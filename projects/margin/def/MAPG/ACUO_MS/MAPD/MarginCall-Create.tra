@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>28/02/2017 17:53:00</Timestamp>
-        <Checksum>fc66ba46</Checksum>
+        <Timestamp>02/03/2017 18:17:26</Timestamp>
+        <Checksum>ad416ba4</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Create" group="Map:ACUO_MS">
@@ -38,6 +38,28 @@
                         </Value>
                     </Property>
                     <Mapper>Sum</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="MinimumTransferAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/minimumTransferAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>

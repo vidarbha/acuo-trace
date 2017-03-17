@@ -1,0 +1,206 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Component Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>14/03/2017 12:23:42</Timestamp>
+        <Checksum>68392640</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinition name="ReutersInput" group="Reuters">
+    <MessageContent>
+        <LocalComponent name="body">
+            <TypeSpecification>
+                <TypeDefinition>
+                    <ComplexContent Compositor="ALL">
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="AsOfDate" nillable="true">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Date</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications converterReference="XsdDate"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="Sections" nillable="true">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="Description" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Boolean</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="Quote" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Boolean</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="PricingAnalysis" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Boolean</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="Valuation" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Boolean</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="RiskMeasures" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Boolean</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="1" maxOccurs="1">
+                            <LocalComponent name="MtMItems" nillable="true">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="1" maxOccurs="UNBOUNDED">
+                                    <LocalComponent
+                                    name="SecurityInputs" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+
+                                    <ComplexContent Compositor="ALL">
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="Guid" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="SecurityId" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="Notional" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Decimal</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="PriceType" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="price" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Decimal</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                    </ComplexContent>
+                </TypeDefinition>
+            </TypeSpecification>
+            <FormatSpecifications/>
+            <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+        </LocalComponent>
+    </MessageContent>
+</MessageDefinition>

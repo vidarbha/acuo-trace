@@ -1,0 +1,187 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>17/03/2017 12:30:45</Timestamp>
+        <Checksum>fe608b52</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="Reuters_to_ACUO" group="Map:Reuters_IN">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <MappingDefinitionInvocation>Reuters:StringToResponseFinal</MappingDefinitionInvocation>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[1]/quote/quotedPrice/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/Price"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/priceQuotationType/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/PriceQuotationType"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/pricingAnalysis/asOfDate/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/ValuationDateTime"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/pricingAnalysis/yield/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/Yield"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/description/isin/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetId"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>ISIN</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="IdType"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="Output"
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Bot>String</Bot>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="true">
+        <Message>Assets</Message>
+    </OutputDefinition>
+    <TempVariable name="ReutersResponse" optional="true" repeating="false">
+        <Message>Reuters:ReutersResponseFinal</Message>
+    </TempVariable>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>
