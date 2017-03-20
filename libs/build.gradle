@@ -6,7 +6,8 @@ ext {
     // location of external files relative to this build.gradle file
     extFiles = [
             valuations:   'transformer-valuations.jar',
-            margin:       'transformer-margin.jar'
+            margin:       'transformer-margin.jar',
+            assets:       'transformer-assets.jar'
             // sources:    'api/extlib-src.zip',
             // javadoc:    'api/extlib-doc.zip'
     ]
@@ -29,10 +30,14 @@ uploadArchives {
         addFilter('transformer-margin') {artifact, file ->
             artifact.name == 'transformer-margin'
         }
+        addFilter('transformer-assets') {artifact, file ->
+            artifact.name == 'transformer-assets'
+        }
     }
 }
 
 artifacts {
     archives file: file( extFiles.valuations), name: 'transformer-valuations', type: 'jar'
     archives file: file( extFiles.margin ), name: 'transformer-margin', type: 'jar'
+    archives file: file( extFiles.assets ), name: 'transformer-assets', type: 'jar'
 }
