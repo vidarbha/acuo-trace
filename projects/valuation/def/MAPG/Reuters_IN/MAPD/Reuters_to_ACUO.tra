@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/03/2017 15:32:51</Timestamp>
-        <Checksum>d76464e8</Checksum>
+        <Timestamp>20/03/2017 12:06:21</Timestamp>
+        <Checksum>23e6f854</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Reuters_to_ACUO" group="Map:Reuters_IN">
@@ -39,7 +39,28 @@
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[1]/quote/quotedPrice/FieldValue"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/pricingAnalysis/yield/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/Yield"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/quotedPrice/FieldValue"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -81,21 +102,147 @@
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/pricingAnalysis/yield/FieldValue"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/priceQuotationDate/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Separator" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>T</Literal>
                             </NodeSpec>
                         </Value>
                     </Property>
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/Yield"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="dateString[]"/>
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Copy></Copy>
+                    <Mapper>Split</Mapper>
                 </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="dateString[1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>yyyy-MM-dd</Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="date"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>TextToDate</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                            <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/priceQuotationTime/FieldValue"/>
+                        </IsPresent>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Date" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="date"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Time" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/priceQuotationTime/FieldValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="DateTime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/ValuationDateTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Mapper>JoinDateTime</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ThenAction>
+                    <ElseAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="dateString[2]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Format" type="string">
+                                    <Value>HH:mm:ss</Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="time"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Mapper>TextToTime</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Date" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="date"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Time" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="time"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="DateTime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/ValuationDateTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Mapper>JoinDateTime</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ElseAction>
+                </IfAction>
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
@@ -139,6 +286,27 @@
                     <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/description/coupon/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetValuation/Coupon"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"
                 contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
@@ -152,7 +320,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[]"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[#]"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -245,8 +413,14 @@
     <TempVariable name="errorCount" optional="true" repeating="false">
         <Bot>Integer</Bot>
     </TempVariable>
-    <TempVariable name="date" optional="true" repeating="false">
+    <TempVariable name="dateString" optional="true" repeating="true">
         <Bot>String</Bot>
+    </TempVariable>
+    <TempVariable name="date" optional="true" repeating="false">
+        <Bot>Date</Bot>
+    </TempVariable>
+    <TempVariable name="time" optional="true" repeating="false">
+        <Bot>Time</Bot>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
