@@ -64,7 +64,7 @@ public class TransformerTest {
         Assets assets = new Assets();
         assets.setAssetId("1231");
         assets.setAvailableQuantities(11);
-        assets.setCurrency(java.util.Currency.getInstance("USD"));
+        assets.setCurrency(Currency.USD);
         assets.setFitchRating("1");
 
         String json = transformer.serialise(ImmutableList.of(assets), context);
