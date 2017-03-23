@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.1</VersionNumber>
-            <BuildNumber>16052</BuildNumber>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>08/02/2017 11:29:54</Timestamp>
-        <Checksum>da1d9c16</Checksum>
+        <Timestamp>21/03/2017 17:50:33</Timestamp>
+        <Checksum>9645e448</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="CLARUS-IN_ACUO" group="Map:CLARUS-IN_ACUO">
@@ -25,7 +25,7 @@
             <Property name="clarus-test" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="pipou"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -44,7 +44,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="pipou/params/marginType"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/params/marginType"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -64,7 +64,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="pipou/params/reportingCcy"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/params/reportingCcy"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -84,7 +84,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="pipou/results/Margin/Change"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/results/Margin/Change"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -104,7 +104,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="pipou/results/Margin/Margin"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/results/Margin/Margin"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -124,7 +124,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="pipou/results/Margin/Account"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/results/Margin/Account"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -145,7 +145,7 @@
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Type>MarginValuation</Type>
     </OutputDefinition>
-    <TempVariable name="pipou" optional="true" repeating="false">
+    <TempVariable name="clarus_temp" optional="true" repeating="false">
         <Message>CLARUS_IN:clarus-test</Message>
     </TempVariable>
     <TempVariable name="stats" optional="true" repeating="false">
