@@ -1,4 +1,5 @@
-apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 group = 'com.acuo.collateral'
 
@@ -13,31 +14,28 @@ ext {
     ]
 }
 
-uploadArchives {
-    repositories.mavenDeployer {
-        pom.project {
-            name 'Transformer Exposed Services jar'
-            organization {
-                name 'Trace Financial'
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username "${nexusUsername}"
+                password "${nexusPassword}"
             }
-        }
-        repository(url: "${nexusUrl}/repository/maven-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}") {
-            authentication(userName: nexusUsername, password: nexusPassword)
-        }
-        addFilter('transformer-valuations') {artifact, file ->
-            artifact.name == 'transformer-valuations'
-        }
-        addFilter('transformer-margin') {artifact, file ->
-            artifact.name == 'transformer-margin'
-        }
-        addFilter('transformer-assets') {artifact, file ->
-            artifact.name == 'transformer-assets'
+            url "${nexusUrl}/repository/maven-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
         }
     }
-}
-
-artifacts {
-    archives file: file( extFiles.valuations), name: 'transformer-valuations', type: 'jar'
-    archives file: file( extFiles.margin ), name: 'transformer-margin', type: 'jar'
-    archives file: file( extFiles.assets ), name: 'transformer-assets', type: 'jar'
+    publications {
+        valuations(MavenPublication) {
+            artifact (file(extFiles.valuations))
+            artifactId = 'transformer-valuations'
+        }
+        margin(MavenPublication) {
+            artifact (file(extFiles.margin))
+            artifactId = 'transformer-margin'
+        }
+        assets(MavenPublication) {
+            artifact (file(extFiles.assets))
+            artifactId = 'transformer-assets'
+        }
+    }
 }

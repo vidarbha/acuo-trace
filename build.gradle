@@ -51,6 +51,6 @@ task fatJar(type: Jar) {
 }
 
 gradle.projectsEvaluated {
-  releaseCheck.dependsOn(":libs:uploadArchives")
-  compileJava.dependsOn(":libs:uploadArchives")
+  releaseCheck.dependsOn(":libs:publish")
+  compileJava.dependsOn(":libs:publish")
 }
