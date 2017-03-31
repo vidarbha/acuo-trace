@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/03/2017 11:15:32</Timestamp>
-        <Checksum>d31d1566</Checksum>
+        <Timestamp>31/03/2017 10:31:41</Timestamp>
+        <Checksum>72047287</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Reuters_to_ACUO" group="Map:Reuters_IN">
@@ -379,50 +379,33 @@
         </RepeatAction>
     </ActionStep>
     <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[#]"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="errorCount"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>Count</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <Literal>Program encountered % errors.</Literal>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Input1" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="errorCount"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>Log</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
         <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[Counter1]/description/securityCode/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1" pathString="AssetId"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
             <ActionStep>
                 <IfAction>
                     <Condition>
                         <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
-                            <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[Counter1]/status/message/Value"/>
+                            <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[Counter1]/status/message/TechnicalMessage"/>
                         </IsPresent>
                     </Condition>
                     <ThenAction>
@@ -431,35 +414,27 @@
                                 <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
-                                    <Literal>Asset % returned % of type %. Message : %</Literal>
-                                    </NodeSpec>
-                                    </Value>
-                                </Property>
-                                <Property name="Input1" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[Counter1]/description/securityCode/FieldValue"/>
-                                    </NodeSpec>
-                                    </Value>
-                                </Property>
-                                <Property name="Input2" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[Counter1]/status/message/Type"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
-                                <Property name="Input3" type="nodespec">
+                                <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[Counter1]/status/message/Value"/>
+                                    specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1" pathString="ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
-                                <Property name="Input4" type="nodespec">
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -467,34 +442,23 @@
                                     </NodeSpec>
                                     </Value>
                                 </Property>
-                                <Mapper>Log</Mapper>
-                            </FunctionCall>
-                        </ActionStep>
-                    </ThenAction>
-                    <ElseAction>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <Literal>Asset % returned an error with no message</Literal>
-                                    </NodeSpec>
-                                    </Value>
-                                </Property>
-                                <Property name="Input1" type="nodespec">
+                                <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[Counter1]/description/securityCode/FieldValue"/>
+                                    specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1" pathString="ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
-                                <Mapper>Log</Mapper>
+                                <Copy></Copy>
                             </FunctionCall>
                         </ActionStep>
-                    </ElseAction>
+                    </ThenAction>
                 </IfAction>
             </ActionStep>
+            <ScopeB specType="TEMP_VAR" pathString="errorCount[]" outputPosnSpecifier="Out1"/>
             <RepeatLimit>
                 <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[#]"/>
             </RepeatLimit>
@@ -504,8 +468,11 @@
     <InputDefinition name="Input" optional="false" repeating="false">
         <Bot>String</Bot>
     </InputDefinition>
-    <OutputDefinition name="Output" optional="false" repeating="true">
+    <OutputDefinition name="Output" optional="true" repeating="true">
         <Message>Assets</Message>
+    </OutputDefinition>
+    <OutputDefinition name="Error" optional="true" repeating="true">
+        <Message>results:Error</Message>
     </OutputDefinition>
     <TempVariable name="ReutersResponse" optional="true" repeating="false">
         <Message>Reuters:ReutersResponseFinal</Message>
