@@ -1,5 +1,6 @@
 package com.acuo.collateral.transform.trace.socs;
 
+import com.acuo.common.util.ArgChecker;
 import com.opengamma.strata.basics.schedule.Frequency;
 import com.tracegroup.transformer.externalobjects.socs.StringBOT;
 import com.tracegroup.transformer.mom.DataException;
@@ -7,10 +8,9 @@ import com.tracegroup.transformer.mom.DataException;
 public class FrequencySoc extends StringBOT<Frequency> {
     @Override
     public Object transformerFromExternalObject(Frequency frequency) throws DataException {
+        ArgChecker.notNull(frequency, "frequency");
         if (Frequency.TERM.equals(frequency)) return "1T";
-        String toParse = frequency.getPeriod().toString();
-        String unprefixed = toParse.startsWith("P") ? toParse.substring(1) : toParse;
-        return unprefixed;
+        return frequency.toString();
     }
 
     /**
@@ -23,6 +23,7 @@ public class FrequencySoc extends StringBOT<Frequency> {
      */
     @Override
     public Frequency externalObjectFromTransformer(String name) throws DataException {
+        ArgChecker.notNull(name, "name");
         if ("1T".equals(name)) return Frequency.TERM;
         return Frequency.parse(name);
     }

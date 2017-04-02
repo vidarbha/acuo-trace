@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.5.5</VersionNumber>
-            <BuildNumber>194</BuildNumber>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>14/09/2016 07:35:28</Timestamp>
-        <Checksum>1e23cafc</Checksum>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>10/02/2017 18:00:49</Timestamp>
+        <Checksum>32a9845d</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
@@ -305,6 +305,12 @@
                     </NodeSpec>
                 </Value>
             </Property>
+            <Property name="SignPosition" type="option">
+                <Value>Leading</Value>
+            </Property>
+            <Property name="NegativeSign" type="string">
+                <Value>-</Value>
+            </Property>
             <Mapper>DecimalToText</Mapper>
         </FunctionCall>
     </ActionStep>
@@ -352,6 +358,9 @@
     </ActionStep>
     <ActionStep>
         <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>MarkitFreq</Value>
+            </Property>
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
@@ -368,7 +377,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Copy></Copy>
+            <Mapper>NamedTableLookup</Mapper>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -400,27 +409,6 @@
     </ActionStep>
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[Counter1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="paydates/holidays/code[Out1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
             <ActionStep>
                 <FunctionCall>
                     <Property name="Table" type="namedlookuptable">

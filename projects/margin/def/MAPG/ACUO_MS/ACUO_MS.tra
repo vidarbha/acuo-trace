@@ -2,16 +2,19 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Definition Group Dialog</Program>
-            <VersionNumber>3.6.1</VersionNumber>
-            <BuildNumber>16052</BuildNumber>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>05/01/2017 01:16:17</Timestamp>
-        <Checksum>6ab41d30</Checksum>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>22/02/2017 15:46:06</Timestamp>
+        <Checksum>ee358dc3</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinitionGroup name="ACUO_MS"
-    MessageDefinitionGroupA="com.acuo.common.model.margin" MessageDefinitionGroupB="Margin-Call">
+    MessageDefinitionGroupA="com.acuo.common.model.margin" MessageDefinitionGroupB="Margin-Call-create">
+    <NamespaceReference namespacePrefix="Margin-Call-agree" group="Msg:Margin-Call-agree"/>
+    <NamespaceReference namespacePrefix="Margin-Call-pledge-create" group="Msg:Margin-Call-Pledge-create"/>
+    <NamespaceReference namespacePrefix="Margin-Call-dispute" group="Msg:Margin-Call-dispute"/>
     <PDG_Basis/>
 </MappingDefinitionGroup>

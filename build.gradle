@@ -13,8 +13,8 @@ group = 'com.acuo.collateral'
 
 ext {
     versions += [
-        common      : '0.2.1',
-        trasnformer : '0.1.0',
+        common      : '0.3.3',
+        transformer : "${project.version}",
         runtime     : '3.6.1',
         design      : '3.6.1',
         currencylib : '1.0.5'
@@ -23,9 +23,9 @@ ext {
 
 dependencies {
     compile (
-        "com.acuo.collateral:transformer-valuations:${versions.trasnformer}",
-        "com.acuo.collateral:transformer-margin:${versions.trasnformer}",
-        "com.acuo.collateral:common:${versions.common}",
+        "com.acuo.collateral:transformer-valuations:${versions.transformer}",
+        "com.acuo.collateral:transformer-margin:${versions.transformer}",
+        "com.acuo.collateral:acuo-common:${versions.common}",
         "com.tracegroup.transformer:transformer-runtime-complete:${versions.runtime}",
         "com.tracegroup.transformer:transformer-designtime:${versions.design}",
         "com.tracegroup.transformer:currencylib:${versions.currencylib}",
@@ -33,7 +33,7 @@ dependencies {
     )
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile (
-        "com.acuo.collateral:common:${versions.common}:tests"
+        "com.acuo.collateral:acuo-common:${versions.common}:tests"
     )
 }
 
@@ -46,4 +46,9 @@ task fatJar(type: Jar) {
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
+}
+
+gradle.projectsEvaluated {
+  releaseCheck.dependsOn(":libs:uploadArchives")
+  compileJava.dependsOn(":libs:uploadArchives")
 }

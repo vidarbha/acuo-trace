@@ -7,7 +7,7 @@ import com.tracegroup.transformer.mom.DataException;
 public class FixingRelativeToSoc extends StringBOT<FixingRelativeTo> {
     @Override
     public Object transformerFromExternalObject(FixingRelativeTo fixingRelativeTo) throws DataException {
-        return fixingRelativeTo.name();
+        return fixingRelativeTo.toString();
     }
 
     @Override
