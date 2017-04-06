@@ -7,11 +7,13 @@ import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
 import com.acuo.common.model.assets.Assets;
 import com.acuo.common.model.margin.MarginCall;
 import com.acuo.common.model.product.SwapHelper;
+import com.acuo.common.model.results.AssetValuation;
 import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.ResourceFile;
 import com.google.common.collect.ImmutableList;
 import com.opengamma.strata.basics.currency.Currency;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -28,6 +30,9 @@ public class TransformerTest {
 
     @Rule
     public ResourceFile received = new ResourceFile("/call/Received_Call.xml");
+
+    @Rule
+    public ResourceFile responsjson = new ResourceFile("/reuters/response.json");
 
     @Before
     public void setup() {
@@ -59,7 +64,7 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseAssetsWithReuters() throws Exception {
-        Transformer<Assets> transformer = new AssetsTransformer<>();
+        Transformer<Assets> transformer = new ReutersTransformer<>();
 
         Assets assets = new Assets();
         assets.setAssetId("1231");
@@ -70,6 +75,17 @@ public class TransformerTest {
         String json = transformer.serialise(ImmutableList.of(assets), context);
 
         assertThat(json).isNotEmpty();
+    }
+
+    @Test
+    public void testSerialiseAssetsFromReuters() throws Exception {
+        Transformer<AssetValuation> transformer = new ReutersTransformer<>();
+
+        List<AssetValuation> assetsList = transformer.deserialiseToList(responsjson.getContent());
+
+        Assert.assertTrue(assetsList.size() > 0);
+        AssetValuation valuation = assetsList.get(0);
+        Assert.assertTrue(valuation.getPrice() >0);
     }
 
     @Test

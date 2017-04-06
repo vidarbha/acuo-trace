@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-public class AssetsTransformer<T> extends BaseTransformer<T> {
+public class ReutersTransformer<T> extends BaseTransformer<T> {
 
     @Override
     public T deserialise(String value) {
