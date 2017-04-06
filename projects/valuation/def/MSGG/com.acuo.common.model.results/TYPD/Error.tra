@@ -7,14 +7,25 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>31/03/2017 10:19:24</Timestamp>
-        <Checksum>28dd4a27</Checksum>
+        <Timestamp>06/04/2017 12:14:57</Timestamp>
+        <Checksum>f9a36d67</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Error" group="com.acuo.common.model.results">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ErrorMessage">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="AssetId">
                         <TypeSpecification>
@@ -28,17 +39,6 @@
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="ErrorType">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ErrorMessage">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>

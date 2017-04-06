@@ -1,16 +1,20 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Test Definition Form</Program>
+            <Program>Action: Set Expected Results to Current Output</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/03/2017 11:52:19</Timestamp>
-        <Checksum>ad13578e</Checksum>
+        <Timestamp>05/04/2017 17:39:34</Timestamp>
+        <Checksum>369775f7</Checksum>
     </LastModification>
 </Prolog>
 <ExposedServiceOperationTestDefinition name="Test-fromReuters"
     testSuiteName="ServiceTests" service="Reuters"
-    operation="fromReuters" testerReference="AdvancedTest"/>
+    operation="fromReuters" testerReference="AdvancedTest">
+    <Property name="ExpectedResults" type="testdatafile">
+        <Value>expected.dat</Value>
+    </Property>
+</ExposedServiceOperationTestDefinition>
