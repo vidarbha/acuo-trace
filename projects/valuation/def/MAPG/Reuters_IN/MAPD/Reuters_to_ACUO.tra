@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>06/04/2017 12:24:20</Timestamp>
-        <Checksum>b44c28a7</Checksum>
+        <Timestamp>10/04/2017 17:45:25</Timestamp>
+        <Checksum>ffb283c4</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Reuters_to_ACUO" group="Map:Reuters_IN">
@@ -120,13 +120,6 @@
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/quotedPrice/FieldValue"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
@@ -136,7 +129,21 @@
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Copy></Copy>
+                    <Property name="Input1" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/valuation/cleanMarketValueInReportCcy/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input2" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/valuation/positionInReportCcy/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Division</Mapper>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
