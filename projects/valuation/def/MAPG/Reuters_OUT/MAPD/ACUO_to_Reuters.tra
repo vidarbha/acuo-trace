@@ -7,11 +7,31 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/03/2017 17:51:53</Timestamp>
-        <Checksum>e1a6c773</Checksum>
+        <Timestamp>11/04/2017 11:14:52</Timestamp>
+        <Checksum>7ff71858</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_to_Reuters" group="Map:Reuters_OUT">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>USD</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="ReutersInput" pathString="ReportCurrency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
     <ActionStep>
         <FunctionCall>
             <Property name="Input" type="nodespec">
@@ -249,10 +269,7 @@
                                 <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Notional"/>
+                                    <Literal>1000000</Literal>
                                     </NodeSpec>
                                     </Value>
                                 </Property>

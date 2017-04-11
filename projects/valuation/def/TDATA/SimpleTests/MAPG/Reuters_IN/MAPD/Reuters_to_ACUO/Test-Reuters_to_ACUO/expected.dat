@@ -505,6 +505,591 @@
    at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
    at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
    at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>US912796HW25</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 18&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 80&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>US912796JE09</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>DE0001137461</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>DE0001141604</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>JP1023481F17</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.GetAttribute(Object iAttributeType)&#xd;
+   at AdfinCore.AdnObject.GetAttribute(Int32 attribute) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 124&#xd;
+   at AdfinCore.AdnObject.GetDateTimeAttribute(Int32 adxAttribute) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 200&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 80&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>JP1051041C55</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>IT0005160111</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 256&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>IT0004164775</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>SG6TI7000001</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>HK0000277696</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>HK4159036564</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
+    <AssetId>AU2CLT260861</AssetId>
+    <ErrorType>Error</ErrorType>
+</Error>
+%%%
+<?xml version="1.0"?>
+<Error xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorMessage>DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; DataModels.ErrorHandling.ErrorableException: Field in error state ---&gt; System.Runtime.InteropServices.COMException: Error HRESULT E_FAIL has been returned from a call to a COM component.&#xd;
+   at AdfinXAnalyticsObjects.IAdxObject.SetAttribute(Object iAttributeType, Object Val)&#xd;
+   at AdfinCore.AdnObject.SetAttribute(Int32 adxAttribute, Object value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 142&#xd;
+   at AdfinCore.AdnObject.SetDateTimeAttribute(Int32 adxAttribute, DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnObject.cs:line 207&#xd;
+   at AdfinCore.AdnInstrument.set_PROD_MATURITY(DateTime value) in d:\workspace\TRACS_CBO_Core\AdfinCore\AdnInstrument.cs:line 58&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.InitAdnBond(BondArgs p_bondArgs, AdnRateModel p_rateModel, AdnRateModel p_refinancingRateModel, AdnRateModel p_reinvestedRateModel, AdnRateModel p_discountRateModel, AdnFxModel p_fxModel, Func`3 p_priceRoundingFunc) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 37&#xd;
+   at FixedRateBondCBO.CalculationCore.CalculationHelpers.BondHelper.ComputeFrbSettlementDate(String p_settlementRuleStructure, String p_settlementRule, Nullable`1 p_tradeDate, Nullable`1 p_maturityDate) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\CalculationHelpers\BondHelper.cs:line 258&#xd;
+   at FixedRateBondCBO.CalculationCore.FrbHelpers.FrbDatesHelpers.ComputeFrbSettlementDate(BondArgs p_bond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationCore\FrbHelpers\FrbDatesHelpers.cs:line 54&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.ComputeDefault() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 85&#xd;
+   at FixedRateBondCBO.CalculationModules.SettlementCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\SettlementCM.cs:line 35&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealTimeDataManagerCM.Compute(FrbData p_frbData) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealTimeDataManagerCM.cs:line 98&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RealTimeData.RealtimeQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RealTimeData\RealtimeQuoteCM.cs:line 50&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.CurrencyDataCM.Compute(Boolean p_isBond) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\CurrencyDataCM.cs:line 105&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.RedemptionDataCM.Compute(Boolean p_computeDateFromAverageLife) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\RedemptionDataCM.cs:line 39&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.Benchmark.BenchmarkQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\Benchmark\BenchmarkQuoteCM.cs:line 25&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.GetAllUserQuotes() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 239&#xd;
+   at FixedRateBondCBO.CalculationModules.PricingQuoteCM.Compute() in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\CalculationModules\PricingQuoteCM.cs:line 26&#xd;
+   at DataModels.ErrorHandling.Errorable.Create[T](Func`1 func) in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\Errorable.cs:line 57&#xd;
+   --- End of inner exception stack trace ---&#xd;
+   at DataModels.ErrorHandling.ErrorableImpl`1.get_Value() in d:\workspace\TRACS_CBO_Core\DataModels\ErrorHandling\ErrorableImpl.cs:line 19&#xd;
+   at FixedRateBondCBO.Extensions.FrbDataExtensions.GetNativePrice(FrbData p_frbData, Boolean p_isBondNativePrice) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\Extensions\FrbDataExtensions.cs:line 294&#xd;
+   at FixedRateBondCBO.OutputBuilder.CreateStatusField[T](Func`1 func, Boolean p_addGlobalException) in d:\workspace\TRACS_CBO_FI_BONDS\FixedRateBondCBO\FixedRateBondCBO\OutputBuilder.cs:line 731</ErrorMessage>
     <AssetId>XS1045278410</AssetId>
     <ErrorType>Error</ErrorType>
 </Error>
