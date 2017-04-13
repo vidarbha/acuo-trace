@@ -2,7 +2,6 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.trace.transformer_assets.FromReutersOutputWrapper;
-import com.acuo.collateral.transform.trace.transformer_assets.Reuters;
 import com.acuo.collateral.transform.trace.transformer_assets.ToReutersOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.common.util.ArgChecker;
