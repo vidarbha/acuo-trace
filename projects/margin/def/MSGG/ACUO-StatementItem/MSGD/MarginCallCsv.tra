@@ -1,0 +1,45 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Component Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>13/04/2017 13:29:50</Timestamp>
+        <Checksum>882a8d56</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinition name="MarginCallCsv" group="ACUO-StatementItem">
+    <MessageContent>
+        <LocalComponent name="Body">
+            <TypeSpecification>
+                <TypeDefinition>
+                    <ComplexContent Compositor="SEQUENCE">
+                        <Child minOccurs="1" maxOccurs="1">
+                            <LocalComponent name="Header">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                            <NamedComponent>BodyMarginCall</NamedComponent>
+                        </Child>
+                    </ComplexContent>
+                </TypeDefinition>
+            </TypeSpecification>
+            <FormatSpecifications parserReference="SeparatedGroup">
+                <Property name="Separator" type="string">
+                    <Value>\r\n</Value>
+                </Property>
+            </FormatSpecifications>
+            <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+        </LocalComponent>
+    </MessageContent>
+</MessageDefinition>
