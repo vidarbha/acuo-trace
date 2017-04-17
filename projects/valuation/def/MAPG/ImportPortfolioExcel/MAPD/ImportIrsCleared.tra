@@ -7,39 +7,43 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/04/2017 11:13:50</Timestamp>
-        <Checksum>331317c4</Checksum>
+        <Timestamp>11/04/2017 12:32:20</Timestamp>
+        <Checksum>9a1e702</Checksum>
     </LastModification>
 </Prolog>
-<MappingDefinition name="CLARUS-IN_ACUO" group="Map:CLARUS-IN_ACUO">
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="input" pathString="."/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="results"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <MappingDefinitionInvocation>CLARUS_IN:newReadJson</MappingDefinitionInvocation>
-        </FunctionCall>
-    </ActionStep>
+<MappingDefinition name="ImportIrsCleared"
+    group="Map:ImportPortfolioExcel" category="Trade">
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
             <ActionStep>
                 <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Product/Leg[1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Body" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <MappingDefinitionInvocation>SwapLegC1</MappingDefinitionInvocation>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/PortfolioId"/>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -48,7 +52,29 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="PortfolioId"/>
+                                    contextPosnSpec="Out1" pathString="Product/Leg[2]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <MappingDefinitionInvocation>SwapLegC2</MappingDefinitionInvocation>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]/PortfolioID"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/Portfolio"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -60,7 +86,8 @@
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/Total"/>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]/PositionAccountID"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -69,7 +96,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="Margin"/>
+                                    contextPosnSpec="Out1" pathString="Info/TradingAccountId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -81,7 +108,7 @@
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/Account"/>
+                                <Literal>SWAP</Literal>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -90,7 +117,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="Account"/>
+                                    contextPosnSpec="Out1" pathString="Type"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -99,19 +126,20 @@
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/ClientId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="Name"/>
+                                    contextPosnSpec="Out1" pathString="Info/TradeId"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]/UTI"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -119,22 +147,20 @@
                 </FunctionCall>
             </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"
-                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
+                pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[#]"/>
+                <PathNodeSpec specType="FROM_DATA"
+                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[#]"/>
             </RepeatLimit>
-            <ScopeA specType="TEMP_VAR" pathString="results/Portfolio[]"/>
+            <ScopeA specType="FROM_DATA" contextName="irscleared" pathString="IRS-Cleared/DataRow1[]"/>
         </RepeatAction>
     </ActionStep>
-    <InputDefinition name="input" optional="false" repeating="false">
-        <Bot>String</Bot>
+    <InputDefinition name="irscleared" optional="false" repeating="false">
+        <Message>PortfolioMostRecentString</Message>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="true">
-        <Type>MarginValuation</Type>
+        <Type>SwapTrade</Type>
     </OutputDefinition>
-    <TempVariable name="results" optional="true" repeating="false">
-        <Message>CLARUS_IN:results</Message>
-    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>
