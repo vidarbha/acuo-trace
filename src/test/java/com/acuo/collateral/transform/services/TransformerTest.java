@@ -85,7 +85,6 @@ public class TransformerTest {
 
         Assert.assertTrue(assetsList.size() > 0);
         AssetValuation valuation = assetsList.get(0);
-        Assert.assertTrue(valuation.getPrice() >0);
     }
 
     @Test
