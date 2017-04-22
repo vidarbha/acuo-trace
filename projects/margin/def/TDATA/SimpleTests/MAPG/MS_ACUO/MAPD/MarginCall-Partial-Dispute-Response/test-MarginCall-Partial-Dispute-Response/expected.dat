@@ -1,8 +1,37 @@
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <Direction>Incoming</Direction>
     <Currency>USD</Currency>
+    <Direction>Incoming</Direction>
+    <AmpId>c100020121792c0ya</AmpId>
+    <Recall>
+        <Version>1</Version>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
+        <Price>1.0</Price>
+        <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <RecallAmpId>m100020170602cp9cd</RecallAmpId>
+        <SecurityId>CHF</SecurityId>
+        <Quantity>500000.0</Quantity>
+        <FXCurrency>CHF</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+    </Recall>
+    <Recall>
+        <Version>1</Version>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
+        <Price>1.0</Price>
+        <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <RecallAmpId>m100020170602cp9cc</RecallAmpId>
+        <SecurityId>USD</SecurityId>
+        <Quantity>500000.0</Quantity>
+        <FXCurrency>USD</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+    </Recall>
     <BusinessState>Partial_Agreed</BusinessState>
     <CallType>Netted</CallType>
     <ValuationDate>2012-06-26T00:00:00</ValuationDate>
@@ -14,14 +43,42 @@
         <ParentAmpId>c100020121792c0xr</ParentAmpId>
         <ParentVersion>2</ParentVersion>
     </Dispute>
-    <AmpId>c100020121792c0ya</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <Direction>Incoming</Direction>
     <Currency>USD</Currency>
+    <Direction>Incoming</Direction>
+    <AmpId>c100020121792c0yb</AmpId>
+    <Recall>
+        <Version>1</Version>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
+        <Price>1.0</Price>
+        <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <RecallAmpId>m100020170602cp9cd</RecallAmpId>
+        <SecurityId>CHF</SecurityId>
+        <Quantity>500000.0</Quantity>
+        <FXCurrency>CHF</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+    </Recall>
+    <Recall>
+        <Version>1</Version>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
+        <Price>1.0</Price>
+        <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <RecallAmpId>m100020170602cp9cc</RecallAmpId>
+        <SecurityId>USD</SecurityId>
+        <Quantity>500000.0</Quantity>
+        <FXCurrency>USD</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+    </Recall>
     <BusinessState>Partial_Disputed</BusinessState>
     <CallType>Netted</CallType>
     <ValuationDate>2012-06-26T00:00:00</ValuationDate>
@@ -30,25 +87,24 @@
         <Parent>false</Parent>
         <State>Received</State>
         <Child>true</Child>
-        <CounterpartyCollateralBalance>5000000.0</CounterpartyCollateralBalance>
         <DisputeReasonCode>9001</DisputeReasonCode>
         <CounterpartyMtM>12000000.0</CounterpartyMtM>
         <CounterpartyIM>0.0</CounterpartyIM>
         <DisputeComment>Dsiagree with exposure value</DisputeComment>
+        <CounterpartyCollateralBalance>5000000.0</CounterpartyCollateralBalance>
         <ParentAmpId>c100020121792c0xr</ParentAmpId>
         <ParentVersion>2</ParentVersion>
     </Dispute>
-    <AmpId>c100020121792c0yb</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>2</Version>
+    <AmpId>c100020121792c0xr</AmpId>
     <BusinessState>Partial</BusinessState>
     <Dispute>
         <Parent>true</Parent>
         <State>Received</State>
         <Child>false</Child>
     </Dispute>
-    <AmpId>c100020121792c0xr</AmpId>
 </MarginCall>

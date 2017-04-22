@@ -13,7 +13,7 @@ group = 'com.acuo.collateral'
 
 ext {
     versions += [
-        common      : '0.3.3',
+        common      : '0.4.0-SNAPSHOT',
         transformer : "${project.version}",
         runtime     : '3.6.1',
         design      : '3.6.1',
@@ -25,6 +25,7 @@ dependencies {
     compile (
         "com.acuo.collateral:transformer-valuations:${versions.transformer}",
         "com.acuo.collateral:transformer-margin:${versions.transformer}",
+            "com.acuo.collateral:transformer-assets:${versions.transformer}",
         "com.acuo.collateral:acuo-common:${versions.common}",
         "com.tracegroup.transformer:transformer-runtime-complete:${versions.runtime}",
         "com.tracegroup.transformer:transformer-designtime:${versions.design}",
@@ -44,11 +45,12 @@ task fatJar(type: Jar) {
                 'Main-Class': 'com.mkyong.DateUtils'
     }
     baseName = project.name + '-all'
+    zip64 true
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
 
 gradle.projectsEvaluated {
-  releaseCheck.dependsOn(":libs:uploadArchives")
-  compileJava.dependsOn(":libs:uploadArchives")
+  releaseCheck.dependsOn(":libs:publish")
+  compileJava.dependsOn(":libs:publish")
 }

@@ -1,4 +1,5 @@
-apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 group = 'com.acuo.collateral'
 
@@ -6,33 +7,35 @@ ext {
     // location of external files relative to this build.gradle file
     extFiles = [
             valuations:   'transformer-valuations.jar',
-            margin:       'transformer-margin.jar'
+            margin:       'transformer-margin.jar',
+            assets:       'transformer-assets.jar'
             // sources:    'api/extlib-src.zip',
             // javadoc:    'api/extlib-doc.zip'
     ]
 }
 
-uploadArchives {
-    repositories.mavenDeployer {
-        pom.project {
-            name 'Transformer Exposed Services jar'
-            organization {
-                name 'Trace Financial'
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username "${nexusUsername}"
+                password "${nexusPassword}"
             }
-        }
-        repository(url: "${nexusUrl}/repository/maven-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}") {
-            authentication(userName: nexusUsername, password: nexusPassword)
-        }
-        addFilter('transformer-valuations') {artifact, file ->
-            artifact.name == 'transformer-valuations'
-        }
-        addFilter('transformer-margin') {artifact, file ->
-            artifact.name == 'transformer-margin'
+            url "${nexusUrl}/repository/maven-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
         }
     }
-}
-
-artifacts {
-    archives file: file( extFiles.valuations), name: 'transformer-valuations', type: 'jar'
-    archives file: file( extFiles.margin ), name: 'transformer-margin', type: 'jar'
+    publications {
+        valuations(MavenPublication) {
+            artifact (file(extFiles.valuations))
+            artifactId = 'transformer-valuations'
+        }
+        margin(MavenPublication) {
+            artifact (file(extFiles.margin))
+            artifactId = 'transformer-margin'
+        }
+        assets(MavenPublication) {
+            artifact (file(extFiles.assets))
+            artifactId = 'transformer-assets'
+        }
+    }
 }
