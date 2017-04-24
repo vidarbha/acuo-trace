@@ -3,6 +3,7 @@ package com.acuo.collateral.transform.services;
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.margin.MarginSphereTransformer;
+import com.acuo.collateral.transform.margin.StatementItemTransformer;
 import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
 import com.acuo.common.model.assets.Assets;
 import com.acuo.common.model.margin.MarginCall;
@@ -33,6 +34,9 @@ public class TransformerTest {
 
     @Rule
     public ResourceFile responsjson = new ResourceFile("/reuters/response.json");
+
+    @Rule
+    public ResourceFile statementItem = new ResourceFile("/mockmc.csv");
 
     @Before
     public void setup() {
@@ -94,5 +98,16 @@ public class TransformerTest {
         List<MarginCall> marginCalls = transformer.deserialiseToList(received.getContent());
 
         assertThat(marginCalls).isNotEmpty();
+    }
+
+    @Test
+    public void testStatementItemImport() throws Exception
+    {
+        Transformer<MarginCall> transformer = new StatementItemTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        List<MarginCall> marginCalls = transformer.deserialiseToList(statementItem.getContent());
+        log.info(marginCalls.toString());
+        assertThat(marginCalls).isNotEmpty();
+
+
     }
 }
