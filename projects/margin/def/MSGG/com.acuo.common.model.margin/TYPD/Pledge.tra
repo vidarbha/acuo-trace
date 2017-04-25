@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/04/2017 18:40:37</Timestamp>
-        <Checksum>a48551a3</Checksum>
+        <Timestamp>25/04/2017 11:31:17</Timestamp>
+        <Checksum>7b8117df</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Pledge" group="com.acuo.common.model.margin">
@@ -27,7 +27,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Haircut">
+                    <LocalComponent name="Price">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>
@@ -38,7 +38,51 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="FXRate">
+                    <LocalComponent name="AdjustedCollateralValue">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="CallAmpId">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="SecurityId">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="DeliveryType">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Quantity">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>
@@ -60,7 +104,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Quantity">
+                    <LocalComponent name="FXRate">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>
@@ -71,10 +115,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="DeliveryType">
+                    <LocalComponent name="Haircut">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -86,28 +130,6 @@
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="CurrentMarketValue">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="RejectReasonCode">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Integer</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -146,29 +168,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="CallAmpId">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="SecurityId">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Price">
+                    <LocalComponent name="CurrentMarketValue">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>
@@ -179,10 +179,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="AdjustedCollateralValue">
+                    <LocalComponent name="RejectReasonCode">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
+                                <BusinessObjectType>Integer</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>

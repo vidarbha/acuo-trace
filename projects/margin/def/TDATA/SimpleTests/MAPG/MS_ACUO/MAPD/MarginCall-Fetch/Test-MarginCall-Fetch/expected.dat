@@ -1,264 +1,264 @@
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <AmpId>m100020170482ad81e</AmpId>
-    <Currency>USD</Currency>
     <Direction>Incoming</Direction>
+    <Currency>USD</Currency>
+    <CallType>Variation</CallType>
+    <ValuationDate>2017-02-16T00:00:00</ValuationDate>
+    <BusinessState>Received</BusinessState>
+    <CallDate>2017-02-17T00:00:00</CallDate>
+    <Exposure>10000000.0</Exposure>
+    <AmpId>m100020170482ad81e</AmpId>
     <CollateralValue>10000000.0</CollateralValue>
     <TotalCallAmount>1000000.0</TotalCallAmount>
     <MarginAgreementAmpId>m100020170472a1uhv</MarginAgreementAmpId>
     <MarginAgreementType>CSA</MarginAgreementType>
-    <BusinessState>Received</BusinessState>
-    <CallDate>2017-02-17T00:00:00</CallDate>
-    <Exposure>10000000.0</Exposure>
-    <CallType>Variation</CallType>
-    <ValuationDate>2017-02-16T00:00:00</ValuationDate>
     <MarginAgreementShortName>a1</MarginAgreementShortName>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <AmpId>m100020170542bl3p1</AmpId>
-    <Currency>USD</Currency>
     <Direction>Outgoing</Direction>
-    <BusinessState>Partial_Agreed</BusinessState>
+    <Currency>USD</Currency>
     <CallType>Variation</CallType>
     <ValuationDate>2017-02-22T00:00:00</ValuationDate>
     <AgreedAmount>50000.0</AgreedAmount>
     <Dispute>
         <State>Received</State>
         <Child>true</Child>
-        <ParentVersion>2</ParentVersion>
         <ParentAmpId>m100020170542bl3f3</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
     </Dispute>
+    <BusinessState>Partial_Agreed</BusinessState>
+    <AmpId>m100020170542bl3p1</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <AmpId>m100020170542bl3p2</AmpId>
-    <Currency>USD</Currency>
     <Direction>Outgoing</Direction>
-    <BusinessState>Partial_Disputed</BusinessState>
+    <Currency>USD</Currency>
     <CallType>Variation</CallType>
     <ValuationDate>2017-02-22T00:00:00</ValuationDate>
     <AgreedAmount>50000.0</AgreedAmount>
     <Dispute>
         <State>Received</State>
-        <Comments>test</Comments>
         <Child>true</Child>
-        <ParentVersion>2</ParentVersion>
-        <ParentAmpId>m100020170542bl3f3</ParentAmpId>
-        <Balance>950000.0</Balance>
-        <DisputeReasonCode>CD</DisputeReasonCode>
-        <Mtm>1000000.0</Mtm>
         <Im>0.0</Im>
+        <Mtm>1000000.0</Mtm>
+        <Comments>test</Comments>
+        <Balance>950000.0</Balance>
+        <ParentAmpId>m100020170542bl3f3</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
+        <DisputeReasonCode>CD</DisputeReasonCode>
     </Dispute>
+    <BusinessState>Partial_Disputed</BusinessState>
+    <AmpId>m100020170542bl3p2</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>2</Version>
-    <AmpId>m100020170542bldei</AmpId>
-    <BusinessState>Agreed</BusinessState>
     <AgreedAmount>70000.0</AgreedAmount>
+    <BusinessState>Agreed</BusinessState>
+    <AmpId>m100020170542bldei</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>2</Version>
-    <AmpId>m100020170542blg4n</AmpId>
-    <BusinessState>Disputed</BusinessState>
     <AgreedAmount>0.0</AgreedAmount>
     <Dispute>
+        <Im>0.0</Im>
+        <Mtm>950000.0</Mtm>
         <Comments>No.</Comments>
         <Balance>950000.0</Balance>
         <DisputeReasonCode>MD</DisputeReasonCode>
         <DisputeReasonCode>BTL</DisputeReasonCode>
         <DisputeReasonCode>AD</DisputeReasonCode>
         <DisputeReasonCode>NT</DisputeReasonCode>
-        <Mtm>950000.0</Mtm>
-        <Im>0.0</Im>
     </Dispute>
+    <BusinessState>Disputed</BusinessState>
+    <AmpId>m100020170542blg4n</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>3</Version>
-    <AmpId>m100020170552bssz1</AmpId>
+    <AgreedAmount>150000.0</AgreedAmount>
     <Pledge>
         <Version>1</Version>
-        <Haircut>0.1</Haircut>
-        <FXRate>1.0</FXRate>
-        <FXCurrency>EUR</FXCurrency>
-        <Quantity>55556.0</Quantity>
-        <DeliveryType>Deliver</DeliveryType>
-        <PledgeAmpId>m100020170552bt0rb</PledgeAmpId>
-        <CurrentMarketValue>55556.0</CurrentMarketValue>
-        <SecurityIdType>CASH</SecurityIdType>
-        <SecurityId>CASH</SecurityId>
         <AdjustedCollateralValue>50000.4</AdjustedCollateralValue>
+        <SecurityId>CASH</SecurityId>
+        <DeliveryType>Deliver</DeliveryType>
+        <Quantity>55556.0</Quantity>
+        <FXCurrency>EUR</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.1</Haircut>
+        <PledgeAmpId>m100020170552bt0rb</PledgeAmpId>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>55556.0</CurrentMarketValue>
     </Pledge>
     <Pledge>
         <Version>1</Version>
-        <Haircut>0.0</Haircut>
-        <FXRate>1.0</FXRate>
-        <FXCurrency>USD</FXCurrency>
-        <Quantity>100000.0</Quantity>
-        <DeliveryType>Deliver</DeliveryType>
-        <PledgeAmpId>m100020170552bt0ra</PledgeAmpId>
-        <CurrentMarketValue>100000.0</CurrentMarketValue>
-        <SecurityIdType>CASH</SecurityIdType>
-        <SecurityId>CASH</SecurityId>
         <AdjustedCollateralValue>100000.0</AdjustedCollateralValue>
+        <SecurityId>CASH</SecurityId>
+        <DeliveryType>Deliver</DeliveryType>
+        <Quantity>100000.0</Quantity>
+        <FXCurrency>USD</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+        <PledgeAmpId>m100020170552bt0ra</PledgeAmpId>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>100000.0</CurrentMarketValue>
     </Pledge>
     <BusinessState>Pledged</BusinessState>
-    <AgreedAmount>150000.0</AgreedAmount>
+    <AmpId>m100020170552bssz1</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>2</Version>
-    <AmpId>m100020170602cp7lo</AmpId>
-    <BusinessState>Agreed</BusinessState>
     <AgreedAmount>1000000.0</AgreedAmount>
+    <BusinessState>Agreed</BusinessState>
+    <AmpId>m100020170602cp7lo</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <AmpId>m100020170602cpd1z</AmpId>
-    <Currency>USD</Currency>
     <Direction>Incoming</Direction>
+    <Currency>USD</Currency>
+    <CallType>Variation</CallType>
+    <ValuationDate>2017-02-28T00:00:00</ValuationDate>
+    <AgreedAmount>500000.0</AgreedAmount>
+    <Dispute>
+        <State>Received</State>
+        <Child>true</Child>
+        <ParentAmpId>m100020170602cp9cb</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
+    </Dispute>
     <Recall>
         <Version>2</Version>
-        <Haircut>0.0</Haircut>
-        <FXRate>1.0</FXRate>
-        <FXCurrency>USD</FXCurrency>
-        <Quantity>500000.0</Quantity>
-        <CurrentMarketValue>500000.0</CurrentMarketValue>
-        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
-        <SecurityIdType>CASH</SecurityIdType>
+        <Price>1.0</Price>
+        <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
         <RecallAmpId>m100020170602cp9cc</RecallAmpId>
         <SecurityId>USD</SecurityId>
-        <Price>1.0</Price>
-        <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <Quantity>500000.0</Quantity>
+        <FXCurrency>USD</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
     </Recall>
     <Recall>
         <Version>2</Version>
-        <Haircut>0.0</Haircut>
-        <FXRate>1.0</FXRate>
-        <FXCurrency>CHF</FXCurrency>
-        <Quantity>500000.0</Quantity>
-        <CurrentMarketValue>500000.0</CurrentMarketValue>
-        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
-        <SecurityIdType>CASH</SecurityIdType>
-        <RecallAmpId>m100020170602cp9cd</RecallAmpId>
-        <SecurityId>CHF</SecurityId>
         <Price>1.0</Price>
         <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <RecallAmpId>m100020170602cp9cd</RecallAmpId>
+        <SecurityId>CHF</SecurityId>
+        <Quantity>500000.0</Quantity>
+        <FXCurrency>CHF</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
     </Recall>
     <BusinessState>Partial_Agreed</BusinessState>
-    <CallType>Variation</CallType>
-    <ValuationDate>2017-02-28T00:00:00</ValuationDate>
-    <AgreedAmount>500000.0</AgreedAmount>
-    <Dispute>
-        <State>Received</State>
-        <Child>true</Child>
-        <ParentVersion>2</ParentVersion>
-        <ParentAmpId>m100020170602cp9cb</ParentAmpId>
-    </Dispute>
+    <AmpId>m100020170602cpd1z</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <AmpId>m100020170602cpd20</AmpId>
-    <Currency>USD</Currency>
     <Direction>Incoming</Direction>
-    <BusinessState>Partial_Disputed</BusinessState>
+    <Currency>USD</Currency>
     <CallType>Variation</CallType>
     <ValuationDate>2017-02-28T00:00:00</ValuationDate>
     <AgreedAmount>500000.0</AgreedAmount>
     <Dispute>
         <State>Received</State>
-        <Comments>This is a comment.</Comments>
         <Child>true</Child>
-        <ParentVersion>2</ParentVersion>
-        <ParentAmpId>m100020170602cp9cb</ParentAmpId>
+        <Mtm>-500000.0</Mtm>
+        <Comments>This is a comment.</Comments>
         <Balance>-1000000.0</Balance>
+        <ParentAmpId>m100020170602cp9cb</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
         <DisputeReasonCode>MD</DisputeReasonCode>
         <DisputeReasonCode>UBE</DisputeReasonCode>
         <DisputeReasonCode>OTH</DisputeReasonCode>
         <DisputeReasonCode>PD</DisputeReasonCode>
-        <Mtm>-500000.0</Mtm>
     </Dispute>
+    <BusinessState>Partial_Disputed</BusinessState>
+    <AmpId>m100020170602cpd20</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <AmpId>m100020170602cpfrx</AmpId>
-    <Currency>USD</Currency>
     <Direction>Outgoing</Direction>
+    <Currency>USD</Currency>
+    <CallType>Variation</CallType>
+    <ValuationDate>2017-02-28T00:00:00</ValuationDate>
+    <AgreedAmount>500000.0</AgreedAmount>
+    <Dispute>
+        <State>Received</State>
+        <Child>true</Child>
+        <ParentAmpId>m100020170602cpfkh</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
+    </Dispute>
     <Recall>
         <Version>2</Version>
-        <Haircut>0.0</Haircut>
-        <FXRate>1.0</FXRate>
-        <FXCurrency>USD</FXCurrency>
-        <Quantity>1000000.0</Quantity>
-        <CurrentMarketValue>1000000.0</CurrentMarketValue>
-        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
-        <SecurityIdType>CASH</SecurityIdType>
-        <RecallAmpId>m100020170602cpfki</RecallAmpId>
-        <SecurityId>USD</SecurityId>
         <Price>1.0</Price>
         <AdjustedCollateralValue>1000000.0</AdjustedCollateralValue>
+        <RecallAmpId>m100020170602cpfki</RecallAmpId>
+        <SecurityId>USD</SecurityId>
+        <Quantity>1000000.0</Quantity>
+        <FXCurrency>USD</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>1000000.0</CurrentMarketValue>
     </Recall>
     <BusinessState>Partial_Agreed</BusinessState>
-    <CallType>Variation</CallType>
-    <ValuationDate>2017-02-28T00:00:00</ValuationDate>
-    <AgreedAmount>500000.0</AgreedAmount>
-    <Dispute>
-        <State>Received</State>
-        <Child>true</Child>
-        <ParentVersion>2</ParentVersion>
-        <ParentAmpId>m100020170602cpfkh</ParentAmpId>
-    </Dispute>
+    <AmpId>m100020170602cpfrx</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
-    <AmpId>m100020170602cpfry</AmpId>
-    <Currency>USD</Currency>
     <Direction>Outgoing</Direction>
-    <BusinessState>Partial_Disputed</BusinessState>
+    <Currency>USD</Currency>
     <CallType>Variation</CallType>
     <ValuationDate>2017-02-28T00:00:00</ValuationDate>
     <AgreedAmount>500000.0</AgreedAmount>
     <Dispute>
         <State>Received</State>
-        <Comments>This is a comment</Comments>
         <Child>true</Child>
-        <ParentVersion>2</ParentVersion>
-        <ParentAmpId>m100020170602cpfkh</ParentAmpId>
+        <Im>0.0</Im>
+        <Mtm>0.0</Mtm>
+        <Comments>This is a comment</Comments>
         <Balance>-500000.0</Balance>
+        <ParentAmpId>m100020170602cpfkh</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
         <DisputeReasonCode>PD</DisputeReasonCode>
         <DisputeReasonCode>CD</DisputeReasonCode>
         <DisputeReasonCode>NT</DisputeReasonCode>
         <DisputeReasonCode>AD</DisputeReasonCode>
         <DisputeReasonCode>OTH</DisputeReasonCode>
         <DisputeReasonCode>UBE</DisputeReasonCode>
-        <Mtm>0.0</Mtm>
-        <Im>0.0</Im>
     </Dispute>
+    <BusinessState>Partial_Disputed</BusinessState>
+    <AmpId>m100020170602cpfry</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>4</Version>
-    <AmpId>m100020170612czxfn</AmpId>
     <BusinessState>Pledge_Accepted</BusinessState>
+    <AmpId>m100020170612czxfn</AmpId>
 </MarginCall>
