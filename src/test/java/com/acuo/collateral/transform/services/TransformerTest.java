@@ -2,6 +2,7 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
+import com.acuo.collateral.transform.margin.DisputeTransformer;
 import com.acuo.collateral.transform.margin.MarginSphereTransformer;
 import com.acuo.collateral.transform.margin.StatementItemTransformer;
 import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
@@ -20,6 +21,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -110,4 +112,18 @@ public class TransformerTest {
 
 
     }
+
+    @Test
+    public void testDisputeRequest() throws Exception
+    {
+        DisputeTransformer<MarginCall> transformer = new DisputeTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setId("cantortest");
+        List<MarginCall> marginCalls = new ArrayList<>();
+        marginCalls.add(marginCall);
+        String reqeset = transformer.serialise(marginCalls, null );
+        assertThat(reqeset).isNotEmpty();
+    }
+
+
 }
