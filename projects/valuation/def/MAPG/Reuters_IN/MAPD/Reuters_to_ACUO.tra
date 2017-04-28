@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>31/03/2017 10:31:41</Timestamp>
-        <Checksum>72047287</Checksum>
+        <Timestamp>17/04/2017 18:15:29</Timestamp>
+        <Checksum>8c00201f</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Reuters_to_ACUO" group="Map:Reuters_IN">
@@ -48,7 +48,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/Source"/>
+                                    contextPosnSpec="Out1" pathString="Source"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -69,7 +69,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/NominalCurrency"/>
+                                    contextPosnSpec="Out1" pathString="NominalCurrency"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -90,7 +90,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/ReportCurrency"/>
+                                    contextPosnSpec="Out1" pathString="ReportCurrency"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -111,7 +111,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/Yield"/>
+                                    contextPosnSpec="Out1" pathString="Yield"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -123,7 +123,7 @@
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/quotedPrice/FieldValue"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/valuation/cleanMarketValueInReportCcy/FieldValue"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -132,7 +132,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/Price"/>
+                                    contextPosnSpec="Out1" pathString="CleanMarketValue"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -144,7 +144,7 @@
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/priceQuotationType/FieldValue"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/valuation/positionInReportCcy/FieldValue"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -153,7 +153,28 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/PriceQuotationType"/>
+                                    contextPosnSpec="Out1" pathString="Notional"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/quote/priceType/FieldValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="PriceQuotationType"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -240,7 +261,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/ValuationDateTime"/>
+                                    contextPosnSpec="Out1" pathString="ValuationDateTime"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -297,7 +318,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/ValuationDateTime"/>
+                                    contextPosnSpec="Out1" pathString="ValuationDateTime"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -308,46 +329,107 @@
                 </IfAction>
             </ActionStep>
             <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/description/isin/FieldValue"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                <IfAction>
+                    <Condition>
+                        <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                            <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/description/isin/FieldValue"/>
+                        </IsPresent>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/description/isin/FieldValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="AssetId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <Literal>ISIN</Literal>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>ISIN</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="IdType"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ThenAction>
+                    <ElseAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/description/securityCode/FieldValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>ISIN</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="IdType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ElseAction>
+                </IfAction>
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
@@ -363,7 +445,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AssetValuation/Coupon"/>
+                                    contextPosnSpec="Out1" pathString="Coupon"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -458,7 +540,8 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ScopeB specType="TEMP_VAR" pathString="errorCount[]" outputPosnSpecifier="Out1"/>
+            <ScopeB specType="TO_DATA" contextName="Error"
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
                 <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/NOK[#]"/>
             </RepeatLimit>
@@ -469,7 +552,7 @@
         <Bot>String</Bot>
     </InputDefinition>
     <OutputDefinition name="Output" optional="true" repeating="true">
-        <Message>Assets</Message>
+        <Message>AssetValuation</Message>
     </OutputDefinition>
     <OutputDefinition name="Error" optional="true" repeating="true">
         <Message>results:Error</Message>

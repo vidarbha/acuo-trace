@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>21/03/2017 17:50:33</Timestamp>
-        <Checksum>9645e448</Checksum>
+        <Timestamp>17/04/2017 11:13:50</Timestamp>
+        <Checksum>331317c4</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="CLARUS-IN_ACUO" group="Map:CLARUS-IN_ACUO">
@@ -22,134 +22,118 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="clarus-test" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="entity" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="stats"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <MappingDefinitionInvocation>CLARUS_IN:readJson</MappingDefinitionInvocation>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/params/marginType"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
             <Property name="Output" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="MarginType"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="results"/>
                     </NodeSpec>
                 </Value>
             </Property>
-            <Copy></Copy>
+            <MappingDefinitionInvocation>CLARUS_IN:newReadJson</MappingDefinitionInvocation>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/params/reportingCcy"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Name"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/results/Margin/Change"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Change"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/results/Margin/Margin"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Margin"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="clarus_temp/results/Margin/Account"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Account"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/PortfolioId"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="PortfolioId"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/Total"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Margin"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/Account"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Account"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[Counter1]/ClientId"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Name"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="Output"
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="TEMP_VAR" pathString="results/Portfolio[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="TEMP_VAR" pathString="results/Portfolio[]"/>
+        </RepeatAction>
     </ActionStep>
     <InputDefinition name="input" optional="false" repeating="false">
         <Bot>String</Bot>
     </InputDefinition>
-    <OutputDefinition name="Output" optional="false" repeating="false">
+    <OutputDefinition name="Output" optional="false" repeating="true">
         <Type>MarginValuation</Type>
     </OutputDefinition>
-    <TempVariable name="clarus_temp" optional="true" repeating="false">
-        <Message>CLARUS_IN:clarus-test</Message>
-    </TempVariable>
-    <TempVariable name="stats" optional="true" repeating="false">
-        <Message>CLARUS_IN:stats</Message>
+    <TempVariable name="results" optional="true" repeating="false">
+        <Message>CLARUS_IN:results</Message>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>

@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>22/02/2017 19:09:22</Timestamp>
-        <Checksum>7cf0f529</Checksum>
+        <Timestamp>17/04/2017 19:33:37</Timestamp>
+        <Checksum>6d429de2</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Dispute" group="Map:ACUO_MS">
@@ -18,6 +18,9 @@
                 <RepeatAction repeatCounter="Counter2">
                     <ActionStep>
                         <FunctionCall>
+                            <Property name="Table" type="namedlookuptable">
+                                <Value>ACUO_MS-DisputeCode</Value>
+                            </Property>
                             <Property name="Input" type="nodespec">
                                 <Value>
                                     <NodeSpec>
@@ -31,12 +34,33 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="disputeCodeInt[Out2]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Mapper>NamedTableLookup</Mapper>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="disputeCodeInt[Out2]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="marginCall[Out1]/disputeReasonCodes/disputeReasonCode[Out2]"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
-                            <Copy></Copy>
+                            <Mapper>TextToInteger</Mapper>
                         </FunctionCall>
                     </ActionStep>
                     <ScopeB specType="TO_DATA" contextName="Output"
@@ -47,7 +71,7 @@
                             contextPosnSpec="Counter1" pathString="Dispute/DisputeReasonCode[#]"/>
                     </RepeatLimit>
                     <ScopeA specType="FROM_DATA" contextName="Input"
-                        contextPosnSpec="Counter1" pathString="Dispute/DisputeReasonCode[]"/>
+                        contextPosnSpec="Counter1" pathString="Dispute/DisputeReasonCode[#]"/>
                 </RepeatAction>
             </ActionStep>
             <ActionStep>
@@ -57,7 +81,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Dispute/DisputeComment"/>
+                                    contextPosnSpec="Counter1" pathString="Dispute/Comments"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -79,7 +103,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Dispute/CounterpartyIM"/>
+                                    contextPosnSpec="Counter1" pathString="Dispute/Im"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -101,7 +125,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Dispute/CounterpartyMtM"/>
+                                    contextPosnSpec="Counter1" pathString="Dispute/Mtm"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -145,7 +169,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Dispute/CounterpartyCollateralBalance"/>
+                                    contextPosnSpec="Counter1" pathString="Dispute/Balance"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -268,6 +292,9 @@
     </OutputDefinition>
     <TempVariable name="counter" optional="true" repeating="false">
         <Bot>Integer</Bot>
+    </TempVariable>
+    <TempVariable name="disputeCodeInt" optional="true" repeating="true">
+        <Bot>String</Bot>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>

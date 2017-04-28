@@ -59,6 +59,7 @@ public class MarginSphereTransformer<T> implements Transformer<T> {
     public List<T> deserialiseToList(String values) {
         try {
             Object outputs = marginCall.fetchCalls(values).getOutput();
+
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of margin calls", values);

@@ -1,0 +1,425 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>11/04/2017 12:23:01</Timestamp>
+        <Checksum>3e5e1223</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="SwapLegB2" group="Map:ImportPortfolioExcel" category="Database">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_TYPE"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Type"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_CCY"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Currency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_MAT_DATE"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="MaturityDate/Date"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Format" type="string">
+                <Value>yyyy/MM/dd</Value>
+            </Property>
+            <Mapper>TextToDate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_START_DATE"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="StartDate/Date"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Format" type="string">
+                <Value>yyyy/MM/dd</Value>
+            </Property>
+            <Mapper>TextToDate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input1" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="UTI"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Input2" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>2</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="idtemp"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>Concatenate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="idtemp"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Id"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>TextToInteger</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_NOTIONAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Notional"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="SignPosition" type="option">
+                <Value>Leading</Value>
+            </Property>
+            <Property name="NegativeSign" type="string">
+                <Value>-</Value>
+            </Property>
+            <Mapper>TextToDecimal</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <IfAction>
+            <Condition>
+                <Comparison>
+                    <FirstTerm>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_TYPE"/>
+                    </FirstTerm>
+                    <Operator>EQ</Operator>
+                    <SecondTerm>
+                        <Literal>FIXED</Literal>
+                    </SecondTerm>
+                </Comparison>
+            </Condition>
+            <ThenAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2_FIXED_RATE"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Rate"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="SignPosition" type="option">
+                            <Value>Leading</Value>
+                        </Property>
+                        <Property name="NegativeSign" type="string">
+                            <Value>-</Value>
+                        </Property>
+                        <Mapper>TextToDecimal</Mapper>
+                    </FunctionCall>
+                </ActionStep>
+            </ThenAction>
+        </IfAction>
+    </ActionStep>
+    <ActionStep>
+        <IfAction>
+            <Condition>
+                <Comparison>
+                    <FirstTerm>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_TYPE"/>
+                    </FirstTerm>
+                    <Operator>EQ</Operator>
+                    <SecondTerm>
+                        <Literal>FLOAT</Literal>
+                    </SecondTerm>
+                </Comparison>
+            </Condition>
+            <ThenAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2_INDEX_TENOR"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Fixing/Tenor"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <Literal>PeriodStart</Literal>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Fixing/FixingRelativeTo"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2_INDEX"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Fixing/FloatingRateName"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+            </ThenAction>
+        </IfAction>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_PAY_ADJ_BUS_DAY_CONV"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_PAY_FREQ"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentSchedule/Frequency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_DAYCOUNT"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_PAY_ADJ_CAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentSchedule/Adjustment/Holiday[1]"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_DIRECTION"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PayReceive"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Type>IRSB</Type>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Type>product:Swap.SwapLeg</Type>
+    </OutputDefinition>
+    <TempVariable name="idtemp" optional="true" repeating="false">
+        <Bot>String</Bot>
+    </TempVariable>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>

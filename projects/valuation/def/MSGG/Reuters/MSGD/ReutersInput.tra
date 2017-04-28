@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/03/2017 13:04:52</Timestamp>
-        <Checksum>9518fd81</Checksum>
+        <Timestamp>11/04/2017 11:13:46</Timestamp>
+        <Checksum>bca97e92</Checksum>
     </LastModification>
 </Prolog>
 <MessageDefinition name="ReutersInput" group="Reuters">
@@ -25,6 +25,17 @@
                                     </TypeDefinition>
                                 </TypeSpecification>
                                 <FormatSpecifications converterReference="XsdDate"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="ReportCurrency">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Currency</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications converterReference="tk:Currency"/>
                                 <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                             </LocalComponent>
                         </Child>
