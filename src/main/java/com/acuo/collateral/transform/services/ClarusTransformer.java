@@ -1,7 +1,7 @@
 package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.trace.transformer_valuations.FromCmeFileOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_valuations.FromClarusOutputWrapper;
 import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
 import com.acuo.collateral.transform.trace.transformer_valuations.ToCmeFileOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
@@ -51,8 +51,8 @@ public class ClarusTransformer<T> extends BaseTransformer<T> {
         ArgChecker.notNull(values, "values");
         values = TraceUtils.replaceNewLineToWindows(values);
         try {
-            FromCmeFileOutputWrapper output = getMapper().fromCmeFile(values);
-            return Arrays.stream(output.getSwap()).map(value -> (T)value).collect(Collectors.toList());
+            FromClarusOutputWrapper output = getMapper().fromClarus(values);
+            return Arrays.stream(output.getOutput()).map(value -> (T) value).collect(Collectors.toList());
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of swaps", values);
             log.error(msg, e);
