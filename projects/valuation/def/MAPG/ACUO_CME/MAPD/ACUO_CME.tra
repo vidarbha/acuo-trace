@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>21/02/2017 17:25:01</Timestamp>
-        <Checksum>9561978c</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>03/05/2017 22:08:41</Timestamp>
+        <Checksum>6bf2e18c</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME" group="Map:ACUO_CME">
@@ -525,6 +525,9 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>Frequency</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -544,7 +547,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
@@ -868,6 +871,9 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>Frequency</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -887,7 +893,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                             </ThenAction>
@@ -1149,6 +1155,9 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>Frequency</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -1168,7 +1177,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
@@ -1519,6 +1528,9 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>Frequency</Value>
+                                    </Property>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -1538,7 +1550,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                             </ElseAction>
