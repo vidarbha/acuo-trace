@@ -19,4 +19,9 @@ public class BusinessDayConventionSoc extends StringBOT<BusinessDayConvention> {
     public Class<BusinessDayConvention> getExternalObjectClass() {
         return BusinessDayConvention.class;
     }
+
+    @Override
+    public boolean canProvideSOCForClass(Class clazz) {
+        return BusinessDayConvention.class.isAssignableFrom(clazz);
+    }
 }
