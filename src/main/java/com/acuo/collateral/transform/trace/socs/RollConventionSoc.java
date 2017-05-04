@@ -10,7 +10,9 @@ import org.apache.commons.lang.StringUtils;
 public class RollConventionSoc extends StringBOT<RollConvention> {
     @Override
     public Object transformerFromExternalObject(RollConvention rollConvention) throws DataException {
-        return rollConvention.getName();
+        if (RollConventions.IMM.equals(rollConvention)) return "IMM";
+        if (RollConventions.EOM.equals(rollConvention)) return "EOM";
+        return String.valueOf(rollConvention.getDayOfMonth());
     }
 
     @Override
