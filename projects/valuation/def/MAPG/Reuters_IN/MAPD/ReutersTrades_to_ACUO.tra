@@ -1,0 +1,28 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>NewMappingDefinition</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>17/05/2017 18:36:12</Timestamp>
+        <Checksum>fe021278</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="ReutersTrades_to_ACUO" group="Map:Reuters_IN">
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Message>ReutersTradeResponse</Message>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Message>MarginValuation</Message>
+    </OutputDefinition>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>
