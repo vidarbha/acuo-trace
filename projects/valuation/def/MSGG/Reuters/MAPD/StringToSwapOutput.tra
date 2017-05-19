@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/05/2017 18:10:52</Timestamp>
-        <Checksum>b5f50162</Checksum>
+        <Timestamp>19/05/2017 17:12:52</Timestamp>
+        <Checksum>e4b599dd</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToSwapOutput" group="Msg:Reuters" category="Reuters">
@@ -94,6 +94,28 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="SwapOutputs/Object/member[Counter1]/Name"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/OK[Out1]/tradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
                                     specType="TEMP_VAR" pathString="tempSwap"/>
                                     </NodeSpec>
                                     </Value>
@@ -103,7 +125,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/OK[Out1]"/>
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/OK[Out1]/results"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -125,6 +147,28 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="SwapOutputs/Object/member[Counter1]/Name"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/NOK[Out2]/tradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
                                     specType="TEMP_VAR" pathString="tempSwap"/>
                                     </NodeSpec>
                                     </Value>
@@ -134,7 +178,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/NOK[Out2]"/>
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/NOK[Out2]/results"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>

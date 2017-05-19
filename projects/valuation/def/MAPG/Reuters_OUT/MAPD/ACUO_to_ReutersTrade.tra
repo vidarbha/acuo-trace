@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>16/05/2017 18:16:38</Timestamp>
-        <Checksum>2bb7e3f1</Checksum>
+        <Timestamp>19/05/2017 15:52:28</Timestamp>
+        <Checksum>8a29ec04</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_to_ReutersTrade" group="Map:Reuters_OUT">
@@ -32,6 +32,25 @@
                 <Value>yyyy-MM-dd</Value>
             </Property>
             <Mapper>DateToText</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>USD</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/reportCurrency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -96,7 +115,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <Literal>true</Literal>
+                        <Literal>false</Literal>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -658,7 +677,15 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
-                                    <Property name="Input" type="nodespec">
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponRate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input1" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -668,15 +695,14 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="Output" type="nodespec">
+                                    <Property name="Input2" type="nodespec">
                                     <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponRate"/>
+                                    <Literal>100</Literal>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Mapper>Division</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                             </ElseAction>
