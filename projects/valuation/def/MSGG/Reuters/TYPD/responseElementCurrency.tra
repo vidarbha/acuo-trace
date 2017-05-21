@@ -7,14 +7,25 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/03/2017 13:48:16</Timestamp>
-        <Checksum>741ac1d3</Checksum>
+        <Timestamp>17/05/2017 18:28:11</Timestamp>
+        <Checksum>eae4c653</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="responseElementCurrency" group="Reuters">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="TechnicalMessage">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="ErrorMessage">
                         <TypeSpecification>

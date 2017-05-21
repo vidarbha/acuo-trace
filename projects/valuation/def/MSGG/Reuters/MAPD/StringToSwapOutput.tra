@@ -1,0 +1,224 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>19/05/2017 17:12:52</Timestamp>
+        <Checksum>e4b599dd</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="StringToSwapOutput" group="Msg:Reuters" category="Reuters">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="Opaque-In"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>Parse</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="Opaque-In/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;swapOutputs&quot;]/JsonValue"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="SwapOutputs"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="SwapOutputs/Object/member[Counter1]/JsonValue"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="tempSwap"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Format</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <Comparison>
+                            <FirstTerm>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="SwapOutputs/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;priceStatus&quot;]/JsonValue/String"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>OK</Literal>
+                            </SecondTerm>
+                        </Comparison>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="SwapOutputs/Object/member[Counter1]/Name"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/OK[Out1]/tradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempSwap"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/OK[Out1]/results"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Parse</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <OutputScope specType="TO_DATA"
+                                    contextName="Output"
+                                    pathString="portfolio/customPortfolio/swapOutputs/OK[]" outputPosnSpecifier="Out1"/>
+                            </NewOutputRepetition>
+                        </ActionStep>
+                    </ThenAction>
+                    <ElseAction>
+                        <ActionStep>
+                            <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="SwapOutputs/Object/member[Counter1]/Name"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/NOK[Out2]/tradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempSwap"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="portfolio/customPortfolio/swapOutputs/NOK[Out2]/results"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Parse</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <OutputScope specType="TO_DATA"
+                                    contextName="Output"
+                                    pathString="portfolio/customPortfolio/swapOutputs/NOK[]" outputPosnSpecifier="Out2"/>
+                            </NewOutputRepetition>
+                        </ActionStep>
+                    </ElseAction>
+                </IfAction>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="TEMP_VAR" pathString="SwapOutputs/Object/member[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="TEMP_VAR" pathString="SwapOutputs/Object/member[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Bot>String</Bot>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Message>ReutersTradeResponse</Message>
+    </OutputDefinition>
+    <TempVariable name="Opaque-In" optional="true" repeating="false">
+        <Type>tk:JsonValue</Type>
+    </TempVariable>
+    <TempVariable name="SwapOutputs" optional="true" repeating="false">
+        <Type>tk:JsonValue</Type>
+    </TempVariable>
+    <TempVariable name="tempSwap" optional="true" repeating="false">
+        <Bot>String</Bot>
+    </TempVariable>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>
