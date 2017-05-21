@@ -1,27 +1,28 @@
 <?xml version="1.0"?>
 <SwapTrade xmlns="com.acuo.common.model.trade"
-    xmlns:transform="com.acuo.collateral.transform"
     xmlns:model="com.acuo.common.model"
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Type>SWAP</Type>
+    <Info>
+        <ClearedTradeId>455161</ClearedTradeId>
+        <ClearedTradeDate>2013-12-06T00:00:00</ClearedTradeDate>
+        <TradeStatus>CLEARED</TradeStatus>
+        <Portfolio>p2</Portfolio>
+        <TradeDate>2013-12-10T00:00:00</TradeDate>
+        <TradeId>455161</TradeId>
+        <Book>SWAPS</Book>
+    </Info>
     <Product>
         <product:Leg>
             <product:Id>1</product:Id>
             <product:Type>FIXED</product:Type>
-            <product:Currency>USD</product:Currency>
-            <product:StartDate>
-                <model:Date>2013-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                     <model:Holiday>USNY</model:Holiday>
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
-                <model:Frequency>6M</model:Frequency>
+                <model:Frequency>P6M</model:Frequency>
             </product:PaymentSchedule>
             <product:CalculationSchedule>
                 <model:Adjustment>
@@ -29,13 +30,12 @@
                     <model:Holiday>USNY</model:Holiday>
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
-                <model:Frequency>6M</model:Frequency>
+                <model:Frequency>P6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>10</product:RollConvention>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>2.5</product:Rate>
+            <product:Currency>USD</product:Currency>
             <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>150000000.0</product:Notional>
+            <product:Notional>-150000000.0</product:Notional>
             <product:MaturityDate>
                 <model:Date>2023-12-10T00:00:00</model:Date>
                 <model:Adjustment>
@@ -44,24 +44,25 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>USD</product:Currency>
+            <product:PayReceive>Pay</product:PayReceive>
             <product:StartDate>
                 <model:Date>2013-12-10T00:00:00</model:Date>
                 <model:Adjustment>
                     <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:StartDate>
+            <product:Rate>2.5</product:Rate>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                     <model:Holiday>USNY</model:Holiday>
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
-                <model:Frequency>3M</model:Frequency>
+                <model:Frequency>P3M</model:Frequency>
             </product:PaymentSchedule>
             <product:CalculationSchedule>
                 <model:Adjustment>
@@ -69,10 +70,10 @@
                     <model:Holiday>USNY</model:Holiday>
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
-                <model:Frequency>3M</model:Frequency>
+                <model:Frequency>P3M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>10</product:RollConvention>
-            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Currency>USD</product:Currency>
             <product:Fixing>
                 <product:FloatingRateName>USD-LIBOR-BBA</product:FloatingRateName>
                 <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
@@ -88,16 +89,15 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
+            <product:PayReceive>Receive</product:PayReceive>
+            <product:StartDate>
+                <model:Date>2013-12-10T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
         </product:Leg>
     </Product>
-    <Info>
-        <ClearedTradeId>455161</ClearedTradeId>
-        <ClearedTradeDate>2013-12-06T00:00:00</ClearedTradeDate>
-        <TradeId>11811161</TradeId>
-        <TradeDate>2013-12-10T00:00:00</TradeDate>
-        <Book>11811161</Book>
-        <TradeStatus>CLEARED</TradeStatus>
-    </Info>
 </SwapTrade>
 ---
 <?xml version="1.0"?>
