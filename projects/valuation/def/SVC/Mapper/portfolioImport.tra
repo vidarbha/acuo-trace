@@ -1,0 +1,27 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Service Operation Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>23/05/2017 17:19:22</Timestamp>
+        <Checksum>12fcf634</Checksum>
+    </LastModification>
+</Prolog>
+<ExposedServiceOperation name="portfolioImport" serviceName="Mapper" operationType="ManyToManyMapping">
+    <Property name="OutputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
+    <InputRuleSet>AcuoPortfolioFRAC</InputRuleSet>
+    <InputRuleSet>AcuoPortfolioIRSB</InputRuleSet>
+    <InputRuleSet>AcuoPortfolioIRSC</InputRuleSet>
+    <InputRuleSet>AcuoPortfolioOISC</InputRuleSet>
+    <ServiceOperationTargetChoice>
+        <ServiceOperationMappingTarget group="Map:ImportPortfolioExcel">
+            <Mapping>ImportPortfolio</Mapping>
+        </ServiceOperationMappingTarget>
+    </ServiceOperationTargetChoice>
+</ExposedServiceOperation>

@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>12/04/2017 16:44:13</Timestamp>
-        <Checksum>b15eada2</Checksum>
+        <Timestamp>23/05/2017 12:02:04</Timestamp>
+        <Checksum>29159a8b</Checksum>
     </LastModification>
 </Prolog>
 <ValidationRule name="CurrencyLeg1" group="Msg:ImportPortfolioExcel"
@@ -28,7 +28,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="IRS-Cleared/DataRow1[1]/LEG1_CCY"/>
+                                    contextName="Input" pathString="DataRow1[1]/LEG1_CCY"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -38,9 +38,9 @@
                 </ConditionalValidationAction>
             </ActionStep>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="IRS-Cleared/DataRow1[#]"/>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="DataRow1[#]"/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input" pathString="IRS-Cleared/DataRow1[]"/>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="DataRow1[#]"/>
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
@@ -48,4 +48,5 @@
     </InputDefinition>
     <ExceptionMessage>For line % of sheet IRS-Cleared, Currency was wrong for the first leg</ExceptionMessage>
     <ErrorCode>11</ErrorCode>
+    <ContextPath>IRS-Cleared</ContextPath>
 </ValidationRule>

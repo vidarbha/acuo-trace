@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>11/04/2017 12:28:34</Timestamp>
-        <Checksum>8a35299f</Checksum>
+        <Timestamp>23/05/2017 17:09:44</Timestamp>
+        <Checksum>a8a6bd24</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="OISLeg1" group="Map:ImportPortfolioExcel" category="Database">
@@ -72,10 +72,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -96,10 +93,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -167,7 +161,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Mapper>TextToDecimal</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -203,13 +197,7 @@
                                 </NodeSpec>
                             </Value>
                         </Property>
-                        <Property name="SignPosition" type="option">
-                            <Value>Leading</Value>
-                        </Property>
-                        <Property name="NegativeSign" type="string">
-                            <Value>-</Value>
-                        </Property>
-                        <Mapper>TextToDecimal</Mapper>
+                        <Copy></Copy>
                     </FunctionCall>
                 </ActionStep>
             </ThenAction>
@@ -401,7 +389,7 @@
         </FunctionCall>
     </ActionStep>
     <InputDefinition name="Body" optional="false" repeating="false">
-        <Type>OISC</Type>
+        <Type>OISCF</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Type>product:Swap.SwapLeg</Type>

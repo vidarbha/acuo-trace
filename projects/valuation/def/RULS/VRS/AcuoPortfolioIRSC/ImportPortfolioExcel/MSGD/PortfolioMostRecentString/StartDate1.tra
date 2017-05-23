@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>12/04/2017 16:42:34</Timestamp>
-        <Checksum>418eae0</Checksum>
+        <Timestamp>23/05/2017 11:59:45</Timestamp>
+        <Checksum>664fddcb</Checksum>
     </LastModification>
 </Prolog>
 <ValidationRule name="StartDate1" group="Msg:ImportPortfolioExcel"
@@ -28,7 +28,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/LEG1_START_DATE"/>
+                                    contextName="Input" pathString="DataRow1[Counter1]/LEG1_START_DATE"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -41,9 +41,9 @@
                 </ConditionalValidationAction>
             </ActionStep>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="IRS-Cleared/DataRow1[#]"/>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="DataRow1[#]"/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input" pathString="IRS-Cleared/DataRow1[]"/>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="DataRow1[#]"/>
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
@@ -54,4 +54,5 @@
     </TempVariable>
     <ExceptionMessage>For line % of sheet IRS-Cleared, Start Date was invalid for the first leg</ExceptionMessage>
     <ErrorCode>13</ErrorCode>
+    <ContextPath>IRS-Cleared</ContextPath>
 </ValidationRule>

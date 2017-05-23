@@ -1,0 +1,52 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>23/05/2017 13:28:45</Timestamp>
+        <Checksum>b7b95923</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="Currency" group="Msg:ImportPortfolioExcel"
+    ruleSet="AcuoPortfolioFRAC" disable="false">
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <ConditionalValidationAction mustBeTrue="true">
+                    <ExceptionTextParams>
+                        <PathNodeSpec specType="BOUND_VAR"
+                            contextName="Counter1" pathString="Counter1"/>
+                    </ExceptionTextParams>
+                    <Condition>
+                        <DeciderCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="DataRow1[1]/LEG1_CCY"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Decider>IsCurrency</Decider>
+                        </DeciderCall>
+                    </Condition>
+                </ConditionalValidationAction>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="DataRow1[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="DataRow1[#]"/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Message>PortfolioMostRecentString</Message>
+    </InputDefinition>
+    <ExceptionMessage>For line % of sheet FRA-Cleared, Currency was wrong (FRA only has one leg)</ExceptionMessage>
+    <ErrorCode>11</ErrorCode>
+    <ContextPath>FRA-Cleared</ContextPath>
+</ValidationRule>

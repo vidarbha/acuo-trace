@@ -7,18 +7,37 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>11/04/2017 12:34:31</Timestamp>
-        <Checksum>329cbe5f</Checksum>
+        <Timestamp>23/05/2017 17:15:45</Timestamp>
+        <Checksum>eff3f678</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportPortfolio" group="Map:ImportPortfolioExcel">
     <ActionStep>
         <FunctionCall>
-            <Property name="irscleared" type="nodespec">
+            <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
                             contextName="Input" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="PortfolioMostRecent"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <MappingDefinitionInvocation>ImportPortfolioExcel:StringToProperFormat</MappingDefinitionInvocation>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="irscleared" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="PortfolioMostRecent"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -38,8 +57,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="."/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="PortfolioMostRecent"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -59,8 +77,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="."/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="PortfolioMostRecent"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -80,8 +97,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="."/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="PortfolioMostRecent"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -102,6 +118,9 @@
     <OutputDefinition name="Output" optional="true" repeating="true">
         <Type>SwapTrade</Type>
     </OutputDefinition>
+    <TempVariable name="PortfolioMostRecent" optional="true" repeating="false">
+        <Message>ImportPortfolioExcel:PortfolioMostRecent</Message>
+    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>
