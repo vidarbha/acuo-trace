@@ -17,12 +17,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-public class MarginSphereTransformer<T> implements Transformer<T> {
+public class MarginSphereTransformer<T> extends BaseMarginCallTransformer<T> {
 
-    private final MarginCall marginCall;
 
     public MarginSphereTransformer(MarginCall marginCall) {
-        this.marginCall = marginCall;
+        super(marginCall);
     }
 
     @Override
@@ -36,10 +35,10 @@ public class MarginSphereTransformer<T> implements Transformer<T> {
             Types.MarginCallType mcType = context.getMarginCallType();
             switch (mcType) {
                 case Create:
-                    CreateCallOutputWrapper outputWrapper = marginCall.createCall(value.toArray());
+                    CreateCallOutputWrapper outputWrapper = getMarginCall().createCall(value.toArray());
                     return outputWrapper.getOutput();
                 case Agree:
-                    AgreeCallOutputWrapper agreeOutputWrapper = marginCall.agreeCall(value.toArray());
+                    AgreeCallOutputWrapper agreeOutputWrapper = getMarginCall().agreeCall(value.toArray());
                     return agreeOutputWrapper.getMarginCalls();
             }
             return null;
@@ -58,7 +57,7 @@ public class MarginSphereTransformer<T> implements Transformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = marginCall.fetchCalls(values).getOutput();
+            Object outputs = getMarginCall().fetchCalls(values).getOutput();
 
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {

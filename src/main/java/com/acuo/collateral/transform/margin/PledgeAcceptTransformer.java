@@ -15,13 +15,12 @@ import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-public class PledgeAcceptTransformer<T> implements Transformer<T> {
+public class PledgeAcceptTransformer<T> extends BaseMarginCallTransformer<T> {
 
-    private final MarginCall marginCall;
 
     public PledgeAcceptTransformer(MarginCall marginCall)
     {
-        this.marginCall = marginCall;
+        super(marginCall);
     }
 
     @Override
@@ -33,7 +32,7 @@ public class PledgeAcceptTransformer<T> implements Transformer<T> {
     public String serialise(List<T> value, TransformerContext context) {
         try
         {
-            PledgeAcceptOutputWrapper pledgeCreateOutputWrapper = marginCall.pledgeAccept(value.toArray());
+            PledgeAcceptOutputWrapper pledgeCreateOutputWrapper = getMarginCall().pledgeAccept(value.toArray());
             return pledgeCreateOutputWrapper.getOutput();
         }catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of margin calls", value);
@@ -50,7 +49,7 @@ public class PledgeAcceptTransformer<T> implements Transformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = marginCall.pledgeAcceptResponse(values);
+            Object outputs = getMarginCall().pledgeAcceptResponse(values);
 
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {

@@ -15,13 +15,12 @@ import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-public class DisputeTransformer<T> implements Transformer<T> {
+public class DisputeTransformer<T> extends BaseMarginCallTransformer<T> {
 
-    private final MarginCall marginCall;
 
     public DisputeTransformer(MarginCall marginCall)
     {
-        this.marginCall = marginCall;
+        super(marginCall);
     }
 
     @Override
@@ -33,7 +32,7 @@ public class DisputeTransformer<T> implements Transformer<T> {
     public String serialise(List<T> value, TransformerContext context) {
         try
         {
-            DisputeCallOutputWrapper disputeCallOutputWrapper = marginCall.disputeCall(value.toArray());
+            DisputeCallOutputWrapper disputeCallOutputWrapper = getMarginCall().disputeCall(value.toArray());
             return disputeCallOutputWrapper.getOutput();
         }catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of margin calls", value);
@@ -50,7 +49,7 @@ public class DisputeTransformer<T> implements Transformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = marginCall.disputeResponse(values);
+            Object outputs = getMarginCall().disputeResponse(values);
 
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
