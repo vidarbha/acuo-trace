@@ -1,0 +1,37 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Component Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>24/05/2017 11:14:41</Timestamp>
+        <Checksum>c25a368</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="PayReceive" group="ImportPortfolioExcel">
+    <TypeSpecification>
+        <TypeDefinition>
+            <BusinessObjectType>Code</BusinessObjectType>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications>
+        <Property name="Codes" type="lookuptable">
+            <Value>
+                <LookupTable inLabel="Code" outLabel="Description">
+                    <TableEntry>
+                        <In>PAY</In>
+                        <Out>pay leg</Out>
+                    </TableEntry>
+                    <TableEntry>
+                        <In>RECEIVE</In>
+                        <Out>receive leg</Out>
+                    </TableEntry>
+                </LookupTable>
+            </Value>
+        </Property>
+    </FormatSpecifications>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>
