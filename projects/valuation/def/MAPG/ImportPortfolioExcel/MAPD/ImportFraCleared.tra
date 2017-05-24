@@ -7,30 +7,30 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>24/05/2017 12:45:42</Timestamp>
-        <Checksum>652bd4c8</Checksum>
+        <Timestamp>24/05/2017 18:33:48</Timestamp>
+        <Checksum>fcca3fe0</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportFraCleared"
     group="Map:ImportPortfolioExcel" category="Trade">
     <ActionStep disabled="true">
-        <FunctionCall>
-            <Property name="Node" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="."/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Ruleset" type="ruleset">
-                <Value>AcuoPortfolioFRAC</Value>
-            </Property>
-            <Mapper>InvokeValidationRuleset</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep disabled="true">
         <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Node" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Ruleset" type="ruleset">
+                        <Value>AcuoPortfolioFRAC</Value>
+                    </Property>
+                    <Mapper>InvokeValidationRuleset</Mapper>
+                </FunctionCall>
+            </ActionStep>
             <ActionStep>
                 <IfAction>
                     <Condition>
@@ -40,7 +40,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="."/>
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/LEG1_MAT_DATE"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -55,7 +55,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="."/>
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -63,19 +63,118 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Errors"
-                                    contextPosnSpec="[]" pathString="."/>
+                                    specType="TEMP_VAR" pathString="Exceptions[]"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>AcuoPortfolioFRAC</Value>
+                                </Property>
                                 <Mapper>GetExceptions</Mapper>
                             </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exceptions[Out1]/Path"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="ErrorPath"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exceptions[Out1]/Exception"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="ErrorMessage"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exceptions[Out1]/RuleSetName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Product"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <OutputScope specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
+                            </NewOutputRepetition>
                         </ActionStep>
                     </ThenAction>
                     <ElseAction>
                         <ActionStep>
                             <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Out1]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>ImportPortfolioExcel:StringToFRACleared</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
                                     <Property name="Output" type="nodespec">
@@ -92,8 +191,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]"/>
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -116,8 +214,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]"/>
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -130,8 +227,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/PortfolioID"/>
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Counter1]/PortfolioID"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -176,8 +272,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/PositionAccountID"/>
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Counter1]/PositionAccountID"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -210,8 +305,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/UTI"/>
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Counter1]/UTI"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -380,8 +474,14 @@
         <Type>SwapTrade</Type>
     </OutputDefinition>
     <OutputDefinition name="Errors" optional="true" repeating="true">
-        <Component>sys:MessageExceptionDetails</Component>
+        <Message>results:ImportError</Message>
     </OutputDefinition>
+    <TempVariable name="Exceptions" optional="true" repeating="true">
+        <Component>sys:MessageExceptionDetails</Component>
+    </TempVariable>
+    <TempVariable name="PortfolioMostRecent" optional="true" repeating="false">
+        <Message>ImportPortfolioExcel:PortfolioMostRecent</Message>
+    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>
