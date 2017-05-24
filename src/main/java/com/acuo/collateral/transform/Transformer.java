@@ -12,4 +12,6 @@ public interface Transformer<T> {
 
     List<T> deserialiseToList(String values);
 
+    List<T> deserialise(byte[] value);
+
 }

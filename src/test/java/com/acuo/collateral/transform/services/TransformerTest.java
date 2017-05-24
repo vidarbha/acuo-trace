@@ -20,6 +20,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +42,9 @@ public class TransformerTest {
 
     @Rule
     public ResourceFile statementItem = new ResourceFile("/mockmc.csv");
+
+    @Rule
+    public ResourceFile portfolioFile = new ResourceFile("/portfolio/TradePortfolio18-05-17v2.xlsx");
 
     @Before
     public void setup() {
@@ -126,4 +132,20 @@ public class TransformerTest {
     }
 
 
+    @Test
+    public void testPortfolio() throws Exception
+    {
+        Transformer<SwapTrade> transformer = new PortfolioImportTransformer(new Mapper());
+        transformer.deserialise(toByteArray(portfolioFile.getInputStream()));
+    }
+
+    public static byte[] toByteArray(InputStream input) throws IOException {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        byte[] buffer = new byte[4096];
+        int n = 0;
+        while (-1 != (n = input.read(buffer))) {
+            output.write(buffer, 0, n);
+        }
+        return output.toByteArray();
+    }
 }

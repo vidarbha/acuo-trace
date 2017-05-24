@@ -18,12 +18,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-public class StatementItemTransformer<T> implements Transformer<T> {
+public class StatementItemTransformer<T> extends BaseMarginCallTransformer<T> {
 
-    private final MarginCall marginCall;
 
     public StatementItemTransformer(MarginCall marginCall) {
-        this.marginCall = marginCall;
+        super(marginCall);
     }
 
     @Override
@@ -44,7 +43,7 @@ public class StatementItemTransformer<T> implements Transformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = marginCall.importStatementItem(values).getOutput();
+            Object outputs = getMarginCall().importStatementItem(values).getOutput();
 
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
