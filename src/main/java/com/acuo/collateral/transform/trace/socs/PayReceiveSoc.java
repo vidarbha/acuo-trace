@@ -12,7 +12,9 @@ public class PayReceiveSoc extends StringBOT<PayReceive> {
 
     @Override
     public PayReceive externalObjectFromTransformer(String name) throws DataException {
-        return PayReceive.of(name);
+        if(name != null)
+            return PayReceive.valueOf(name);
+        return null;
     }
 
     @Override

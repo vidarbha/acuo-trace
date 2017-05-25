@@ -14,6 +14,7 @@ import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.ResourceFile;
 import com.google.common.collect.ImmutableList;
 import com.opengamma.strata.basics.currency.Currency;
+import com.opengamma.strata.product.common.PayReceive;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Before;
@@ -44,7 +45,7 @@ public class TransformerTest {
     public ResourceFile statementItem = new ResourceFile("/mockmc.csv");
 
     @Rule
-    public ResourceFile portfolioFile = new ResourceFile("/portfolio/TradePortfolio18-05-17v2.xlsx");
+    public ResourceFile portfolioFile = new ResourceFile("/portfolio/TradePortfolio24-05-17.xlsx");
 
     @Before
     public void setup() {
@@ -147,5 +148,6 @@ public class TransformerTest {
             output.write(buffer, 0, n);
         }
         return output.toByteArray();
+
     }
 }
