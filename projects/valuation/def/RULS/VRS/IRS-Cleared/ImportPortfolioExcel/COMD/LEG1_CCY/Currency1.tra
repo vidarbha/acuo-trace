@@ -1,0 +1,38 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>25/05/2017 11:41:54</Timestamp>
+        <Checksum>c9af62d8</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="Currency1" group="Msg:ImportPortfolioExcel"
+    ruleSet="IRS-Cleared" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Decider>IsCurrency</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>LEG1_CCY</Component>
+    </InputDefinition>
+    <ExceptionMessage>LEG1_CCY</ExceptionMessage>
+    <ErrorCode>12</ErrorCode>
+</ValidationRule>
