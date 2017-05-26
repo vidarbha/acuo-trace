@@ -1,17 +1,17 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Component Form</Program>
+            <Program>Copy File Action</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 10:42:46</Timestamp>
-        <Checksum>78dea229</Checksum>
+        <Timestamp>26/05/2017 10:32:26</Timestamp>
+        <Checksum>f7e1b054</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="IRSB" group="ImportPortfolioExcel">
+<NamedComponentType name="IRSBNPV" group="ImportPortfolioExcel">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="SEQUENCE">
@@ -521,6 +521,9 @@
                         </FormatSpecifications>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <NamedComponent>NPV</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="FirmID" nillable="true">

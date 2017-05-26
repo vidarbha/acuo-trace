@@ -1,23 +1,26 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Test Definition Form</Program>
+            <Program>Copy File Action</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 11:36:20</Timestamp>
-        <Checksum>794d37cf</Checksum>
+        <Timestamp>26/05/2017 10:32:07</Timestamp>
+        <Checksum>f0d33bae</Checksum>
     </LastModification>
 </Prolog>
-<MappingTestDefinition name="test-ImportFraCleared"
-    testSuiteName="SimpleTests" group="Map:ImportPortfolioExcel"
-    testerReference="AdvancedTest" target="ImportFraCleared">
+<ValidationRuleSetTestDefinition name="Portfolio-Rules-FRAC"
+    testSuiteName="RuleSuite" group="ImportPortfolioExcel" testerReference="AdvancedTest">
     <Property name="OutputType" type="option">
         <Value>Raw</Value>
     </Property>
     <Property name="InputFile" type="testdatafile">
         <Value>TestData/MessageTests/MessageDefinitionGroups/ImportPortfolioExcel/Messages/PortfolioMostRecentString/test-PortfolioMostRecentString/TradePortfolio18-05-17v2.xlsx</Value>
     </Property>
-</MappingTestDefinition>
+    <Target>
+        <Message>PortfolioMostRecentStringNPV</Message>
+    </Target>
+    <RuleSetReference>AcuoPortfolioFRAC</RuleSetReference>
+</ValidationRuleSetTestDefinition>
