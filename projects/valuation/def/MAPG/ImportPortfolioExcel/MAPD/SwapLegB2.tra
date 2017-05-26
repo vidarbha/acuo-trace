@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/05/2017 17:13:08</Timestamp>
-        <Checksum>1ace38ef</Checksum>
+        <Timestamp>26/05/2017 12:13:39</Timestamp>
+        <Checksum>fd79808b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="SwapLegB2" group="Map:ImportPortfolioExcel" category="Database">
@@ -274,6 +274,27 @@
                                 <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="Fixing/FloatingRateName"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2_RESET_FREQ"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="ResetSchedule/Frequency"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
