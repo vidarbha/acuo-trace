@@ -7,11 +7,11 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 13:28:25</Timestamp>
-        <Checksum>58ac9e2e</Checksum>
+        <Timestamp>26/05/2017 13:25:47</Timestamp>
+        <Checksum>ab844462</Checksum>
     </LastModification>
 </Prolog>
-<ValidationRule name="Notional1" group="Msg:ImportPortfolioExcel"
+<ValidationRule name="NPV" group="Msg:ImportPortfolioExcel"
     ruleSet="IRS-Cleared" disable="false">
     <ActionStep>
         <ConditionalValidationAction mustBeTrue="true">
@@ -41,10 +41,8 @@
         </ConditionalValidationAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Component>LEG1_NOTIONAL</Component>
+        <Component>NPV</Component>
     </InputDefinition>
-    <TempVariable name="mustbedec" optional="true" repeating="false">
-        <Bot>Decimal</Bot>
-    </TempVariable>
-    <ExceptionMessage>LEG1_NOTIONAL</ExceptionMessage>
+    <ExceptionMessage>NPV</ExceptionMessage>
+    <ErrorCode>10</ErrorCode>
 </ValidationRule>

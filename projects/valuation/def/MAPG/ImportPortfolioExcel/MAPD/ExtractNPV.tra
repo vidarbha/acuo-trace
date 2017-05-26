@@ -1,0 +1,1054 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>26/05/2017 13:19:04</Timestamp>
+        <Checksum>f411fcc6</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="ExtractNPV" group="Map:ImportPortfolioExcel" category="Trade">
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                            <PathNodeSpec specType="FROM_DATA"
+                                contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/NPV"/>
+                        </IsPresent>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Cleared</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <IfAction>
+                                <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Cleared</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                </Condition>
+                                <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Exceptions" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Cleared</Value>
+                                    </Property>
+                                    <Mapper>GetExceptions</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/RuleSetName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Sheet"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/Exception"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Variable"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="BOUND_VAR"
+                                    contextName="Counter1" pathString="Counter1"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="LineNumber"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>IntegerToText</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ThenAction>
+                                <ElseAction>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/UTI"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="TradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="SignPosition" type="option">
+                                    <Value>Leading</Value>
+                                    </Property>
+                                    <Property
+                                    name="NegativeSign" type="string">
+                                    <Value>-</Value>
+                                    </Property>
+                                    <Property
+                                    name="ThousandsSeparator" type="string">
+                                    <Value>,</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MarketValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDecimal</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ElseAction>
+                            </IfAction>
+                        </ActionStep>
+                    </ThenAction>
+                </IfAction>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="IRS-Cleared/DataRow1[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="IRS-Cleared/DataRow1[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                            <PathNodeSpec specType="FROM_DATA"
+                                contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/NPV"/>
+                        </IsPresent>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>FRA-Cleared</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <IfAction>
+                                <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>FRA-Cleared</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                </Condition>
+                                <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Exceptions" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>FRA-Cleared</Value>
+                                    </Property>
+                                    <Mapper>GetExceptions</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/RuleSetName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Sheet"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/Exception"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Variable"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="BOUND_VAR"
+                                    contextName="Counter1" pathString="Counter1"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="LineNumber"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>IntegerToText</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ThenAction>
+                                <ElseAction>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/UTI"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="TradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="SignPosition" type="option">
+                                    <Value>Leading</Value>
+                                    </Property>
+                                    <Property
+                                    name="NegativeSign" type="string">
+                                    <Value>-</Value>
+                                    </Property>
+                                    <Property
+                                    name="ThousandsSeparator" type="string">
+                                    <Value>,</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MarketValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDecimal</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ElseAction>
+                            </IfAction>
+                        </ActionStep>
+                    </ThenAction>
+                </IfAction>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="FRA-Cleared/DataRow1[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="FRA-Cleared/DataRow1[#]"/>
+        </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                            <PathNodeSpec specType="FROM_DATA"
+                                contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/NPV"/>
+                        </IsPresent>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>OIS-Cleared</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <IfAction>
+                                <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>OIS-Cleared</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                </Condition>
+                                <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Exceptions" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>OIS-Cleared</Value>
+                                    </Property>
+                                    <Mapper>GetExceptions</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/RuleSetName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Sheet"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/Exception"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Variable"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="BOUND_VAR"
+                                    contextName="Counter1" pathString="Counter1"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="LineNumber"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>IntegerToText</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ThenAction>
+                                <ElseAction>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/UTI"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="TradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="SignPosition" type="option">
+                                    <Value>Leading</Value>
+                                    </Property>
+                                    <Property
+                                    name="NegativeSign" type="string">
+                                    <Value>-</Value>
+                                    </Property>
+                                    <Property
+                                    name="ThousandsSeparator" type="string">
+                                    <Value>,</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MarketValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDecimal</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ElseAction>
+                            </IfAction>
+                        </ActionStep>
+                    </ThenAction>
+                </IfAction>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="OIS-Cleared/DataRow1[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="OIS-Cleared/DataRow1[#]"/>
+        </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                            <PathNodeSpec specType="FROM_DATA"
+                                contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/NPV"/>
+                        </IsPresent>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Bilateral</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <IfAction>
+                                <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Bilateral</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                </Condition>
+                                <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Exceptions" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Bilateral</Value>
+                                    </Property>
+                                    <Mapper>GetExceptions</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/RuleSetName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Sheet"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Exception[Out1]/Exception"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="Variable"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="BOUND_VAR"
+                                    contextName="Counter1" pathString="Counter1"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="Out1" pathString="LineNumber"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>IntegerToText</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ThenAction>
+                                <ElseAction>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/UTI"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="TradeId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/NPV"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="SignPosition" type="option">
+                                    <Value>Leading</Value>
+                                    </Property>
+                                    <Property
+                                    name="NegativeSign" type="string">
+                                    <Value>-</Value>
+                                    </Property>
+                                    <Property
+                                    name="ThousandsSeparator" type="string">
+                                    <Value>,</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MarketValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDecimal</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ElseAction>
+                            </IfAction>
+                        </ActionStep>
+                    </ThenAction>
+                </IfAction>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="IRS-Bilateral/DataRow1[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="IRS-Bilateral/DataRow1[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Message>PortfolioMostRecentStringNPV</Message>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="true" repeating="true">
+        <Message>results:TradeValuation</Message>
+    </OutputDefinition>
+    <OutputDefinition name="Errors" optional="true" repeating="true">
+        <Message>results:ImportError</Message>
+    </OutputDefinition>
+    <TempVariable name="Exception" optional="true" repeating="true">
+        <Component>sys:MessageExceptionDetails</Component>
+    </TempVariable>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>
