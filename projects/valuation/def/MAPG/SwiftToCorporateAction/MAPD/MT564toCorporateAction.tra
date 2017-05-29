@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>29/05/2017 17:47:26</Timestamp>
-        <Checksum>c68e7fed</Checksum>
+        <Timestamp>29/05/2017 19:03:16</Timestamp>
+        <Checksum>1d9c6547</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MT564toCorporateAction" group="Map:SwiftToCorporateAction">
@@ -31,8 +31,10 @@
                     </Condition>
                     <ThenAction>
                         <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                            <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -41,22 +43,23 @@
                                     contextPosnSpec="Counter1" pathString="s:Blocks123/Block1/OurAddress/IdCode"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="IdCode"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="IdCode"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -65,22 +68,23 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/References/CorporateActionRef"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="ActionReference"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ActionReference"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -89,22 +93,23 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/References/SendersReference"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="SenderReference"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="SenderReference"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -113,22 +118,23 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/FunctionOfMessage/Function"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="MessageFunction"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MessageFunction"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -137,22 +143,23 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/Indicators/CAEventProcessing/Indicator"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="ActionEventProcessing"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ActionEventProcessing"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -161,22 +168,23 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/Indicators/CAEventInd/Indicator"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="ActionEventIndicator"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ActionEventIndicator"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -185,22 +193,23 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/Indicators/MandOrVolInd/Indicator"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="MandatoryVoluntary"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MandatoryVoluntary"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -209,22 +218,23 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/ProcessingStatus/StatusCode"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="ProcessingStatus"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ProcessingStatus"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
-                        </ActionStep>
-                        <ActionStep>
-                            <FunctionCall>
-                                <Property name="Input" type="nodespec">
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -233,18 +243,288 @@
                                     contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/PrepDateTime/OptionC/Date"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Property name="Output" type="nodespec">
+                                    </Property>
+                                    <Property name="Format" type="string">
+                                    <Value>yyyy/MM/dd</Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>DateToText</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/GeneralInfo/PrepDateTime/OptionC/Time"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Format" type="string">
+                                    <Value>hh:mm:ss</Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TimeToText</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input1" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input2" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempPreparationDateTime[Out1]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>-</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Concatenate</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="tempPreparationDateTime[Out1]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Format" type="string">
+                                    <Value>yyyy/MM/dd-hh:mm:ss</Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output" pathString="PreparationDate"/>
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="PreparationDateTime"/>
                                     </NodeSpec>
                                     </Value>
-                                </Property>
-                                <Copy></Copy>
-                            </FunctionCall>
+                                    </Property>
+                                    <Mapper>TextToDateTime</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/UnderlyingSecurities/IdOfInstrument/IdOfSecurity"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="SecurityId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/UnderlyingSecurities/InstrumentAttributes/DateTimes/CouponDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="CouponDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/UnderlyingSecurities/InstrumentAttributes/DateTimes/MaturityDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MaturityDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/CorporateActionOptions[1]/Indicators/CAOptionCode/OptionF/Indicator"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="OptionCode"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/CorporateActionOptions[1]/CurrencyOption"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="CurrencyOption"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/CorporateActionOptions[1]/CashMovements[1]/DateTimes/PaymentDate/OptionA"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="CashPaymentDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Block4/AdditionalInfo/Narratives/AdditionalText[1]/OptionE"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AdditionalInformation"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <OutputScope specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
+                            </NewOutputRepetition>
                         </ActionStep>
                     </ThenAction>
                 </IfAction>
@@ -260,9 +540,18 @@
     <InputDefinition name="Input" optional="true" repeating="true">
         <Message>MT564</Message>
     </InputDefinition>
-    <OutputDefinition name="Output" optional="false" repeating="false">
+    <OutputDefinition name="Output" optional="true" repeating="true">
         <Message>CorporateAction</Message>
     </OutputDefinition>
+    <TempVariable name="tempPreparationDateTime" optional="true" repeating="true">
+        <Bot>String</Bot>
+    </TempVariable>
+    <TempVariable name="tempDate" optional="true" repeating="false">
+        <Bot>String</Bot>
+    </TempVariable>
+    <TempVariable name="tempTime" optional="true" repeating="false">
+        <Bot>String</Bot>
+    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>
