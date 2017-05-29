@@ -1,6 +1,8 @@
 package com.acuo.collateral.transform.trace.socs;
 
 import com.opengamma.strata.basics.index.FloatingRateName;
+import com.opengamma.strata.basics.index.FloatingRateType;
+import com.opengamma.strata.basics.index.ImmutableFloatingRateName;
 import com.tracegroup.transformer.externalobjects.socs.StringBOT;
 import com.tracegroup.transformer.mom.DataException;
 import lombok.extern.slf4j.Slf4j;
@@ -19,8 +21,8 @@ public class FloatingRateNameSoc extends StringBOT<FloatingRateName> {
             return FloatingRateName.of(name);
         }catch (Exception e)
         {
-            log.error("can not find name :" + name);
-            return null;
+            log.warn("can not find name :" + name);
+            return ImmutableFloatingRateName.of(name,name, FloatingRateType.IBOR);
         }
 
     }
