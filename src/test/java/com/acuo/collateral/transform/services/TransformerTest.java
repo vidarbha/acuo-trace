@@ -10,6 +10,7 @@ import com.acuo.common.model.assets.Assets;
 import com.acuo.common.model.margin.MarginCall;
 import com.acuo.common.model.product.SwapHelper;
 import com.acuo.common.model.results.AssetValuation;
+import com.acuo.common.model.results.TradeValuation;
 import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.ResourceFile;
 import com.google.common.collect.ImmutableList;
@@ -46,6 +47,9 @@ public class TransformerTest {
 
     @Rule
     public ResourceFile portfolioFile = new ResourceFile("/portfolio/TradePortfolio24-05-17.xlsx");
+
+    @Rule
+    public ResourceFile npvFile = new ResourceFile("/portfolio/TradePortfolio18-05-17v2-NPV.xlsx");
 
     @Before
     public void setup() {
@@ -149,5 +153,13 @@ public class TransformerTest {
         }
         return output.toByteArray();
 
+    }
+
+    @Test
+    public void testNPV() throws Exception
+    {
+        Transformer<TradeValuation> transformer = new TradeValuationTransformer<>(new Mapper());
+        List<TradeValuation> tradeValuations = transformer.deserialise(toByteArray(npvFile.getInputStream()));
+        log.info("result:" + tradeValuations.toString());
     }
 }
