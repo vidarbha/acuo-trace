@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>25/05/2017 16:30:31</Timestamp>
-        <Checksum>b8ae4480</Checksum>
+        <Timestamp>01/06/2017 11:36:00</Timestamp>
+        <Checksum>427eaa54</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportPortfolio" group="Map:ImportPortfolioExcel">
@@ -126,26 +126,6 @@
                 </Value>
             </Property>
             <MappingDefinitionInvocation>ImportIrsBilateral</MappingDefinitionInvocation>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep disabled="true">
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="."/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="PortfolioMostRecent"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <MappingDefinitionInvocation>ImportPortfolioExcel:StringToProperFormat</MappingDefinitionInvocation>
         </FunctionCall>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">

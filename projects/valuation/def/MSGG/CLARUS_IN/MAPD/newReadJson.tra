@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>13/04/2017 17:51:09</Timestamp>
-        <Checksum>9bd98269</Checksum>
+        <Timestamp>31/05/2017 15:58:02</Timestamp>
+        <Checksum>9db5873d</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="newReadJson" group="Msg:CLARUS_IN" category="Clarus">
@@ -39,7 +39,7 @@
                     <Condition>
                         <Comparison>
                             <FirstTerm>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[Counter1]/Name"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[Counter1]/Name"/>
                             </FirstTerm>
                             <Operator>EQ</Operator>
                             <SecondTerm>
@@ -56,7 +56,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Total&quot;]/JsonValue/Number"/>
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Total&quot;]/JsonValue/Number"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -78,7 +78,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Account&quot;]/JsonValue/Number"/>
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Account&quot;]/JsonValue/Number"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -116,7 +116,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[Counter1]/Name"/>
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[Counter1]/Name"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -181,7 +181,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Account&quot;]/JsonValue/Number"/>
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Account&quot;]/JsonValue/Number"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -203,7 +203,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Total&quot;]/JsonValue/Number"/>
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;Total&quot;]/JsonValue/Number"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -228,9 +228,9 @@
                 </IfAction>
             </ActionStep>
             <RepeatLimit>
-                <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[#]"/>
+                <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[#]"/>
             </RepeatLimit>
-            <ScopeA specType="TEMP_VAR" pathString="json/Object/member[1]/JsonValue/Object/member[]"/>
+            <ScopeA specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[]"/>
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">

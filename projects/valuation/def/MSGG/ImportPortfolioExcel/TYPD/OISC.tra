@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 13:33:29</Timestamp>
-        <Checksum>466d4fa4</Checksum>
+        <Timestamp>01/06/2017 10:47:24</Timestamp>
+        <Checksum>87ef755f</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="OISC" group="ImportPortfolioExcel">
@@ -16,61 +16,7 @@
         <TypeDefinition>
             <ComplexContent Compositor="SEQUENCE">
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="ValueDate" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HeaderValue" type="string">
-                                <Value>Value Date</Value>
-                            </Property>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>yyyy/mm/dd</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>10.43</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>ValueDate</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="PositionAccountID" nillable="true">

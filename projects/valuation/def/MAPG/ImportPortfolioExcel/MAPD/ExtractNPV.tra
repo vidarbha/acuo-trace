@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 13:51:41</Timestamp>
-        <Checksum>b3ac272</Checksum>
+        <Timestamp>01/06/2017 11:25:58</Timestamp>
+        <Checksum>42428888</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ExtractNPV" group="Map:ImportPortfolioExcel" category="Trade">
@@ -41,12 +41,32 @@
                             </FunctionCall>
                         </ActionStep>
                         <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Cleared</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
                             <IfAction>
                                 <Condition>
+                                    <CompoundCondition operator="OR">
+                                    <Condition>
                                     <DeciderCall>
                                     <Property name="Node" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/NPV"/>
@@ -58,6 +78,26 @@
                                     </Property>
                                     <Decider>HasExceptions</Decider>
                                     </DeciderCall>
+                                    </Condition>
+                                    <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Cleared</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                    </Condition>
+                                    </CompoundCondition>
                                 </Condition>
                                 <ThenAction>
                                     <ActionStep>
@@ -67,7 +107,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -274,6 +314,38 @@
                                     </Value>
                                     </Property>
                                     <Mapper>TextToDecimal</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Format" type="string">
+                                    <Value>yyyy/MM/dd</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ValuationDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDate</Mapper>
                                     </FunctionCall>
                                     </ActionStep>
                                     <OutputScope
@@ -379,12 +451,32 @@
                             </FunctionCall>
                         </ActionStep>
                         <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>FRA-Cleared</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
                             <IfAction>
                                 <Condition>
+                                    <CompoundCondition operator="OR">
+                                    <Condition>
                                     <DeciderCall>
                                     <Property name="Node" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/NPV"/>
@@ -396,6 +488,26 @@
                                     </Property>
                                     <Decider>HasExceptions</Decider>
                                     </DeciderCall>
+                                    </Condition>
+                                    <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>FRA-Cleared</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                    </Condition>
+                                    </CompoundCondition>
                                 </Condition>
                                 <ThenAction>
                                     <ActionStep>
@@ -405,7 +517,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/NPV"/>
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -612,6 +724,38 @@
                                     </Value>
                                     </Property>
                                     <Mapper>TextToDecimal</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Format" type="string">
+                                    <Value>yyyy/MM/dd</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ValuationDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDate</Mapper>
                                     </FunctionCall>
                                     </ActionStep>
                                     <OutputScope
@@ -717,12 +861,32 @@
                             </FunctionCall>
                         </ActionStep>
                         <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>OIS-Cleared</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
                             <IfAction>
                                 <Condition>
+                                    <CompoundCondition operator="OR">
+                                    <Condition>
                                     <DeciderCall>
                                     <Property name="Node" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/NPV"/>
@@ -734,6 +898,26 @@
                                     </Property>
                                     <Decider>HasExceptions</Decider>
                                     </DeciderCall>
+                                    </Condition>
+                                    <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>OIS-Cleared</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                    </Condition>
+                                    </CompoundCondition>
                                 </Condition>
                                 <ThenAction>
                                     <ActionStep>
@@ -743,7 +927,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/NPV"/>
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -950,6 +1134,38 @@
                                     </Value>
                                     </Property>
                                     <Mapper>TextToDecimal</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Format" type="string">
+                                    <Value>yyyy/MM/dd</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ValuationDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDate</Mapper>
                                     </FunctionCall>
                                     </ActionStep>
                                     <OutputScope
@@ -1055,12 +1271,32 @@
                             </FunctionCall>
                         </ActionStep>
                         <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Bilateral</Value>
+                                </Property>
+                                <Mapper>InvokeValidationRuleset</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
                             <IfAction>
                                 <Condition>
+                                    <CompoundCondition operator="OR">
+                                    <Condition>
                                     <DeciderCall>
                                     <Property name="Node" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/NPV"/>
@@ -1072,6 +1308,26 @@
                                     </Property>
                                     <Decider>HasExceptions</Decider>
                                     </DeciderCall>
+                                    </Condition>
+                                    <Condition>
+                                    <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Ruleset" type="ruleset">
+                                    <Value>IRS-Bilateral</Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                    </DeciderCall>
+                                    </Condition>
+                                    </CompoundCondition>
                                 </Condition>
                                 <ThenAction>
                                     <ActionStep>
@@ -1081,7 +1337,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/NPV"/>
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1290,6 +1546,38 @@
                                     <Mapper>TextToDecimal</Mapper>
                                     </FunctionCall>
                                     </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="IRS-Bilateral/DataRow1[Counter1]/ValueDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Format" type="string">
+                                    <Value>yyyy/MM/dd</Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="ValuationDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>TextToDate</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Output"
@@ -1365,7 +1653,7 @@
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Message>PortfolioMostRecentStringNPV</Message>
+        <Message>PortfolioMostRecentString</Message>
     </InputDefinition>
     <OutputDefinition name="Output" optional="true" repeating="true">
         <Message>results:TradeValuation</Message>

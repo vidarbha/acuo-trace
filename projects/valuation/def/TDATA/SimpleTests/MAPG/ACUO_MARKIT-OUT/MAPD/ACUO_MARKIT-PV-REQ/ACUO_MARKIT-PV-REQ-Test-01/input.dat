@@ -1,106 +1,73 @@
 <?xml version="1.0"?>
 <SwapTrade xmlns="com.acuo.common.model.trade"
-    xmlns:transform="com.acuo.collateral.transform"
     xmlns:model="com.acuo.common.model"
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Type>SWAP</Type>
     <Info>
-        <ClearedTradeId>455161</ClearedTradeId>
-        <ClearedTradeDate>2013-12-06T00:00:00</ClearedTradeDate>
-        <TradeId>11811161</TradeId>
+        <Portfolio>p46</Portfolio>
+        <Book>test</Book>
+        <MaturityDate>2017-12-11T00:00:00</MaturityDate>
         <TradeDate>2013-12-10T00:00:00</TradeDate>
-        <TradeStatus>CLEARED</TradeStatus>
-        <Book>11811161</Book>
+        <TradeId>500124</TradeId>
+        <DerivativeType>Bilateral</DerivativeType>
+        <TradingAccountId>ACUOAUS3021</TradingAccountId>
     </Info>
     <Product>
         <product:Leg>
-            <product:Id>1</product:Id>
+            <product:Id>5001241</product:Id>
             <product:Type>FIXED</product:Type>
-            <product:Currency>USD</product:Currency>
-            <product:PaymentSchedule>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>MODIFIED_FOLLOWING</model:BusinessDayConvention>
-                </model:Adjustment>
-                <model:Frequency>1T</model:Frequency>
-            </product:PaymentSchedule>
-            <product:CalculationSchedule>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
-                <model:Frequency>1M</model:Frequency>
-            </product:CalculationSchedule>
-            <product:RollConvention>10</product:RollConvention>
+            <product:Currency>SEK</product:Currency>
+            <product:Rate>0.65</product:Rate>
             <product:StartDate>
                 <model:Date>2013-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
             </product:StartDate>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Rate>2.5</product:Rate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
-            <product:Notional>150000000.0</product:Notional>
             <product:MaturityDate>
-                <model:Date>2023-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
+                <model:Date>2017-12-11T00:00:00</model:Date>
             </product:MaturityDate>
+            <product:Notional>55000000.0</product:Notional>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>SEST</model:Holiday>
+                </model:Adjustment>
+                <model:Frequency>P1Y</model:Frequency>
+            </product:PaymentSchedule>
         </product:Leg>
         <product:Leg>
-            <product:Id>2</product:Id>
+            <product:Id>5001242</product:Id>
             <product:Type>FLOAT</product:Type>
-            <product:Currency>USD</product:Currency>
-            <product:PaymentSchedule>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
-                <model:Frequency>P1M</model:Frequency>
-            </product:PaymentSchedule>
-            <product:CalculationSchedule>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
-                <model:Frequency>1T</model:Frequency>
-            </product:CalculationSchedule>
-            <product:RollConvention>10</product:RollConvention>
+            <product:Currency>SEK</product:Currency>
             <product:StartDate>
                 <model:Date>2013-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
             </product:StartDate>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Fixing>
-                <product:FloatingRateName>INR-MIFOR</product:FloatingRateName>
-                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
-                <product:Tenor>4W</product:Tenor>
-            </product:Fixing>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>150000000.0</product:Notional>
+            <product:ResetSchedule>
+                <model:Frequency>P3M</model:Frequency>
+            </product:ResetSchedule>
             <product:MaturityDate>
-                <model:Date>2023-12-10T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
+                <model:Date>2017-12-11T00:00:00</model:Date>
             </product:MaturityDate>
+            <product:Notional>55000000.0</product:Notional>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Fixing>
+                <product:Tenor>3M</product:Tenor>
+                <product:FloatingRateName>SEK-STIBOR-SIDE</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>SEST</model:Holiday>
+                </model:Adjustment>
+                <model:Frequency>P3M</model:Frequency>
+            </product:PaymentSchedule>
         </product:Leg>
     </Product>
 </SwapTrade>
 ---
 <?xml version="1.0"?>
 <Context xmlns="com.acuo.collateral.transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ValueDate>2016-08-11T00:00:00</ValueDate>
+    <ValueDate>2017-05-30T00:00:00</ValueDate>
 </Context>
