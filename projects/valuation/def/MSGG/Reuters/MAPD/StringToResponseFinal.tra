@@ -7,101 +7,11 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/03/2017 11:29:31</Timestamp>
-        <Checksum>68f18811</Checksum>
+        <Timestamp>17/05/2017 16:55:38</Timestamp>
+        <Checksum>1a11b90c</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToResponseFinal" group="Msg:Reuters" category="Reuters">
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="."/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="Opaque-In"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>Parse</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="Opaque-In"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="Response-Without-Bonds"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Target" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="Response-Without-Bonds/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>RemoveNode</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="Response-Without-Bonds"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="temp"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>Format</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="temp"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="."/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>Parse</Mapper>
-        </FunctionCall>
-    </ActionStep>
     <ActionStep>
         <FunctionCall>
             <Property name="Input" type="nodespec">
@@ -140,6 +50,9 @@
     </TempVariable>
     <TempVariable name="temp" optional="true" repeating="false">
         <Bot>String</Bot>
+    </TempVariable>
+    <TempVariable name="Response-Without-Most-Stuff" optional="true" repeating="false">
+        <Type>tk:JsonValue</Type>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>

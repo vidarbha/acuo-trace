@@ -1,0 +1,91 @@
+{
+	"AsOfDate": "2017-04-27",
+	
+	"Sections": {
+		"Description": "true",
+		"RiskMeasures": "true",
+		"Valuation": "true",
+		"pricingAnalysis": "true"
+	},
+	
+	"MtmItems": {
+		"SwapInputs": [{
+			"SwapDefinition": {
+				"id": "SWAP_1",
+				"StartDate": {
+					"Date": "2015-11-19"
+				},
+				"Maturity": {
+					"EndDate": "2027-11-19"
+				},
+				"Collateral": null,
+				"IsNonDeliverable": false,
+				"Legs": [{
+					"Id": "1",
+					"Currency": "USD",
+					"Direction": "Received",
+					"UpfrontPayment": null,
+					"InterestRate": [{
+						"type": "ThomsonReuters.TracsCommon.Ird.Definitions.Swaps.FixedInterestRateDefinitionElement, InterestRateDerivativesCbo",
+						"Type": "Fixed",
+						"Frequency": "SemiAnnual",
+						"CouponType": "BB00",
+						"AccruedCalculationMethod": "ACC_BB00",
+						"DateMovingConvention": "ModifiedFollowing",
+						"EndOfMonthConvention": "SameDay",
+						"AdjustCashflows": true,
+						"ReferenceDateType": "ShortFirstProRata",
+						"CouponRate": 0.0393
+					}],
+					"Notional": [{
+		               				 "type": "ThomsonReuters.TracsCommon.Ird.Definitions.Swaps.ConstantNotionalDefinitionElement, InterestRateDerivativesCbo",
+		               				 "BaseValue": 100000000,
+						"NotionalExchange": "None"
+					}]
+				},
+				{
+					"Id": "2",
+					"Currency": "USD",
+					"Direction": "Paid",
+					"UpfrontPayment": null,
+					"InterestRate": [{
+						"type": "ThomsonReuters.TracsCommon.Ird.Definitions.Swaps.FloatInterestRateDefinitionElement, InterestRateDerivativesCbo",
+						"Type": "Float",
+						"Frequency": "SemiAnnual",
+						"CouponType": "MMA0",
+						"AccruedCalculationMethod": "ACC_MMA0",
+						"DateMovingConvention": "ModifiedFollowing",
+						"EndOfMonthConvention": "SameDay",
+						"AdjustCashflows": true,
+						"ReferenceDateType": "ShortFirstProRata",
+						"FloatRateIndex": {
+							"type": "ThomsonReuters.TracsCommon.Ird.Definitions.Swaps.FixingDefinition, InterestRateDerivativesCbo",
+							"Calendar": "USA,UKG",
+							"ResetType": "InAdvance",
+							"Name": "LIBOR",
+							"Identifiers": {
+								"RIC": "USD6MFSR=",
+								"IdnFixingId": "LIBOR",
+								"StreamsFixingId": "LIBOR"
+							},
+							"Currency": "USD",
+							"Tenor": "6M",
+							"FixingLag": "1",
+							"PaymentFrequency": "SemiAnnual",
+							"ResetFrequency": "SemiAnnual",
+							"IsOvernightIndex": false,
+							"Validate": false,
+							"CalculationMethod":"Constant"
+						},
+						"Spread": 0.01458
+					}],
+					"Notional": [{
+						 "type": "ThomsonReuters.TracsCommon.Ird.Definitions.Swaps.ConstantNotionalDefinitionElement, InterestRateDerivativesCbo",
+						 "BaseValue": 100000000,
+						"NotionalExchange": "None"
+					}]
+				}]
+			}
+		}]
+	}
+}
