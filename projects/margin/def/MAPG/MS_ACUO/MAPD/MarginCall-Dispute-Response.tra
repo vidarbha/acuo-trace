@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/04/2017 11:08:38</Timestamp>
-        <Checksum>4b33e68e</Checksum>
+        <Timestamp>07/06/2017 11:49:52</Timestamp>
+        <Checksum>7de0d8c3</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Dispute-Response" group="Map:MS_ACUO">
@@ -20,7 +20,7 @@
                         <Comparison>
                             <FirstTerm>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/businessState"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/businessState"/>
                             </FirstTerm>
                             <Operator>EQ</Operator>
                             <SecondTerm>
@@ -36,7 +36,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/version"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/version"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -60,7 +60,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/ampId"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/ampId"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -84,7 +84,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/businessState"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/businessState"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -110,7 +110,7 @@
                                     <FirstTerm>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/child"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/child"/>
                                     </FirstTerm>
                                     <Operator>EQ</Operator>
                                     <SecondTerm>
@@ -126,7 +126,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/parentVersion"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/parentVersion"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -154,7 +154,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[Counter2]"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[Counter2]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -209,10 +209,10 @@
                                     <RepeatLimit>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[#]"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[#]"/>
                                     </RepeatLimit>
                                     <ScopeA specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[]"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/disputeReasonCodes/disputeReasonCode[]"/>
                                     </RepeatAction>
                                     </ActionStep>
                                     <ActionStep>
@@ -222,7 +222,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/currency"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/currency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -250,7 +250,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/ampId"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/ampId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -278,7 +278,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/currentMarketValue"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/currentMarketValue"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -306,7 +306,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/price"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/price"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -334,7 +334,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/version"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/version"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -362,7 +362,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/fxCurrency"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/fxCurrency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -390,7 +390,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/securityId"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/securityId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -418,7 +418,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/securityIdType"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/securityIdType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -446,7 +446,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/settlementDate/month"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/settlementDate/month"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -457,7 +457,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/settlementDate/year"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/settlementDate/year"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -467,7 +467,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/settlementDate/day"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/settlementDate/day"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -495,7 +495,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/quantity"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/quantity"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -523,7 +523,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/adjustedCollateralValue"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/adjustedCollateralValue"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -551,7 +551,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/externalUsername"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/externalUsername"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -579,7 +579,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/haircut"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/haircut"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -607,7 +607,7 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/fxRate"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[Counter2]/fxRate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -633,10 +633,10 @@
                                     <RepeatLimit>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[#]"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[#]"/>
                                     </RepeatLimit>
                                     <ScopeA specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/recallItems/recallItem[]"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/recallItems/recallItem[]"/>
                                     </RepeatAction>
                                     </ActionStep>
                                     <ActionStep>
@@ -646,7 +646,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/valuationDate/month"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/valuationDate/month"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -655,7 +655,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/valuationDate/year"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/valuationDate/year"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -664,7 +664,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/valuationDate/day"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/valuationDate/day"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -688,7 +688,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/callType"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/callType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -712,7 +712,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/direction"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/direction"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -736,7 +736,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/counterpartyInitialMargin"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/counterpartyInitialMargin"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -760,7 +760,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/counterpartyMarkToMarket"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/counterpartyMarkToMarket"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -784,7 +784,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/counterpartyCollateralBalance"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/counterpartyCollateralBalance"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -808,7 +808,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/disputeComments"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/disputeComments"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -832,7 +832,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/agreedAmount"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/agreedAmount"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -856,7 +856,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/parentAmpId"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/parentAmpId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -883,7 +883,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/businessState"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/businessState"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -921,7 +921,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/version"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/version"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -945,7 +945,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/child"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/child"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -969,7 +969,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/parent"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/parent"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -993,7 +993,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/state"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/state"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -1017,7 +1017,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/ampId"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/ampId"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -1040,16 +1040,150 @@
             <ScopeB specType="TO_DATA" contextName="Output"
                 contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="marginCall[#]"/>
+                <PathNodeSpec specType="FROM_DATA"
+                    contextName="marginCalls" pathString="marginCall[#]"/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input" pathString="marginCall[]"/>
+            <ScopeA specType="FROM_DATA" contextName="marginCalls" pathString="marginCall[]"/>
         </RepeatAction>
     </ActionStep>
-    <InputDefinition name="Input" optional="false" repeating="false">
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter2">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="ampErrorCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="ErrorCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="ampErrorDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="ErrorDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="httpStatusDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="HttpStatusDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="errorMessage"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="httpStatusCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="StatusCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="MSError"
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out2"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA"
+                    contextName="WebServiceError" contextPosnSpec="[#]" pathString="."/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="WebServiceError"
+                contextPosnSpec="[#]" pathString="."/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="marginCalls" optional="true" repeating="false">
         <Component>marginCalls</Component>
     </InputDefinition>
-    <OutputDefinition name="Output" optional="false" repeating="true">
+    <InputDefinition name="WebServiceError" optional="true" repeating="true">
+        <Message>webError:webServiceError</Message>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="true" repeating="true">
         <Type>MarginCall</Type>
+    </OutputDefinition>
+    <OutputDefinition name="MSError" optional="true" repeating="true">
+        <Message>results:MSError</Message>
     </OutputDefinition>
     <TempVariable name="disputeCodeString" optional="true" repeating="true">
         <Bot>String</Bot>

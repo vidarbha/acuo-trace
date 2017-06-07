@@ -1,0 +1,235 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Message Import</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>06/06/2017 18:41:17</Timestamp>
+        <Checksum>88eb34da</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinition name="schema" group="Margin-Call">
+    <MessageContent>
+        <LocalComponent name="body">
+            <TypeSpecification>
+                <TypeDefinition>
+                    <ComplexContent Compositor="ALL">
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="@version">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Decimal</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                <ExampleData>1.0</ExampleData>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="@targetNamespace">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                <ExampleData>error.api.acadiasoft.com</ExampleData>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="1" maxOccurs="UNBOUNDED">
+                            <LocalComponent name="element">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="@name">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>webServiceError</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="@type">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>tns:AcadiaSoft.Web.Service.Error</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="@form">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>qualified</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="@minOccurs">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Integer</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>0</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="1" maxOccurs="1">
+                            <LocalComponent name="complexType">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="@name">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>AcadiaSoft.Web.Service.Error</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="@final">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>extension restriction</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="all">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+
+                                    <ComplexContent Compositor="ALL">
+                                    <Child
+                                    minOccurs="1" maxOccurs="UNBOUNDED">
+
+                                    <LocalComponent name="element">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+
+                                    <ComplexContent Compositor="ALL">
+
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent name="@name">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>webServiceError</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent name="@type">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>tns:AcadiaSoft.Web.Service.Error</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent name="@form">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>qualified</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent name="@minOccurs">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>Integer</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                                    <ExampleData>0</ExampleData>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                    </ComplexContent>
+                </TypeDefinition>
+            </TypeSpecification>
+            <FormatSpecifications/>
+            <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+        </LocalComponent>
+    </MessageContent>
+</MessageDefinition>

@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>23/02/2017 10:21:50</Timestamp>
-        <Checksum>20cd0fed</Checksum>
+        <Timestamp>07/06/2017 11:41:47</Timestamp>
+        <Checksum>f6c6c1cb</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Agree-Response" group="Map:MS_ACUO">
@@ -20,7 +20,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/version"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/version"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -42,7 +42,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/ampId"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/ampId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -64,7 +64,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/agreedAmount"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/agreedAmount"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -86,7 +86,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="marginCall[Counter1]/businessState"/>
+                                    contextName="marginCalls" pathString="marginCall[Counter1]/businessState"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -105,18 +105,152 @@
             <ScopeB specType="TO_DATA" contextName="Output"
                 contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="marginCall[#]"/>
+                <PathNodeSpec specType="FROM_DATA"
+                    contextName="marginCalls" pathString="marginCall[#]"/>
             </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input" pathString="marginCall[]"/>
+            <ScopeA specType="FROM_DATA" contextName="marginCalls" pathString="marginCall[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter2">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="ampErrorCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="ErrorCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="ampErrorDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="ErrorDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="httpStatusDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="HttpStatusDescription"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="errorMessage"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="WebServiceError"
+                                    contextPosnSpec="Counter2" pathString="httpStatusCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="MSError"
+                                    contextPosnSpec="Out2" pathString="StatusCode"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="MSError"
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out2"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA"
+                    contextName="WebServiceError" contextPosnSpec="[#]" pathString="."/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="WebServiceError"
+                contextPosnSpec="[]" pathString="."/>
         </RepeatAction>
     </ActionStep>
     <Description>
 </Description>
-    <InputDefinition name="Input" optional="false" repeating="false">
+    <InputDefinition name="marginCalls" optional="true" repeating="false">
         <Component>marginCalls</Component>
     </InputDefinition>
-    <OutputDefinition name="Output" optional="false" repeating="true">
+    <InputDefinition name="WebServiceError" optional="true" repeating="true">
+        <Message>webError:webServiceError</Message>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="true" repeating="true">
         <Type>MarginCall</Type>
+    </OutputDefinition>
+    <OutputDefinition name="MSError" optional="true" repeating="true">
+        <Message>results:MSError</Message>
     </OutputDefinition>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
