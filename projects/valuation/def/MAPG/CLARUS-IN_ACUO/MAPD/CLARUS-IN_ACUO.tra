@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/04/2017 11:13:50</Timestamp>
-        <Checksum>331317c4</Checksum>
+        <Timestamp>08/06/2017 12:22:51</Timestamp>
+        <Checksum>bbb41dcd</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="CLARUS-IN_ACUO" group="Map:CLARUS-IN_ACUO">
@@ -126,11 +126,45 @@
             <ScopeA specType="TEMP_VAR" pathString="results/Portfolio[]"/>
         </RepeatAction>
     </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter2">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="results/messages[Counter2]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="ClarusError"
+                                    contextPosnSpec="Out2" pathString="Message"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="ClarusError"
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out2"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="TEMP_VAR" pathString="results/messages[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="TEMP_VAR" pathString="results/messages[]"/>
+        </RepeatAction>
+    </ActionStep>
     <InputDefinition name="input" optional="false" repeating="false">
         <Bot>String</Bot>
     </InputDefinition>
-    <OutputDefinition name="Output" optional="false" repeating="true">
+    <OutputDefinition name="Output" optional="true" repeating="true">
         <Type>MarginValuation</Type>
+    </OutputDefinition>
+    <OutputDefinition name="ClarusError" optional="true" repeating="true">
+        <Message>ClarusError</Message>
     </OutputDefinition>
     <TempVariable name="results" optional="true" repeating="false">
         <Message>CLARUS_IN:results</Message>

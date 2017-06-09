@@ -1,6 +1,5 @@
 package com.acuo.collateral.transform.margin;
 
-import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
 import com.acuo.collateral.transform.trace.transformer_margin.PledgeAcceptOutputWrapper;
@@ -49,7 +48,7 @@ public class PledgeAcceptTransformer<T> extends BaseMarginCallTransformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = getMarginCall().pledgeAcceptResponse(values);
+            Object outputs = getMarginCall().pledgeAcceptResponse(values, new String[]{});
 
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
