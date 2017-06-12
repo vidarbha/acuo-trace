@@ -141,7 +141,7 @@ public class TransformerTest {
     public void testPortfolio() throws Exception
     {
         Transformer<SwapTrade> transformer = new PortfolioImportTransformer(new Mapper());
-        transformer.deserialise(toByteArray(portfolioFile.getInputStream()));
+        transformer.deserialise(toByteArray(npvFile.getInputStream()));
     }
 
     public static byte[] toByteArray(InputStream input) throws IOException {

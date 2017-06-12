@@ -48,7 +48,7 @@ public class DisputeTransformer<T> extends BaseMarginCallTransformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = getMarginCall().disputeResponse(values, new String[]{});
+            Object outputs = getMarginCall().disputeResponse(values);
 
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
