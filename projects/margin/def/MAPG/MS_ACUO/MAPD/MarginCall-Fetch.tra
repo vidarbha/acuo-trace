@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>05/06/2017 10:49:21</Timestamp>
-        <Checksum>2d74eb4c</Checksum>
+        <Timestamp>13/06/2017 15:44:16</Timestamp>
+        <Checksum>ab834dec</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Fetch" group="Map:MS_ACUO">
@@ -679,6 +679,30 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="MarginAgreementAmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]/marginAgreementShortName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="MarginAgreementShortName"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
