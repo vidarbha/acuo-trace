@@ -15,16 +15,13 @@ import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.ResourceFile;
 import com.google.common.collect.ImmutableList;
 import com.opengamma.strata.basics.currency.Currency;
-import com.opengamma.strata.product.common.PayReceive;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -114,52 +111,34 @@ public class TransformerTest {
     }
 
     @Test
-    public void testStatementItemImport() throws Exception
-    {
+    public void testStatementItemImport() throws Exception {
         Transformer<MarginCall> transformer = new StatementItemTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         List<MarginCall> marginCalls = transformer.deserialiseToList(statementItem.getContent());
-        log.info(marginCalls.toString());
         assertThat(marginCalls).isNotEmpty();
-
-
     }
 
     @Test
-    public void testDisputeRequest() throws Exception
-    {
+    public void testDisputeRequest() throws Exception {
         DisputeTransformer<MarginCall> transformer = new DisputeTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setId("cantortest");
         List<MarginCall> marginCalls = new ArrayList<>();
         marginCalls.add(marginCall);
-        String reqeset = transformer.serialise(marginCalls, null );
+        String reqeset = transformer.serialise(marginCalls, null);
         assertThat(reqeset).isNotEmpty();
     }
 
 
     @Test
-    public void testPortfolio() throws Exception
-    {
+    public void testPortfolio() throws Exception {
         Transformer<SwapTrade> transformer = new PortfolioImportTransformer(new Mapper());
-        transformer.deserialise(toByteArray(npvFile.getInputStream()));
-    }
-
-    public static byte[] toByteArray(InputStream input) throws IOException {
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        byte[] buffer = new byte[4096];
-        int n = 0;
-        while (-1 != (n = input.read(buffer))) {
-            output.write(buffer, 0, n);
-        }
-        return output.toByteArray();
-
+        transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
     }
 
     @Test
-    public void testNPV() throws Exception
-    {
+    public void testNPV() throws Exception {
         Transformer<TradeValuation> transformer = new TradeValuationTransformer<>(new Mapper());
-        List<TradeValuation> tradeValuations = transformer.deserialise(toByteArray(npvFile.getInputStream()));
+        List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
         log.info("result:" + tradeValuations.toString());
     }
 }
