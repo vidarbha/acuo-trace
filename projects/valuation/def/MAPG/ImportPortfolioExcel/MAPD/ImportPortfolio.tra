@@ -7,13 +7,21 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>11/04/2017 12:34:31</Timestamp>
-        <Checksum>329cbe5f</Checksum>
+        <Timestamp>01/06/2017 11:36:00</Timestamp>
+        <Checksum>427eaa54</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportPortfolio" group="Map:ImportPortfolioExcel">
     <ActionStep>
         <FunctionCall>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="IRSC" contextPosnSpec="[]" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
             <Property name="irscleared" type="nodespec">
                 <Value>
                     <NodeSpec>
@@ -22,11 +30,11 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Output" type="nodespec">
+            <Property name="ImportError" type="nodespec">
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" contextPosnSpec="[]" pathString="."/>
+                            contextName="IRSCError" contextPosnSpec="[]" pathString="."/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -47,7 +55,15 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" contextPosnSpec="[]" pathString="."/>
+                            contextName="FRAC" contextPosnSpec="[]" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Errors" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="FRACError" contextPosnSpec="[]" pathString="."/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -68,7 +84,15 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" contextPosnSpec="[]" pathString="."/>
+                            contextName="OISC" contextPosnSpec="[]" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="ImportError" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="OISCError" contextPosnSpec="[]" pathString="."/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -89,7 +113,15 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" contextPosnSpec="[]" pathString="."/>
+                            contextName="IRSB" contextPosnSpec="[]" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Errors" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="IRSBError" contextPosnSpec="[]" pathString="."/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -99,9 +131,33 @@
     <InputDefinition name="Input" optional="false" repeating="false">
         <Message>PortfolioMostRecentString</Message>
     </InputDefinition>
-    <OutputDefinition name="Output" optional="true" repeating="true">
+    <OutputDefinition name="IRSC" optional="true" repeating="true">
         <Type>SwapTrade</Type>
     </OutputDefinition>
+    <OutputDefinition name="IRSCError" optional="true" repeating="true">
+        <Message>results:ImportError</Message>
+    </OutputDefinition>
+    <OutputDefinition name="FRAC" optional="true" repeating="true">
+        <Type>SwapTrade</Type>
+    </OutputDefinition>
+    <OutputDefinition name="FRACError" optional="true" repeating="true">
+        <Message>results:ImportError</Message>
+    </OutputDefinition>
+    <OutputDefinition name="IRSB" optional="true" repeating="true">
+        <Type>SwapTrade</Type>
+    </OutputDefinition>
+    <OutputDefinition name="IRSBError" optional="true" repeating="true">
+        <Message>results:ImportError</Message>
+    </OutputDefinition>
+    <OutputDefinition name="OISC" optional="true" repeating="true">
+        <Type>SwapTrade</Type>
+    </OutputDefinition>
+    <OutputDefinition name="OISCError" optional="true" repeating="true">
+        <Message>results:ImportError</Message>
+    </OutputDefinition>
+    <TempVariable name="PortfolioMostRecent" optional="true" repeating="false">
+        <Message>ImportPortfolioExcel:PortfolioMostRecent</Message>
+    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>

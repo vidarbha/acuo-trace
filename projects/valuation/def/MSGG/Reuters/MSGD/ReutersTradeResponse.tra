@@ -1,0 +1,57 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Component Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>17/05/2017 18:09:46</Timestamp>
+        <Checksum>46d9fdd3</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinition name="ReutersTradeResponse" group="Reuters">
+    <MessageContent>
+        <LocalComponent name="body">
+            <TypeSpecification>
+                <TypeDefinition>
+                    <ComplexContent Compositor="ALL">
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="portfolio" nillable="true">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="customPortfolio" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+
+                                    <ComplexContent Compositor="ALL">
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+                                    <NamedComponent>swapOutputs</NamedComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                    </ComplexContent>
+                </TypeDefinition>
+            </TypeSpecification>
+            <FormatSpecifications/>
+            <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+        </LocalComponent>
+    </MessageContent>
+</MessageDefinition>

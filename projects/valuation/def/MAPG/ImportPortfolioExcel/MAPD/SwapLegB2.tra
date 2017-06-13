@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>11/04/2017 12:23:01</Timestamp>
-        <Checksum>3e5e1223</Checksum>
+        <Timestamp>26/05/2017 12:13:39</Timestamp>
+        <Checksum>fd79808b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="SwapLegB2" group="Map:ImportPortfolioExcel" category="Database">
@@ -72,10 +72,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -96,10 +93,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -167,13 +161,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="SignPosition" type="option">
-                <Value>Leading</Value>
-            </Property>
-            <Property name="NegativeSign" type="string">
-                <Value>-</Value>
-            </Property>
-            <Mapper>TextToDecimal</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -209,13 +197,7 @@
                                 </NodeSpec>
                             </Value>
                         </Property>
-                        <Property name="SignPosition" type="option">
-                            <Value>Leading</Value>
-                        </Property>
-                        <Property name="NegativeSign" type="string">
-                            <Value>-</Value>
-                        </Property>
-                        <Mapper>TextToDecimal</Mapper>
+                        <Copy></Copy>
                     </FunctionCall>
                 </ActionStep>
             </ThenAction>
@@ -292,6 +274,27 @@
                                 <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="Fixing/FloatingRateName"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2_RESET_FREQ"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="ResetSchedule/Frequency"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -407,7 +410,7 @@
         </FunctionCall>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Type>IRSB</Type>
+        <Type>IRSBF</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Type>product:Swap.SwapLeg</Type>

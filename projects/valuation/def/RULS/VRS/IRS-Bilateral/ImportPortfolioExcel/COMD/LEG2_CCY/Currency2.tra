@@ -1,0 +1,37 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Copy File Action</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>25/05/2017 13:34:24</Timestamp>
+        <Checksum>5b165f6f</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="Currency2" group="Msg:ImportPortfolioExcel"
+    ruleSet="IRS-Bilateral" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Decider>IsCurrency</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>LEG2_CCY</Component>
+    </InputDefinition>
+    <ExceptionMessage>LEG2_CCY</ExceptionMessage>
+</ValidationRule>

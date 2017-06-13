@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Component Form</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>10/04/2017 19:06:06</Timestamp>
-        <Checksum>29fe5462</Checksum>
+        <Timestamp>01/06/2017 10:47:24</Timestamp>
+        <Checksum>87ef755f</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="OISC" group="ImportPortfolioExcel">
@@ -16,61 +16,7 @@
         <TypeDefinition>
             <ComplexContent Compositor="SEQUENCE">
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="ValueDate" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HeaderValue" type="string">
-                                <Value>Value Date</Value>
-                            </Property>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>yyyy/mm/dd</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>10.43</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>ValueDate</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="PositionAccountID" nillable="true">
@@ -523,58 +469,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="NPV" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>General</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>8.57</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>NPV</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="PreviousNPV" nillable="true">
@@ -922,58 +817,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_CCY" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>General</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>8.57</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG1_CCY</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="LEG1_PAY_FREQ" nillable="true">
@@ -1222,220 +1066,16 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_START_DATE" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>yyyy/mm/dd</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>18.57</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG1_START_DATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_MAT_DATE" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>yyyy/mm/dd</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>16.29</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG1_MAT_DATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_NOTIONAL" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>General</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>16.14</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG1_NOTIONAL</NamedComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_FIXED_RATE" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>General</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>18.29</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                <Child minOccurs="0" maxOccurs="1">
+                    <NamedComponent>LEG1_FIXED_RATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="LEG2_TYPE" nillable="true">
@@ -1491,7 +1131,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="LEG2_INDEX_TENOR" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -1546,58 +1186,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_CCY" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>General</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>8.57</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG2_CCY</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="LEG2_PAY_FREQ" nillable="true">
@@ -1815,7 +1404,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="LEG2_INDEX" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -1924,181 +1513,16 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_START_DATE" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>yyyy/mm/dd</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>18.57</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG2_START_DATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_MAT_DATE" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>yyyy/mm/dd</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>16.29</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG2_MAT_DATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_NOTIONAL" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="HorizontalAlignment" type="enum">
-                                <Value>GENERAL</Value>
-                            </Property>
-                            <Property name="VerticalAlignment" type="enum">
-                                <Value>BOTTOM</Value>
-                            </Property>
-                            <Property name="FontColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="FontSize" type="integer">
-                                <Value>10</Value>
-                            </Property>
-                            <Property name="FontName" type="string">
-                                <Value>Arial</Value>
-                            </Property>
-                            <Property name="TopBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="LeftBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BottomBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="RightBorder" type="enum">
-                                <Value>NONE</Value>
-                            </Property>
-                            <Property name="BorderColor" type="enum">
-                                <Value>BLACK</Value>
-                            </Property>
-                            <Property name="Rotation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Indentation" type="integer">
-                                <Value>0</Value>
-                            </Property>
-                            <Property name="Format" type="string">
-                                <Value>General</Value>
-                            </Property>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>16.14</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG2_NOTIONAL</NamedComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="LEG2_FIXED_RATE" nillable="true">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="CellWidth" type="decimal">
-                                <Value>18.29</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG2_FIXED_RATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="LEG1_DIRECTION" nillable="true">
@@ -2547,7 +1971,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="NPVadj" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -2601,7 +2025,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="pNPVadj" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -2655,7 +2079,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Notionaladj" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -2709,7 +2133,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="IM" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -2763,7 +2187,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Commissions" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -2817,7 +2241,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="Fees" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -2871,7 +2295,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="MaturityTrench" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>

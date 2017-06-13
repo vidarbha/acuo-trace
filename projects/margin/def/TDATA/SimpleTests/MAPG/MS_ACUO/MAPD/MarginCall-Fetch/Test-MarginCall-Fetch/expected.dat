@@ -31,6 +31,7 @@
         <ParentVersion>2</ParentVersion>
     </Dispute>
     <BusinessState>Partial_Agreed</BusinessState>
+    <CallDate>2017-02-23T00:00:00</CallDate>
     <AmpId>m100020170542bl3p1</AmpId>
 </MarginCall>
 %%%
@@ -54,6 +55,7 @@
         <DisputeReasonCode>CD</DisputeReasonCode>
     </Dispute>
     <BusinessState>Partial_Disputed</BusinessState>
+    <CallDate>2017-02-23T00:00:00</CallDate>
     <AmpId>m100020170542bl3p2</AmpId>
 </MarginCall>
 %%%
@@ -168,6 +170,7 @@
         <CurrentMarketValue>500000.0</CurrentMarketValue>
     </Recall>
     <BusinessState>Partial_Agreed</BusinessState>
+    <CallDate>2017-03-01T00:00:00</CallDate>
     <AmpId>m100020170602cpd1z</AmpId>
 </MarginCall>
 %%%
@@ -193,6 +196,7 @@
         <DisputeReasonCode>PD</DisputeReasonCode>
     </Dispute>
     <BusinessState>Partial_Disputed</BusinessState>
+    <CallDate>2017-03-01T00:00:00</CallDate>
     <AmpId>m100020170602cpd20</AmpId>
 </MarginCall>
 %%%
@@ -225,6 +229,7 @@
         <CurrentMarketValue>1000000.0</CurrentMarketValue>
     </Recall>
     <BusinessState>Partial_Agreed</BusinessState>
+    <CallDate>2017-03-01T00:00:00</CallDate>
     <AmpId>m100020170602cpfrx</AmpId>
 </MarginCall>
 %%%
@@ -253,6 +258,7 @@
         <DisputeReasonCode>UBE</DisputeReasonCode>
     </Dispute>
     <BusinessState>Partial_Disputed</BusinessState>
+    <CallDate>2017-03-01T00:00:00</CallDate>
     <AmpId>m100020170602cpfry</AmpId>
 </MarginCall>
 %%%
@@ -261,4 +267,86 @@
     <Version>4</Version>
     <BusinessState>Pledge_Accepted</BusinessState>
     <AmpId>m100020170612czxfn</AmpId>
+</MarginCall>
+%%%
+<?xml version="1.0"?>
+<MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Version>1</Version>
+    <Direction>Outgoing</Direction>
+    <Currency>USD</Currency>
+    <CallType>Variation</CallType>
+    <ValuationDate>2017-03-01T00:00:00</ValuationDate>
+    <Recall>
+        <Version>1</Version>
+        <Price>1.0</Price>
+        <AdjustedCollateralValue>1000000.0</AdjustedCollateralValue>
+        <RecallAmpId>m100020170612d01th</RecallAmpId>
+        <SecurityId>CASH</SecurityId>
+        <Quantity>1000000.0</Quantity>
+        <FXCurrency>USD</FXCurrency>
+        <FXRate>1.0</FXRate>
+        <Haircut>0.0</Haircut>
+        <SettlementDate>2017-03-03T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>1000000.0</CurrentMarketValue>
+    </Recall>
+    <BusinessState>Received</BusinessState>
+    <CallDate>2017-03-02T00:00:00</CallDate>
+    <Exposure>0.0</Exposure>
+    <AmpId>m100020170612d01tg</AmpId>
+    <CollateralValue>-1000000.0</CollateralValue>
+    <TotalCallAmount>1000000.0</TotalCallAmount>
+    <MarginAgreementAmpId>m100020170602cpeti</MarginAgreementAmpId>
+    <MarginAgreementType>CSA</MarginAgreementType>
+    <MarginAgreementShortName>a2</MarginAgreementShortName>
+</MarginCall>
+%%%
+<?xml version="1.0"?>
+<MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Version>2</Version>
+    <AgreedAmount>-18000.0</AgreedAmount>
+    <BusinessState>Agreed</BusinessState>
+    <AmpId>m100020171292vmrg3</AmpId>
+</MarginCall>
+%%%
+<?xml version="1.0"?>
+<MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Version>1</Version>
+    <Direction>Outgoing</Direction>
+    <Currency>USD</Currency>
+    <CallType>Variation</CallType>
+    <ValuationDate>2017-05-15T00:00:00</ValuationDate>
+    <AgreedAmount>9500.0</AgreedAmount>
+    <Dispute>
+        <State>Received</State>
+        <Child>true</Child>
+        <ParentAmpId>m100020171362xmg7t</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
+    </Dispute>
+    <BusinessState>Partial_Agreed</BusinessState>
+    <CallDate>2017-05-16T00:00:00</CallDate>
+    <AmpId>m100020171362xmgv5</AmpId>
+</MarginCall>
+%%%
+<?xml version="1.0"?>
+<MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Version>1</Version>
+    <Direction>Outgoing</Direction>
+    <Currency>USD</Currency>
+    <CallType>Variation</CallType>
+    <ValuationDate>2017-05-15T00:00:00</ValuationDate>
+    <AgreedAmount>9500.0</AgreedAmount>
+    <Dispute>
+        <State>Received</State>
+        <Child>true</Child>
+        <Im>0.0</Im>
+        <Mtm>9500.0</Mtm>
+        <Balance>1000000.0</Balance>
+        <ParentAmpId>m100020171362xmg7t</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
+        <DisputeReasonCode>MD</DisputeReasonCode>
+    </Dispute>
+    <BusinessState>Partial_Disputed</BusinessState>
+    <CallDate>2017-05-16T00:00:00</CallDate>
+    <AmpId>m100020171362xmgv6</AmpId>
 </MarginCall>

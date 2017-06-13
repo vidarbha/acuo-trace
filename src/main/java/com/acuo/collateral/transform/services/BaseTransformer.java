@@ -9,6 +9,8 @@ import com.tracegroup.transformer.exposedservices.StructureException;
 import com.tracegroup.transformer.exposedservices.UnrecognizedMessageException;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 @Slf4j
 public abstract class BaseTransformer<T> implements Transformer<T> {
 
@@ -39,5 +41,11 @@ public abstract class BaseTransformer<T> implements Transformer<T> {
     public Reuters getReuters()
     {
         return reuters;
+    }
+
+    @Override
+    public List<T> deserialise(byte[] value)
+    {
+        return null;
     }
 }

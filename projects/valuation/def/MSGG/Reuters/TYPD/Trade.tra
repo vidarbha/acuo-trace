@@ -1,0 +1,537 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Component Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>17/05/2017 18:33:23</Timestamp>
+        <Checksum>fd46242c</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="Trade" group="Reuters">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="status" nillable="true">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="priceStatus" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="analyticStatus" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <NamedComponent>message</NamedComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="description" nillable="true">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="assetClass" nillable="true">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="instrumentDescription" nillable="true">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="tradeDate" nillable="true">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementDate"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="startDate" nillable="true">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementDate"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="maturityDate" nillable="true">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementDate"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="portfolioName" nillable="true">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="legsOutput" nillable="true">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="ALL">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="description" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="direction" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="legType" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="notional" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="ccy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementCurrency"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="coupon" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="legId" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="projectionCurveName" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="discountCurveName" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="discoutCurveSourceId" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="indexName" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="indexTenor" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="forwardCurveSourceId" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="valuation" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="cleanMarketValueInDealCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="accruedAmountInDealCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="dirtyMarketValueInDealCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="cleanMarketValueInReportCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="accruedAmountInReportCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="dirtyMarketValueInReportCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="positionInDealCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="positionInReportCcy" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent
+                                    name="pricingAnalysis" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="ALL">
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="tradeDate" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDate"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="calculationDate" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDate"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="asOfDate" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDate"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="settlementdate" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDate"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="accrued" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="cleanPrice" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="dirtyPrice" nillable="true">
+                                    <TypeSpecification>
+
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>10/04/2017 19:07:45</Timestamp>
-        <Checksum>44c905fd</Checksum>
+        <Timestamp>24/05/2017 18:35:41</Timestamp>
+        <Checksum>2a679085</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FraLegFixed" group="Map:ImportPortfolioExcel" category="Database">
@@ -72,10 +72,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -96,10 +93,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -167,16 +161,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="SignPosition" type="option">
-                <Value>Leading</Value>
-            </Property>
-            <Property name="NegativeSign" type="string">
-                <Value>-</Value>
-            </Property>
-            <Property name="ThousandsSeparator" type="string">
-                <Value>,</Value>
-            </Property>
-            <Mapper>TextToDecimal</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -197,13 +182,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="SignPosition" type="option">
-                <Value>Leading</Value>
-            </Property>
-            <Property name="NegativeSign" type="string">
-                <Value>-</Value>
-            </Property>
-            <Mapper>TextToDecimal</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -287,10 +266,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -311,10 +287,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -322,7 +295,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <Literal>ZERO</Literal>
+                        <Literal>Term</Literal>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -337,8 +310,29 @@
             <Copy></Copy>
         </FunctionCall>
     </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG1_DAYCOUNT"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Type>FRAC</Type>
+        <Type>FRACF</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Type>product:Swap.SwapLeg</Type>

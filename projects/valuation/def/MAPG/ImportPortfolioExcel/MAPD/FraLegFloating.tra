@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>10/04/2017 19:09:14</Timestamp>
-        <Checksum>70ef0964</Checksum>
+        <Timestamp>24/05/2017 18:35:33</Timestamp>
+        <Checksum>b38dfeb7</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FraLegFloating"
@@ -73,10 +73,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -97,10 +94,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -168,16 +162,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="SignPosition" type="option">
-                <Value>Leading</Value>
-            </Property>
-            <Property name="NegativeSign" type="string">
-                <Value>-</Value>
-            </Property>
-            <Property name="ThousandsSeparator" type="string">
-                <Value>,</Value>
-            </Property>
-            <Mapper>TextToDecimal</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -252,7 +237,7 @@
                     </FirstTerm>
                     <Operator>EQ</Operator>
                     <SecondTerm>
-                        <Literal>P</Literal>
+                        <Literal>PAY</Literal>
                     </SecondTerm>
                 </Comparison>
             </Condition>
@@ -262,7 +247,7 @@
                         <Property name="Input" type="nodespec">
                             <Value>
                                 <NodeSpec>
-                                    <Literal>R</Literal>
+                                    <Literal>RECEIVE</Literal>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -284,7 +269,7 @@
                         <Property name="Input" type="nodespec">
                             <Value>
                                 <NodeSpec>
-                                    <Literal>P</Literal>
+                                    <Literal>PAY</Literal>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -362,10 +347,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -386,10 +368,7 @@
                     </NodeSpec>
                 </Value>
             </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -397,7 +376,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <Literal>ZERO</Literal>
+                        <Literal>Term</Literal>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -412,8 +391,29 @@
             <Copy></Copy>
         </FunctionCall>
     </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG1_DAYCOUNT"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Type>FRAC</Type>
+        <Type>FRACF</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Type>product:Swap.SwapLeg</Type>
