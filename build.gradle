@@ -45,6 +45,8 @@ task fatJar(type: Jar, dependsOn: ":libs:publish") {
                 'Main-Class': 'com.mkyong.DateUtils'
     }
     baseName = project.name + '-all'
+    version = ''
+    classifier = ''
     zip64 true
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
