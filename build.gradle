@@ -38,7 +38,7 @@ dependencies {
     )
 }
 
-task fatJar(type: Jar) {
+task fatJar(type: Jar, dependsOn: ":libs:publish") {
     manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
                 'Implementation-Version': version,
