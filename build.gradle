@@ -15,9 +15,10 @@ ext {
     versions += [
         common      : '0.10.0-SNAPSHOT',
         transformer : "${project.version}",
-        runtime     : '3.6.1',
-        design      : '3.6.1',
-        currencylib : '1.0.5'
+        runtime     : '3.6.3',
+        design      : '3.6.3',
+        currencylib : '1.0.5',
+        swiftlib    : '1.5'
     ]
 }
 
@@ -25,11 +26,12 @@ dependencies {
     compile (
         "com.acuo.collateral:transformer-valuations:${versions.transformer}",
         "com.acuo.collateral:transformer-margin:${versions.transformer}",
-            "com.acuo.collateral:transformer-assets:${versions.transformer}",
+        "com.acuo.collateral:transformer-assets:${versions.transformer}",
         "com.acuo.collateral:acuo-common:${versions.common}",
         "com.tracegroup.transformer:transformer-runtime-complete:${versions.runtime}",
         "com.tracegroup.transformer:transformer-designtime:${versions.design}",
         "com.tracegroup.transformer:currencylib:${versions.currencylib}",
+        "com.swift:swift2016lib:${versions.swiftlib}",
         "com.opengamma.strata:strata-basics:1.0.0"
     )
     testCompile group: 'junit', name: 'junit', version: '4.11'
