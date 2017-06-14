@@ -13,7 +13,7 @@ group = 'com.acuo.collateral'
 
 ext {
     versions += [
-        common      : '0.9.0-SNAPSHOT',
+        common      : '0.9.1',
         transformer : "${project.version}",
         runtime     : '3.6.1',
         design      : '3.6.1',
@@ -38,13 +38,15 @@ dependencies {
     )
 }
 
-task fatJar(type: Jar) {
+task fatJar(type: Jar, dependsOn: ":libs:publish") {
     manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
                 'Implementation-Version': version,
                 'Main-Class': 'com.mkyong.DateUtils'
     }
     baseName = project.name + '-all'
+    version = ''
+    classifier = ''
     zip64 true
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar

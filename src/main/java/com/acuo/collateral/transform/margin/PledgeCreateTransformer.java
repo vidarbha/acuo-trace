@@ -48,7 +48,7 @@ public class PledgeCreateTransformer<T> extends BaseMarginCallTransformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = getMarginCall().pledgeAcceptResponse(values,new String[]{});
+            Object outputs = getMarginCall().pledgeAcceptResponse(values);
 
             return Arrays.asList((T[]) outputs);
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
