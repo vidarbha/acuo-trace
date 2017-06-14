@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 12:25:28</Timestamp>
-        <Checksum>3118d476</Checksum>
+        <Timestamp>14/06/2017 18:52:35</Timestamp>
+        <Checksum>cca46923</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportOisCleared"
@@ -607,6 +607,30 @@
                         </ActionStep>
                         <ActionStep>
                             <NewOutputRepetition>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="OIS-Cleared/DataRow1[Counter1]/UTI"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="ImportError"
+                                    contextPosnSpec="Out2" pathString="ObjectId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
                                     <Property name="Input" type="nodespec">
