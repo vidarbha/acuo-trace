@@ -2,32 +2,21 @@
     <LastModification>
         <Transformer>
             <Program>External Object Import</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.1</VersionNumber>
+            <BuildNumber>16052</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 13:50:23</Timestamp>
-        <Checksum>d9b787e1</Checksum>
+        <User>hicham</User>
+        <Host>xps15</Host>
+        <Timestamp>14/06/2017 11:19:59</Timestamp>
+        <Checksum>517d7e07</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="ImportError" group="com.acuo.common.model.results">
     <TypeSpecification>
-        <TypeDefinition>
-            <ComplexContent Compositor="ALL">
+        <NamedType type="Error">
+            <ComplexTypeXsdExtension Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="LineNumber">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="TradeId">
+                    <LocalComponent name="Sheet">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -49,7 +38,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Sheet">
+                    <LocalComponent name="LineNumber">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -59,8 +48,8 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-            </ComplexContent>
-        </TypeDefinition>
+            </ComplexTypeXsdExtension>
+        </NamedType>
     </TypeSpecification>
     <FormatSpecifications/>
     <SchemaEquivalent>TYPE</SchemaEquivalent>
