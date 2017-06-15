@@ -1,17 +1,17 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>External Object Import</Program>
+            <Program>Schema Import</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 16:18:35</Timestamp>
-        <Checksum>6d843b69</Checksum>
+        <Timestamp>15/06/2017 16:02:15</Timestamp>
+        <Checksum>c8890cc6</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="Types.AgreementType" group="com.acuo.common.model.margin">
+<NamedComponentType name="AcadiaSoft.DeliveryMap.Status" group="DeliveryMap-update">
     <TypeSpecification>
         <NamedType type="xsd:string">
             <SimpleTypeRestriction></SimpleTypeRestriction>
@@ -21,9 +21,12 @@
         <Property name="enumeration" type="enumerationFacet">
             <Value>
                 <List>
-                    <Enumeration>Group</Enumeration>
-                    <Enumeration>CSA</Enumeration>
-                    <Enumeration>Regulatory_CSA</Enumeration>
+                    <Enumeration>PENDING_ACK</Enumeration>
+                    <Enumeration>PENDING_DELIVERY</Enumeration>
+                    <Enumeration>ACKNOWLEDGED</Enumeration>
+                    <Enumeration>TEMP_FAILURE</Enumeration>
+                    <Enumeration>PERM_FAILURE</Enumeration>
+                    <Enumeration>ARCHIVED</Enumeration>
                 </List>
             </Value>
         </Property>
