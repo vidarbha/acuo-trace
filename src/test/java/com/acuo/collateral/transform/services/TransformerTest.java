@@ -2,6 +2,7 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
+import com.acuo.collateral.transform.margin.DeliveryMapTransformer;
 import com.acuo.collateral.transform.margin.DisputeTransformer;
 import com.acuo.collateral.transform.margin.MarginSphereTransformer;
 import com.acuo.collateral.transform.margin.StatementItemTransformer;
@@ -140,5 +141,15 @@ public class TransformerTest {
         Transformer<TradeValuation> transformer = new TradeValuationTransformer<>(new Mapper());
         List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
         log.info("result:" + tradeValuations.toString());
+    }
+
+    @Test
+    public void testDeliveryMap() throws Exception
+    {
+        Transformer<MarginCall> transformer = new DeliveryMapTransformer(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testssss");
+        marginCall.setModifyDate(LocalDate.now());
+        log.info(transformer.serialise(marginCall, null));
     }
 }
