@@ -24,6 +24,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -149,7 +150,7 @@ public class TransformerTest {
         Transformer<MarginCall> transformer = new DeliveryMapTransformer(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testssss");
-        marginCall.setModifyDate(LocalDate.now());
+        marginCall.setModifyDate(LocalDateTime.now());
         log.info(transformer.serialise(marginCall, null));
     }
 }
