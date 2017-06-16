@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>24/05/2017 18:35:41</Timestamp>
-        <Checksum>2a679085</Checksum>
+        <Timestamp>15/06/2017 15:24:05</Timestamp>
+        <Checksum>7814d3a4</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FraLegFixed" group="Map:ImportPortfolioExcel" category="Database">
@@ -220,7 +220,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentSchedule/Adjustment/Holiday[1]"/>
+                            contextName="Output" pathString="MaturityDate/Adjustment/Holiday[1]"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -241,7 +241,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                            contextName="Output" pathString="MaturityDate/Adjustment/BusinessDayConvention"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -262,7 +262,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentSchedule/Date"/>
+                            contextName="Output" pathString="MaturityDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -283,27 +283,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="CalculationSchedule/Date"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <Literal>Term</Literal>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentSchedule/Frequency"/>
+                            contextName="Output" pathString="StartDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -335,7 +315,7 @@
         <Type>FRACF</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
-        <Type>product:Swap.SwapLeg</Type>
+        <Type>product:FRA.FRALeg</Type>
     </OutputDefinition>
     <TempVariable name="idtemp" optional="true" repeating="false">
         <Bot>String</Bot>

@@ -1,0 +1,41 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Move File</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>15/06/2017 14:15:18</Timestamp>
+        <Checksum>5c5cd9d3</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="SettleDate_leg2" group="Msg:ImportPortfolioExcel"
+    ruleSet="FWSwap_Bilateral" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Element" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>yyyy/MM/dd</Value>
+                    </Property>
+                    <Decider>IsDate</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>SettleDate_leg2</Component>
+    </InputDefinition>
+    <ExceptionMessage>SettleDate_leg2</ExceptionMessage>
+    <ErrorCode>20</ErrorCode>
+</ValidationRule>

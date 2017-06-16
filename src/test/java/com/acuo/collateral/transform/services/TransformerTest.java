@@ -149,7 +149,7 @@ public class TransformerTest {
         Transformer<MarginCall> transformer = new DeliveryMapTransformer(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testssss");
-        marginCall.setModifyDate(LocalDate.now());
+        marginCall.setModifyDate(LocalDateTime.now());
         log.info(transformer.serialise(marginCall, null));
     }
 }

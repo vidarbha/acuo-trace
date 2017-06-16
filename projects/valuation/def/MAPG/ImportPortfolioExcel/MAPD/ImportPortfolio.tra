@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>01/06/2017 11:36:00</Timestamp>
-        <Checksum>427eaa54</Checksum>
+        <Timestamp>15/06/2017 18:58:13</Timestamp>
+        <Checksum>1487bc49</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportPortfolio" group="Map:ImportPortfolioExcel">
@@ -128,6 +128,35 @@
             <MappingDefinitionInvocation>ImportIrsBilateral</MappingDefinitionInvocation>
         </FunctionCall>
     </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="FXSW" contextPosnSpec="[]" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Error" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="FXSWError" contextPosnSpec="[]" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <MappingDefinitionInvocation>ImportFXSwapBilateral</MappingDefinitionInvocation>
+        </FunctionCall>
+    </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
         <Message>PortfolioMostRecentString</Message>
     </InputDefinition>
@@ -138,7 +167,7 @@
         <Message>results:ImportError</Message>
     </OutputDefinition>
     <OutputDefinition name="FRAC" optional="true" repeating="true">
-        <Type>SwapTrade</Type>
+        <Type>FRATrade</Type>
     </OutputDefinition>
     <OutputDefinition name="FRACError" optional="true" repeating="true">
         <Message>results:ImportError</Message>
@@ -154,6 +183,12 @@
     </OutputDefinition>
     <OutputDefinition name="OISCError" optional="true" repeating="true">
         <Message>results:ImportError</Message>
+    </OutputDefinition>
+    <OutputDefinition name="FXSW" optional="true" repeating="true">
+        <Type>FXSwapTrade</Type>
+    </OutputDefinition>
+    <OutputDefinition name="FXSWError" optional="true" repeating="true">
+        <Type>results:ImportError</Type>
     </OutputDefinition>
     <TempVariable name="PortfolioMostRecent" optional="true" repeating="false">
         <Message>ImportPortfolioExcel:PortfolioMostRecent</Message>

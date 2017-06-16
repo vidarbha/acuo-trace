@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/03/2017 13:56:24</Timestamp>
-        <Checksum>92389a9a</Checksum>
+        <Timestamp>16/06/2017 16:27:31</Timestamp>
+        <Checksum>56a52d88</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="NOK" group="Reuters">
@@ -64,6 +64,15 @@
                                     name="securityCode" nillable="true">
                                     <TypeSpecification>
                                     <NamedType type="responseElementString"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="startDate">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementDate"/>
                                     </TypeSpecification>
                                     <FormatSpecifications/>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>
@@ -514,6 +523,15 @@
                                     <Child minOccurs="0" maxOccurs="1">
                                     <LocalComponent
                                     name="accruedNextDay" nillable="true">
+                                    <TypeSpecification>
+                                    <NamedType type="responseElementDecimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="realYield">
                                     <TypeSpecification>
                                     <NamedType type="responseElementDecimal"/>
                                     </TypeSpecification>
