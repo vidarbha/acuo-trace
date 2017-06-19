@@ -58,7 +58,7 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseSwapsWithClarus() throws Exception {
-        Transformer<SwapTrade> transformer = new ClarusTransformer(new Mapper());
+        Transformer<SwapTrade> transformer = new ClarusTransformer<>(new Mapper());
 
         SwapTrade trade = SwapHelper.createTrade();
 
@@ -69,7 +69,7 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseSwapsWithMarkit() throws Exception {
-        Transformer<SwapTrade> transformer = new MarkitTransformer(new Mapper());
+        Transformer<SwapTrade> transformer = new MarkitTransformer<>(new Mapper());
 
         SwapTrade trade = SwapHelper.createTrade();
 
@@ -101,11 +101,12 @@ public class TransformerTest {
 
         Assert.assertTrue(assetsList.size() > 0);
         AssetValuation valuation = assetsList.get(0);
+        assertThat(valuation).isNotNull();
     }
 
     @Test
     public void testSerialiseSwapsWithMarginsphere() throws Exception {
-        Transformer<MarginCall> transformer = new MarginSphereTransformer(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        Transformer<MarginCall> transformer = new MarginSphereTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
 
         List<MarginCall> marginCalls = transformer.deserialiseToList(received.getContent());
 
@@ -115,7 +116,11 @@ public class TransformerTest {
     @Test
     public void testStatementItemImport() throws Exception {
         Transformer<MarginCall> transformer = new StatementItemTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
-        List<MarginCall> marginCalls = transformer.deserialiseToList(statementItem.getContent());
+        String content = statementItem.getContent();
+        if (content != null) {
+            content = content.replace("\n", "\r\n");
+        }
+        List<MarginCall> marginCalls = transformer.deserialiseToList(content);
         assertThat(marginCalls).isNotEmpty();
     }
 
@@ -133,7 +138,7 @@ public class TransformerTest {
 
     @Test
     public void testPortfolio() throws Exception {
-        Transformer<SwapTrade> transformer = new PortfolioImportTransformer(new Mapper());
+        Transformer<SwapTrade> transformer = new PortfolioImportTransformer<>(new Mapper());
         transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
     }
 
@@ -147,7 +152,7 @@ public class TransformerTest {
     @Test
     public void testDeliveryMap() throws Exception
     {
-        Transformer<MarginCall> transformer = new DeliveryMapTransformer(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        Transformer<MarginCall> transformer = new DeliveryMapTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testssss");
         marginCall.setModifyDate(LocalDateTime.now());
