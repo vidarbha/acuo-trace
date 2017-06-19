@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<FXSwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Info>
+        <Portfolio>p1a</Portfolio>
+        <TradeDate>2017-06-14T00:00:00</TradeDate>
+        <TradeId>500501</TradeId>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>BILATERAL</DerivativeType>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>5005011</product:Id>
+            <product:Position>77000000.0</product:Position>
+            <product:SpotSource>MRW</product:SpotSource>
+            <product:SettleDate>
+                <model:Date>2017-06-21T00:00:00</model:Date>
+            </product:SettleDate>
+            <product:MaturityDate>
+                <model:Date>2017-06-19T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:Rate>0.97</product:Rate>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>5005012</product:Id>
+            <product:Position>-77000000.0</product:Position>
+            <product:SpotSource>MRW</product:SpotSource>
+            <product:SettleDate>
+                <model:Date>2018-06-21T00:00:00</model:Date>
+            </product:SettleDate>
+            <product:MaturityDate>
+                <model:Date>2018-06-19T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:Rate>0.9043</product:Rate>
+        </product:Leg>
+        <product:Currency1>USD</product:Currency1>
+        <product:Currency2>CHF</product:Currency2>
+    </Product>
+</FXSwapTrade>
+%%%
+<?xml version="1.0"?>
+<FXSwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Info>
+        <Portfolio>p1a</Portfolio>
+        <TradeDate>2017-06-14T00:00:00</TradeDate>
+        <TradeId>500502</TradeId>
+        <TradingAccountId>ACUOUS3014</TradingAccountId>
+        <DerivativeType>BILATERAL</DerivativeType>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>5005021</product:Id>
+            <product:Position>-6000000.0</product:Position>
+            <product:SettleDate>
+                <model:Date>2017-06-21T00:00:00</model:Date>
+            </product:SettleDate>
+            <product:MaturityDate>
+                <model:Date>2017-06-19T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:Rate>1.38</product:Rate>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>5005022</product:Id>
+            <product:Position>6000000.0</product:Position>
+            <product:SettleDate>
+                <model:Date>2018-06-21T00:00:00</model:Date>
+            </product:SettleDate>
+            <product:MaturityDate>
+                <model:Date>2018-06-19T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:Rate>1.2768</product:Rate>
+        </product:Leg>
+        <product:Currency1>USD</product:Currency1>
+        <product:Currency2>SGD</product:Currency2>
+    </Product>
+</FXSwapTrade>
+---
+<?xml version="1.0"?>
+<Context xmlns="com.acuo.collateral.transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ValueDate>2017-05-30T00:00:00</ValueDate>
+</Context>
