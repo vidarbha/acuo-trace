@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 public class MarkitTransformer<T> extends BaseTransformer<T> {
 
-    MarkitTransformer(Mapper mapper) {
+    public MarkitTransformer(Mapper mapper) {
         super(mapper);
     }
 
