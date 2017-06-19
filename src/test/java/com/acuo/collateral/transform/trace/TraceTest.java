@@ -52,7 +52,7 @@ public class TraceTest {
         Object[] trades = trace.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        String output = trace.toMarkitPvRequest(trades, context).getOutput();
+        String output = trace.toIRSMarkit(trades, context).getOutput();
         assertThat(output).isNotEmpty();
     }
 
