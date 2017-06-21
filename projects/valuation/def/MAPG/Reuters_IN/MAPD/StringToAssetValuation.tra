@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>21/06/2017 13:31:53</Timestamp>
-        <Checksum>18af86d1</Checksum>
+        <Timestamp>21/06/2017 16:56:24</Timestamp>
+        <Checksum>4f76adbe</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToAssetValuation" group="Map:Reuters_IN" category="Reuters">
@@ -635,22 +635,7 @@
                                     </NewOutputRepetition>
                                     </ActionStep>
                                 </ThenAction>
-                            </IfAction>
-                        </ActionStep>
-                        <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <CompoundCondition operator="AND">
-                                    <Condition>
-                                    <IsAbsent
-                                    TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;valuation&quot;]/JsonValue/Object/member[Name = &quot;nominalCcy&quot;]/JsonValue/Object/member[Name = &quot;FieldValue&quot;]/JsonValue/String"/>
-                                    </IsAbsent>
-                                    </Condition>
-                                    </CompoundCondition>
-                                </Condition>
-                                <ThenAction>
+                                <ElseAction>
                                     <ActionStep>
                                     <NewOutputRepetition>
                                     <ActionStep>
@@ -673,7 +658,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ObjectId"/>
+                                    contextPosnSpec="Out1" pathString="ObjectId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -681,7 +666,27 @@
                                     </FunctionCall>
                                     </ActionStep>
                                     <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+
+                                    <CompoundCondition operator="AND">
+                                    <Condition>
+
+                                    <IsAbsent
+                                    TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;valuation&quot;]/JsonValue/Object/member[Name = &quot;nominalCcy&quot;]/JsonValue/Object/member[Name = &quot;FieldValue&quot;]/JsonValue/String"/>
+                                    </IsAbsent>
+                                    </Condition>
+                                    </CompoundCondition>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -690,6 +695,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -698,7 +704,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -707,6 +713,7 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -715,6 +722,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -723,63 +731,40 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
+
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="[]"
-                                    pathString="." outputPosnSpecifier="Out2"/>
+                                    contextPosnSpec="Out1"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
-                                </ThenAction>
-                            </IfAction>
-                        </ActionStep>
-                        <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <IsAbsent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <IsAbsent
+                                    TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;valuation&quot;]/JsonValue/Object/member[Name = &quot;reportCcy&quot;]/JsonValue/Object/member[Name = &quot;FieldValue&quot;]/JsonValue/String"/>
                                     </IsAbsent>
-                                </Condition>
-                                <ThenAction>
+                                    </Condition>
+                                    <ThenAction>
                                     <ActionStep>
                                     <NewOutputRepetition>
                                     <ActionStep>
                                     <FunctionCall>
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
 
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/Name"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ObjectId"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -788,6 +773,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -796,7 +782,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -805,6 +791,7 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -813,6 +800,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -821,63 +809,40 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
+
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="[]"
-                                    pathString="." outputPosnSpecifier="Out2"/>
+                                    contextPosnSpec="Out1"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
-                                </ThenAction>
-                            </IfAction>
-                        </ActionStep>
-                        <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <IsAbsent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <IsAbsent
+                                    TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;valuation&quot;]/JsonValue/Object/member[Name = &quot;cleanMarketValueInDealCcy&quot;]/JsonValue/Object/member[Name = &quot;FieldValue&quot;]/JsonValue/Number"/>
                                     </IsAbsent>
-                                </Condition>
-                                <ThenAction>
+                                    </Condition>
+                                    <ThenAction>
                                     <ActionStep>
                                     <NewOutputRepetition>
                                     <ActionStep>
                                     <FunctionCall>
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
 
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/Name"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ObjectId"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -886,6 +851,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -894,7 +860,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -903,6 +869,7 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -911,6 +878,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -919,63 +887,40 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
+
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="[]"
-                                    pathString="." outputPosnSpecifier="Out2"/>
+                                    contextPosnSpec="Out1"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
-                                </ThenAction>
-                            </IfAction>
-                        </ActionStep>
-                        <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <IsAbsent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <IsAbsent
+                                    TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;description&quot;]/JsonValue/Object/member[Name = &quot;coupon&quot;]/JsonValue/Object/member[Name = &quot;FieldValue&quot;]/JsonValue/Number"/>
                                     </IsAbsent>
-                                </Condition>
-                                <ThenAction>
+                                    </Condition>
+                                    <ThenAction>
                                     <ActionStep>
                                     <NewOutputRepetition>
                                     <ActionStep>
                                     <FunctionCall>
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
 
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/Name"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ObjectId"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -984,6 +929,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -992,7 +938,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1001,6 +947,7 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -1009,6 +956,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -1017,63 +965,40 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
+
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="[]"
-                                    pathString="." outputPosnSpecifier="Out2"/>
+                                    contextPosnSpec="Out1"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
-                                </ThenAction>
-                            </IfAction>
-                        </ActionStep>
-                        <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <IsAbsent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <IsAbsent
+                                    TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;pricingAnalysis&quot;]/JsonValue/Object/member[Name = &quot;yield&quot;]/JsonValue/Object/member[Name = &quot;FieldValue&quot;]/JsonValue/Number"/>
                                     </IsAbsent>
-                                </Condition>
-                                <ThenAction>
+                                    </Condition>
+                                    <ThenAction>
                                     <ActionStep>
                                     <NewOutputRepetition>
                                     <ActionStep>
                                     <FunctionCall>
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
 
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/Name"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ObjectId"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -1082,6 +1007,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -1090,7 +1016,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1099,6 +1025,7 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -1107,6 +1034,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -1115,36 +1043,40 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
+
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="[]"
-                                    pathString="." outputPosnSpecifier="Out2"/>
+                                    contextPosnSpec="Out1"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
-                                </ThenAction>
-                            </IfAction>
-                        </ActionStep>
-                        <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <IsAbsent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <IsAbsent
+                                    TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;quote&quot;]/JsonValue/Object/member[Name = &quot;priceQuotationDate&quot;]/JsonValue/Object/member[Name = &quot;FieldValue&quot;]/JsonValue/String"/>
                                     </IsAbsent>
-                                </Condition>
-                                <ThenAction>
+                                    </Condition>
+                                    <ThenAction>
                                     <ActionStep>
                                     <NewOutputRepetition>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -1155,6 +1087,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -1172,6 +1105,7 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -1180,6 +1114,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -1188,7 +1123,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1197,6 +1132,7 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
+
                                     <Property
                                     name="Input" type="nodespec">
                                     <Value>
@@ -1205,6 +1141,7 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
+
                                     <Property
                                     name="Output" type="nodespec">
                                     <Value>
@@ -1213,21 +1150,32 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out2" pathString="ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
+
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
                                     contextPosnSpec="[]"
-                                    pathString="." outputPosnSpecifier="Out2"/>
+                                    pathString="." outputPosnSpecifier="Out1"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
-                                </ThenAction>
+                                </ElseAction>
                             </IfAction>
                         </ActionStep>
                     </ThenAction>
@@ -1258,50 +1206,67 @@
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
+                                    <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
                                     <FunctionCall>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;message&quot;]/JsonValue/Array/JsonValue[1]/Object/member[Name = &quot;Value&quot;]/JsonValue/String"/>
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;message&quot;]/JsonValue/Array/JsonValue[Counter2]/Object/member[Name = &quot;Value&quot;]/JsonValue/String"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1" pathString="ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
+                                    </ActionStep>
+                                    <ActionStep>
                                     <FunctionCall>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;message&quot;]/JsonValue/Array/JsonValue[1]/Object/member[Name = &quot;Type&quot;]/JsonValue/String"/>
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;message&quot;]/JsonValue/Array/JsonValue[Counter2]/Object/member[Name = &quot;Type&quot;]/JsonValue/String"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1" pathString="ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
+                                    </ActionStep>
+                                    <ScopeB specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
+                                    <RepeatLimit>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;message&quot;]/JsonValue/Array/JsonValue[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA specType="TEMP_VAR" pathString="json/Object/member[Name = &quot;portfolio&quot;]/JsonValue/Object/member[Name = &quot;customPortfolio&quot;]/JsonValue/Object/member[Name = &quot;bondOutputs&quot;]/JsonValue/Object/member[Counter1]/JsonValue/Object/member[Name = &quot;status&quot;]/JsonValue/Object/member[Name = &quot;message&quot;]/JsonValue/Array/JsonValue[]"/>
+                                    </RepeatAction>
                                 </ActionStep>
                                 <OutputScope specType="TO_DATA"
                                     contextName="Error"
