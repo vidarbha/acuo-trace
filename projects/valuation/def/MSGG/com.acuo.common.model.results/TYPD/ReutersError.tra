@@ -5,33 +5,20 @@
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>14/06/2017 18:49:38</Timestamp>
-        <Checksum>84dc6933</Checksum>
+        <User>hicham</User>
+        <Host>dev-box</Host>
+        <Timestamp>21/06/2017 09:25:55</Timestamp>
+        <Checksum>3c8cdc5</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="ReutersError" group="com.acuo.common.model.results">
     <TypeSpecification>
         <NamedType type="Error">
             <ComplexTypeXsdExtension Compositor="ALL">
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ErrorMessage">
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="ReutersMessage">
                         <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ErrorType">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
+                            <NamedType type="ReutersMessage"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>

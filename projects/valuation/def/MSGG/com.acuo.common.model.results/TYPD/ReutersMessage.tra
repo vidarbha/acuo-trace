@@ -8,15 +8,26 @@
         <User>hicham</User>
         <Host>dev-box</Host>
         <Timestamp>21/06/2017 09:25:55</Timestamp>
-        <Checksum>5398c2ab</Checksum>
+        <Checksum>60efe839</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="Error" group="com.acuo.common.model.results">
+<NamedComponentType name="ReutersMessage" group="com.acuo.common.model.results">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ObjectId">
+                    <LocalComponent name="ErrorMessage">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ErrorType">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
