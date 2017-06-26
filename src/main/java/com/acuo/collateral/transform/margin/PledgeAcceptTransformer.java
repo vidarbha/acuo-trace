@@ -3,6 +3,7 @@ package com.acuo.collateral.transform.margin;
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
 import com.acuo.collateral.transform.trace.transformer_margin.PledgeAcceptOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_margin.PledgeAcceptResponseOutputWrapper;
 import com.google.common.collect.ImmutableList;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -17,8 +18,7 @@ import java.util.List;
 public class PledgeAcceptTransformer<T> extends BaseMarginCallTransformer<T> {
 
 
-    public PledgeAcceptTransformer(MarginCall marginCall)
-    {
+    public PledgeAcceptTransformer(MarginCall marginCall) {
         super(marginCall);
     }
 
@@ -29,11 +29,10 @@ public class PledgeAcceptTransformer<T> extends BaseMarginCallTransformer<T> {
 
     @Override
     public String serialise(List<T> value, TransformerContext context) {
-        try
-        {
+        try {
             PledgeAcceptOutputWrapper pledgeCreateOutputWrapper = getMarginCall().pledgeAccept(value.toArray());
             return pledgeCreateOutputWrapper.getOutput();
-        }catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
+        } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of margin calls", value);
             log.error(msg, e);
             throw new RuntimeException(msg, e);
@@ -48,9 +47,12 @@ public class PledgeAcceptTransformer<T> extends BaseMarginCallTransformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            Object outputs = getMarginCall().pledgeAcceptResponse(values);
-
-            return Arrays.asList((T[]) outputs);
+            PledgeAcceptResponseOutputWrapper outputs = getMarginCall().pledgeAcceptResponse(values);
+            if (Arrays.stream(outputs.getOutput()).count() > 0) {
+                return Arrays.asList((T[]) outputs.getOutput());
+            } else {
+                return Arrays.asList((T[]) outputs.getMSError());
+            }
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of margin calls", values);
             log.error(msg, e);
