@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>24/05/2017 13:56:54</Timestamp>
-        <Checksum>159b9cb5</Checksum>
+        <Timestamp>15/06/2017 15:13:19</Timestamp>
+        <Checksum>ce0d7538</Checksum>
     </LastModification>
 </Prolog>
 <MessageDefinition name="PortfolioMostRecentString" group="ImportPortfolioExcel">
@@ -89,6 +89,27 @@
                                     <LocalComponent name="DataRow1">
                                     <TypeSpecification>
                                     <NamedType type="IRSB"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="FXSwap-Bilateral">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="FXSWB"/>
                                     </TypeSpecification>
                                     <FormatSpecifications/>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>

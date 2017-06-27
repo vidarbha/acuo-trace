@@ -1,0 +1,38 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Validation Rule Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>15/06/2017 13:21:40</Timestamp>
+        <Checksum>5ca85419</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="Currency1" group="Msg:ImportPortfolioExcel"
+    ruleSet="FWSwap_Bilateral" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Decider>IsCurrency</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>Currency1</Component>
+    </InputDefinition>
+    <ExceptionMessage>Currency1</ExceptionMessage>
+    <ErrorCode>11</ErrorCode>
+</ValidationRule>

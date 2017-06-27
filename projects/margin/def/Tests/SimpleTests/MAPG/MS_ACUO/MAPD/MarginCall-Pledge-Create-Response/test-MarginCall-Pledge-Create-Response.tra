@@ -1,23 +1,32 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Action: Set Expected Results to Current Output</Program>
+            <Program>Test Definition Form</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>22/02/2017 11:12:21</Timestamp>
-        <Checksum>d98179e0</Checksum>
+        <Timestamp>07/06/2017 12:15:07</Timestamp>
+        <Checksum>f4dc9e4e</Checksum>
     </LastModification>
 </Prolog>
 <MappingTestDefinition name="test-MarginCall-Pledge-Create-Response"
     testSuiteName="SimpleTests" group="Map:MS_ACUO"
-    testerReference="AdvancedTest" target="MarginCall-Pledge-Create-Response">
+    testerReference="MultipleTest" target="MarginCall-Pledge-Create-Response">
     <Property name="OutputType" type="option">
         <Value>Raw</Value>
     </Property>
     <Property name="ExpectedResults" type="testdatafile">
         <Value>expected.dat</Value>
+    </Property>
+    <Property name="MultipleTestSplitString" type="string">
+        <Value>+++</Value>
+    </Property>
+    <Property name="MessageSplitString" type="string">
+        <Value>---</Value>
+    </Property>
+    <Property name="RepeatSplitString" type="string">
+        <Value>%%%</Value>
     </Property>
 </MappingTestDefinition>

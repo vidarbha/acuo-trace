@@ -1,3 +1,6 @@
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              Test 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>1</Version>
@@ -17,45 +20,44 @@
     <Version>1</Version>
     <Direction>Incoming</Direction>
     <Currency>USD</Currency>
-    <CallType>Netted</CallType>
-    <ValuationDate>2012-06-26T00:00:00</ValuationDate>
-    <AgreedAmount>7000000.0</AgreedAmount>
-    <Dispute>
-        <Parent>false</Parent>
-        <State>Received</State>
-        <Child>true</Child>
-        <ParentAmpId>c100020121792c0xr</ParentAmpId>
-        <ParentVersion>2</ParentVersion>
-    </Dispute>
     <Recall>
         <Version>1</Version>
-        <Price>1.0</Price>
         <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <Price>1.0</Price>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
         <RecallAmpId>m100020170602cp9cd</RecallAmpId>
         <SecurityId>CHF</SecurityId>
         <Quantity>500000.0</Quantity>
         <FXCurrency>CHF</FXCurrency>
         <FXRate>1.0</FXRate>
         <Haircut>0.0</Haircut>
-        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
-        <SecurityIdType>CASH</SecurityIdType>
-        <CurrentMarketValue>500000.0</CurrentMarketValue>
     </Recall>
     <Recall>
         <Version>1</Version>
-        <Price>1.0</Price>
         <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <Price>1.0</Price>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
         <RecallAmpId>m100020170602cp9cc</RecallAmpId>
         <SecurityId>USD</SecurityId>
         <Quantity>500000.0</Quantity>
         <FXCurrency>USD</FXCurrency>
         <FXRate>1.0</FXRate>
         <Haircut>0.0</Haircut>
-        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
-        <SecurityIdType>CASH</SecurityIdType>
-        <CurrentMarketValue>500000.0</CurrentMarketValue>
     </Recall>
     <BusinessState>Partial_Agreed</BusinessState>
+    <CallType>Netted</CallType>
+    <ValuationDate>2012-06-26T00:00:00</ValuationDate>
+    <AgreedAmount>7000000.0</AgreedAmount>
+    <Dispute>
+        <Parent>false</Parent>
+        <Child>true</Child>
+        <ParentAmpId>c100020121792c0xr</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
+    </Dispute>
     <AmpId>c100020121792c0ya</AmpId>
 </MarginCall>
 %%%
@@ -64,61 +66,72 @@
     <Version>1</Version>
     <Direction>Incoming</Direction>
     <Currency>USD</Currency>
-    <CallType>Netted</CallType>
-    <ValuationDate>2012-06-26T00:00:00</ValuationDate>
-    <AgreedAmount>7000000.0</AgreedAmount>
-    <Dispute>
-        <Parent>false</Parent>
-        <State>Received</State>
-        <Child>true</Child>
-        <Im>0.0</Im>
-        <Mtm>12000000.0</Mtm>
-        <Comments>Dsiagree with exposure value</Comments>
-        <Balance>5000000.0</Balance>
-        <ParentAmpId>c100020121792c0xr</ParentAmpId>
-        <ParentVersion>2</ParentVersion>
-        <DisputeReasonCode>PD</DisputeReasonCode>
-    </Dispute>
     <Recall>
         <Version>1</Version>
-        <Price>1.0</Price>
         <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <Price>1.0</Price>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
         <RecallAmpId>m100020170602cp9cd</RecallAmpId>
         <SecurityId>CHF</SecurityId>
         <Quantity>500000.0</Quantity>
         <FXCurrency>CHF</FXCurrency>
         <FXRate>1.0</FXRate>
         <Haircut>0.0</Haircut>
-        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
-        <SecurityIdType>CASH</SecurityIdType>
-        <CurrentMarketValue>500000.0</CurrentMarketValue>
     </Recall>
     <Recall>
         <Version>1</Version>
-        <Price>1.0</Price>
         <AdjustedCollateralValue>500000.0</AdjustedCollateralValue>
+        <Price>1.0</Price>
+        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>500000.0</CurrentMarketValue>
         <RecallAmpId>m100020170602cp9cc</RecallAmpId>
         <SecurityId>USD</SecurityId>
         <Quantity>500000.0</Quantity>
         <FXCurrency>USD</FXCurrency>
         <FXRate>1.0</FXRate>
         <Haircut>0.0</Haircut>
-        <SettlementDate>2017-03-02T00:00:00</SettlementDate>
-        <SecurityIdType>CASH</SecurityIdType>
-        <CurrentMarketValue>500000.0</CurrentMarketValue>
     </Recall>
     <BusinessState>Partial_Disputed</BusinessState>
+    <CallType>Netted</CallType>
+    <ValuationDate>2012-06-26T00:00:00</ValuationDate>
+    <AgreedAmount>7000000.0</AgreedAmount>
+    <Dispute>
+        <Parent>false</Parent>
+        <Child>true</Child>
+        <Mtm>12000000.0</Mtm>
+        <Im>0.0</Im>
+        <DisputeReasonCode>PD</DisputeReasonCode>
+        <Comments>Dsiagree with exposure value</Comments>
+        <Balance>5000000.0</Balance>
+        <ParentAmpId>c100020121792c0xr</ParentAmpId>
+        <ParentVersion>2</ParentVersion>
+    </Dispute>
     <AmpId>c100020121792c0yb</AmpId>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Version>2</Version>
+    <BusinessState>Partial</BusinessState>
     <Dispute>
         <Parent>true</Parent>
-        <State>Received</State>
         <Child>false</Child>
     </Dispute>
-    <BusinessState>Partial</BusinessState>
     <AmpId>c100020121792c0xr</AmpId>
 </MarginCall>
+---
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              Test 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---
+<?xml version="1.0"?>
+<MSError xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <StatusCode>400</StatusCode>
+    <ErrorCode>5002</ErrorCode>
+    <ErrorMessage>XML Validation exception occured at line [6], column [23], with error message [cvc-complex-type.2.4.a: Invalid content was found starting with element 'tns:callDate'. One of '{"create.margincall.api.acadiasoft.com":exposure, "create.margincall.api.acadiasoft.com":finalTransferAmount, "create.margincall.api.acadiasoft.com":initialMarginAmount, "create.margincall.api.acadiasoft.com":minimumTransferAmount, "create.margincall.api.acadiasoft.com":netRequiredAmount, "create.margincall.api.acadiasoft.com":pendingCollateral, "create.margincall.api.acadiasoft.com":roundingAmount, "create.margincall.api.acadiasoft.com":threshold, "create.margincall.api.acadiasoft.com":valuationDate, "create.margincall.api.acadiasoft.com":externalReference, "create.margincall.api.acadiasoft.com":marginAgreementAmpId, "create.margincall.api.acadiasoft.com":marginAgreementShortName}' is expected.]</ErrorMessage>
+    <HttpStatusDescription>Bad Request</HttpStatusDescription>
+    <ErrorDescription>JAXB Unmarshaling Error</ErrorDescription>
+</MSError>

@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>31/05/2017 15:58:02</Timestamp>
-        <Checksum>9db5873d</Checksum>
+        <Timestamp>08/06/2017 12:14:02</Timestamp>
+        <Checksum>1082925c</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="newReadJson" group="Msg:CLARUS_IN" category="Clarus">
@@ -231,6 +231,41 @@
                 <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[#]"/>
             </RepeatLimit>
             <ScopeA specType="TEMP_VAR" pathString="json/Object/member[Name = 'results']/JsonValue/Object/member[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <NewOutputRepetition>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="json/Object/member[Name = 'messages']/JsonValue/Array/JsonValue[Counter1]/String"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="messages[Out1]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <OutputScope specType="TO_DATA" contextName="Output"
+                        pathString="messages[]" outputPosnSpecifier="Out1"/>
+                </NewOutputRepetition>
+            </ActionStep>
+            <RepeatLimit>
+                <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[Name = 'messages']/JsonValue/Array/JsonValue[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="TEMP_VAR" pathString="json/Object/member[Name = 'messages']/JsonValue/Array/JsonValue[]"/>
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">

@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/05/2017 12:49:07</Timestamp>
-        <Checksum>eb03519c</Checksum>
+        <Timestamp>14/06/2017 18:58:12</Timestamp>
+        <Checksum>518f9fdd</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ReutersAssets_to_ACUO" group="Map:Reuters_IN">
@@ -123,7 +123,7 @@
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/valuation/cleanMarketValueInReportCcy/FieldValue"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersResponse/portfolio/customPortfolio/bondOutputs/OK[Counter1]/valuation/cleanMarketValueInDealCcy/FieldValue"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -476,7 +476,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1" pathString="AssetId"/>
+                                    contextPosnSpec="Out1" pathString="ObjectId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -555,7 +555,7 @@
         <Message>AssetValuation</Message>
     </OutputDefinition>
     <OutputDefinition name="Error" optional="true" repeating="true">
-        <Message>results:Error</Message>
+        <Message>results:ReutersError</Message>
     </OutputDefinition>
     <TempVariable name="ReutersResponse" optional="true" repeating="false">
         <Message>Reuters:ReutersResponseFinal</Message>

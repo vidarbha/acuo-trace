@@ -1,23 +1,32 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Test Definition Form</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/04/2017 11:09:19</Timestamp>
-        <Checksum>949dfd38</Checksum>
+        <Timestamp>07/06/2017 11:50:48</Timestamp>
+        <Checksum>eb65b076</Checksum>
     </LastModification>
 </Prolog>
 <MappingTestDefinition name="test-MarginCall-Dispute-Response"
     testSuiteName="SimpleTests" group="Map:MS_ACUO"
-    testerReference="AdvancedTest" target="MarginCall-Dispute-Response">
+    testerReference="MultipleTest" target="MarginCall-Dispute-Response">
     <Property name="OutputType" type="option">
         <Value>Raw</Value>
     </Property>
     <Property name="ExpectedResults" type="testdatafile">
         <Value>expected.dat</Value>
+    </Property>
+    <Property name="MultipleTestSplitString" type="string">
+        <Value>+++</Value>
+    </Property>
+    <Property name="MessageSplitString" type="string">
+        <Value>---</Value>
+    </Property>
+    <Property name="RepeatSplitString" type="string">
+        <Value>%%%</Value>
     </Property>
 </MappingTestDefinition>

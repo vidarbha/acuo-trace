@@ -1,6 +1,5 @@
 package com.acuo.collateral.transform.margin;
 
-import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
 import com.acuo.collateral.transform.trace.transformer_margin.PledgeCreateOutputWrapper;
