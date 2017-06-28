@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 15:24:25</Timestamp>
-        <Checksum>3d1a80c4</Checksum>
+        <Timestamp>28/06/2017 18:34:39</Timestamp>
+        <Checksum>c0b9046a</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportFraCleared"
@@ -118,6 +118,38 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/FRA_FIXING_DATE"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Ruleset" type="ruleset">
+                        <Value>FRA-Cleared</Value>
+                    </Property>
+                    <Mapper>InvokeValidationRuleset</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Node" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/FIXEDLEG_PAYATSTART"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Ruleset" type="ruleset">
+                        <Value>FRA-Cleared</Value>
+                    </Property>
+                    <Mapper>InvokeValidationRuleset</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Node" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/FLOATLEG_PAYATSTART"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -606,6 +638,29 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="Info/DerivativeType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[1]/DiscountMethod"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/DiscountMethod"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>

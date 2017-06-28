@@ -71,3 +71,74 @@
 <Context xmlns="com.acuo.collateral.transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <ValueDate>2016-08-11T00:00:00</ValueDate>
 </Context>
+---
+<?xml version="1.0"?>
+<FRATrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Type>FRA</Type>
+    <Info>
+        <DerivativeType>Cleared</DerivativeType>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <ClearedTradeDate>2015-12-03T00:00:00</ClearedTradeDate>
+        <TradeId>455137</TradeId>
+        <TradeDate>2016-02-12T00:00:00</TradeDate>
+        <MaturityDate>2017-08-12T00:00:00</MaturityDate>
+        <Portfolio>p31</Portfolio>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>4551371</product:Id>
+            <product:Type>FIXED</product:Type>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>35000000.0</product:Notional>
+            <product:FixingDate>
+                <model:Date>2018-08-13T00:00:00</model:Date>
+            </product:FixingDate>
+            <product:Rate>0.25</product:Rate>
+            <product:Currency>GBP</product:Currency>
+            <product:PaymentDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>GBLO</model:Holiday>
+                </model:Adjustment>
+            </product:PaymentDate>
+            <product:PayAtStart>true</product:PayAtStart>
+            <product:StartDate>
+                <model:Date>2018-08-13T00:00:00</model:Date>
+            </product:StartDate>
+            <product:MaturityDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+            </product:MaturityDate>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>4551372</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:FloatingRateName>GBP-LIBOR-BBA</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Tenor>6M</product:Tenor>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>35000000.0</product:Notional>
+            <product:Currency>GBP</product:Currency>
+            <product:PaymentDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>GBLO</model:Holiday>
+                </model:Adjustment>
+            </product:PaymentDate>
+            <product:PayAtStart>true</product:PayAtStart>
+            <product:StartDate>
+                <model:Date>2018-08-13T00:00:00</model:Date>
+            </product:StartDate>
+            <product:MaturityDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+            </product:MaturityDate>
+        </product:Leg>
+    </Product>
+</FRATrade>
