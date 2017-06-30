@@ -1,8 +1,8 @@
 package com.acuo.collateral.transform.margin;
 
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.trace.transformer_margin.DisputeCallOutputWrapper;
-import com.acuo.collateral.transform.trace.transformer_margin.DisputeResponseOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_margin.CreateCallOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_margin.CreateCallReponseOutputWrapper;
 import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
 import com.google.common.collect.ImmutableList;
 import com.tracegroup.transformer.exposedservices.MomException;
@@ -15,10 +15,9 @@ import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-public class DisputeTransformer<T> extends BaseMarginCallTransformer<T> {
+public class CreateTransformer<T> extends BaseMarginCallTransformer<T> {
 
-
-    public DisputeTransformer(MarginCall marginCall) {
+    public CreateTransformer(MarginCall marginCall) {
         super(marginCall);
     }
 
@@ -30,8 +29,8 @@ public class DisputeTransformer<T> extends BaseMarginCallTransformer<T> {
     @Override
     public String serialise(List<T> value, TransformerContext context) {
         try {
-            DisputeCallOutputWrapper disputeCallOutputWrapper = getMarginCall().disputeCall(value.toArray());
-            return disputeCallOutputWrapper.getOutput();
+            CreateCallOutputWrapper outputWrapper = getMarginCall().createCall(value.toArray());
+            return outputWrapper.getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of margin calls", value);
             log.error(msg, e);
@@ -47,7 +46,7 @@ public class DisputeTransformer<T> extends BaseMarginCallTransformer<T> {
     @Override
     public List<T> deserialiseToList(String values) {
         try {
-            DisputeResponseOutputWrapper outputs = getMarginCall().disputeResponse(values);
+            CreateCallReponseOutputWrapper outputs = getMarginCall().createCallReponse(values);
             if (Arrays.stream(outputs.getOutput()).count() > 0) {
                 return Arrays.asList((T[]) outputs.getOutput());
             } else {
