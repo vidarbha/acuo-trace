@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>28/06/2017 16:46:56</Timestamp>
-        <Checksum>954da5bd</Checksum>
+        <Timestamp>15/06/2017 15:22:58</Timestamp>
+        <Checksum>4db65d32</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FraLegFloating"
@@ -18,7 +18,8 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <Literal>FLOAT</Literal>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG1_TYPE"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -300,7 +301,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentDate/Adjustment/Holiday[1]"/>
+                            contextName="Output" pathString="MaturityDate/Adjustment/Holiday[1]"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -321,7 +322,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentDate/Adjustment/BusinessDayConvention"/>
+                            contextName="Output" pathString="MaturityDate/Adjustment/BusinessDayConvention"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -342,7 +343,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentDate/Date"/>
+                            contextName="Output" pathString="MaturityDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -354,8 +355,8 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="FixingDate/Date"/>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="FRA_FIXING_DATE"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -385,27 +386,6 @@
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
                             contextName="Output" pathString="Daycount"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="FLOATLEG_PAYATSTART"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PayAtStart"/>
                     </NodeSpec>
                 </Value>
             </Property>
