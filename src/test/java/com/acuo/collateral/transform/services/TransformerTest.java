@@ -158,4 +158,19 @@ public class TransformerTest {
         marginCall.setModifyDate(LocalDateTime.now());
         log.info(transformer.serialise(marginCall, null));
     }
+
+    @Test
+    public void testSerialiseSettlementDate() throws Exception {
+        Transformer<Assets> transformer = new SettlementDateTransformer<>();
+
+        Assets assets = new Assets();
+        assets.setAssetId("1231");
+        assets.setAvailableQuantities(11);
+        assets.setCurrency(Currency.USD);
+        assets.setFitchRating("1");
+
+        String json = transformer.serialise(ImmutableList.of(assets), context);
+        log.info(json);
+        assertThat(json).isNotEmpty();
+    }
 }
