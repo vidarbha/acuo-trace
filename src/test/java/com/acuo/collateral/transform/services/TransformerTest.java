@@ -2,10 +2,7 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.margin.DeliveryMapTransformer;
-import com.acuo.collateral.transform.margin.DisputeTransformer;
-import com.acuo.collateral.transform.margin.MarginSphereTransformer;
-import com.acuo.collateral.transform.margin.StatementItemTransformer;
+import com.acuo.collateral.transform.margin.*;
 import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
 import com.acuo.common.model.assets.Assets;
 import com.acuo.common.model.margin.MarginCall;
@@ -18,6 +15,7 @@ import com.google.common.collect.ImmutableList;
 import com.opengamma.strata.basics.currency.Currency;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.eclipse.persistence.annotations.TenantTableDiscriminator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -172,5 +170,14 @@ public class TransformerTest {
         String json = transformer.serialise(ImmutableList.of(assets), context);
         log.info(json);
         assertThat(json).isNotEmpty();
+    }
+
+    @Test
+    public void testAgree() throws Exception
+    {
+        Transformer<MarginCall> transformer = new AgreeTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        log.info(transformer.serialise(marginCall, null));
     }
 }
