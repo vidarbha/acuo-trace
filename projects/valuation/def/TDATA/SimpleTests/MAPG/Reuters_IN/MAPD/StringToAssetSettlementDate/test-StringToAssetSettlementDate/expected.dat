@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<AssetSettlementDate xmlns:margin="com.acuo.common.model.margin"
+    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <AssetId>JP1023561F93</AssetId>
+    <SettlementDate>2017-06-05T00:00:00</SettlementDate>
+</AssetSettlementDate>
+---
+<?xml version="1.0"?>
+<ReutersError xmlns:margin="com.acuo.common.model.margin"
+    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ObjectId>US912796HW25</ObjectId>
+    <ReutersMessage>
+        <ErrorMessage>Functional error : Bond is matured : TradeDate='01/06/2017' , MaturityDate='09/06/2016'</ErrorMessage>
+        <ErrorType>Error</ErrorType>
+    </ReutersMessage>
+    <ReutersMessage>
+        <ErrorMessage>This is a test : Bond is matured : TradeDate='01/06/2017' , MaturityDate='09/06/2016'</ErrorMessage>
+        <ErrorType>Additional Error for testing purposes</ErrorType>
+    </ReutersMessage>
+</ReutersError>
+%%%
+<?xml version="1.0"?>
+<ReutersError xmlns:margin="com.acuo.common.model.margin"
+    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ObjectId>FR0010482547</ObjectId>
+    <ReutersMessage>
+        <ErrorMessage>SettlementDate is missing</ErrorMessage>
+        <ErrorType>FieldMissing</ErrorType>
+    </ReutersMessage>
+</ReutersError>
