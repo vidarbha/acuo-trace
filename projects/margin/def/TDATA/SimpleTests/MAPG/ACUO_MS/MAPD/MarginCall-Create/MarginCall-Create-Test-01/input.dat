@@ -1,54 +1,126 @@
 <?xml version="1.0"?>
-<MarginCall xmlns="com.acuo.common.model.margin"
-    xmlns:model="com.acuo.common.model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <PledgeFxRates/>
+<MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Id>A</Id>
+    <Comment>A</Comment>
+    <Side>A</Side>
+    <Version>1</Version>
+    <Threshold>1.0</Threshold>
     <Currency>GBP</Currency>
+    <Direction>A</Direction>
+    <Role>A</Role>
+    <ExpiryDate>2029-03-24T02:50:24.593</ExpiryDate>
+    <AmpId>A</AmpId>
+    <Child>true</Child>
+    <Recall>
+        <FXRate>1.0</FXRate>
+        <FXCurrency>USD</FXCurrency>
+        <SecurityId>CASH</SecurityId>
+        <RecallAmpId>m100020170552bt0ra</RecallAmpId>
+        <Version>1</Version>
+        <CallAmpId>A</CallAmpId>
+        <Haircut>0.0</Haircut>
+        <Quantity>100000.0</Quantity>
+        <DeliveryType>Deliver</DeliveryType>
+        <AdjustedCollateralValue>100000.0</AdjustedCollateralValue>
+        <SettlementDate>2017-02-03T10:00:00.000</SettlementDate>
+        <ExternalUsername>A</ExternalUsername>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>100000.0</CurrentMarketValue>
+        <RejectReasonCode>1</RejectReasonCode>
+        <Price>1</Price>
+    </Recall>
+    <Recall>
+        <FXRate>1.0</FXRate>
+        <FXCurrency>USD</FXCurrency>
+        <SecurityId>CASH</SecurityId>
+        <RecallAmpId>m100020170552bt0ra</RecallAmpId>
+        <Haircut>0.0</Haircut>
+        <Quantity>100000.0</Quantity>
+        <DeliveryType>Deliver</DeliveryType>
+        <AdjustedCollateralValue>100000.0</AdjustedCollateralValue>
+        <SettlementDate>2017-02-03T10:00:00.000</SettlementDate>
+        <SecurityIdType>CASH</SecurityIdType>
+        <CurrentMarketValue>100000.0</CurrentMarketValue>
+        <Price>1</Price>
+    </Recall>
+    <Pledge>
+        <FXRate>1.0</FXRate>
+        <FXCurrency>PHP</FXCurrency>
+        <SecurityId>A</SecurityId>
+        <Version>1</Version>
+        <CallAmpId>A</CallAmpId>
+        <Haircut>1.0</Haircut>
+        <Quantity>1.0</Quantity>
+        <DeliveryType>A</DeliveryType>
+        <PledgeAmpId>A</PledgeAmpId>
+        <AdjustedCollateralValue>1.0</AdjustedCollateralValue>
+        <SettlementDate>1984-02-01T14:21:37.341</SettlementDate>
+        <ExternalUsername>A</ExternalUsername>
+        <SecurityIdType>SEDOL</SecurityIdType>
+        <CurrentMarketValue>1.0</CurrentMarketValue>
+        <RejectReasonCode>1</RejectReasonCode>
+        <Price>1.0</Price>
+    </Pledge>
+    <BusinessState>Dispute_Cancelled</BusinessState>
     <CallDate>2004-07-03T13:33:08.668</CallDate>
     <DeliverAmount>1.0</DeliverAmount>
     <Exposure>250000.0</Exposure>
     <ReturnAmount>0.0</ReturnAmount>
     <CallType>Variation</CallType>
+    <MarginType>ProductCashFlow</MarginType>
     <ValuationDate>2008-12-22T11:49:33.145</ValuationDate>
+    <ModifyDate>1983-03-22T17:14:06.572</ModifyDate>
+    <PledgeFxRates/>
+    <AgreedAmount>1.0</AgreedAmount>
+    <StatementId>A</StatementId>
+    <UpfrontFee>1.0</UpfrontFee>
+    <ClearingFee>1.0</ClearingFee>
+    <BrokerFee>1.0</BrokerFee>
+    <Dispute>
+        <Parent>true</Parent>
+        <State>A</State>
+        <Child>true</Child>
+        <Comments>A</Comments>
+        <Balance>1.0</Balance>
+        <ParentAmpId>A</ParentAmpId>
+        <ParentVersion>1</ParentVersion>
+        <AgreedAmount>1.0</AgreedAmount>
+        <DisputeReasonCode>OTH</DisputeReasonCode>
+        <DisputedAmount>1.0</DisputedAmount>
+        <MsId>A</MsId>
+        <Im>1.0</Im>
+        <Mtm>1.0</Mtm>
+    </Dispute>
+    <ReturnMinimumTransferAmount>1.0</ReturnMinimumTransferAmount>
+    <DeliverMinimumTransferAmount>1.0</DeliverMinimumTransferAmount>
+    <MarginAgreementShortName>XYABREG05-VM</MarginAgreementShortName>
+    <LocalCounterpartyLabel>XY Growth</LocalCounterpartyLabel>
+    <CancelReasonCode>1</CancelReasonCode>
     <CollateralValue>177000.0</CollateralValue>
+    <CallDateCalculated>true</CallDateCalculated>
     <PendingCollateral>0.0</PendingCollateral>
     <RoundingAmount>5000.0</RoundingAmount>
+    <RoundingMethod>A</RoundingMethod>
+    <DeliverRoundingAmount>1.0</DeliverRoundingAmount>
+    <DeliverRoundingMethod>A</DeliverRoundingMethod>
+    <ReturnRoundingAmount>1.0</ReturnRoundingAmount>
+    <ReturnRoundingMethod>A</ReturnRoundingMethod>
+    <ThresholdTreatment>A</ThresholdTreatment>
     <TotalCallAmount>75000.0</TotalCallAmount>
     <MinimumTransferAmount>20000.0</MinimumTransferAmount>
     <SettlementDate>2006-07-07T18:25:54.559</SettlementDate>
+    <ExternalReference>A</ExternalReference>
     <MarginAgreementAmpId>m100020170329rek5k</MarginAgreementAmpId>
-    <MarginAgreementShortName>XYABREG05-VM</MarginAgreementShortName>
     <ExternalUsername>Org Admin</ExternalUsername>
-    <LocalCounterpartyLabel>XY Growth</LocalCounterpartyLabel>
     <MarginAgreementType>CSA</MarginAgreementType>
-    <Pledge></Pledge>
-    <Recall>
-        <AdjustedCollateralValue>100000.0</AdjustedCollateralValue>
-        <SecurityIdType>CASH</SecurityIdType>
-        <CurrentMarketValue>100000.0</CurrentMarketValue>
-        <RecallAmpId>m100020170552bt0ra</RecallAmpId>
-        <SecurityId>CASH</SecurityId>
-        <DeliveryType>Deliver</DeliveryType>
-        <Quantity>100000.0</Quantity>
-        <FXCurrency>USD</FXCurrency>
-        <FXRate>1.0</FXRate>
-        <Haircut>0.0</Haircut>    
-        <SettlementDate>2017-02-03T10:00:00.000</SettlementDate>
-        <Price>1</Price>
-    </Recall>
-    <Recall>
-        <AdjustedCollateralValue>100000.0</AdjustedCollateralValue>
-        <SecurityIdType>CASH</SecurityIdType>
-        <CurrentMarketValue>100000.0</CurrentMarketValue>
-        <RecallAmpId>m100020170552bt0ra</RecallAmpId>
-        <SecurityId>CASH</SecurityId>
-        <DeliveryType>Deliver</DeliveryType>
-        <Quantity>100000.0</Quantity>
-        <FXCurrency>USD</FXCurrency>
-        <FXRate>1.0</FXRate>
-        <Haircut>0.0</Haircut>    
-        <SettlementDate>2017-02-03T10:00:00.000</SettlementDate>
-        <Price>1</Price>
-    </Recall>
+    <TotalCouponPayment>1.0</TotalCouponPayment>
+    <PremiumPayment>1.0</PremiumPayment>
+    <CDSCreditEvent>1.0</CDSCreditEvent>
+    <NDFCashSettlement>1.0</NDFCashSettlement>
+    <InitialBalanceCash>1.0</InitialBalanceCash>
+    <InitialBalanceNonCash>1.0</InitialBalanceNonCash>
+    <NotificationTime>A</NotificationTime>
+    <NetRequiredAmount>1.0</NetRequiredAmount>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
