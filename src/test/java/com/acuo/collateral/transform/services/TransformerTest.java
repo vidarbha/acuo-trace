@@ -180,4 +180,14 @@ public class TransformerTest {
         marginCall.setAmpId("testss");
         log.info(transformer.serialise(marginCall, null));
     }
+
+    @Test
+    public void testCreate() throws Exception
+    {
+        Transformer<MarginCall> transformer = new CreateTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setRoundingAmount(111);
+        log.info(transformer.serialise(marginCall, null));
+    }
 }
