@@ -2,18 +2,16 @@
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Id>A</Id>
     <Comment>A</Comment>
-    <Side>A</Side>
-    <Version>1</Version>
     <Threshold>1.0</Threshold>
+    <Version>1</Version>
+    <Side>A</Side>
+    <ExpiryDate>2044-02-15T03:51:55.149</ExpiryDate>
     <Currency>ESP</Currency>
     <Direction>A</Direction>
     <Role>A</Role>
-    <ExpiryDate>2044-02-15T03:51:55.149</ExpiryDate>
-    <AmpId>A</AmpId>
-    <Child>true</Child>
-    <CancelReasonCode>1</CancelReasonCode>
-    <CancelReasonCode>2</CancelReasonCode>
-    <CancelReasonCode>3</CancelReasonCode>
+    <CancelReasonCode>AD</CancelReasonCode>
+    <CancelReasonCode>CD</CancelReasonCode>
+    <CancelReasonCode>TWC</CancelReasonCode>
     <CancelComments>A</CancelComments>
     <CollateralValue>1.0</CollateralValue>
     <CallDateCalculated>true</CallDateCalculated>
@@ -42,11 +40,12 @@
     <NetRequiredAmount>1.0</NetRequiredAmount>
     <Recall>
         <Version>1</Version>
+        <SecurityIdType>CUSIP</SecurityIdType>
+        <RejectReasonCode>1</RejectReasonCode>
+        <CurrentMarketValue>1.0</CurrentMarketValue>
         <SettlementDate>2023-07-22T20:59:38.932</SettlementDate>
         <ExternalUsername>A</ExternalUsername>
-        <SecurityIdType>CUSIP</SecurityIdType>
-        <CurrentMarketValue>1.0</CurrentMarketValue>
-        <RejectReasonCode>1</RejectReasonCode>
+        <Price>1.0</Price>
         <CallAmpId>A</CallAmpId>
         <RecallAmpId>A</RecallAmpId>
         <SecurityId>A</SecurityId>
@@ -56,15 +55,15 @@
         <FXRate>1.0</FXRate>
         <Haircut>1.0</Haircut>
         <AdjustedCollateralValue>1.0</AdjustedCollateralValue>
-        <Price>1.0</Price>
     </Recall>
     <Pledge>
         <Version>1</Version>
+        <SecurityIdType>CUSIP</SecurityIdType>
+        <RejectReasonCode>1</RejectReasonCode>
+        <CurrentMarketValue>1.0</CurrentMarketValue>
         <SettlementDate>1986-03-17T16:03:53.946</SettlementDate>
         <ExternalUsername>A</ExternalUsername>
-        <SecurityIdType>CUSIP</SecurityIdType>
-        <CurrentMarketValue>1.0</CurrentMarketValue>
-        <RejectReasonCode>1</RejectReasonCode>
+        <Price>1.0</Price>
         <CallAmpId>A</CallAmpId>
         <SecurityId>A</SecurityId>
         <DeliveryType>A</DeliveryType>
@@ -74,7 +73,6 @@
         <Haircut>1.0</Haircut>
         <PledgeAmpId>A</PledgeAmpId>
         <AdjustedCollateralValue>1.0</AdjustedCollateralValue>
-        <Price>1.0</Price>
     </Pledge>
     <BusinessState>Agree_Cancelled</BusinessState>
     <CallDate>2020-10-18T20:17:09.118</CallDate>
@@ -96,39 +94,39 @@
         <Parent>true</Parent>
         <State>A</State>
         <Child>true</Child>
+        <Balance>1.0</Balance>
+        <ParentVersion>1</ParentVersion>
+        <ParentAmpId>A</ParentAmpId>
+        <Comments>A</Comments>
         <DisputeReasonCode>BTL</DisputeReasonCode>
         <DisputedAmount>1.0</DisputedAmount>
-        <AgreedAmount>1.0</AgreedAmount>
-        <Comments>A</Comments>
-        <Balance>1.0</Balance>
-        <ParentAmpId>A</ParentAmpId>
-        <ParentVersion>1</ParentVersion>
         <MsId>A</MsId>
         <Mtm>1.0</Mtm>
         <Im>1.0</Im>
+        <AgreedAmount>1.0</AgreedAmount>
     </Dispute>
-    <MarginAgreementShortName>A</MarginAgreementShortName>
     <ReturnMinimumTransferAmount>1.0</ReturnMinimumTransferAmount>
     <DeliverMinimumTransferAmount>1.0</DeliverMinimumTransferAmount>
+    <MarginAgreementShortName>A</MarginAgreementShortName>
     <LocalCounterpartyLabel>A</LocalCounterpartyLabel>
+    <AmpId>A</AmpId>
+    <Child>true</Child>
 </MarginCall>
 %%%
 <?xml version="1.0"?>
 <MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Id>A</Id>
     <Comment>A</Comment>
-    <Side>A</Side>
-    <Version>1</Version>
     <Threshold>1.0</Threshold>
+    <Version>1</Version>
+    <Side>A</Side>
+    <ExpiryDate>2018-06-30T21:29:39.144</ExpiryDate>
     <Currency>VAL</Currency>
     <Direction>A</Direction>
     <Role>A</Role>
-    <ExpiryDate>2018-06-30T21:29:39.144</ExpiryDate>
-    <AmpId>A</AmpId>
-    <Child>true</Child>
-    <CancelReasonCode>4</CancelReasonCode>
-    <CancelReasonCode>5</CancelReasonCode>
-    <CancelReasonCode>6</CancelReasonCode>
+    <CancelReasonCode>PD</CancelReasonCode>
+    <CancelReasonCode>CAD</CancelReasonCode>
+    <CancelReasonCode>BTL</CancelReasonCode>
     <CancelComments>A</CancelComments>
     <CollateralValue>1.0</CollateralValue>
     <CallDateCalculated>true</CallDateCalculated>
@@ -157,11 +155,12 @@
     <NetRequiredAmount>1.0</NetRequiredAmount>
     <Recall>
         <Version>1</Version>
+        <SecurityIdType>CASH</SecurityIdType>
+        <RejectReasonCode>1</RejectReasonCode>
+        <CurrentMarketValue>1.0</CurrentMarketValue>
         <SettlementDate>2039-03-08T08:12:07.832</SettlementDate>
         <ExternalUsername>A</ExternalUsername>
-        <SecurityIdType>CASH</SecurityIdType>
-        <CurrentMarketValue>1.0</CurrentMarketValue>
-        <RejectReasonCode>1</RejectReasonCode>
+        <Price>1.0</Price>
         <CallAmpId>A</CallAmpId>
         <RecallAmpId>A</RecallAmpId>
         <SecurityId>A</SecurityId>
@@ -171,15 +170,15 @@
         <FXRate>1.0</FXRate>
         <Haircut>1.0</Haircut>
         <AdjustedCollateralValue>1.0</AdjustedCollateralValue>
-        <Price>1.0</Price>
     </Recall>
     <Pledge>
         <Version>1</Version>
+        <SecurityIdType>ISIN</SecurityIdType>
+        <RejectReasonCode>1</RejectReasonCode>
+        <CurrentMarketValue>1.0</CurrentMarketValue>
         <SettlementDate>1993-12-05T22:10:00.047</SettlementDate>
         <ExternalUsername>A</ExternalUsername>
-        <SecurityIdType>ISIN</SecurityIdType>
-        <CurrentMarketValue>1.0</CurrentMarketValue>
-        <RejectReasonCode>1</RejectReasonCode>
+        <Price>1.0</Price>
         <CallAmpId>A</CallAmpId>
         <SecurityId>A</SecurityId>
         <DeliveryType>A</DeliveryType>
@@ -189,7 +188,6 @@
         <Haircut>1.0</Haircut>
         <PledgeAmpId>A</PledgeAmpId>
         <AdjustedCollateralValue>1.0</AdjustedCollateralValue>
-        <Price>1.0</Price>
     </Pledge>
     <BusinessState>Agree_Cancelled</BusinessState>
     <CallDate>1986-01-21T00:21:03.587</CallDate>
@@ -211,19 +209,21 @@
         <Parent>true</Parent>
         <State>A</State>
         <Child>true</Child>
+        <Balance>1.0</Balance>
+        <ParentVersion>1</ParentVersion>
+        <ParentAmpId>A</ParentAmpId>
+        <Comments>A</Comments>
         <DisputeReasonCode>NT</DisputeReasonCode>
         <DisputedAmount>1.0</DisputedAmount>
-        <AgreedAmount>1.0</AgreedAmount>
-        <Comments>A</Comments>
-        <Balance>1.0</Balance>
-        <ParentAmpId>A</ParentAmpId>
-        <ParentVersion>1</ParentVersion>
         <MsId>A</MsId>
         <Mtm>1.0</Mtm>
         <Im>1.0</Im>
+        <AgreedAmount>1.0</AgreedAmount>
     </Dispute>
-    <MarginAgreementShortName>A</MarginAgreementShortName>
     <ReturnMinimumTransferAmount>1.0</ReturnMinimumTransferAmount>
     <DeliverMinimumTransferAmount>1.0</DeliverMinimumTransferAmount>
+    <MarginAgreementShortName>A</MarginAgreementShortName>
     <LocalCounterpartyLabel>A</LocalCounterpartyLabel>
+    <AmpId>A</AmpId>
+    <Child>true</Child>
 </MarginCall>

@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>09/08/2017 13:05:01</Timestamp>
-        <Checksum>7145c4e3</Checksum>
+        <Timestamp>15/08/2017 16:54:53</Timestamp>
+        <Checksum>9ebc9c68</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Fetch" group="Map:MS_ACUO">
@@ -4838,13 +4838,40 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="cancelCodeString[Out2]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>IntegerToText</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>MS_ACUO-DisputeCode</Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="cancelCodeString[Out2]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="NoEntryOption" type="option">
+                                    <Value>Copy Input to Output</Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="CancelReasonCode[Out2]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ScopeB specType="TO_DATA"
@@ -4904,6 +4931,9 @@
         <Bot>String</Bot>
     </TempVariable>
     <TempVariable name="partDisputeCodeString" optional="true" repeating="true">
+        <Bot>String</Bot>
+    </TempVariable>
+    <TempVariable name="cancelCodeString" optional="true" repeating="true">
         <Bot>String</Bot>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
