@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>02/06/2017 12:55:18</Timestamp>
-        <Checksum>31ec4c94</Checksum>
+        <Timestamp>07/08/2017 13:46:39</Timestamp>
+        <Checksum>923787e6</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME" group="Map:ACUO_CME">
@@ -760,7 +760,21 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Property name="Table" type="lookuptable">
+                                    <Value>
+                                    <LookupTable
+                                    inLabel="In" outLabel="Out">
+                                    <TableEntry>
+                                    <In>SGD-SOR-Reuters</In>
+                                    <Out>SGD-SOR-VWAP</Out>
+                                    </TableEntry>
+                                    </LookupTable>
+                                    </Value>
+                                    </Property>
+                                    <Property name="NoEntryOption" type="option">
+                                    <Value>Copy Input to Output</Value>
+                                    </Property>
+                                    <Mapper>LocalTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
@@ -1413,7 +1427,21 @@
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Copy></Copy>
+                                    <Property name="Table" type="lookuptable">
+                                    <Value>
+                                    <LookupTable
+                                    inLabel="In" outLabel="Out">
+                                    <TableEntry>
+                                    <In>SGD-SOR-Reuters</In>
+                                    <Out>SGD-SOR-VWAP</Out>
+                                    </TableEntry>
+                                    </LookupTable>
+                                    </Value>
+                                    </Property>
+                                    <Property name="NoEntryOption" type="option">
+                                    <Value>Copy Input to Output</Value>
+                                    </Property>
+                                    <Mapper>LocalTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>

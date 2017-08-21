@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Component Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>24/05/2017 11:15:33</Timestamp>
-        <Checksum>2910bd50</Checksum>
+        <Timestamp>17/08/2017 17:34:27</Timestamp>
+        <Checksum>ba6efd7f</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="IRSCF" group="ImportPortfolioExcel">
@@ -286,6 +286,21 @@
                             </Property>
                             <Property name="CellWidth" type="decimal">
                                 <Value>12.57</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="TradeTime">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Time</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="Format" type="string">
+                                <Value>HH:mm:ss.SSS</Value>
                             </Property>
                         </FormatSpecifications>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>

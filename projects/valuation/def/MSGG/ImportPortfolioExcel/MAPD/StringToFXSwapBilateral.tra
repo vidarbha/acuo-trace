@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 17:43:04</Timestamp>
-        <Checksum>6b9f6d64</Checksum>
+        <Timestamp>17/08/2017 17:35:14</Timestamp>
+        <Checksum>d5c60d47</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToFXSwapBilateral"
@@ -566,6 +566,30 @@
                 </Value>
             </Property>
             <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="TradeTime"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Format" type="string">
+                <Value>HH:mm:ss.SSS</Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="TradeTime"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>TextToTime</Mapper>
         </FunctionCall>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">

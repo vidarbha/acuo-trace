@@ -15,7 +15,6 @@ import com.google.common.collect.ImmutableList;
 import com.opengamma.strata.basics.currency.Currency;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
-import org.eclipse.persistence.annotations.TenantTableDiscriminator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -178,6 +177,26 @@ public class TransformerTest {
         Transformer<MarginCall> transformer = new AgreeTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
+        log.info(transformer.serialise(marginCall, null));
+    }
+
+    @Test
+    public void testCreate() throws Exception
+    {
+        Transformer<MarginCall> transformer = new CreateTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setRoundingAmount(111);
+        log.info(transformer.serialise(marginCall, null));
+    }
+
+    @Test
+    public void testCancel() throws Exception
+    {
+        Transformer<MarginCall> transformer = new CancelTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setRoundingAmount(111);
         log.info(transformer.serialise(marginCall, null));
     }
 }
