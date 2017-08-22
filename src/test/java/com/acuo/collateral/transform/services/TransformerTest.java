@@ -42,10 +42,10 @@ public class TransformerTest {
     public ResourceFile statementItem = new ResourceFile("/mockmc.csv");
 
     @Rule
-    public ResourceFile portfolioFile = new ResourceFile("/portfolio/TradePortfolio24-05-17.xlsx");
+    public ResourceFile oneTradeFile = new ResourceFile("/portfolio/OneIRS.xlsx");
 
     @Rule
-    public ResourceFile npvFile = new ResourceFile("/portfolio/TradePortfolio_OW-742.xlsx");
+    public ResourceFile tradePortfolio = new ResourceFile("/portfolio/TradePortfolio_OW-742.xlsx");
 
     @Before
     public void setup() {
@@ -134,16 +134,24 @@ public class TransformerTest {
 
 
     @Test
-    public void testPortfolio() throws Exception {
+    public void testTradePortfolio() throws Exception {
         Transformer<SwapTrade> transformer = new PortfolioImportTransformer<>(new Mapper());
-        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
+        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        assertThat(trades).isNotEmpty();
+    }
+
+    @Test
+    public void testOneTradePortfolio() throws Exception {
+        Transformer<SwapTrade> transformer = new PortfolioImportTransformer<>(new Mapper());
+        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(oneTradeFile.getInputStream()));
+        assertThat(trades).isNotEmpty();
     }
 
     @Test
     public void testNPV() throws Exception {
         Transformer<TradeValuation> transformer = new TradeValuationTransformer<>(new Mapper());
-        List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
-        log.info("result:" + tradeValuations.toString());
+        List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        assertThat(tradeValuations).isNotEmpty();
     }
 
     @Test
