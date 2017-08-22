@@ -45,7 +45,7 @@ public class TransformerTest {
     public ResourceFile portfolioFile = new ResourceFile("/portfolio/TradePortfolio24-05-17.xlsx");
 
     @Rule
-    public ResourceFile npvFile = new ResourceFile("/portfolio/TradePortfolio18-05-17v2-NPV.xlsx");
+    public ResourceFile npvFile = new ResourceFile("/portfolio/TradePortfolio_OW-742.xlsx");
 
     @Before
     public void setup() {
