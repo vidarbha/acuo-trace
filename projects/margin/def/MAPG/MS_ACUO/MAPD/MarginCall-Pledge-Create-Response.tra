@@ -5,10 +5,10 @@
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>09/06/2017 18:49:22</Timestamp>
-        <Checksum>1cc86432</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>23/08/2017 15:09:00</Timestamp>
+        <Checksum>1223d05e</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Pledge-Create-Response" group="Map:MS_ACUO">
@@ -398,6 +398,87 @@
                                     <PathNodeSpec specType="TEMP_VAR" pathString="marginCalls/marginCall[Counter1]/pledges/pledge[#]"/>
                                 </RepeatLimit>
                                 <ScopeA specType="TEMP_VAR" pathString="marginCalls/marginCall[Counter1]/pledges/pledge[#]"/>
+                            </RepeatAction>
+                        </ActionStep>
+                        <ActionStep>
+                            <RepeatAction repeatCounter="Counter2">
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="marginCalls/marginCall[Counter1]/recallItems/recallItem[Counter2]/ampId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Recall[Out2]/RecallAmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="marginCalls/marginCall[Counter1]/recallItems/recallItem[Counter2]/version"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Recall[Out2]/Version"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="marginCalls/marginCall[Counter1]/recallItems/recallItem[Counter2]/businessState"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Recall[Out2]/BusinessState"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ScopeB specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1"
+                                    pathString="Recall[]" outputPosnSpecifier="Out2"/>
+                                <RepeatLimit>
+                                    <PathNodeSpec specType="TEMP_VAR" pathString="marginCalls/marginCall[Counter1]/recallItems/recallItem[#]"/>
+                                </RepeatLimit>
+                                <ScopeA specType="TEMP_VAR" pathString="marginCalls/marginCall[Counter1]/recallItems/recallItem[]"/>
                             </RepeatAction>
                         </ActionStep>
                         <ScopeB specType="TO_DATA" contextName="Output"

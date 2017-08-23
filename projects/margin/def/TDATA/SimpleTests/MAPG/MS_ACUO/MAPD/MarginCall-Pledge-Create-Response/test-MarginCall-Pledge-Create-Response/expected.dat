@@ -55,3 +55,37 @@
     <HttpStatusDescription>Bad Request</HttpStatusDescription>
     <ErrorDescription>JAXB Unmarshaling Error</ErrorDescription>
 </MSError>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              Test 3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<?xml version="1.0"?>
+<MarginCall xmlns="com.acuo.common.model.margin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Version>3</Version>
+    <Recall>
+        <Version>2</Version>
+        <RecallAmpId>m100020152254nbtuh</RecallAmpId>
+        <BusinessState>Rejected</BusinessState>
+    </Recall>
+    <Recall>
+        <Version>2</Version>
+        <RecallAmpId>m100020152254nbtui</RecallAmpId>
+        <BusinessState>Pledged</BusinessState>
+    </Recall>
+    <Pledge>
+        <Version>1</Version>
+        <SecurityIdType>ISIN</SecurityIdType>
+        <SecurityId>JP2143ADKJJ</SecurityId>
+        <Quantity>1818181.0</Quantity>
+        <PledgeAmpId>m100020152254nc5tm</PledgeAmpId>
+    </Pledge>
+    <Pledge>
+        <Version>1</Version>
+        <SecurityIdType>CASH</SecurityIdType>
+        <SecurityId>CASH</SecurityId>
+        <Quantity>2000000.0</Quantity>
+        <PledgeAmpId>m100020152254nc5tl</PledgeAmpId>
+    </Pledge>
+    <BusinessState>Pledged</BusinessState>
+    <AmpId>m100020152254nbtug</AmpId>
+</MarginCall>
+---
