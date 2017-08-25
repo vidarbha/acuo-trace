@@ -215,8 +215,9 @@ public class TransformerTest {
         Transformer<MarginCall> transformer = new PledgeCreateTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
+        marginCall.setVersion(1);
         Recall recall = new Recall();
-        recall.setCallAmpId("ampidrecall");
+        recall.setRecallAmpId("ampidrecall");
         recall.setRecallIsAccepted(true);
         Set<Recall> recallSet = new HashSet<Recall>();
         recallSet.add(recall);
