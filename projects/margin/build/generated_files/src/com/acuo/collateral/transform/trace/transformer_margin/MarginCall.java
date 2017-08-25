@@ -16,7 +16,7 @@ import com.tracegroup.transformer.transport.*;
 /**
  * This class is auto-generated from ExposedService MarginCall.
  * <P/>
- * Created by staf on 22-Aug-2017 16:52:15 using Project margin.tpj
+ * Created by lucie on 25 août 2017 06:31:45 using Project margin.tpj
  * <P/>
  * Services to transform from/to MarginSphere messages and Acuo data model
  * <P/>
@@ -136,6 +136,78 @@ public class MarginCall implements Serializable {
          = outBasket.get("Output", String.class);
     wrapper.setOutput(vOutput);
 
+
+    return wrapper;
+  }
+
+  /**
+   * ExposedServiceOperation cancelCall
+   */
+  
+  public CancelCallOutputWrapper cancelCall(
+            Object[] input)
+          throws MomException, RuleException,
+                 com.tracegroup.transformer.exposedservices.UnrecognizedMessageException,
+                 com.tracegroup.transformer.exposedservices.StructureException {
+
+    ObjectBasket inputs = new ObjectBasket();
+    inputs.add("Input", input);
+
+
+    @SuppressWarnings("unchecked")
+    StringBasket outBasket = ServicePerformerExecutor
+            .performServiceWithSimpleExceptions(
+                    PROJECT_MANAGER,
+                    PROJECT_KEY,
+                    SERVICE_NAME,
+                    "cancelCall",
+                    inputs,
+                    StringBasket.class,
+                    null);
+
+    CancelCallOutputWrapper wrapper = new CancelCallOutputWrapper();
+
+    String vOutput
+         = outBasket.get("Output", String.class);
+    wrapper.setOutput(vOutput);
+
+
+    return wrapper;
+  }
+
+  /**
+   * ExposedServiceOperation cancelCallResponse
+   */
+  
+  public CancelCallResponseOutputWrapper cancelCallResponse(
+            String input)
+          throws MomException, RuleException,
+                 com.tracegroup.transformer.exposedservices.UnrecognizedMessageException,
+                 com.tracegroup.transformer.exposedservices.StructureException {
+
+    StringBasket inputs = new StringBasket();
+    inputs.add("Input", input);
+
+
+    @SuppressWarnings("unchecked")
+    ObjectBasket outBasket = ServicePerformerExecutor
+            .performServiceWithSimpleExceptions(
+                    PROJECT_MANAGER,
+                    PROJECT_KEY,
+                    SERVICE_NAME,
+                    "cancelCallResponse",
+                    inputs,
+                    ObjectBasket.class,
+                    null);
+
+    CancelCallResponseOutputWrapper wrapper = new CancelCallResponseOutputWrapper();
+
+    Object[] aOutput
+         = outBasket.get("Output", Object[].class);
+    wrapper.setOutput(aOutput);
+    Object[] aMSError
+         = outBasket.get("MSError", Object[].class);
+    wrapper.setMSError(aMSError);
 
     return wrapper;
   }
@@ -285,6 +357,43 @@ public class MarginCall implements Serializable {
   }
 
   /**
+   * ExposedServiceOperation fetchAgreementDetails
+   */
+  
+  public FetchAgreementDetailsOutputWrapper fetchAgreementDetails(
+            String input)
+          throws MomException, RuleException,
+                 com.tracegroup.transformer.exposedservices.UnrecognizedMessageException,
+                 com.tracegroup.transformer.exposedservices.StructureException {
+
+    StringBasket inputs = new StringBasket();
+    inputs.add("Input", input);
+
+
+    @SuppressWarnings("unchecked")
+    ObjectBasket outBasket = ServicePerformerExecutor
+            .performServiceWithSimpleExceptions(
+                    PROJECT_MANAGER,
+                    PROJECT_KEY,
+                    SERVICE_NAME,
+                    "fetchAgreementDetails",
+                    inputs,
+                    ObjectBasket.class,
+                    null);
+
+    FetchAgreementDetailsOutputWrapper wrapper = new FetchAgreementDetailsOutputWrapper();
+
+    Object[] aOutput
+         = outBasket.get("Output", Object[].class);
+    wrapper.setOutput(aOutput);
+    Object[] aMSError
+         = outBasket.get("MSError", Object[].class);
+    wrapper.setMSError(aMSError);
+
+    return wrapper;
+  }
+
+  /**
    * ExposedServiceOperation fetchCalls
    */
   
@@ -348,41 +457,6 @@ public class MarginCall implements Serializable {
     Object[] aOutput
          = outBasket.get("Output", Object[].class);
     wrapper.setOutput(aOutput);
-
-    return wrapper;
-  }
-
-  /**
-   * ExposedServiceOperation margincallRecallAccept
-   */
-  
-  public MargincallRecallAcceptOutputWrapper margincallRecallAccept(
-            Object[] input)
-          throws MomException, RuleException,
-                 com.tracegroup.transformer.exposedservices.UnrecognizedMessageException,
-                 com.tracegroup.transformer.exposedservices.StructureException {
-
-    ObjectBasket inputs = new ObjectBasket();
-    inputs.add("Input", input);
-
-
-    @SuppressWarnings("unchecked")
-    StringBasket outBasket = ServicePerformerExecutor
-            .performServiceWithSimpleExceptions(
-                    PROJECT_MANAGER,
-                    PROJECT_KEY,
-                    SERVICE_NAME,
-                    "margincallRecallAccept",
-                    inputs,
-                    StringBasket.class,
-                    null);
-
-    MargincallRecallAcceptOutputWrapper wrapper = new MargincallRecallAcceptOutputWrapper();
-
-    String vOutput
-         = outBasket.get("Output", String.class);
-    wrapper.setOutput(vOutput);
-
 
     return wrapper;
   }

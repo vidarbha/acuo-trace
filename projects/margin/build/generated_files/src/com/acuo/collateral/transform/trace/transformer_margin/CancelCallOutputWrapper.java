@@ -4,9 +4,9 @@ import com.tracegroup.transformer.exposedservices.*;
 
 /**
  * This class is auto-generated to define the objects returned by the ManyToMany
- * ExposedServiceOperation MargincallRecallAccept.
+ * ExposedServiceOperation CancelCall.
  */
-public class MargincallRecallAcceptOutputWrapper {
+public class CancelCallOutputWrapper {
   private String Output;
 
   public String getOutput() {
