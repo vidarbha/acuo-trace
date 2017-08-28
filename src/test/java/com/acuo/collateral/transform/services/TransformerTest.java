@@ -195,7 +195,7 @@ public class TransformerTest {
         Transformer<MarginCall> transformer = new CreateTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
-        marginCall.setRoundingAmount(111);
+        marginCall.setRoundingAmount(111d);
         log.info(transformer.serialise(marginCall, null));
     }
 
@@ -205,7 +205,7 @@ public class TransformerTest {
         Transformer<MarginCall> transformer = new CancelTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
-        marginCall.setRoundingAmount(111);
+        marginCall.setRoundingAmount(111d);
         log.info(transformer.serialise(marginCall, null));
     }
 
@@ -222,6 +222,7 @@ public class TransformerTest {
         Set<Recall> recallSet = new HashSet<Recall>();
         recallSet.add(recall);
         marginCall.setRecalls(recallSet);
-        log.info(transformer.serialise(marginCall,null));
+        String xml = transformer.serialise(marginCall,null);
+        Assert.assertTrue(xml.contains("recallItem"));
     }
 }
