@@ -222,6 +222,7 @@ public class TransformerTest {
         Set<Recall> recallSet = new HashSet<Recall>();
         recallSet.add(recall);
         marginCall.setRecalls(recallSet);
-        log.info(transformer.serialise(marginCall,null));
+        String xml = transformer.serialise(marginCall,null);
+        Assert.assertTrue(xml.contains("recallItem"));
     }
 }
