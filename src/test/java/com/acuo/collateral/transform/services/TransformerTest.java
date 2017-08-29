@@ -225,4 +225,24 @@ public class TransformerTest {
         String xml = transformer.serialise(marginCall,null);
         Assert.assertTrue(xml.contains("recallItem"));
     }
+
+    @Test
+    public void testRejectRecall() throws Exception
+    {
+        Transformer<MarginCall> transformer = new PledgeCreateTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setVersion(1);
+        Recall recall = new Recall();
+        recall.setRecallAmpId("ampidrecall");
+        recall.setRecallIsAccepted(false);
+        recall.setRejectReasonCode(999);
+        recall.setRejectComment("cantortest");
+        Set<Recall> recallSet = new HashSet<Recall>();
+        recallSet.add(recall);
+        marginCall.setRecalls(recallSet);
+        String xml = transformer.serialise(marginCall,null);
+        log.info(xml);
+        Assert.assertTrue(xml.contains("cantortest"));
+    }
 }
