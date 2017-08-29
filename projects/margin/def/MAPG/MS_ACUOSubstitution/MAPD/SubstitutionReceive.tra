@@ -7,8 +7,8 @@
         </Transformer>
         <User>acer</User>
         <Host>acer-pc</Host>
-        <Timestamp>28/08/2017 17:13:50</Timestamp>
-        <Checksum>38c03dec</Checksum>
+        <Timestamp>29/08/2017 10:29:00</Timestamp>
+        <Checksum>5cbc20e0</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="SubstitutionReceive" group="Map:MS_ACUOSubstitution">
@@ -560,6 +560,29 @@
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="SubstitutionItem[Out2]/AdjustedCollateralValue"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/substitutionItems/substitutionItem[Counter3]/currentMarketValue"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="SubstitutionItem[Out2]/CurrentMarketValue"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
