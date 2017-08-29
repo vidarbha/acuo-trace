@@ -16,7 +16,7 @@ import com.tracegroup.transformer.transport.*;
 /**
  * This class is auto-generated from ExposedService MarginCall.
  * <P/>
- * Created by lucie on 28 août 2017 18:05:50 using Project margin.tpj
+ * Created by lucie on 29 août 2017 11:18:53 using Project margin.tpj
  * <P/>
  * Services to transform from/to MarginSphere messages and Acuo data model
  * <P/>
@@ -601,6 +601,41 @@ public class MarginCall implements Serializable {
     Object[] aMSError
          = outBasket.get("MSError", Object[].class);
     wrapper.setMSError(aMSError);
+
+    return wrapper;
+  }
+
+  /**
+   * ExposedServiceOperation whitelistCreate
+   */
+  
+  public WhitelistCreateOutputWrapper whitelistCreate(
+            Object[] input)
+          throws MomException, RuleException,
+                 com.tracegroup.transformer.exposedservices.UnrecognizedMessageException,
+                 com.tracegroup.transformer.exposedservices.StructureException {
+
+    ObjectBasket inputs = new ObjectBasket();
+    inputs.add("Input", input);
+
+
+    @SuppressWarnings("unchecked")
+    StringBasket outBasket = ServicePerformerExecutor
+            .performServiceWithSimpleExceptions(
+                    PROJECT_MANAGER,
+                    PROJECT_KEY,
+                    SERVICE_NAME,
+                    "whitelistCreate",
+                    inputs,
+                    StringBasket.class,
+                    null);
+
+    WhitelistCreateOutputWrapper wrapper = new WhitelistCreateOutputWrapper();
+
+    String vOutput
+         = outBasket.get("Output", String.class);
+    wrapper.setOutput(vOutput);
+
 
     return wrapper;
   }
