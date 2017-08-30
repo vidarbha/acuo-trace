@@ -16,7 +16,7 @@ import com.tracegroup.transformer.transport.*;
 /**
  * This class is auto-generated from ExposedService MarginCall.
  * <P/>
- * Created by lucie on 29 août 2017 11:18:53 using Project margin.tpj
+ * Created by staf on 30-Aug-2017 16:48:57 using Project margin.tpj
  * <P/>
  * Services to transform from/to MarginSphere messages and Acuo data model
  * <P/>
