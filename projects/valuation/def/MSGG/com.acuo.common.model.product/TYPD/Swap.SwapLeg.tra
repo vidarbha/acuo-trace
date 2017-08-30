@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>External Object Import</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>26/05/2017 12:05:38</Timestamp>
-        <Checksum>596e75db</Checksum>
+        <Timestamp>05/07/2017 18:36:49</Timestamp>
+        <Checksum>104be8d1</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Swap.SwapLeg" group="com.acuo.common.model.product">
@@ -170,6 +170,39 @@
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="RollConvention">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="VariableCurrency">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Boolean</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="FutureNotional">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="CompoundingRule">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>

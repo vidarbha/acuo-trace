@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/08/2017 18:31:43</Timestamp>
-        <Checksum>d797e42a</Checksum>
+        <Timestamp>18/08/2017 12:29:25</Timestamp>
+        <Checksum>40d94b8</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportOisCleared"
@@ -833,6 +833,37 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Time" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="PortfolioUpload/OIS-Cleared/DataRow1[Out1]/TradeTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Date" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="PortfolioUpload/OIS-Cleared/DataRow1[Out1]/EffectiveDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="DateTime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/TradeTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>JoinDateTime</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -852,37 +883,6 @@
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Date" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="PortfolioUpload/OIS-Cleared/DataRow1[Counter1]/EffectiveDate"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Time" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="PortfolioUpload/OIS-Cleared/DataRow1[Counter1]/TradeTime"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="DateTime" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="Info/TradeTime"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Mapper>JoinDateTime</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>

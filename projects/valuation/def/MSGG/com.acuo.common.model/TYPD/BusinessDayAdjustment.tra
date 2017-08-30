@@ -2,21 +2,21 @@
     <LastModification>
         <Transformer>
             <Program>External Object Import</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 18:50:10</Timestamp>
-        <Checksum>3eda3a4a</Checksum>
+        <Timestamp>05/07/2017 18:36:49</Timestamp>
+        <Checksum>2a00743a</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="BusinessDayAdjustment" group="com.acuo.common.model">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
-                <Child minOccurs="0" maxOccurs="UNBOUNDED">
-                    <LocalComponent name="Holiday">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="BusinessDayConvention">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -26,8 +26,8 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="BusinessDayConvention">
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="Holiday">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>

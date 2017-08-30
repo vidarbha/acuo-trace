@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 15:24:05</Timestamp>
-        <Checksum>7814d3a4</Checksum>
+        <Timestamp>28/06/2017 16:47:02</Timestamp>
+        <Checksum>14c16878</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FraLegFixed" group="Map:ImportPortfolioExcel" category="Database">
@@ -17,8 +17,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="LEG1_TYPE"/>
+                        <Literal>FIXED</Literal>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -220,7 +219,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="MaturityDate/Adjustment/Holiday[1]"/>
+                            contextName="Output" pathString="PaymentDate/Adjustment/Holiday[1]"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -241,7 +240,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="MaturityDate/Adjustment/BusinessDayConvention"/>
+                            contextName="Output" pathString="PaymentDate/Adjustment/BusinessDayConvention"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -262,7 +261,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="MaturityDate/Date"/>
+                            contextName="Output" pathString="PaymentDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -283,7 +282,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="StartDate/Date"/>
+                            contextName="Output" pathString="FixingDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -305,6 +304,27 @@
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
                             contextName="Output" pathString="Daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="FIXEDLEG_PAYATSTART"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PayAtStart"/>
                     </NodeSpec>
                 </Value>
             </Property>

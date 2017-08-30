@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Component Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 14:16:20</Timestamp>
-        <Checksum>cc5d69</Checksum>
+        <Timestamp>05/07/2017 16:41:20</Timestamp>
+        <Checksum>f9a84e8e</Checksum>
     </LastModification>
 </Prolog>
 <MessageDefinition name="PortfolioMostRecent" group="ImportPortfolioExcel">
@@ -110,6 +110,27 @@
                                     <LocalComponent name="DataRow1">
                                     <TypeSpecification>
                                     <NamedType type="FXSWBF"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="ZCS-Cleared">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="ZCSCF"/>
                                     </TypeSpecification>
                                     <FormatSpecifications/>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>

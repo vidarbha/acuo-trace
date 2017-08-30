@@ -18,8 +18,7 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="LEG1_TYPE"/>
+                        <Literal>FLOAT</Literal>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -301,7 +300,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="MaturityDate/Adjustment/Holiday[1]"/>
+                            contextName="Output" pathString="PaymentDate/Adjustment/Holiday[1]"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -322,7 +321,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="MaturityDate/Adjustment/BusinessDayConvention"/>
+                            contextName="Output" pathString="PaymentDate/Adjustment/BusinessDayConvention"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -343,7 +342,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="MaturityDate/Date"/>
+                            contextName="Output" pathString="PaymentDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -355,8 +354,8 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="FRA_FIXING_DATE"/>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="FixingDate/Date"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -386,6 +385,27 @@
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
                             contextName="Output" pathString="Daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="FLOATLEG_PAYATSTART"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PayAtStart"/>
                     </NodeSpec>
                 </Value>
             </Property>
