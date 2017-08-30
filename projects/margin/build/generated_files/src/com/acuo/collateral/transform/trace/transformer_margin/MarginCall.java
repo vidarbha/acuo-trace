@@ -16,7 +16,7 @@ import com.tracegroup.transformer.transport.*;
 /**
  * This class is auto-generated from ExposedService MarginCall.
  * <P/>
- * Created by staf on 30-Aug-2017 16:48:57 using Project margin.tpj
+ * Created by lucie on 30 août 2017 17:36:02 using Project margin.tpj
  * <P/>
  * Services to transform from/to MarginSphere messages and Acuo data model
  * <P/>
@@ -101,6 +101,41 @@ public class MarginCall implements Serializable {
     Object[] aMSError
          = outBasket.get("MSError", Object[].class);
     wrapper.setMSError(aMSError);
+
+    return wrapper;
+  }
+
+  /**
+   * ExposedServiceOperation agreeSubstitution
+   */
+  
+  public AgreeSubstitutionOutputWrapper agreeSubstitution(
+            Object input)
+          throws MomException, RuleException,
+                 com.tracegroup.transformer.exposedservices.UnrecognizedMessageException,
+                 com.tracegroup.transformer.exposedservices.StructureException {
+
+    ObjectBasket inputs = new ObjectBasket();
+    inputs.add("Input", input);
+
+
+    @SuppressWarnings("unchecked")
+    StringBasket outBasket = ServicePerformerExecutor
+            .performServiceWithSimpleExceptions(
+                    PROJECT_MANAGER,
+                    PROJECT_KEY,
+                    SERVICE_NAME,
+                    "agreeSubstitution",
+                    inputs,
+                    StringBasket.class,
+                    null);
+
+    AgreeSubstitutionOutputWrapper wrapper = new AgreeSubstitutionOutputWrapper();
+
+    String vOutput
+         = outBasket.get("Output", String.class);
+    wrapper.setOutput(vOutput);
+
 
     return wrapper;
   }
@@ -423,6 +458,41 @@ public class MarginCall implements Serializable {
     Object[] aOutput
          = outBasket.get("Output", Object[].class);
     wrapper.setOutput(aOutput);
+
+    return wrapper;
+  }
+
+  /**
+   * ExposedServiceOperation getSubstitution
+   */
+  
+  public GetSubstitutionOutputWrapper getSubstitution(
+            String[] input)
+          throws MomException, RuleException,
+                 com.tracegroup.transformer.exposedservices.UnrecognizedMessageException,
+                 com.tracegroup.transformer.exposedservices.StructureException {
+
+    StringBasket inputs = new StringBasket();
+    inputs.add("Input", input);
+
+
+    @SuppressWarnings("unchecked")
+    ObjectBasket outBasket = ServicePerformerExecutor
+            .performServiceWithSimpleExceptions(
+                    PROJECT_MANAGER,
+                    PROJECT_KEY,
+                    SERVICE_NAME,
+                    "getSubstitution",
+                    inputs,
+                    ObjectBasket.class,
+                    null);
+
+    GetSubstitutionOutputWrapper wrapper = new GetSubstitutionOutputWrapper();
+
+    Object vOutput
+         = outBasket.get("Output", Object.class);
+    wrapper.setOutput(vOutput);
+
 
     return wrapper;
   }
