@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>21/06/2017 17:35:59</Timestamp>
-        <Checksum>989320a3</Checksum>
+        <User>lucie</User>
+        <Host>DESKTOP-OBN2924</Host>
+        <Timestamp>31/08/2017 11:04:00</Timestamp>
+        <Checksum>a9657669</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToTradeValuation" group="Map:Reuters_IN">
@@ -165,8 +165,8 @@
 
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="TradeId"/>
+                                    contextName="Error"
+                                    contextPosnSpec="Out2" pathString="ObjectId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -197,7 +197,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
+                                    contextPosnSpec="Out2" pathString="ReutersMessage[Out3]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -233,7 +233,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
+                                    contextPosnSpec="Out2" pathString="ReutersMessage[Out3]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -244,8 +244,8 @@
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1"
-                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
+                                    contextPosnSpec="Out2"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out3"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
                                     </ThenAction>
@@ -275,7 +275,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorType"/>
+                                    contextPosnSpec="Out2" pathString="ReutersMessage[Out3]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -311,7 +311,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1" pathString="ReutersMessage[Out2]/ErrorMessage"/>
+                                    contextPosnSpec="Out2" pathString="ReutersMessage[Out3]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -322,8 +322,8 @@
                                     <OutputScope
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="Out1"
-                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out2"/>
+                                    contextPosnSpec="Out2"
+                                    pathString="ReutersMessage[]" outputPosnSpecifier="Out3"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
                                     </ThenAction>
@@ -333,7 +333,7 @@
                                     specType="TO_DATA"
                                     contextName="Error"
                                     contextPosnSpec="[]"
-                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    pathString="." outputPosnSpecifier="Out2"/>
                                     </NewOutputRepetition>
                                     </ActionStep>
                                 </ElseAction>

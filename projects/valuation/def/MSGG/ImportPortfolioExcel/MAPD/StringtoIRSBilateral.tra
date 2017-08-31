@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>18/08/2017 12:17:02</Timestamp>
-        <Checksum>42c82d5</Checksum>
+        <User>lucie</User>
+        <Host>DESKTOP-OBN2924</Host>
+        <Timestamp>31/08/2017 11:34:59</Timestamp>
+        <Checksum>a1dbd540</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringtoIRSBilateral"
@@ -895,38 +895,6 @@
             <Mapper>TextToTime</Mapper>
         </FunctionCall>
     </ActionStep>
-                            contextName="Input" pathString="LEG1_VARIABLECURRENCY"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="LEG1_VARIABLECURRENCY"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Table" type="lookuptable">
-                <Value>
-                    <LookupTable inLabel="In" outLabel="Out">
-                        <TableEntry>
-                            <In>TRUE</In>
-                            <Out>TRUE</Out>
-                        </TableEntry>
-                        <TableEntry>
-                            <In>FALSE</In>
-                            <Out>FALSE</Out>
-                        </TableEntry>
-                    </LookupTable>
-                </Value>
-            </Property>
-            <Property name="NoEntryOption" type="option">
-                <Value>Copy Input to Output</Value>
-            </Property>
-            <Mapper>LocalTableLookup</Mapper>
-        </FunctionCall>
-    </ActionStep>
     <ActionStep>
         <FunctionCall>
             <Property name="Input" type="nodespec">
@@ -961,6 +929,41 @@
             </Property>
             <Property name="NoEntryOption" type="option">
                 <Value>Copy Input to Output</Value>
+            </Property>
+            <Mapper>LocalTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG1_VARIABLECURRENCY"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="LEG1_VARIABLECURRENCY"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Table" type="lookuptable">
+                <Value>
+                    <LookupTable inLabel="In" outLabel="Out">
+                        <TableEntry>
+                            <In>TRUE</In>
+                            <Out>TRUE</Out>
+                        </TableEntry>
+                        <TableEntry>
+                            <In>FALSE</In>
+                            <Out>FALSE</Out>
+                        </TableEntry>
+                    </LookupTable>
+                </Value>
             </Property>
             <Mapper>LocalTableLookup</Mapper>
         </FunctionCall>
