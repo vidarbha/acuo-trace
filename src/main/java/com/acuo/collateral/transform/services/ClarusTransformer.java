@@ -32,7 +32,7 @@ public class ClarusTransformer<T> extends BaseTransformer<T> {
     @Override
     public String serialise(List<T> value, TransformerContext context) {
         try {
-            ToCmeFileOutputWrapper outputWrapper = getMapper().toCmeFile(value.toArray(), context);
+            ToCmeFileOutputWrapper outputWrapper = getMapper().toCmeFile(value.toArray(), context, null);
             return outputWrapper.getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of swaps", value);
