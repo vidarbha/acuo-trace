@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 public class ClarusTransformer<T> extends BaseTransformer<T> {
@@ -52,7 +53,8 @@ public class ClarusTransformer<T> extends BaseTransformer<T> {
         values = TraceUtils.replaceNewLineToWindows(values);
         try {
             FromClarusOutputWrapper output = getMapper().fromClarus(values);
-            return Arrays.stream(output.getOutput()).map(value -> (T) value).collect(Collectors.toList());
+            return Stream.concat(Arrays.stream(output.getOutput()), Arrays.stream(output.getError()))
+                    .map(value -> (T) value).collect(Collectors.toList());
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data {} to a list of swaps", values);
             log.error(msg, e);
