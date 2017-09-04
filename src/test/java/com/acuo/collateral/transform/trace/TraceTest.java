@@ -42,7 +42,7 @@ public class TraceTest {
         Object[] trades = trace.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        String output = trace.toCmeFile(trades, context).getOutput();
+        String output = trace.toCmeFile(trades, context, null).getOutput();
         assertThat(output).isNotEmpty();
     }
 
@@ -63,7 +63,7 @@ public class TraceTest {
         Object[] trades = trace.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(43);
 
-        String output = trace.toCmeFile(trades, context).getOutput();
+        String output = trace.toCmeFile(trades, context, null).getOutput();
         assertThat(output).isEqualTo(itrs43.getContent());
     }
 }
