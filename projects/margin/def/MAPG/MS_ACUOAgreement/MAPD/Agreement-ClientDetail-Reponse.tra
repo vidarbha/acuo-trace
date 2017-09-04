@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>30/08/2017 16:37:38</Timestamp>
-        <Checksum>2bf76d65</Checksum>
+        <Timestamp>04/09/2017 22:57:15</Timestamp>
+        <Checksum>a8310f4c</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Agreement-ClientDetail-Reponse" group="Map:MS_ACUOAgreement">
@@ -181,7 +181,7 @@
                     </RepeatAction>
                 </ActionStep>
             </ThenAction>
-            <ElseAction>
+            <ElseIfAction>
                 <ActionStep>
                     <FunctionCall>
                         <Property name="Input" type="nodespec">
@@ -489,7 +489,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AgreementType"/>
+                                    contextPosnSpec="Out1" pathString="AgreementType[1]"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -1256,7 +1256,19 @@
                         <ScopeA specType="TEMP_VAR" pathString="Agreement/marginAgreement[]"/>
                     </RepeatAction>
                 </ActionStep>
-            </ElseAction>
+                <Condition>
+                    <Comparison>
+                        <FirstTerm>
+                            <PathNodeSpec specType="FROM_DATA"
+                                contextName="Input" pathString="."/>
+                        </FirstTerm>
+                        <Operator>EQ</Operator>
+                        <SecondTerm>
+                            <Literal>Active</Literal>
+                        </SecondTerm>
+                    </Comparison>
+                </Condition>
+            </ElseIfAction>
         </IfAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
