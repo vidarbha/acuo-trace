@@ -7,8 +7,8 @@
         </Transformer>
         <User>lucie</User>
         <Host>DESKTOP-OBN2924</Host>
-        <Timestamp>05/09/2017 16:43:05</Timestamp>
-        <Checksum>2b2d2b8b</Checksum>
+        <Timestamp>06/09/2017 17:28:05</Timestamp>
+        <Checksum>a10ef038</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginAgreement-create" group="Map:ACUO_MSAgreement">
@@ -345,7 +345,21 @@
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Copy></Copy>
+                    <Property name="What" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>_</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="With" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal> </Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Replace</Mapper>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
@@ -487,50 +501,63 @@
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                <RepeatAction repeatCounter="Counter2">
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="InterestBenchmark[1]/Currency"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="1" pathString="marginAgreement[Out1]/interestBenchmarks/interestBenchmark[1]/currency"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                                    contextPosnSpec="Counter1" pathString="InterestBenchmark[Counter2]/Currency"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/interestBenchmarks/interestBenchmark[Out2]/currency"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="InterestBenchmark[1]/BenchmarkName"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="1" pathString="marginAgreement[Out1]/interestBenchmarks/interestBenchmark[1]/benchmarkName"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
+                                    contextPosnSpec="Counter1" pathString="InterestBenchmark[Counter2]/BenchmarkName"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/interestBenchmarks/interestBenchmark[Out2]/benchmarkName"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ScopeB specType="TO_DATA" contextName="Output"
+                        pathString="marginAgreement[Out1]/interestBenchmarks/interestBenchmark[]" outputPosnSpecifier="Out2"/>
+                    <RepeatLimit>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input"
+                            contextPosnSpec="Counter1" pathString="InterestBenchmark[#]"/>
+                    </RepeatLimit>
+                    <ScopeA specType="FROM_DATA" contextName="Input"
+                        contextPosnSpec="Counter1" pathString="InterestBenchmark[]"/>
+                </RepeatAction>
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
@@ -625,27 +652,40 @@
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
-                <FunctionCall>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="1" pathString="marginAgreement[Out1]/nettingCallTypes/nettingCallType[1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
+                <RepeatAction repeatCounter="Counter2">
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/nettingCallTypes/nettingCallType[Out1]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="NettingCallType[1]"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
+                                    contextPosnSpec="Counter1" pathString="NettingCallType[Counter1]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ScopeB specType="TO_DATA" contextName="Output"
+                        pathString="marginAgreement[Out1]/nettingCallTypes/nettingCallType[]" outputPosnSpecifier="Out2"/>
+                    <RepeatLimit>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input"
+                            contextPosnSpec="Counter1" pathString="NettingCallType[#]"/>
+                    </RepeatLimit>
+                    <ScopeA specType="FROM_DATA" contextName="Input"
+                        contextPosnSpec="Counter1" pathString="NettingCallType[]"/>
+                </RepeatAction>
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
