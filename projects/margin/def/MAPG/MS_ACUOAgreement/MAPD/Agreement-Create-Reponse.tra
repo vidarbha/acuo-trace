@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>staf</User>
-        <Host>S</Host>
-        <Timestamp>06/09/2017 11:28:05</Timestamp>
-        <Checksum>fdcefaee</Checksum>
+        <User>lucie</User>
+        <Host>DESKTOP-OBN2924</Host>
+        <Timestamp>06/09/2017 17:17:41</Timestamp>
+        <Checksum>60f7ed6f</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Agreement-Create-Reponse" group="Map:MS_ACUOAgreement">
@@ -489,45 +489,30 @@
                             </FunctionCall>
                         </ActionStep>
                         <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <Comparison>
-                                    <FirstTerm>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/agreementType"/>
-                                    </FirstTerm>
-                                    <Operator>EQ</Operator>
-                                    <SecondTerm>
-                                    <Literal>Regulatory CSA</Literal>
-                                    </SecondTerm>
-                                    </Comparison>
-                                </Condition>
-                                <ThenAction>
-                                    <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/agreementType"/>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Property name="With" type="nodespec">
+                                </Property>
+                                <Property name="With" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <Literal>_</Literal>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Property name="What" type="nodespec">
+                                </Property>
+                                <Property name="What" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <Literal> </Literal>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
+                                </Property>
+                                <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -536,12 +521,9 @@
                                     contextPosnSpec="Out1" pathString="AgreementType"/>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Mapper>Replace</Mapper>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                </ThenAction>
-                            </IfAction>
+                                </Property>
+                                <Mapper>Replace</Mapper>
+                            </FunctionCall>
                         </ActionStep>
                         <ActionStep>
                             <FunctionCall>
@@ -613,45 +595,30 @@
                             </FunctionCall>
                         </ActionStep>
                         <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <Comparison>
-                                    <FirstTerm>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/businessState"/>
-                                    </FirstTerm>
-                                    <Operator>EQ</Operator>
-                                    <SecondTerm>
-                                    <Literal>Pending New</Literal>
-                                    </SecondTerm>
-                                    </Comparison>
-                                </Condition>
-                                <ThenAction>
-                                    <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/businessState"/>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Property name="What" type="nodespec">
+                                </Property>
+                                <Property name="What" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <Literal> </Literal>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Property name="With" type="nodespec">
+                                </Property>
+                                <Property name="With" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <Literal>_</Literal>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
+                                </Property>
+                                <Property name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
@@ -660,12 +627,9 @@
                                     contextPosnSpec="Out1" pathString="BusinessState"/>
                                     </NodeSpec>
                                     </Value>
-                                    </Property>
-                                    <Mapper>Replace</Mapper>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                </ThenAction>
-                            </IfAction>
+                                </Property>
+                                <Mapper>Replace</Mapper>
+                            </FunctionCall>
                         </ActionStep>
                         <ActionStep>
                             <FunctionCall>
