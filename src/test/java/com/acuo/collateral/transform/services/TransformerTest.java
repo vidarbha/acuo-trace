@@ -45,7 +45,7 @@ public class TransformerTest {
     public ResourceFile oneTradeFile = new ResourceFile("/portfolio/OneIRS.xlsx");
 
     @Rule
-    public ResourceFile tradePortfolio = new ResourceFile("/portfolio/TradePortfolio_OW-742.xlsx");
+    public ResourceFile tradePortfolio = new ResourceFile("/portfolio/TradePortfolio-OW-650.xlsx");
 
     @Before
     public void setup() {
