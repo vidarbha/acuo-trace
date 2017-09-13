@@ -7,9 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.Arrays.stream;
+import static java.util.stream.Stream.concat;
 
 @Slf4j
 public class PortfolioImportTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -25,10 +25,14 @@ public class PortfolioImportTransformer<INPUT, OUTPUT> extends BaseTransformer<I
             final Object[] irsc = portfolioImportOutputWrapper.getIRSC();
             final Object[] oisc = portfolioImportOutputWrapper.getOISC();
             final Object[] frac = portfolioImportOutputWrapper.getFRAC();
-            return Stream.concat(
-                    Stream.concat(
-                            Stream.concat(stream(irsb), stream(irsc)), stream(oisc)
-                    ), stream(frac)
+            final Object[] fxsw = portfolioImportOutputWrapper.getFXSW();
+            return concat(
+                        concat(
+                            concat(
+                                    concat(stream(irsb), stream(irsc)),
+                                stream(oisc)
+                            ), stream(frac)
+                        ), stream(fxsw)
             ).map(value -> (OUTPUT) value)
                     .collect(Collectors.toList());
         } catch (Exception e) {
