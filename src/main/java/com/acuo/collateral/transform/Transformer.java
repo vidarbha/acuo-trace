@@ -8,9 +8,9 @@ public interface Transformer<INPUT, OUTPUT> {
 
     String serialise(List<INPUT> value, TransformerContext context);
 
-    OUTPUT deserialise(String value);
+    TransformerOutput<OUTPUT> deserialise(String value);
 
-    List<OUTPUT> deserialiseToList(String values);
+    TransformerOutput<OUTPUT> deserialiseToList(String values);
 
-    List<OUTPUT> deserialise(byte[] value);
+    TransformerOutput<OUTPUT> deserialise(byte[] value);
 }

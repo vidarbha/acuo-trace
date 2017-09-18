@@ -1,5 +1,6 @@
 package com.acuo.collateral.transform.margin;
 
+import com.acuo.collateral.transform.TransformerOutput;
 import com.acuo.collateral.transform.services.BaseTransformer;
 import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
 
@@ -11,8 +12,8 @@ public abstract class BaseMarginCallTransformer<INOUT> extends BaseTransformer<I
     protected MarginCall marginCall = null;
 
     @Override
-    public INOUT deserialise(String value) {
-        return deserialiseToList(value).get(0);
+    public TransformerOutput<INOUT> deserialise(String value) {
+        return deserialiseToList(value);
     }
 
 }

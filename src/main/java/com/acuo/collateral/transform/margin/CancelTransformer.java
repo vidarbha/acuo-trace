@@ -1,16 +1,19 @@
 package com.acuo.collateral.transform.margin;
 
 import com.acuo.collateral.transform.TransformerContext;
+import com.acuo.collateral.transform.TransformerOutput;
 import com.acuo.collateral.transform.trace.transformer_margin.CancelCallOutputWrapper;
 import com.acuo.collateral.transform.trace.transformer_margin.CancelCallResponseOutputWrapper;
+import com.acuo.collateral.transform.utils.OutputBuilder;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
 import com.tracegroup.transformer.exposedservices.UnrecognizedMessageException;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Arrays;
 import java.util.List;
+
+import static com.acuo.common.util.ArgChecker.notNull;
 
 @Slf4j
 public class CancelTransformer<T> extends BaseMarginCallTransformer<T> {
@@ -28,14 +31,11 @@ public class CancelTransformer<T> extends BaseMarginCallTransformer<T> {
     }
 
     @Override
-    public List<T> deserialiseToList(String values) {
+    public TransformerOutput<T> deserialiseToList(String values) {
         try {
-            CancelCallResponseOutputWrapper outputs = marginCall.cancelCallResponse(values);
-            if (Arrays.stream(outputs.getOutput()).count() > 0) {
-                return Arrays.asList((T[]) outputs.getOutput());
-            } else {
-                return Arrays.asList((T[]) outputs.getMSError());
-            }
+            CancelCallResponseOutputWrapper output = marginCall.cancelCallResponse(notNull(values, "values"));
+            OutputBuilder<T> outputBuilder = OutputBuilder.of(output.getOutput(), output.getMSError());
+            return outputBuilder.build();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of margin calls", values);
             log.error(msg, e);

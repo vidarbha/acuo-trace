@@ -2,6 +2,7 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
+import com.acuo.collateral.transform.TransformerOutput;
 import com.acuo.collateral.transform.margin.AgreeTransformer;
 import com.acuo.collateral.transform.margin.CancelTransformer;
 import com.acuo.collateral.transform.margin.CreateTransformer;
@@ -114,7 +115,8 @@ public class TransformerTest {
     public void testSerialiseAssetsFromReuters() throws Exception {
         Transformer<String, AssetValuation> transformer = injector.getInstance(ReutersTransformer.class);
 
-        List<AssetValuation> assetsList = transformer.deserialiseToList(responsjson.getContent());
+        TransformerOutput<AssetValuation> output = transformer.deserialiseToList(responsjson.getContent());
+        List<AssetValuation> assetsList = output.results();
 
         Assert.assertTrue(assetsList.size() > 0);
         AssetValuation valuation = assetsList.get(0);
@@ -125,7 +127,8 @@ public class TransformerTest {
     public void testSerialiseSwapsWithMarginsphere() throws Exception {
         Transformer<MarginCall, MarginCall> transformer = injector.getInstance(MarginSphereTransformer.class);
 
-        List<MarginCall> marginCalls = transformer.deserialiseToList(received.getContent());
+        TransformerOutput<MarginCall> output = transformer.deserialiseToList(received.getContent());
+        List<MarginCall> marginCalls = output.results();
 
         assertThat(marginCalls).isNotEmpty();
     }
@@ -138,7 +141,8 @@ public class TransformerTest {
         if (content != null) {
             content = content.replace("\n", "\r\n");
         }
-        List<MarginCall> marginCalls = transformer.deserialiseToList(content);
+        TransformerOutput<MarginCall> output = transformer.deserialiseToList(content);
+        List<MarginCall> marginCalls = output.results();
         assertThat(marginCalls).isNotEmpty();
     }
 
@@ -157,21 +161,24 @@ public class TransformerTest {
     @Test
     public void testTradePortfolio() throws Exception {
         Transformer<String, SwapTrade> transformer = injector.getInstance(PortfolioImportTransformer.class);
-        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        TransformerOutput<SwapTrade> output = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        List<SwapTrade> trades = output.results();
         assertThat(trades).isNotEmpty();
     }
 
     @Test
     public void testOneTradePortfolio() throws Exception {
         Transformer<String, SwapTrade> transformer = injector.getInstance(PortfolioImportTransformer.class);
-        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(oneTradeFile.getInputStream()));
+        TransformerOutput<SwapTrade> output = transformer.deserialise(IOUtils.toByteArray(oneTradeFile.getInputStream()));
+        List<SwapTrade> trades = output.results();
         assertThat(trades).isNotEmpty();
     }
 
     @Test
     public void testNPV() throws Exception {
         Transformer<String, TradeValuation> transformer = injector.getInstance(TradeValuationTransformer.class);
-        List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        TransformerOutput<TradeValuation> output = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        List<TradeValuation> tradeValuations = output.results();
         assertThat(tradeValuations).isNotEmpty();
     }
 

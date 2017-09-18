@@ -2,6 +2,7 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
+import com.acuo.collateral.transform.TransformerOutput;
 import com.google.common.collect.ImmutableList;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,17 +22,17 @@ public abstract class BaseTransformer<INPUT, OUTPUT> implements Transformer<INPU
     }
 
     @Override
-    public OUTPUT deserialise(String value) {
+    public TransformerOutput<OUTPUT> deserialise(String value) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public List<OUTPUT> deserialise(byte[] value) {
+    public TransformerOutput<OUTPUT> deserialise(byte[] value) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public List<OUTPUT> deserialiseToList(String values) {
+    public TransformerOutput<OUTPUT> deserialiseToList(String values) {
         throw new UnsupportedOperationException();
     }
 }

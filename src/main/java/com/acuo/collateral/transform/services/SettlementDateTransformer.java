@@ -1,10 +1,12 @@
 package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
+import com.acuo.collateral.transform.TransformerOutput;
 import com.acuo.collateral.transform.trace.transformer_assets.FromSettlementDateOutputWrapper;
 import com.acuo.collateral.transform.trace.transformer_assets.Reuters;
 import com.acuo.collateral.transform.trace.transformer_assets.ToSettlementDateOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
+import com.acuo.collateral.transform.utils.OutputBuilder;
 import com.acuo.common.util.ArgChecker;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -13,10 +15,7 @@ import com.tracegroup.transformer.exposedservices.UnrecognizedMessageException;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Slf4j
 public class SettlementDateTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -37,13 +36,13 @@ public class SettlementDateTransformer<INPUT, OUTPUT> extends BaseTransformer<IN
     }
 
     @Override
-    public List<OUTPUT> deserialiseToList(String values) {
+    public TransformerOutput<OUTPUT> deserialiseToList(String values) {
         ArgChecker.notNull(values, "values");
         values = TraceUtils.replaceNewLineToWindows(values);
         try {
             FromSettlementDateOutputWrapper output = reuters.fromSettlementDate(values);
-            return Stream.concat(Arrays.stream(output.getOutput()), Arrays.stream(output.getError()))
-                    .map(value -> (OUTPUT) value).collect(Collectors.toList());
+            OutputBuilder<OUTPUT> outputBuilder = OutputBuilder.of(output.getOutput(), output.getError());
+            return outputBuilder.build();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of assets", values);
             log.error(msg, e);
