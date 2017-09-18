@@ -21,6 +21,7 @@ import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -66,7 +67,8 @@ public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseT
         values = TraceUtils.replaceNewLineToWindows(values);
         try {
             FromClarusOutputWrapper output = mapper.fromClarus(values);
-            return Arrays.stream(output.getOutput()).map(value -> (OUTPUT) value).collect(Collectors.toList());
+            return Stream.concat(Arrays.stream(output.getOutput()), Arrays.stream(output.getError()))
+                    .map(value -> (OUTPUT) value).collect(Collectors.toList());
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of swaps", values);
             log.error(msg, e);

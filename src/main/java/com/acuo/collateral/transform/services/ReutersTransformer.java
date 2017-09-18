@@ -16,6 +16,8 @@ import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.Stream;
 
 @Slf4j
 public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -41,7 +43,8 @@ public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OU
         values = TraceUtils.replaceNewLineToWindows(values);
         try {
             FromReutersOutputWrapper output = reuters.fromReuters(values);
-            return Arrays.stream(output.getOutput()).map(value -> (OUTPUT)value).collect(Collectors.toList());
+            return Stream.concat(Arrays.stream(output.getOutput()), Arrays.stream(output.getError()))
+                    .map(value -> (OUTPUT) value).collect(Collectors.toList());
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of assets", values);
             log.error(msg, e);

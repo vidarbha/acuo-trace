@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import java.util.stream.Stream;
+
 @Slf4j
 public class TradeValuationTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
 
@@ -19,10 +21,8 @@ public class TradeValuationTransformer<INPUT, OUTPUT> extends BaseTransformer<IN
     public List<OUTPUT> deserialise(byte[] input) {
         try {
             ExtractNPVOutputWrapper extractNPVOutputWrapper = mapper.extractNPV(input);
-            final Object[] valuations = extractNPVOutputWrapper.getOutput();
-            return Arrays.stream(valuations)
-                    .map(valuation -> (OUTPUT)valuation)
-                    .collect(Collectors.toList());
+            return Stream.concat(Arrays.stream(extractNPVOutputWrapper.getOutput()), Arrays.stream(extractNPVOutputWrapper.getErrors()))
+                    .map(value -> (OUTPUT) value).collect(Collectors.toList());
         } catch (Exception e) {
             log.error("Exception in TradeValuationTransformer", e);
             throw new RuntimeException("Exception in TradeValuationTransformer", e);
