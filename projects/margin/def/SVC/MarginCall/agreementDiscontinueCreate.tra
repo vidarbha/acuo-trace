@@ -1,0 +1,27 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Service Operation Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>05/09/2017 18:00:13</Timestamp>
+        <Checksum>a81de19d</Checksum>
+    </LastModification>
+</Prolog>
+<ExposedServiceOperation name="agreementDiscontinueCreate"
+    serviceName="MarginCall" operationType="ManyToManyMapping">
+    <Property name="InputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
+    <ServiceOperationTargetChoice>
+        <ServiceOperationMappingTarget group="Map:ACUO_MSAgreement">
+            <Mapping>MarginAgreement-discontinue-create</Mapping>
+        </ServiceOperationMappingTarget>
+    </ServiceOperationTargetChoice>
+</ExposedServiceOperation>

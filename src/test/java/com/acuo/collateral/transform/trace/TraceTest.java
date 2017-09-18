@@ -1,8 +1,12 @@
 package com.acuo.collateral.transform.trace;
 
 import com.acuo.collateral.transform.TransformerContext;
+import com.acuo.collateral.transform.inputs.ClarusInput;
+import com.acuo.collateral.transform.inputs.Envelop;
 import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
+import com.acuo.common.model.trade.ProductType;
+import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.ResourceFile;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -15,6 +19,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -42,7 +49,17 @@ public class TraceTest {
         Object[] trades = trace.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        String output = trace.toCmeFile(trades, context, null).getOutput();
+        final List<Envelop> envelops = Arrays.stream(trades).map(o -> {
+            Envelop envelop = new Envelop();
+            envelop.setSwapTrade((SwapTrade) o);
+            envelop.setType(ProductType.SWAP);
+            return envelop;
+        })
+                .collect(Collectors.toList());
+        ClarusInput clarusInput = new ClarusInput();
+        clarusInput.setContext(context);
+        clarusInput.setEnvelops(envelops);
+        String output = trace.toCmeFileNew(clarusInput).getOutput();
         assertThat(output).isNotEmpty();
     }
 

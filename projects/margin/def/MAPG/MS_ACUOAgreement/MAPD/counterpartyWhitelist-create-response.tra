@@ -7,8 +7,8 @@
         </Transformer>
         <User>lucie</User>
         <Host>DESKTOP-OBN2924</Host>
-        <Timestamp>31/08/2017 16:10:10</Timestamp>
-        <Checksum>fea6489c</Checksum>
+        <Timestamp>08/09/2017 18:11:21</Timestamp>
+        <Checksum>a494cb44</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="counterpartyWhitelist-create-response" group="Map:MS_ACUOAgreement">
@@ -20,7 +20,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[1]/counterpartyAmpId"/>
+                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/counterpartyAmpId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -42,7 +42,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[1]/counterpartyLabel"/>
+                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/counterpartyLabel"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -64,7 +64,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[1]/localCounterpartyAmpId"/>
+                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/localCounterpartyAmpId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -86,7 +86,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[1]/localCounterpartyLabel"/>
+                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/localCounterpartyLabel"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -108,7 +108,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[1]/tradingPartyAmpId"/>
+                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/tradingPartyAmpId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -117,7 +117,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="ClientLegalEntity/TradingPartyAmpId"/>
+                                    contextPosnSpec="Counter1" pathString="CptyTradingParty/AmpId"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -130,7 +130,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[1]/tradingPartyName"/>
+                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/tradingPartyName"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -139,13 +139,15 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="ClientLegalEntity/TradingPartyName"/>
+                                    contextPosnSpec="Counter1" pathString="CptyTradingParty/Name"/>
                             </NodeSpec>
                         </Value>
                     </Property>
                     <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="Output"
+                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
             <RepeatLimit>
                 <PathNodeSpec specType="TO_DATA" contextName="Output"
                     contextPosnSpec="[#]" pathString="."/>
