@@ -8,15 +8,15 @@
         <User>staf</User>
         <Host>S</Host>
         <Timestamp>20/09/2017 18:31:37</Timestamp>
-        <Checksum>2a00743a</Checksum>
+        <Checksum>8d8b780b</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="BusinessDayAdjustment" group="com.acuo.common.model">
+<NamedComponentType name="CompoundingSchedule" group="com.acuo.common.model">
     <TypeSpecification>
-        <TypeDefinition>
-            <ComplexContent Compositor="ALL">
+        <NamedType type="AdjustableSchedule">
+            <ComplexTypeXsdExtension Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="BusinessDayConvention">
+                    <LocalComponent name="CompoundingRule">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -26,19 +26,8 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="0" maxOccurs="UNBOUNDED">
-                    <LocalComponent name="Holiday">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-            </ComplexContent>
-        </TypeDefinition>
+            </ComplexTypeXsdExtension>
+        </NamedType>
     </TypeSpecification>
     <FormatSpecifications/>
     <SchemaEquivalent>TYPE</SchemaEquivalent>
