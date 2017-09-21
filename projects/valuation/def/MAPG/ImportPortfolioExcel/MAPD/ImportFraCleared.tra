@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 15:24:25</Timestamp>
-        <Checksum>3d1a80c4</Checksum>
+        <Timestamp>17/08/2017 18:28:09</Timestamp>
+        <Checksum>24ce2153</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportFraCleared"
@@ -22,6 +22,22 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/LEG1_CCY"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Ruleset" type="ruleset">
+                        <Value>FRA-Cleared</Value>
+                    </Property>
+                    <Mapper>InvokeValidationRuleset</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Node" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/TradeTime"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -139,6 +155,20 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/LEG1_CCY"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                </DeciderCall>
+                            </Condition>
+                            <Condition>
+                                <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FRA-Cleared/DataRow1[Counter1]/TradeTime"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -451,6 +481,37 @@
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Date" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Counter1]/EffectiveDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Time" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="PortfolioMostRecent/FRA-Cleared/DataRow1[Counter1]/TradeTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="DateTime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/TradeTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>JoinDateTime</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>

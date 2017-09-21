@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>24/05/2017 15:12:55</Timestamp>
-        <Checksum>b613cbb6</Checksum>
+        <Timestamp>17/08/2017 17:35:19</Timestamp>
+        <Checksum>548e3579</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToFRACleared"
@@ -620,6 +620,30 @@
                 </Value>
             </Property>
             <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="TradeTime"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Format" type="string">
+                <Value>HH:mm:ss.SSS</Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="TradeTime"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>TextToTime</Mapper>
         </FunctionCall>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">

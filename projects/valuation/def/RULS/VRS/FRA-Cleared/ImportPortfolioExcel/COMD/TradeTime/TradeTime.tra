@@ -1,0 +1,41 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>17/08/2017 17:27:42</Timestamp>
+        <Checksum>812e2fc5</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="TradeTime" group="Msg:ImportPortfolioExcel"
+    ruleSet="FRA-Cleared" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Element" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>HH:mm:ss.SSS</Value>
+                    </Property>
+                    <Decider>IsTime</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>TradeTime</Component>
+    </InputDefinition>
+    <ExceptionMessage>TradeTime</ExceptionMessage>
+    <ErrorCode>501</ErrorCode>
+</ValidationRule>

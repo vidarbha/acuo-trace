@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>14/06/2017 18:52:56</Timestamp>
-        <Checksum>4e21945f</Checksum>
+        <Timestamp>17/08/2017 18:44:23</Timestamp>
+        <Checksum>37bc38a9</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportIrsCleared"
@@ -134,6 +134,22 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]/LEG2_NOTIONAL"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Ruleset" type="ruleset">
+                        <Value>IRS-Cleared</Value>
+                    </Property>
+                    <Mapper>InvokeValidationRuleset</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Node" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]/TradeTime"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -414,6 +430,20 @@
                                 </DeciderCall>
                             </Condition>
                             <Condition>
+                                <DeciderCall>
+                                    <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="irscleared" pathString="IRS-Cleared/DataRow1[Counter1]/TradeTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Decider>HasExceptions</Decider>
+                                </DeciderCall>
+                            </Condition>
+                            <Condition>
                                 <CompoundCondition operator="AND">
                                     <Condition>
                                     <Comparison>
@@ -658,6 +688,37 @@
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Date" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Portfolio/IRS-Cleared/DataRow1[Counter1]/EffectiveDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Time" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Portfolio/IRS-Cleared/DataRow1[Counter1]/TradeTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="DateTime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/TradeTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>JoinDateTime</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>

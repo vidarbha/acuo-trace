@@ -15,7 +15,6 @@ import com.google.common.collect.ImmutableList;
 import com.opengamma.strata.basics.currency.Currency;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
-import org.eclipse.persistence.annotations.TenantTableDiscriminator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -43,10 +42,10 @@ public class TransformerTest {
     public ResourceFile statementItem = new ResourceFile("/mockmc.csv");
 
     @Rule
-    public ResourceFile portfolioFile = new ResourceFile("/portfolio/TradePortfolio24-05-17.xlsx");
+    public ResourceFile oneTradeFile = new ResourceFile("/portfolio/OneIRS.xlsx");
 
     @Rule
-    public ResourceFile npvFile = new ResourceFile("/portfolio/TradePortfolio18-05-17v2-NPV.xlsx");
+    public ResourceFile tradePortfolio = new ResourceFile("/portfolio/TradePortfolio_OW-742.xlsx");
 
     @Before
     public void setup() {
@@ -135,16 +134,24 @@ public class TransformerTest {
 
 
     @Test
-    public void testPortfolio() throws Exception {
+    public void testTradePortfolio() throws Exception {
         Transformer<SwapTrade> transformer = new PortfolioImportTransformer<>(new Mapper());
-        transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
+        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        assertThat(trades).isNotEmpty();
+    }
+
+    @Test
+    public void testOneTradePortfolio() throws Exception {
+        Transformer<SwapTrade> transformer = new PortfolioImportTransformer<>(new Mapper());
+        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(oneTradeFile.getInputStream()));
+        assertThat(trades).isNotEmpty();
     }
 
     @Test
     public void testNPV() throws Exception {
         Transformer<TradeValuation> transformer = new TradeValuationTransformer<>(new Mapper());
-        List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(npvFile.getInputStream()));
-        log.info("result:" + tradeValuations.toString());
+        List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        assertThat(tradeValuations).isNotEmpty();
     }
 
     @Test
@@ -178,6 +185,26 @@ public class TransformerTest {
         Transformer<MarginCall> transformer = new AgreeTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
+        log.info(transformer.serialise(marginCall, null));
+    }
+
+    @Test
+    public void testCreate() throws Exception
+    {
+        Transformer<MarginCall> transformer = new CreateTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setRoundingAmount(111);
+        log.info(transformer.serialise(marginCall, null));
+    }
+
+    @Test
+    public void testCancel() throws Exception
+    {
+        Transformer<MarginCall> transformer = new CancelTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setRoundingAmount(111);
         log.info(transformer.serialise(marginCall, null));
     }
 }
