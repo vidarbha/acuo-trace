@@ -28,7 +28,9 @@ public class PortfolioImportTransformer<INPUT, OUTPUT> extends BaseTransformer<I
                     .addResults(output.getFRAC())
                     .addErrors(output.getFRACError())
                     .addResults(output.getFXSW())
-                    .addErrors(output.getFXSWError());
+                    .addErrors(output.getFXSWError())
+                    .addResults(output.getZCSC())
+                    .addErrors(output.getZCSError());
 
             return outputBuilder.build();
         } catch (Exception e) {
