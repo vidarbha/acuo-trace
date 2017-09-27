@@ -2,166 +2,367 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.5</VersionNumber>
-            <BuildNumber>98</BuildNumber>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>lucie</User>
-        <Host>DESKTOP-OBN2924</Host>
-        <Timestamp>08/09/2017 18:11:21</Timestamp>
-        <Checksum>a494cb44</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>27/09/2017 19:22:30</Timestamp>
+        <Checksum>eae7a977</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="counterpartyWhitelist-create-response" group="Map:MS_ACUOAgreement">
     <ActionStep>
-        <RepeatAction repeatCounter="Counter1">
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
+        <IfAction>
+            <Condition>
+                <DeciderCall>
+                    <Property name="Value" type="nodespec">
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/counterpartyAmpId"/>
+                                    contextName="Input" pathString="."/>
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Property name="Output" type="nodespec">
+                    <Property name="Pattern" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                <Literal>webServiceError</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Decider>Contains</Decider>
+                </DeciderCall>
+            </Condition>
+            <ThenAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TEMP_VAR" pathString="WebServiceError[1]"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Mapper>Parse</Mapper>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <RepeatAction repeatCounter="Counter1">
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WebServiceError[Counter1]/ampErrorCode"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="MSError" pathString="ErrorCode"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WebServiceError[Counter1]/ampErrorDescription"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="MSError" pathString="ErrorDescription"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WebServiceError[Counter1]/errorMessage"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="MSError" pathString="ErrorMessage"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WebServiceError[Counter1]/httpStatusCode"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="MSError" pathString="StatusCode"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WebServiceError[Counter1]/httpStatusDescription"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="MSError" pathString="HttpStatusDescription"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ScopeB specType="TO_DATA" contextName="MSError"
+                            contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
+                        <RepeatLimit>
+                            <PathNodeSpec specType="TEMP_VAR" pathString="WebServiceError[#]"/>
+                        </RepeatLimit>
+                        <ScopeA specType="TEMP_VAR" pathString="WebServiceError[]"/>
+                    </RepeatAction>
+                </ActionStep>
+            </ThenAction>
+            <ElseAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TEMP_VAR" pathString="WhitelistForAll"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Mapper>Parse</Mapper>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <RepeatAction repeatCounter="Counter1">
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="CptyLegalEntity/AmpId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/counterpartyLabel"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    contextPosnSpec="Out1" pathString="CptyLegalEntity/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WhitelistForAll/counterpartyWhitelist[1]/counterpartyAmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="CptyLegalEntity/Label"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/localCounterpartyAmpId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    contextPosnSpec="Out1" pathString="CptyLegalEntity/Label"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WhitelistForAll/counterpartyWhitelist[1]/counterpartyLabel"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="ClientLegalEntity/AmpId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/localCounterpartyLabel"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    contextPosnSpec="Out1" pathString="ClientLegalEntity/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WhitelistForAll/counterpartyWhitelist[1]/localCounterpartyAmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="ClientLegalEntity/Label"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/tradingPartyAmpId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    contextPosnSpec="Out1" pathString="ClientLegalEntity/Label"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WhitelistForAll/counterpartyWhitelist[1]/localCounterpartyLabel"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="CptyTradingParty/AmpId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="counterpartyWhitelist[Counter1]/tradingPartyName"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    contextPosnSpec="Out1" pathString="CptyTradingParty/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WhitelistForAll/counterpartyWhitelist[1]/tradingPartyAmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Counter1" pathString="CptyTradingParty/Name"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ScopeB specType="TO_DATA" contextName="Output"
-                contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
-            <RepeatLimit>
-                <PathNodeSpec specType="TO_DATA" contextName="Output"
-                    contextPosnSpec="[#]" pathString="."/>
-            </RepeatLimit>
-            <ScopeA specType="TO_DATA" contextName="Output"
-                contextPosnSpec="[]" pathString="."/>
-        </RepeatAction>
+                                    contextPosnSpec="Out1" pathString="CptyTradingParty/Name"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="WhitelistForAll/counterpartyWhitelist[1]/tradingPartyName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ScopeB specType="TO_DATA" contextName="Output"
+                            contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
+                        <RepeatLimit>
+                            <PathNodeSpec specType="TEMP_VAR" pathString="WhitelistForAll[#]"/>
+                        </RepeatLimit>
+                        <ScopeA specType="TEMP_VAR" pathString="WhitelistForAll[]"/>
+                    </RepeatAction>
+                </ActionStep>
+            </ElseAction>
+        </IfAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Component>cpty-whitelist:counterpartyWhitelists</Component>
+        <Bot>String</Bot>
     </InputDefinition>
     <OutputDefinition name="Output" optional="true" repeating="true">
         <Type>WhitelistInfo</Type>
     </OutputDefinition>
+    <OutputDefinition name="MSError" optional="false" repeating="false">
+        <Type>results:MSError</Type>
+    </OutputDefinition>
+    <TempVariable name="WebServiceError" optional="true" repeating="true">
+        <Message>webError:webServiceError</Message>
+    </TempVariable>
+    <TempVariable name="WhitelistForAll" optional="true" repeating="false">
+        <Component>cpty-whitelist:counterpartyWhitelists</Component>
+    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>
