@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="detail.dtccsubscriber.api.acadiasoft.com" xmlns:tns="detail.dtccsubscriber.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="dtccSubscribers" type="tns:AcadiaSoft.DtccSubscriber.List"/>
+
+  <xs:complexType name="AcadiaSoft.DtccSubscriber.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="dtccSubscriber" type="tns:AcadiaSoft.DtccSubscriber" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.DtccSubscriber">
+    <xs:all>
+      <xs:element name="accountName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalAccount" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="firmCode" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="firmName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="internalAccount" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

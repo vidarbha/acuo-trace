@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="create.referencegroup.api.acadiasoft.com" xmlns:tns="create.referencegroup.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="referenceGroups" type="tns:AcadiaSoft.Reference.Group.Create.List"/>
+
+  <xs:complexType name="AcadiaSoft.Reference.Group.Create.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="referenceGroup" type="tns:AcadiaSoft.Reference.Group.Create" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Reference.Group.Create">
+    <xs:all>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="referenceMappings" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="referenceMapping" type="tns:AcadiaSoft.Reference.Group.Mapping" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="marginAgreementType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="role" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Reference.Group.Mapping">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="reference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="referenceAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="referenceGroupAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="referenceGroupName" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

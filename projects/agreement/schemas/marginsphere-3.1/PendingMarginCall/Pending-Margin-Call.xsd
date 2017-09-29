@@ -1,0 +1,253 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="detail.pendingmargincall.api.acadiasoft.com" xmlns:tns="detail.pendingmargincall.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="pendingMarginCalls" type="tns:AcadiaSoft.Pending.Margin.Call.List"/>
+
+  <xs:complexType name="AcadiaSoft.Pending.Margin.Call.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="pendingMarginCall" type="tns:AcadiaSoft.Pending.Margin.Call" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Pending.Margin.Call">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified"/>
+      <xs:element name="businessState" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="agreedAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="agreedDeliverAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="agreedReturnAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="cancelComments" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="cancelReasonCodes" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cancelReasonCode" type="xs:int" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="collateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="comments" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyCollateralBalance" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyCreditCollateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyCreditExposure" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyCreditNetRequiredAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyCreditObligationDeliver" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyCreditObligationReturn" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyCreditPendingCollateral" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyInitialMargin" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyMarkToMarket" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="currency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="deliverAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="deliverMinimumTransferAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="deliverRoundingAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="deliverRoundingMethod" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="deliveryType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="disputeComments" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="disputeReasonCodes" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="disputeReasonCode" type="xs:int" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="disputedAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="exposure" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="fullReturn" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="initialCollateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="initialExposure" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="initialNetRequiredAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="initialObligationDeliver" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="initialObligationReturn" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="initialPendingCollateral" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="callInterestAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="localCreditCollateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="localCreditExposure" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="localCreditNetRequiredAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="localCreditObligationDeliver" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="localCreditObligationReturn" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="localCreditPendingCollateral" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="minimumTransferAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="netRequiredAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="notificationTime" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="notificationTimeZone" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="parentVersion" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="pendingCollateral" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="returnAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="returnMinimumTransferAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="returnRoundingAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="returnRoundingMethod" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="role" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="roundingAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="roundingMethod" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementDate" type="tns:AcadiaSoft.Pending.Margin.Call.Date.Only" form="qualified" minOccurs="0"/>
+      <xs:element name="threshold" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="thresholdTreatment" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCallAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="valuationDate" type="tns:AcadiaSoft.Pending.Margin.Call.Date.Only" form="qualified" minOccurs="0"/>
+      <xs:element name="variationCollateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="variationExposure" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="variationNetRequiredAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="variationObligationDeliver" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="variationObligationReturn" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="variationPendingCollateral" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="version" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="child" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyALabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyBAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyBExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyBLabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyDtccAccount" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyLabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="direction" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyDtccAccount" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="localCounterpartyLabel" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginAgreementShortName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginCallFields" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="marginCallField" type="tns:AcadiaSoft.Margin.Call.Field" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="parent" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="parentAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="recallItems" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="recallItem" type="tns:AcadiaSoft.Recall.Item" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="silos" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="silo" type="tns:AcadiaSoft.Margin.Call.Silo" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="state" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="temporaryExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Pending.Margin.Call.Date.Only">
+    <xs:all>
+      <xs:element name="day" type="xs:int" form="qualified"/>
+      <xs:element name="month" type="xs:int" form="qualified"/>
+      <xs:element name="year" type="xs:int" form="qualified"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Call.Field">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="fieldName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="fieldValue" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="fieldVersion" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="marginCallAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Recall.Item">
+    <xs:all>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="businessState" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyBExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalReference" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="marginCallAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="adjustedCollateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="comments" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="currentMarketValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="fxCurrency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="fxRate" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="haircut" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="price" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="quantity" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="rejectComments" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="rejectReasonCodes" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rejectReasonCode" type="xs:int" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="securityId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="securityIdType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementDate" type="tns:AcadiaSoft.Recall.Item.Date.Only" form="qualified" minOccurs="0"/>
+      <xs:element name="version" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="temporaryExternalReference" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Recall.Item.Date.Only">
+    <xs:all>
+      <xs:element name="day" type="xs:int" form="qualified"/>
+      <xs:element name="month" type="xs:int" form="qualified"/>
+      <xs:element name="year" type="xs:int" form="qualified"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Margin.Call.Silo">
+    <xs:all>
+      <xs:element name="adjustedCollateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="adjustedExposure" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="adjustedInterestAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="adjustedRequiredAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="agreedAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="agreedDeliverAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="agreedReturnAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="businessState" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="collateralValue" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="createDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="createUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="currency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="expireDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="expireUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="exposure" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="fxRate" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="interestAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="interestBenchmark" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="interestRate" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="marginCallAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyDate" type="xs:dateTime" form="qualified" minOccurs="0"/>
+      <xs:element name="modifyUserAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="requiredAmount" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

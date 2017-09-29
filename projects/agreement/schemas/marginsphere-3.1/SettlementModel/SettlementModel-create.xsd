@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="create.settlementModel.api.acadiasoft.com" xmlns:tns="create.settlementModel.api.acadiasoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="settlementModels" type="tns:AcadiaSoft.SettlementModel.Create.List"/>
+
+  <xs:complexType name="AcadiaSoft.SettlementModel.Create.List">
+    <xs:sequence>
+      <xs:element name="skip" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="max" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="totalCount" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementModel" type="tns:AcadiaSoft.SettlementModel.Create" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.SettlementModel.Create">
+    <xs:all>
+      <xs:element name="accounts" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountMapping" type="tns:AcadiaSoft.Account.Create" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="clientBic" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="counterpartyBic" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="externalUsername" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="instructionType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="organizationName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="releaseOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="releaseOrganizationName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementModelName" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AcadiaSoft.Account.Create">
+    <xs:all>
+      <xs:element name="accountId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="accountName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="accountOwnerIdToPayer" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="ampId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="assetType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="callType" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="currency" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="custodianBic" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="custodianOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="custodianOrganizationName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementModelAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="settlementModelName" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="triPartyAccount" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="triPartyBic" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="triPartyNumber" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="triPartyOrganizationAmpId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="triPartyOrganizationName" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+

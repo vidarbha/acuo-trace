@@ -1,0 +1,134 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Schema Import</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>29/09/2017 16:56:02</Timestamp>
+        <Checksum>e2e30688</Checksum>
+    </LastModification>
+</Prolog>
+<ProjectProperties>
+    <Property name="rootDirectory" type="rootcontainer">
+        <Value>
+            <RootContainerDefinition>
+                <LocalConfigServerDefinition parent="Project File" path="def"/>
+            </RootContainerDefinition>
+        </Value>
+    </Property>
+    <Property name="buildDirectory" type="diskfile">
+        <Value>
+            <DiskFilePropertyValue parent="Project File" path="build"/>
+        </Value>
+    </Property>
+    <Property name="libraries" type="lookuptable">
+        <Value>
+            <LookupTable inLabel="Logical Name" outLabel="Path">
+                <OutputDefinition name="outType" type="rootcontainer">
+                    <MetaProperty name="Description" type="string">
+                        <Value>Select a Library File or Directory</Value>
+                    </MetaProperty>
+                    <MetaProperty name="FileSelectionMode" type="option">
+                        <Value>FILES_AND_DIRECTORIES</Value>
+                    </MetaProperty>
+                    <MetaProperty name="FileSuffix" type="string">
+                        <Value>.jar</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ChooserFilterDescription" type="string">
+                        <Value>Library Jar or Directory</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ParentTypes" type="list">
+                        <Value>
+                            <List>
+                                <Enumeration>Project File</Enumeration>
+                                <Enumeration>Projects Directory</Enumeration>
+                                <Enumeration>Project Root Directory</Enumeration>
+                                <Enumeration>Libraries Directory</Enumeration>
+                                <Enumeration>Absolute</Enumeration>
+                            </List>
+                        </Value>
+                    </MetaProperty>
+                </OutputDefinition>
+            </LookupTable>
+        </Value>
+    </Property>
+    <Property name="schemaLocations" type="lookuptable">
+        <Value>
+            <LookupTable inLabel="Message Definition Group" outLabel="Schema Location">
+                <TableEntry>
+                    <In>MarginAgreement-create</In>
+                    <Out>file:///E:/ACUO/projects/acuo-trace/projects/agreement/schemas/marginsphere-3.1/MarginAgreement/MarginAgreement-create.xsd</Out>
+                </TableEntry>
+                <TableEntry>
+                    <In>CounterpartyWhitelist</In>
+                    <Out>file:///E:/ACUO/projects/acuo-trace/projects/agreement/schemas/marginsphere-3.1/CounterpartyWhitelist/CounterpartyWhitelist.xsd</Out>
+                </TableEntry>
+                <TableEntry>
+                    <In>CounterpartyWhitelist-create</In>
+                    <Out>file:///E:/ACUO/projects/acuo-trace/projects/agreement/schemas/marginsphere-3.1/CounterpartyWhitelist/CounterpartyWhitelist-create.xsd</Out>
+                </TableEntry>
+                <TableEntry>
+                    <In>DeliveryMap-update</In>
+                    <Out>file:///E:/ACUO/projects/acuo-trace/projects/agreement/schemas/marginsphere-3.1/DeliveryMap/DeliveryMap-update.xsd</Out>
+                </TableEntry>
+                <TableEntry>
+                    <In>MarginAgreement-discontinue</In>
+                    <Out>file:///E:/ACUO/projects/acuo-trace/projects/agreement/schemas/marginsphere-3.1/MarginAgreement/MarginAgreement-discontinue.xsd</Out>
+                </TableEntry>
+            </LookupTable>
+        </Value>
+    </Property>
+    <Property name="externalLibraries" type="lookuptable">
+        <Value>
+            <LookupTable inLabel="Logical Name" outLabel="Path">
+                <OutputDefinition name="outType" type="diskfile">
+                    <MetaProperty name="FileSelectionMode" type="option">
+                        <Value>FILES_AND_DIRECTORIES</Value>
+                    </MetaProperty>
+                    <MetaProperty name="FileSuffix" type="string">
+                        <Value>.jar,.zip</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ChooserFilterDescription" type="string">
+                        <Value>class directory, zip or jar</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ParentTypes" type="list">
+                        <Value>
+                            <List>
+                                <Enumeration>Projects Directory</Enumeration>
+                                <Enumeration>Project Root Directory</Enumeration>
+                                <Enumeration>Libraries Directory</Enumeration>
+                                <Enumeration>Absolute</Enumeration>
+                            </List>
+                        </Value>
+                    </MetaProperty>
+                </OutputDefinition>
+                <TableEntry>
+                    <In>all</In>
+                    <Out>
+                        <DiskFilePropertyValue
+                            parent="Project Root Directory" path="..\..\..\build\libs\acuo-mapping-all.jar"/>
+                    </Out>
+                </TableEntry>
+                <TableEntry>
+                    <In>main</In>
+                    <Out>
+                        <DiskFilePropertyValue
+                            parent="Project Root Directory" path="..\..\..\build\classes"/>
+                    </Out>
+                </TableEntry>
+            </LookupTable>
+        </Value>
+    </Property>
+    <Property name="projectPrefix" type="string">
+        <Value>com.acuo.collateral.trace</Value>
+    </Property>
+    <Property name="projectVersion" type="string">
+        <Value>0.01</Value>
+    </Property>
+    <Property name="projectStatus" type="option">
+        <Value>TEST</Value>
+    </Property>
+</ProjectProperties>
