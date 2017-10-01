@@ -1,0 +1,35 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Action: Set Expected Results to Current Output</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>lucie</User>
+        <Host>DESKTOP-OBN2924</Host>
+        <Timestamp>06/09/2017 13:03:10</Timestamp>
+        <Checksum>7efb6e4b</Checksum>
+    </LastModification>
+</Prolog>
+<MappingTestDefinition name="test-Agreement-ClientDetail-Response"
+    testSuiteName="SimpleTests" group="Map:MS_ACUOAgreement"
+    testerReference="MultipleTest" target="Agreement-ClientDetail-Reponse">
+    <Property name="OutputType" type="option">
+        <Value>Raw</Value>
+    </Property>
+    <Property name="InputFile" type="testdatafile">
+        <Value>input.dat</Value>
+    </Property>
+    <Property name="RepeatSplitString" type="string">
+        <Value>%%%</Value>
+    </Property>
+    <Property name="MessageSplitString" type="string">
+        <Value>---</Value>
+    </Property>
+    <Property name="MultipleTestSplitString" type="string">
+        <Value>+++</Value>
+    </Property>
+    <Property name="ExpectedResults" type="testdatafile">
+        <Value>expected.dat</Value>
+    </Property>
+</MappingTestDefinition>
