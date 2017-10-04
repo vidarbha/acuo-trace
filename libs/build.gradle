@@ -8,7 +8,8 @@ ext {
     extFiles = [
             valuations:   'transformer-valuations.jar',
             margin:       'transformer-margin.jar',
-            assets:       'transformer-assets.jar'
+            assets:       'transformer-assets.jar',
+            agreement:    'transformer-agreement.jar'
             // sources:    'api/extlib-src.zip',
             // javadoc:    'api/extlib-doc.zip'
     ]
@@ -36,6 +37,10 @@ publishing {
         assets(MavenPublication) {
             artifact (file(extFiles.assets))
             artifactId = 'transformer-assets'
+        }
+        agreement(MavenPublication) {
+            artifact (file(extFiles.agreement))
+            artifactId = 'transformer-agreement'
         }
     }
 }
