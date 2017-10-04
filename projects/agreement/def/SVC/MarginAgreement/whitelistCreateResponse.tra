@@ -2,16 +2,17 @@
     <LastModification>
         <Transformer>
             <Program>Service Operation Form</Program>
-            <VersionNumber>3.6.5</VersionNumber>
-            <BuildNumber>98</BuildNumber>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>lucie</User>
-        <Host>DESKTOP-OBN2924</Host>
-        <Timestamp>30/08/2017 17:25:26</Timestamp>
-        <Checksum>94230007</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>04/10/2017 16:15:40</Timestamp>
+        <Checksum>8f1a2af3</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="getSubstitution" serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="whitelistCreateResponse"
+    serviceName="MarginAgreement" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>String</Value>
     </Property>
@@ -19,8 +20,8 @@
         <Value>External Object</Value>
     </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:MS_ACUOSubstitution">
-            <Mapping>SubstitutionReceive</Mapping>
+        <ServiceOperationMappingTarget group="Map:MS_ACUOAgreement">
+            <Mapping>counterpartyWhitelist-create-response</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

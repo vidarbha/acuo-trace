@@ -1,18 +1,18 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Service Operation Form</Program>
+            <Program>Copy File Action</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>13/04/2017 13:48:50</Timestamp>
-        <Checksum>a879c107</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>04/10/2017 16:11:49</Timestamp>
+        <Checksum>763e2e9f</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="importStatementItem"
-    serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="fetchCounterparty"
+    serviceName="MarginAgreement" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>String</Value>
     </Property>
@@ -20,8 +20,8 @@
         <Value>External Object</Value>
     </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:Cpty_ACUO">
-            <Mapping>StatementItemImport</Mapping>
+        <ServiceOperationMappingTarget group="Map:MS_ACUOAgreement">
+            <Mapping>Counterparty</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

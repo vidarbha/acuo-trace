@@ -1,17 +1,18 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Service Operation Form</Program>
+            <Program>Copy File Action</Program>
             <VersionNumber>3.6.3</VersionNumber>
             <BuildNumber>47</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>20/03/2017 13:15:59</Timestamp>
-        <Checksum>e8bad468</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>04/10/2017 16:11:31</Timestamp>
+        <Checksum>be4828d6</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="disputeCall" serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="whitelistCreate"
+    serviceName="MarginAgreement" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>External Object</Value>
     </Property>
@@ -19,8 +20,8 @@
         <Value>String</Value>
     </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:ACUO_MS">
-            <Mapping>MarginCall-Dispute</Mapping>
+        <ServiceOperationMappingTarget group="Map:ACUO_MSAgreement">
+            <Mapping>counterpartyWhitelist-create</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>
