@@ -1,20 +1,23 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Test Definition Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <Program>Action: Set Expected Results to Current Output</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>staf</User>
-        <Host>S</Host>
-        <Timestamp>25/08/2017 11:49:13</Timestamp>
-        <Checksum>8969857</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/10/2017 08:06:47</Timestamp>
+        <Checksum>c9df0e95</Checksum>
     </LastModification>
 </Prolog>
 <MessageTestDefinition name="test-agreement-clientdetails"
     testSuiteName="MessageTests" group="MarginAgreement-client-detail" testerReference="AdvancedTest">
     <Property name="OutputType" type="option">
         <Value>Raw</Value>
+    </Property>
+    <Property name="ExpectedResults" type="testdatafile">
+        <Value>expected.dat</Value>
     </Property>
     <Target>
         <Component>marginAgreements</Component>

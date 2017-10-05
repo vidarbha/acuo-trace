@@ -1,0 +1,67 @@
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              Test 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<?xml version="1.0"?>
+<Agreement xmlns:margin="com.acuo.common.model.margin"
+    xmlns="com.acuo.common.model.agreements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <TimeZone>GMT</TimeZone>
+    <Direction>Outgoing</Direction>
+    <SeparateVariationCallsByCurrency>false</SeparateVariationCallsByCurrency>
+    <MarginCallEnabled>true</MarginCallEnabled>
+    <ModifyUserAmpId>m100020133061z3cgy</ModifyUserAmpId>
+    <InterestStatementEnabled>false</InterestStatementEnabled>
+    <RequestedActiveDate>2017-08-30T00:00:00</RequestedActiveDate>
+    <AgreementVersion>0</AgreementVersion>
+    <AgreementShortName>Agreement Short Name</AgreementShortName>
+    <ExternalUsername>username</ExternalUsername>
+    <SubstitutionEnabled>false</SubstitutionEnabled>
+    <BilateralDetail>
+        <CallType>Variation</CallType>
+    </BilateralDetail>
+    <BilateralDetail>
+        <CallType>Netted</CallType>
+    </BilateralDetail>
+    <BilateralDetail>
+        <CallType>Initial</CallType>
+    </BilateralDetail>
+    <BilateralDetail>
+        <CallType>Variation</CallType>
+    </BilateralDetail>
+    <BilateralDetail>
+        <CallType>Initial</CallType>
+    </BilateralDetail>
+    <BilateralDetail>
+        <CallType>Initial</CallType>
+    </BilateralDetail>
+    <AllowMultipleMarginCallsPerDay>true</AllowMultipleMarginCallsPerDay>
+    <CounterpartyLabel>cpty label</CounterpartyLabel>
+    <CounterpartyAmpId>prd42rkv6s7p</CounterpartyAmpId>
+    <CreateUserAmpId>m100020133061z3cgy</CreateUserAmpId>
+    <LastModifiedCounterparty>m10002012324prlw3</LastModifiedCounterparty>
+    <LocalCounterpartyAmpId>m10002012324prlw3</LocalCounterpartyAmpId>
+    <LocalCounterpartyLabel>cpty label</LocalCounterpartyLabel>
+    <InitialCallsEnabled>true</InitialCallsEnabled>
+    <CreditCallsEnabled>false</CreditCallsEnabled>
+    <SeparateInitialCallsByCurrency>false</SeparateInitialCallsByCurrency>
+    <VariationCallsEnabled>true</VariationCallsEnabled>
+    <AgreementType>Group</AgreementType>
+    <AmpId>m10002017242ogpgyi</AmpId>
+    <CreatedBy>username</CreatedBy>
+    <LongName>Agreement Long Name</LongName>
+    <BusinessState>Pending_New</BusinessState>
+    <CreateDate>2017-08-30T07:43:02.431-04:00</CreateDate>
+    <ModifyDate>2017-08-30T07:43:02.431-04:00</ModifyDate>
+</Agreement>
+---
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              Test 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---
+<?xml version="1.0"?>
+<MSError xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ErrorCode>5002</ErrorCode>
+    <ErrorDescription>JAXB Unmarshaling Error</ErrorDescription>
+    <ErrorMessage>XML Validation exception occured at line [6], column [23], with error message [cvc-complex-type.2.4.a: Invalid content was found starting with element 'tns:callDate'. One of '{"create.margincall.api.acadiasoft.com":exposure, "create.margincall.api.acadiasoft.com":finalTransferAmount, "create.margincall.api.acadiasoft.com":initialMarginAmount, "create.margincall.api.acadiasoft.com":minimumTransferAmount, "create.margincall.api.acadiasoft.com":netRequiredAmount, "create.margincall.api.acadiasoft.com":pendingCollateral, "create.margincall.api.acadiasoft.com":roundingAmount, "create.margincall.api.acadiasoft.com":threshold, "create.margincall.api.acadiasoft.com":valuationDate, "create.margincall.api.acadiasoft.com":externalReference, "create.margincall.api.acadiasoft.com":marginAgreementAmpId, "create.margincall.api.acadiasoft.com":marginAgreementShortName}' is expected.]</ErrorMessage>
+    <StatusCode>400</StatusCode>
+    <HttpStatusDescription>Bad Request</HttpStatusDescription>
+</MSError>
