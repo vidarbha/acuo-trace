@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>acer</User>
         <Host>acer-pc</Host>
-        <Timestamp>04/10/2017 15:34:33</Timestamp>
-        <Checksum>166dbc65</Checksum>
+        <Timestamp>05/10/2017 17:00:41</Timestamp>
+        <Checksum>200d0074</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Agreement-ClientDetail-Reponse" group="Map:MS_ACUOAgreement">
@@ -244,6 +244,87 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/ampId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/agreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AgreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/Role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
                                     <Property
@@ -674,6 +755,27 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/acceptedBy"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/acceptedBy"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
                                     specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/counterpartyAmpId"/>
                                     </NodeSpec>
                                     </Value>
@@ -754,52 +856,6 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="CreateUserAmpId"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/direction"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="Direction"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="ExternalUsername"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/externalUsername"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -965,45 +1021,6 @@
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Datetime" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="RequestedActiveDate"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Day" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/requestedActiveDate/day"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Month" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/requestedActiveDate/month"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Year" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/requestedActiveDate/year"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
                                     </FunctionCall>
                                     </ActionStep>
                                     <ActionStep>
@@ -1363,6 +1380,45 @@
                                 <ThenAction>
                                     <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="RequestedActiveDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/requestedActiveDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/requestedActiveDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/requestedActiveDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -1396,6 +1452,29 @@
                                     </Value>
                                     </Property>
                                     <Mapper>Replace</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/direction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Direction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
                                 </ThenAction>
