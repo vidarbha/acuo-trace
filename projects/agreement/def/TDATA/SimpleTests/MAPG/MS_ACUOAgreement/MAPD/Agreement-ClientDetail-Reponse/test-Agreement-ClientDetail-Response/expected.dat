@@ -6,88 +6,95 @@
     xmlns="com.acuo.common.model.agreements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <TimeZone>A</TimeZone>
     <Threshold>1.0</Threshold>
-    <CreatedBy>A</CreatedBy>
-    <CreateDate>1983-03-15T15:36:32.618</CreateDate>
-    <ModifyDate>2017-04-30T06:57:36.966</ModifyDate>
-    <AgreementType>Regulatory_CSA</AgreementType>
-    <ActiveDate>0001-01-01T00:00:00</ActiveDate>
-    <DefaultValue>
-        <Currency>A</Currency>
-        <CallType>A</CallType>
-        <AutoPartialDisputeMismatched>true</AutoPartialDisputeMismatched>
-        <AutoPledgeTolerancePercentage>1.0</AutoPledgeTolerancePercentage>
-        <AutoAgreeLowerTotalCallAmount>true</AutoAgreeLowerTotalCallAmount>
-        <AutoFullDisputeForNoAction>true</AutoFullDisputeForNoAction>
-        <ReturnRoundingAmount>1.0</ReturnRoundingAmount>
-        <AutoAgreeWithinTolerance>true</AutoAgreeWithinTolerance>
-        <DeliverMinimumTransferAmount>1.0</DeliverMinimumTransferAmount>
-        <ReturnMinimumTransferAmount>1.0</ReturnMinimumTransferAmount>
-        <DeliverRoundingAmount>1.0</DeliverRoundingAmount>
-    </DefaultValue>
-    <LongName>A</LongName>
-    <AmpId>A</AmpId>
-    <BusinessState>Active</BusinessState>
-    <SeparateVariationCallsByCurrency>true</SeparateVariationCallsByCurrency>
-    <AccountBaseCurrency>USD</AccountBaseCurrency>
-    <BilateralDetail>
-        <CallType>Variation</CallType>
-        <AgreementType>CSA</AgreementType>
-        <AmpId>A</AmpId>
-        <MarginTermDeliverRoundingAmount>1.0</MarginTermDeliverRoundingAmount>
-        <MarginTermReturnRoundingAmount>1.0</MarginTermReturnRoundingAmount>
-        <MarginTermDeliverMinimumTransferAmount>1.0</MarginTermDeliverMinimumTransferAmount>
-        <MarginTermReturnMinimumTransferAmount>1.0</MarginTermReturnMinimumTransferAmount>
-        <AccountBaseCurrency>USD</AccountBaseCurrency>
-        <Role>Pledgor</Role>
-    </BilateralDetail>
-    <AgreementShortName>A</AgreementShortName>
     <AgreementVersion>1</AgreementVersion>
-    <AllowMultipleMarginCallsPerDay>true</AllowMultipleMarginCallsPerDay>
-    <SoleCalculation>true</SoleCalculation>
-    <SeparateInitialCallsByCurrency>true</SeparateInitialCallsByCurrency>
-    <LocalCounterpartyLabel>A</LocalCounterpartyLabel>
-    <InitialCallsEnabled>true</InitialCallsEnabled>
-    <MarginCallEnabled>true</MarginCallEnabled>
-    <CreateUserAmpId>A</CreateUserAmpId>
-    <VariationCallsEnabled>true</VariationCallsEnabled>
-    <SubstitutionEnabled>true</SubstitutionEnabled>
-    <CreditCallsEnabled>true</CreditCallsEnabled>
-    <InterestStatementEnabled>true</InterestStatementEnabled>
-    <LastModifiedCounterparty>A</LastModifiedCounterparty>
     <CounterpartyAmpId>A</CounterpartyAmpId>
-    <CounterpartyLabel>A</CounterpartyLabel>
-    <ModifyUserAmpId>A</ModifyUserAmpId>
-    <LocalCounterpartyAmpId>A</LocalCounterpartyAmpId>
-    <InterestBenchmark>
-        <BenchmarkName>A</BenchmarkName>
-        <Currency>USD</Currency>
-    </InterestBenchmark>
-    <ValuationAgentAmpId>A</ValuationAgentAmpId>
+    <CreditCallsEnabled>true</CreditCallsEnabled>
     <NettingCallType>Variation</NettingCallType>
     <NettingCallType>Initial</NettingCallType>
+    <LocalCounterpartyLabel>A</LocalCounterpartyLabel>
+    <CreateUserAmpId>A</CreateUserAmpId>
+    <BilateralDetail>
+        <MarginTermDeliverMinimumTransferAmount>1.0</MarginTermDeliverMinimumTransferAmount>
+        <MarginTermDeliverRoundingAmount>1.0</MarginTermDeliverRoundingAmount>
+        <MarginTermThresholdAmount>1.0</MarginTermThresholdAmount>
+        <AccountBaseCurrency>USD</AccountBaseCurrency>
+        <MarginTermThresholdTreatment>A</MarginTermThresholdTreatment>
+        <MarginTermNotificationTime>A</MarginTermNotificationTime>
+        <MarginTermEndDate>0001-01-01T00:00:00</MarginTermEndDate>
+        <MarginTermStartDate>0001-01-01T00:00:00</MarginTermStartDate>
+        <MarginTermReturnMinimumTransferAmount>1.0</MarginTermReturnMinimumTransferAmount>
+        <MarginTermDeliverRoundingMethod>A</MarginTermDeliverRoundingMethod>
+        <MarginTermReturnRoundingMethod>A</MarginTermReturnRoundingMethod>
+        <MarginTermNotificationTimeZone>A</MarginTermNotificationTimeZone>
+        <MarginTermReturnRoundingAmount>1.0</MarginTermReturnRoundingAmount>
+    </BilateralDetail>
+    <LastModifiedCounterparty>A</LastModifiedCounterparty>
+    <LocalCounterpartyAmpId>A</LocalCounterpartyAmpId>
+    <MarginCallEnabled>true</MarginCallEnabled>
+    <InterestStatementEnabled>true</InterestStatementEnabled>
+    <InterestBenchmark>
+        <Currency>USD</Currency>
+        <BenchmarkName>A</BenchmarkName>
+    </InterestBenchmark>
+    <StpConfiguration>
+        <StpOptionType>Pledge Currency</StpOptionType>
+        <StpAction>Pledge</StpAction>
+        <StpOptionCallType>Initial</StpOptionCallType>
+        <StpOptionCurrency>USD</StpOptionCurrency>
+    </StpConfiguration>
+    <StpConfiguration>
+        <StpOptionType>Tri-Party</StpOptionType>
+        <StpAction>Pledge Accept</StpAction>
+        <StpOptionCallType>Variation</StpOptionCallType>
+    </StpConfiguration>
+    <CounterpartyLabel>A</CounterpartyLabel>
+    <SubstitutionEnabled>true</SubstitutionEnabled>
+    <SoleCalculation>true</SoleCalculation>
+    <AgreementShortName>A</AgreementShortName>
+    <AllowMultipleMarginCallsPerDay>true</AllowMultipleMarginCallsPerDay>
+    <ValuationAgentAmpId>A</ValuationAgentAmpId>
+    <ModifyUserAmpId>A</ModifyUserAmpId>
+    <SeparateInitialCallsByCurrency>true</SeparateInitialCallsByCurrency>
+    <VariationCallsEnabled>true</VariationCallsEnabled>
+    <InitialCallsEnabled>true</InitialCallsEnabled>
+    <AmpId>A</AmpId>
+    <CreatedBy>A</CreatedBy>
+    <AgreementType>Regulatory_CSA</AgreementType>
+    <DefaultValue>
+        <Currency>USD</Currency>
+        <DeliverRoundingAmount>1.0</DeliverRoundingAmount>
+        <ReturnRoundingAmount>1.0</ReturnRoundingAmount>
+        <AutoPartialDisputeMismatched>true</AutoPartialDisputeMismatched>
+        <AutoAgreeWithinTolerance>true</AutoAgreeWithinTolerance>
+        <AutoPledgeTolerancePercentage>1.0</AutoPledgeTolerancePercentage>
+        <AutoFullDisputeForNoAction>true</AutoFullDisputeForNoAction>
+        <ReturnMinimumTransferAmount>1.0</ReturnMinimumTransferAmount>
+        <AutoAgreeLowerTotalCallAmount>true</AutoAgreeLowerTotalCallAmount>
+        <DeliverMinimumTransferAmount>1.0</DeliverMinimumTransferAmount>
+        <CallType>Initial</CallType>
+    </DefaultValue>
+    <ActiveDate>0001-01-01T00:00:00</ActiveDate>
+    <LocalDetail>
+        <CallIssuancePrimaryToValidatorTolerance>1.0</CallIssuancePrimaryToValidatorTolerance>
+        <CallIssuanceOwnVsCptyTolerance>1.0</CallIssuanceOwnVsCptyTolerance>
+        <CallIssuanceNoMaterialChangeCheck>true</CallIssuanceNoMaterialChangeCheck>
+        <CallIssuanceMultipleCallsPerDayCheck>true</CallIssuanceMultipleCallsPerDayCheck>
+        <CallIssuanceManual>true</CallIssuanceManual>
+        <CallIssuanceSchedule>A</CallIssuanceSchedule>
+    </LocalDetail>
+    <CreateDate>1983-03-15T15:36:32.618</CreateDate>
+    <BusinessState>Active</BusinessState>
+    <LongName>A</LongName>
+    <ModifyDate>2017-04-30T06:57:36.966</ModifyDate>
+    <SeparateVariationCallsByCurrency>true</SeparateVariationCallsByCurrency>
 </Agreement>
-
-Error Report:
-Agreement
-..DefaultValue[1]
-....Currency
-...... No entry for 'A' in Currency table
-...... Data:            'A'
-...... Exception type:  CONVERTER
-...... Constraint Name: Currency
-
-....CallType[1]
-...... Value 'A' not allowed
-...... Data:            'A'
-...... Exception type:  CONVERTER
-...... Constraint Name: enumeration
 %%%
 <?xml version="1.0"?>
 <Agreement xmlns:margin="com.acuo.common.model.margin"
     xmlns="com.acuo.common.model.agreements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <BusinessState>Pending_New</BusinessState>
-    <RequestedActiveDate>0001-01-01T00:00:00</RequestedActiveDate>
     <Direction>A</Direction>
+    <RequestedActiveDate>0001-01-01T00:00:00</RequestedActiveDate>
+    <BusinessState>Pending_New</BusinessState>
 </Agreement>
 ---
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
