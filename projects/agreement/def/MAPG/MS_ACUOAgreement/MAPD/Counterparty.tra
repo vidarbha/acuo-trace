@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>29/08/2017 22:43:34</Timestamp>
-        <Checksum>16427e63</Checksum>
+        <Timestamp>13/10/2017 12:24:22</Timestamp>
+        <Checksum>fe858aac</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Counterparty" group="Map:MS_ACUOAgreement">
@@ -206,6 +206,29 @@
                     <RepeatAction repeatCounter="Counter1">
                         <ActionStep>
                             <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Active"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Counterparty/counterparty[Counter1]/active"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
                                 <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -344,6 +367,29 @@
                         </ActionStep>
                         <ActionStep>
                             <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LegalEntityIdentifier"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Counterparty/counterparty[Counter1]/legalEntityIdentifier"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
                                 <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -382,6 +428,29 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="CreateDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="EmailEnabled"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Counterparty/counterparty[Counter1]/emailEnabled"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
