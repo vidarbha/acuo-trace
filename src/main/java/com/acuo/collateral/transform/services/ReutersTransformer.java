@@ -7,6 +7,7 @@ import com.acuo.collateral.transform.trace.transformer_assets.Reuters;
 import com.acuo.collateral.transform.trace.transformer_assets.ToReutersOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.OutputBuilder;
+import com.acuo.common.util.LocalDateUtils;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
@@ -27,7 +28,10 @@ public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OU
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {
         try {
-            ToReutersOutputWrapper outputWrapper = reuters.toReuters(value.toArray());
+            if (context.getValueDate() == null) {
+                context.setValueDate(LocalDateUtils.valuationDate());
+            }
+            ToReutersOutputWrapper outputWrapper = reuters.toReuters(value.toArray(), context);
             return outputWrapper.getReutersInput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of assets", value);
