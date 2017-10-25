@@ -1,0 +1,27 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>25/10/2017 17:52:15</Timestamp>
+        <Checksum>13b0b340</Checksum>
+    </LastModification>
+</Prolog>
+<ExposedServiceOperation name="toIRSMarkit" serviceName="Service" operationType="ManyToManyMapping">
+    <Property name="InputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
+    <Description>transform a list of IrSwap into a Markit PV Request</Description>
+    <ServiceOperationTargetChoice>
+        <ServiceOperationMappingTarget group="Map:ACUO_MARKIT-OUT">
+            <Mapping>ACUO_MarkitIRS</Mapping>
+        </ServiceOperationMappingTarget>
+    </ServiceOperationTargetChoice>
+</ExposedServiceOperation>

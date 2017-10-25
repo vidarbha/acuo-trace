@@ -1,0 +1,27 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>25/10/2017 17:34:13</Timestamp>
+        <Checksum>bf35ed8b</Checksum>
+    </LastModification>
+</Prolog>
+<ExposedServiceOperation name="fromCmeFile" serviceName="Service" operationType="ManyToManyMapping">
+    <Property name="InputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
+    <Description>Parse CME ITRS csv file into a collection Acuo IrSwaps</Description>
+    <ServiceOperationTargetChoice>
+        <ServiceOperationMappingTarget group="Map:CME_ACUO">
+            <Mapping>CME_ACUO</Mapping>
+        </ServiceOperationMappingTarget>
+    </ServiceOperationTargetChoice>
+</ExposedServiceOperation>
