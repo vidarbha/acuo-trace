@@ -1,0 +1,41 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Copy File Action</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>01/06/2017 10:43:55</Timestamp>
+        <Checksum>6a0b04b8</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="ValueDate" group="Msg:ImportPortfolioExcel"
+    ruleSet="IRS-Bilateral" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Element" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>yyyy/MM/dd</Value>
+                    </Property>
+                    <Decider>IsDate</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>ValueDate</Component>
+    </InputDefinition>
+    <ExceptionMessage>ValueDate</ExceptionMessage>
+    <ErrorCode>15</ErrorCode>
+</ValidationRule>

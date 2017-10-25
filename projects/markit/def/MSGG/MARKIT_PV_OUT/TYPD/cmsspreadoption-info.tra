@@ -1,0 +1,133 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:29:14</Timestamp>
+        <Checksum>f058e4e1</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="cmsspreadoption-info" group="MARKIT_PV_OUT">
+    <TypeSpecification>
+        <NamedType type="trade-date-info">
+            <ComplexTypeXsdExtension Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="currency">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="daycount">
+                        <TypeSpecification>
+                            <NamedType type="daycount"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="notional">
+                        <TypeSpecification>
+                            <NamedType type="nonzero"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="paydates">
+                        <TypeSpecification>
+                            <NamedType type="dates"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="fixings">
+                        <TypeSpecification>
+                            <NamedType type="cmsspreadoption-fixings"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="arrears">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="digital">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="digitalrate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="caporfloor">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="enumeration" type="enumerationFacet">
+                                <Value>
+                                    <List>
+                                    <Enumeration>CAP</Enumeration>
+                                    <Enumeration>FLOOR</Enumeration>
+                                    </List>
+                                </Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="strikerate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="conditions">
+                        <TypeSpecification>
+                            <NamedType type="cmsspreadoption-conditions"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexTypeXsdExtension>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

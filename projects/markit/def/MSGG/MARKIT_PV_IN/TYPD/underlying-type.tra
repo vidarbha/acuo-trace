@@ -1,0 +1,80 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:33:48</Timestamp>
+        <Checksum>fe15abe6</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="underlying-type" group="MARKIT_PV_IN">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_choice1">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="Value">
+                                    <TypeSpecification>
+                                    <NamedType type="decimalvalue"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="String_Value">
+                                    <TypeSpecification>
+                                    <NamedType type="stringvalue"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="Date_Value">
+                                    <TypeSpecification>
+                                    <NamedType type="datevalue"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="Map">
+                                    <TypeSpecification>
+                                    <NamedType type="map-type"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="@name">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

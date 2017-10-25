@@ -1,0 +1,354 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:29:14</Timestamp>
+        <Checksum>237e3bf4</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="cdototemtranche-info" group="MARKIT_PV_OUT">
+    <TypeSpecification>
+        <NamedType type="trade-info">
+            <ComplexTypeXsdExtension Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_choice1">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="portfolioid">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:string"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="portfolioredid">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:string"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="tradedate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="settledate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_choice2">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="maturity">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:date"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="maturityperiod">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:string"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="rolldate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="rollcode">
+                        <TypeSpecification>
+                            <NamedType type="rollcodes"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="adjust">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="adjustStart">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="adjustEnd">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="eom">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="enumeration" type="enumerationFacet">
+                                <Value>
+                                    <List>
+                                    <Enumeration>Y</Enumeration>
+                                    <Enumeration>N</Enumeration>
+                                    </List>
+                                </Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="attachment">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="minInclusive" type="comparableFacet">
+                                <Value>0</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="detachment">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="minInclusive" type="comparableFacet">
+                                <Value>0</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="spread">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="minInclusive" type="comparableFacet">
+                                <Value>0</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="frequency">
+                        <TypeSpecification>
+                            <NamedType type="frequency"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="daycount">
+                        <TypeSpecification>
+                            <NamedType type="daycount"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="nthtodefault">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="recovery">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fixedRecovery">
+                        <TypeSpecification>
+                            <NamedType type="customrecovery"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="position">
+                        <TypeSpecification>
+                            <NamedType type="nonzero"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="currency">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="2">
+                    <LocalComponent name="_choice3">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="upfront">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:decimal">
+                                    <SimpleTypeRestriction></SimpleTypeRestriction>
+                                    </NamedType>
+                                    </TypeSpecification>
+                                    <FormatSpecifications>
+                                    <Property
+                                    name="minInclusive" type="comparableFacet">
+                                    <Value>0</Value>
+                                    </Property>
+                                    </FormatSpecifications>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="upfrontamount">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:decimal">
+                                    <SimpleTypeRestriction></SimpleTypeRestriction>
+                                    </NamedType>
+                                    </TypeSpecification>
+                                    <FormatSpecifications>
+                                    <Property
+                                    name="minInclusive" type="comparableFacet">
+                                    <Value>0</Value>
+                                    </Property>
+                                    </FormatSpecifications>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fee">
+                        <TypeSpecification>
+                            <NamedType type="fee"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="bondFormat">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="firstUploadDate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="lastUploadDate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexTypeXsdExtension>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

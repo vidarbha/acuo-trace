@@ -1,0 +1,304 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>18/10/2017 14:42:21</Timestamp>
+        <Checksum>74799ec3</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="ACUO_to_ReutersAssets" group="Map:Reuters_OUT">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <ValueGeneratorReference>TRUE</ValueGeneratorReference>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="ReutersInput" pathString="Sections/Description"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <ValueGeneratorReference>TRUE</ValueGeneratorReference>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="ReutersInput" pathString="Sections/Quote"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <ValueGeneratorReference>TRUE</ValueGeneratorReference>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="ReutersInput" pathString="Sections/PricingAnalysis"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <ValueGeneratorReference>TRUE</ValueGeneratorReference>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="ReutersInput" pathString="Sections/Valuation"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <ValueGeneratorReference>FALSE</ValueGeneratorReference>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="ReutersInput" pathString="Sections/RiskMeasures"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Context" pathString="ValueDate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="ReutersInput" pathString="AsOfDate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Node" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Ruleset" type="ruleset">
+                        <Value>AcuoAssets</Value>
+                    </Property>
+                    <Mapper>InvokeValidationRuleset</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <DeciderCall>
+                            <Property name="Node" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="."/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Decider>HasExceptions</Decider>
+                        </DeciderCall>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Node" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="."/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Exceptions" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Errors"
+                                    contextPosnSpec="[]" pathString="."/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Mapper>GetExceptions</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ThenAction>
+                    <ElseAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="ReutersInput" pathString="MtMItems/SecurityInputs[Out1]/SecurityId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="ReutersInput" pathString="MtMItems/SecurityInputs[Out1]/Guid"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="ParValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="ReutersInput" pathString="MtMItems/SecurityInputs[Out1]/Notional"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ElseAction>
+                </IfAction>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="ReutersInput"
+                pathString="MtMItems/SecurityInputs[]" outputPosnSpecifier="Out1"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input"
+                    contextPosnSpec="[#]" pathString="."/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input"
+                contextPosnSpec="[#]" pathString="."/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="true">
+        <Message>Assets</Message>
+    </InputDefinition>
+    <InputDefinition name="Context" optional="false" repeating="false">
+        <Type>transform:TransformerContext</Type>
+    </InputDefinition>
+    <OutputDefinition name="ReutersInput" optional="false" repeating="false">
+        <Message>ReutersInput</Message>
+    </OutputDefinition>
+    <OutputDefinition name="Errors" optional="true" repeating="true">
+        <Component>sys:MessageExceptionDetails</Component>
+    </OutputDefinition>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>

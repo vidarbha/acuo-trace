@@ -1,0 +1,45 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 14:18:31</Timestamp>
+        <Checksum>d68a67d0</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinition name="ITRS" group="CME">
+    <MessageContent>
+        <LocalComponent name="Body">
+            <TypeSpecification>
+                <TypeDefinition>
+                    <ComplexContent Compositor="SEQUENCE">
+                        <Child minOccurs="1" maxOccurs="1">
+                            <LocalComponent name="Header">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications converterReference="String"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="1" maxOccurs="UNBOUNDED">
+                            <NamedComponent>Body</NamedComponent>
+                        </Child>
+                    </ComplexContent>
+                </TypeDefinition>
+            </TypeSpecification>
+            <FormatSpecifications parserReference="SeparatedGroup">
+                <Property name="Separator" type="string">
+                    <Value>\r\n</Value>
+                </Property>
+            </FormatSpecifications>
+            <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+        </LocalComponent>
+    </MessageContent>
+</MessageDefinition>

@@ -1,0 +1,157 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Component Form</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>05/07/2017 16:41:20</Timestamp>
+        <Checksum>f9a84e8e</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinition name="PortfolioMostRecent" group="ImportPortfolioExcel">
+    <MessageContent>
+        <LocalComponent name="body">
+            <TypeSpecification>
+                <TypeDefinition>
+                    <ComplexContent Compositor="SEQUENCE">
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="IRS-Cleared">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="IRSCF"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="FRA-Cleared">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="FRACF"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="OIS-Cleared">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="OISCF"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="IRS-Bilateral">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="IRSBF"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="FXSwap-Bilateral">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="FXSWBF"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="ZCS-Cleared">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                                    <LocalComponent name="DataRow1">
+                                    <TypeSpecification>
+                                    <NamedType type="ZCSCF"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="SheetParser"/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                    </ComplexContent>
+                </TypeDefinition>
+            </TypeSpecification>
+            <FormatSpecifications>
+                <Property name="UseOOXMLFormat" type="boolean">
+                    <Value>true</Value>
+                </Property>
+            </FormatSpecifications>
+            <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+        </LocalComponent>
+    </MessageContent>
+</MessageDefinition>

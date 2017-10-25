@@ -1,0 +1,115 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:29:14</Timestamp>
+        <Checksum>7a85bad4</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="capfloor-info" group="MARKIT_PV_OUT">
+    <TypeSpecification>
+        <NamedType type="trade-date-info">
+            <ComplexTypeXsdExtension Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="leg">
+                        <TypeSpecification>
+                            <NamedType type="swapleg"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="caporfloor">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="enumeration" type="enumerationFacet">
+                                <Value>
+                                    <List>
+                                    <Enumeration>CAP</Enumeration>
+                                    <Enumeration>FLOOR</Enumeration>
+                                    </List>
+                                </Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="payoff">
+                        <TypeSpecification>
+                            <NamedType type="optionpayoff"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="digitalrate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="strikerate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="tenor">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="customerpv">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fee">
+                        <TypeSpecification>
+                            <NamedType type="fee"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="discountmethod">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexTypeXsdExtension>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

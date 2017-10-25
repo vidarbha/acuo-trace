@@ -1,0 +1,101 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:29:14</Timestamp>
+        <Checksum>ea36a546</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="bonddetails" group="MARKIT_PV_OUT">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="CHOICE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_sequence1">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="instrument">
+                                    <TypeSpecification>
+                                    <NamedType type="instrument"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="position">
+                                    <TypeSpecification>
+                                    <NamedType type="nonzero"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_sequence2">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="SEQUENCE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="ticker">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:string"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="tier">
+                                    <TypeSpecification>
+                                    <NamedType type="tier"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="docclause">
+                                    <TypeSpecification>
+                                    <NamedType type="docclause"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="leg">
+                                    <TypeSpecification>
+                                    <NamedType type="swapleg"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

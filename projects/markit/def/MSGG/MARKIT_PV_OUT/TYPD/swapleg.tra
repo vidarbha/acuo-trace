@@ -1,0 +1,580 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:29:14</Timestamp>
+        <Checksum>5e7656a1</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="swapleg" group="MARKIT_PV_OUT">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="id">
+                        <TypeSpecification>
+                            <NamedType type="xsd:integer"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="underlyingtype">
+                        <TypeSpecification>
+                            <NamedType type="equityunderlying"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="currency">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="currencytype">
+                        <TypeSpecification>
+                            <NamedType type="currencytypetype"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="curvetype">
+                        <TypeSpecification>
+                            <NamedType type="nonemptystring"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fxrate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="taxrate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="_choice1">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="fixing">
+                                    <TypeSpecification>
+                                    <NamedType type="fixing"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="indexfixing">
+                                    <TypeSpecification>
+                                    <NamedType type="indexfixing"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="_choice2">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="basketfixing">
+                                    <TypeSpecification>
+                                    <NamedType type="equityorbasketfixing"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="equityfixing">
+                                    <TypeSpecification>
+                                    <NamedType type="equityorbasketfixing"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="zerotaubetweenreset">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="futuresexchange">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_choice3">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="_sequence1">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child
+                                    minOccurs="1" maxOccurs="1">
+
+                                    <LocalComponent name="rate">
+                                    <TypeSpecification>
+
+                                    <NamedType type="xsd:decimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent name="minimumfee">
+                                    <TypeSpecification>
+
+                                    <NamedType type="xsd:decimal"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="spread">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:double"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="rateschedule">
+                                    <TypeSpecification>
+                                    <NamedType type="couponschedule"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="_choice4">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="gearedfloat">
+                                    <TypeSpecification>
+                                    <NamedType type="gearedfloat-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="gearedfloatschedule">
+                                    <TypeSpecification>
+                                    <NamedType type="gearedfloatschedule-info"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="rangeaccrual">
+                        <TypeSpecification>
+                            <NamedType type="rangeaccrual-info"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ticksize">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="type">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="enumeration" type="enumerationFacet">
+                                <Value>
+                                    <List>
+                                    <Enumeration>FIXED</Enumeration>
+                                    <Enumeration>FLOAT</Enumeration>
+                                    <Enumeration>RETURN</Enumeration>
+                                    <Enumeration>DIVIDEND</Enumeration>
+                                    <Enumeration>TOTALRETURN</Enumeration>
+                                    <Enumeration>RATIORETURN</Enumeration>
+                                    <Enumeration>PRICERETURN</Enumeration>
+                                    <Enumeration>GEAREDFLOAT</Enumeration>
+                                    <Enumeration>FIXEDRANGEACCRUAL</Enumeration>
+                                    <Enumeration>FLOATRANGEACCRUAL</Enumeration>
+                                    </List>
+                                </Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="reinvestdividends">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="daycount">
+                        <TypeSpecification>
+                            <NamedType type="daycount"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="_choice5">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="notional">
+                                    <TypeSpecification>
+                                    <NamedType type="nonzero"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="shares">
+                                    <TypeSpecification>
+                                    <NamedType type="nonzero"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="futurenotional">
+                                    <TypeSpecification>
+                                    <NamedType type="nonzero"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="maturitypaymenttype">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="enumeration" type="enumerationFacet">
+                                <Value>
+                                    <List>
+                                    <Enumeration>RETURN</Enumeration>
+                                    <Enumeration>RATIORETURN</Enumeration>
+                                    </List>
+                                </Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="notionaldf">
+                        <TypeSpecification>
+                            <NamedType type="nonzero"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="_choice6">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <ComplexContent Compositor="CHOICE">
+                                    <Child minOccurs="1" maxOccurs="1">
+                                    <LocalComponent name="_sequence1">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <ComplexContent Compositor="SEQUENCE">
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent name="front">
+                                    <TypeSpecification>
+
+                                    <NamedType type="frontback"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent name="back">
+                                    <TypeSpecification>
+
+                                    <NamedType type="frontback"/>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    <Child minOccurs="0" maxOccurs="1">
+                                    <LocalComponent name="notionalxg">
+                                    <TypeSpecification>
+                                    <NamedType type="xsd:string">
+                                    <SimpleTypeRestriction></SimpleTypeRestriction>
+                                    </NamedType>
+                                    </TypeSpecification>
+                                    <FormatSpecifications>
+                                    <Property
+                                    name="enumeration" type="enumerationFacet">
+                                    <Value>
+                                    <List>
+                                    <Enumeration>BOTH</Enumeration>
+                                    <Enumeration>FRONT</Enumeration>
+                                    <Enumeration>BACK</Enumeration>
+                                    <Enumeration>NEITHER</Enumeration>
+                                    </List>
+                                    </Value>
+                                    </Property>
+                                    </FormatSpecifications>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                </ComplexContent>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>UNNAMED_MODELGROUP</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="variablecurrencyleg">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="initialvariablenotional">
+                        <TypeSpecification>
+                            <NamedType type="nonzero"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="payatstart">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="paydates">
+                        <TypeSpecification>
+                            <NamedType type="dates"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="compoundingdates">
+                        <TypeSpecification>
+                            <NamedType type="compoundingdates"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fixingdates">
+                        <TypeSpecification>
+                            <NamedType type="compoundingdates"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="notionalfixingdates">
+                        <TypeSpecification>
+                            <NamedType type="compoundingdates"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="amortizingdates">
+                        <TypeSpecification>
+                            <NamedType type="amortizingschedule"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="customerpv">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="clearing">
+                        <TypeSpecification>
+                            <NamedType type="clearing-info"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="couponrate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="deflationfloor">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ignoreshortstub">
+                        <TypeSpecification>
+                            <NamedType type="xsd:boolean"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

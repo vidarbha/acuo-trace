@@ -1,0 +1,60 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>27/06/2017 13:34:32</Timestamp>
+        <Checksum>ecf0f5f4</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="FIXEDLEG_PAYATSTART"
+    group="Msg:ImportPortfolioExcel" ruleSet="FRA-Cleared" disable="false">
+    <ActionStep>
+        <IfAction>
+            <Condition>
+                <IsPresent TreatNullAsAbsent="true" TreatEmptyAsAbsent="true">
+                    <PathNodeSpec specType="FROM_DATA"
+                        contextName="Input" pathString="."/>
+                </IsPresent>
+            </Condition>
+            <ThenAction>
+                <ActionStep>
+                    <ConditionalValidationAction mustBeTrue="true">
+                        <Condition>
+                            <DeciderCall>
+                                <Property name="List" type="list">
+                                    <Value>
+                                    <List>
+                                    <Enumeration>TRUE</Enumeration>
+                                    <Enumeration>FALSE</Enumeration>
+                                    <Enumeration>1</Enumeration>
+                                    <Enumeration>0</Enumeration>
+                                    </List>
+                                    </Value>
+                                </Property>
+                                <Property name="Value" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Decider>ExistsInList</Decider>
+                            </DeciderCall>
+                        </Condition>
+                    </ConditionalValidationAction>
+                </ActionStep>
+            </ThenAction>
+        </IfAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>FIXEDLEG_PAYATSTART</Component>
+    </InputDefinition>
+    <ExceptionMessage>PayAtStart</ExceptionMessage>
+</ValidationRule>

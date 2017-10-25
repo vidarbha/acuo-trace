@@ -1,0 +1,638 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>18/10/2017 19:13:36</Timestamp>
+        <Checksum>fff1c661</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="Leg_SwapLeg" group="Map:ACUO_MARKIT-OUT" category="Advanced Actions">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Id"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="id"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Currency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="currency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Rate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="rate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="type"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Type"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <IfAction>
+            <Condition>
+                <Comparison>
+                    <FirstTerm>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Type"/>
+                    </FirstTerm>
+                    <Operator>EQ</Operator>
+                    <SecondTerm>
+                        <Literal>FLOAT</Literal>
+                    </SecondTerm>
+                </Comparison>
+            </Condition>
+            <ThenAction>
+                <ActionStep disabled="true">
+                    <FunctionCall>
+                        <Property name="Table" type="namedlookuptable">
+                            <Value>MarkitFloatingRateName</Value>
+                        </Property>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Fixing/FloatingRateName"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/name"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Mapper>NamedTableLookup</Mapper>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep disabled="true">
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Fixing/Tenor"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/term"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep disabled="true">
+                    <IfAction>
+                        <Condition>
+                            <Comparison>
+                                <FirstTerm>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Fixing/FixingRelativeTo"/>
+                                </FirstTerm>
+                                <Operator>EQ</Operator>
+                                <SecondTerm>
+                                    <Literal>PeriodStart</Literal>
+                                </SecondTerm>
+                            </Comparison>
+                        </Condition>
+                        <ThenAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/arrears"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>false</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ThenAction>
+                        <ElseAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/arrears"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>true</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ElseAction>
+                    </IfAction>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="fixing"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="Fixing"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <MappingDefinitionInvocation>Fixing</MappingDefinitionInvocation>
+                    </FunctionCall>
+                </ActionStep>
+            </ThenAction>
+        </IfAction>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Spread"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="spread"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>MarkitDayCount</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Notional"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="notional"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="SignPosition" type="option">
+                <Value>Leading</Value>
+            </Property>
+            <Property name="NegativeSign" type="string">
+                <Value>-</Value>
+            </Property>
+            <Mapper>DecimalToText</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="StartDate/Date"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/startdate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="MaturityDate/Date"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/enddate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>MarkitFreq</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="PaymentSchedule/Frequency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/freq"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="NoEntryOption" type="option">
+                <Value>Copy Input to Output</Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>MarkitBusDayConv</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/rollcode"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="NoEntryOption" type="option">
+                <Value>Skip Operation</Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Table" type="namedlookuptable">
+                        <Value>MarkitHolidays</Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[Counter1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="paydates/holidays/code[Out1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>NamedTableLookup</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="Output"
+                pathString="paydates/holidays/code[]" outputPosnSpecifier="Out1"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="PaymentSchedule/Adjustment/Holiday[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="VariableCurrency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="variablecurrencyleg"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="FutureNotional"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="SignPosition" type="option">
+                <Value>Leading</Value>
+            </Property>
+            <Property name="NegativeSign" type="string">
+                <Value>-</Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="futurenotional"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>DecimalToText</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Notionalxg"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="notionalxg"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>MarkitFreq</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="CompoundingSchedule/Frequency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="compoundingdates/freq"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="NoEntryOption" type="option">
+                <Value>Copy Input to Output</Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>MarkitBusDayConv</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="CompoundingSchedule/Adjustment/BusinessDayConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="compoundingdates/rollcode"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="NoEntryOption" type="option">
+                <Value>Skip Operation</Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="CompoundingSchedule/CompoundingRule"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="compoundingdates/rule"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Table" type="namedlookuptable">
+                        <Value>MarkitHolidays</Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="CompoundingSchedule/Adjustment/Holiday[Counter1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="compoundingdates/holidays/code[Out1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>NamedTableLookup</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="Output"
+                pathString="compoundingdates/holidays/code[]" outputPosnSpecifier="Out1"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="CompoundingSchedule/Adjustment/Holiday[#]"/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="Input" pathString="CompoundingSchedule/Adjustment/Holiday[]"/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Type>product:Swap.SwapLeg</Type>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Type>swapleg</Type>
+    </OutputDefinition>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>

@@ -1,0 +1,447 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>06/06/2017 17:25:37</Timestamp>
+        <Checksum>c7e8d7fd</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="Leg2_SwapLeg" group="Map:CME_MARKIT-OUT" category="Advanced Actions">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>2</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="id"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2CCY"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="currency"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <IfAction>
+            <Condition>
+                <Comparison>
+                    <FirstTerm>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2TYPE"/>
+                    </FirstTerm>
+                    <Operator>EQ</Operator>
+                    <SecondTerm>
+                        <Literal>FIXED</Literal>
+                    </SecondTerm>
+                </Comparison>
+            </Condition>
+            <ThenAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2FIXEDRATE"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="rate"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="type"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2TYPE"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+            </ThenAction>
+        </IfAction>
+    </ActionStep>
+    <ActionStep>
+        <IfAction>
+            <Condition>
+                <Comparison>
+                    <FirstTerm>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2TYPE"/>
+                    </FirstTerm>
+                    <Operator>EQ</Operator>
+                    <SecondTerm>
+                        <Literal>FLOAT</Literal>
+                    </SecondTerm>
+                </Comparison>
+            </Condition>
+            <ThenAction>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2INDEX"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/name"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <IfAction>
+                        <Condition>
+                            <Comparison>
+                                <FirstTerm>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2INDEXTENOR"/>
+                                </FirstTerm>
+                                <Operator>EQ</Operator>
+                                <SecondTerm>
+                                    <NullValue></NullValue>
+                                </SecondTerm>
+                            </Comparison>
+                        </Condition>
+                        <ThenAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>1D</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/term"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ThenAction>
+                        <ElseAction>
+                            <ActionStep>
+                                <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2INDEXTENOR"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/term"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                </FunctionCall>
+                            </ActionStep>
+                        </ElseAction>
+                    </IfAction>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="fixing/arrears"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <Literal>false</Literal>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2SPREAD"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="spread"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+                <ActionStep>
+                    <FunctionCall>
+                        <Property name="Output" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="type"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Property name="Input" type="nodespec">
+                            <Value>
+                                <NodeSpec>
+                                    <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="LEG2TYPE"/>
+                                </NodeSpec>
+                            </Value>
+                        </Property>
+                        <Copy></Copy>
+                    </FunctionCall>
+                </ActionStep>
+            </ThenAction>
+        </IfAction>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>DayCount</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2DAYCOUNT"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="daycount"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2NOTIONAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="notional"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>IntegerToText</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2STARTDATE"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/startdate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2MATDATE"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/enddate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2PAYFREQ"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/freq"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Table" type="namedlookuptable">
+                <Value>BusDayConv</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2PAYADJBUSDAYCONV"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/rollcode"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>NamedTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2PAYADJCAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="paydates/holidays/code[1]"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>Body</Component>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Type>swapleg</Type>
+    </OutputDefinition>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>

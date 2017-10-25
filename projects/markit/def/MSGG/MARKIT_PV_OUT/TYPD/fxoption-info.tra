@@ -1,0 +1,169 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>05/08/2016 15:29:14</Timestamp>
+        <Checksum>c9222eaa</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="fxoption-info" group="MARKIT_PV_OUT">
+    <TypeSpecification>
+        <NamedType type="trade-info">
+            <ComplexTypeXsdExtension Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="position">
+                        <TypeSpecification>
+                            <NamedType type="nonzero"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="putcall">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="enumeration" type="enumerationFacet">
+                                <Value>
+                                    <List>
+                                    <Enumeration>PUT</Enumeration>
+                                    <Enumeration>CALL</Enumeration>
+                                    </List>
+                                </Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="style">
+                        <TypeSpecification>
+                            <NamedType type="optionstyle"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="payoff">
+                        <TypeSpecification>
+                            <NamedType type="optionpayoff"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>_group_ndfcurrencygroup</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="tradedate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="settledate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:date"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="strikerate">
+                        <TypeSpecification>
+                            <NamedType type="xsd:decimal">
+                                <SimpleTypeRestriction></SimpleTypeRestriction>
+                            </NamedType>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="minExclusive" type="comparableFacet">
+                                <Value>0</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="spotfixings">
+                        <TypeSpecification>
+                            <NamedType type="fxfixingstype"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="barrier">
+                        <TypeSpecification>
+                            <NamedType type="barrier-info"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fxfixings">
+                        <TypeSpecification>
+                            <NamedType type="fxfixingstype"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fva">
+                        <TypeSpecification>
+                            <NamedType type="fxfva-info"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="pvreportingccy">
+                        <TypeSpecification>
+                            <NamedType type="xsd:string"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="customerpv">
+                        <TypeSpecification>
+                            <NamedType type="xsd:double"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="fee">
+                        <TypeSpecification>
+                            <NamedType type="fee"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexTypeXsdExtension>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

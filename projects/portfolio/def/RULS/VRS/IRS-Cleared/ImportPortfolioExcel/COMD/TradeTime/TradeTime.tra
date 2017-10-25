@@ -1,0 +1,41 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Copy File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>18/08/2017 12:20:45</Timestamp>
+        <Checksum>f13756b6</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="TradeTime" group="Msg:ImportPortfolioExcel"
+    ruleSet="IRS-Cleared" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Element" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>HH:mm:ss.SSS</Value>
+                    </Property>
+                    <Decider>IsTime</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>TradeTime</Component>
+    </InputDefinition>
+    <ExceptionMessage>TradeTime</ExceptionMessage>
+    <ErrorCode>550</ErrorCode>
+</ValidationRule>

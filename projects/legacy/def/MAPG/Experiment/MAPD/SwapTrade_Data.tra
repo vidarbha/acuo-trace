@@ -1,0 +1,87 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.5.5</VersionNumber>
+            <BuildNumber>194</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>09/09/2016 13:25:03</Timestamp>
+        <Checksum>b358b5b9</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="SwapTrade_Data" group="Map:Experiment">
+    <ActionStep>
+        <RepeatAction repeatCounter="Counter1">
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="SwapTrade"
+                                    contextPosnSpec="Counter1" pathString="Info/TradeDate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/tradedate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input1" type="mapping">
+                        <Value>FixedConvention_IRSwap</Value>
+                    </Property>
+                    <Property name="Input2" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="SwapTrade"
+                                    contextPosnSpec="Counter1" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/leg[]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>ApplyMappingToDescendants</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ScopeB specType="TO_DATA" contextName="Output"
+                pathString="data/_choice1[]" outputPosnSpecifier="Out1"/>
+            <RepeatLimit>
+                <PathNodeSpec specType="FROM_DATA"
+                    contextName="SwapTrade" contextPosnSpec="[#]" pathString="."/>
+            </RepeatLimit>
+            <ScopeA specType="FROM_DATA" contextName="SwapTrade"
+                contextPosnSpec="[]" pathString="."/>
+        </RepeatAction>
+    </ActionStep>
+    <InputDefinition name="SwapTrade" optional="false" repeating="true">
+        <Type>SwapTrade</Type>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Component>presentvalue</Component>
+    </OutputDefinition>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>

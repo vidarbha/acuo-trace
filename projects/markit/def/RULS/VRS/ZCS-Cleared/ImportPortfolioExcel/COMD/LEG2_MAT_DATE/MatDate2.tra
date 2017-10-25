@@ -1,0 +1,40 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Copy File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>IEUser</User>
+        <Host>IE11Win7</Host>
+        <Timestamp>05/07/2017 17:27:10</Timestamp>
+        <Checksum>49b1f350</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="MatDate2" group="Msg:ImportPortfolioExcel"
+    ruleSet="ZCS-Cleared" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Element" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>yyyy/MM/dd</Value>
+                    </Property>
+                    <Decider>IsDate</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>LEG2_MAT_DATE</Component>
+    </InputDefinition>
+    <ExceptionMessage>LEG2_MAT_DATE</ExceptionMessage>
+</ValidationRule>
