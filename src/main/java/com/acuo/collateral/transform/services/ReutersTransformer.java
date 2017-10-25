@@ -2,9 +2,9 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.TransformerOutput;
-import com.acuo.collateral.transform.trace.transformer_assets.FromReutersOutputWrapper;
-import com.acuo.collateral.transform.trace.transformer_assets.Reuters;
-import com.acuo.collateral.transform.trace.transformer_assets.ToReutersOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_reuters.FromReutersOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_reuters.Service;
+import com.acuo.collateral.transform.trace.transformer_reuters.ToReutersOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.OutputBuilder;
 import com.acuo.common.util.LocalDateUtils;
@@ -23,7 +23,7 @@ import static com.acuo.common.util.ArgChecker.notNull;
 public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
 
     @Inject
-    private Reuters reuters = null;
+    private Service service = null;
 
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {
@@ -31,7 +31,7 @@ public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OU
             if (context.getValueDate() == null) {
                 context.setValueDate(LocalDateUtils.valuationDate());
             }
-            ToReutersOutputWrapper outputWrapper = reuters.toReuters(value.toArray(), context);
+            ToReutersOutputWrapper outputWrapper = service.toReuters(value.toArray(), context);
             return outputWrapper.getReutersInput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of assets", value);
@@ -44,7 +44,7 @@ public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OU
     public TransformerOutput<OUTPUT> deserialiseToList(String values) {
         values = TraceUtils.replaceNewLineToWindows(notNull(values, "values"));
         try {
-            FromReutersOutputWrapper output = reuters.fromReuters(values);
+            FromReutersOutputWrapper output = service.fromReuters(values);
             OutputBuilder<OUTPUT> outputBuilder = OutputBuilder.of(output.getOutput(), output.getError());
             return outputBuilder.build();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {

@@ -2,9 +2,9 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.TransformerOutput;
-import com.acuo.collateral.transform.trace.transformer_assets.FromSettlementDateOutputWrapper;
-import com.acuo.collateral.transform.trace.transformer_assets.Reuters;
-import com.acuo.collateral.transform.trace.transformer_assets.ToSettlementDateOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_reuters.FromSettlementDateOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_reuters.Service;
+import com.acuo.collateral.transform.trace.transformer_reuters.ToSettlementDateOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.OutputBuilder;
 import com.acuo.common.util.ArgChecker;
@@ -21,7 +21,7 @@ import java.util.List;
 public class SettlementDateTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
 
     @Inject
-    private Reuters reuters = null;
+    private Service reuters = null;
 
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {

@@ -4,9 +4,9 @@ import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.TransformerOutput;
 import com.acuo.collateral.transform.inputs.ClarusInput;
 import com.acuo.collateral.transform.inputs.Envelop;
-import com.acuo.collateral.transform.trace.transformer_valuations.FromClarusOutputWrapper;
-import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
-import com.acuo.collateral.transform.trace.transformer_valuations.ToCmeFileNewOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_clarus.FromClarusOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_cme.Service;
+import com.acuo.collateral.transform.trace.transformer_cme.ToCmeFileNewOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.OutputBuilder;
 import com.acuo.common.model.trade.FRATrade;
@@ -28,7 +28,10 @@ import static com.acuo.common.util.ArgChecker.notNull;
 public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
 
     @Inject
-    private Mapper mapper = null;
+    private Service cme = null;
+
+    @Inject
+    private com.acuo.collateral.transform.trace.transformer_clarus.Service clarus = null;
 
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {
@@ -53,7 +56,7 @@ public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseT
             ClarusInput input = new ClarusInput();
             input.setEnvelops(envelops);
             input.setContext(context);
-            ToCmeFileNewOutputWrapper outputWrapper = mapper.toCmeFileNew(input);
+            ToCmeFileNewOutputWrapper outputWrapper = cme.toCmeFileNew(input);
             return outputWrapper.getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of swaps", value);
@@ -66,7 +69,7 @@ public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseT
     public TransformerOutput<OUTPUT> deserialiseToList(String values) {
         values = TraceUtils.replaceNewLineToWindows(notNull(values, "values"));
         try {
-            FromClarusOutputWrapper output = mapper.fromClarus(values);
+            FromClarusOutputWrapper output = clarus.fromClarus(values);
             OutputBuilder<OUTPUT> outputBuilder = OutputBuilder.of(output.getOutput(), output.getError());
             return outputBuilder.build();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {

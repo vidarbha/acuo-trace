@@ -1,8 +1,8 @@
 package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerOutput;
-import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
-import com.acuo.collateral.transform.trace.transformer_valuations.PortfolioImportOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_portfolio.PortfolioImportOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_portfolio.Service;
 import com.acuo.collateral.transform.utils.OutputBuilder;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,12 +12,12 @@ import javax.inject.Inject;
 public class PortfolioImportTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT,OUTPUT> {
 
     @Inject
-    private Mapper mapper = null;
+    private Service service = null;
 
     @Override
     public TransformerOutput<OUTPUT> deserialise(byte[] input) {
         try {
-            PortfolioImportOutputWrapper output = mapper.portfolioImport(input);
+            PortfolioImportOutputWrapper output = service.portfolioImport(input);
             OutputBuilder<OUTPUT> outputBuilder = OutputBuilder
                     .of(output.getIRSB(), output.getIRSBError());
 
