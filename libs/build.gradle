@@ -4,15 +4,18 @@ apply plugin: 'maven-publish'
 group = 'com.acuo.collateral'
 
 ext {
-    // location of external files relative to this build.gradle file
     extFiles = [
-            valuations:   'transformer-valuations.jar',
-            margin:       'transformer-margin.jar',
-            assets:       'transformer-assets.jar',
-            agreement:    'transformer-agreement.jar'
+            agreement:  'transformer-agreement.jar',
+            clarus:     'transformer-clarus.jar',
+            cme:        'transformer-cme.jar',
+            margin:     'transformer-margin.jar',
+            markit:     'transformer-markit.jar',
+            portfolio:  'transformer-portfolio.jar',
+            reuters:    'transformer-reuters.jar'
             // sources:    'api/extlib-src.zip',
             // javadoc:    'api/extlib-doc.zip'
     ]
+    // location of external files relative to this build.gradle file
 }
 
 publishing {
