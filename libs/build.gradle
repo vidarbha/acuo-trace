@@ -29,21 +29,33 @@ publishing {
         }
     }
     publications {
-        valuations(MavenPublication) {
-            artifact (file(extFiles.valuations))
-            artifactId = 'transformer-valuations'
+        agreement(MavenPublication) {
+            artifact (file(extFiles.agreement))
+            artifactId = 'transformer-agreement'
+        }
+        clarus(MavenPublication) {
+            artifact (file(extFiles.clarus))
+            artifactId = 'transformer-clarus'
+        }
+        cme(MavenPublication) {
+            artifact (file(extFiles.cme))
+            artifactId = 'transformer-cme'
         }
         margin(MavenPublication) {
             artifact (file(extFiles.margin))
             artifactId = 'transformer-margin'
         }
-        assets(MavenPublication) {
-            artifact (file(extFiles.assets))
-            artifactId = 'transformer-assets'
+        markit(MavenPublication) {
+            artifact (file(extFiles.markit))
+            artifactId = 'transformer-markit'
         }
-        agreement(MavenPublication) {
-            artifact (file(extFiles.agreement))
-            artifactId = 'transformer-agreement'
+        portfolio(MavenPublication) {
+            artifact (file(extFiles.portfolio))
+            artifactId = 'transformer-portfolio'
+        }
+        reuters(MavenPublication) {
+            artifact (file(extFiles.reuters))
+            artifactId = 'transformer-reuters'
         }
     }
 }
