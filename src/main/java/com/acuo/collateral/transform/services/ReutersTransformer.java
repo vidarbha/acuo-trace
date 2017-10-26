@@ -7,7 +7,6 @@ import com.acuo.collateral.transform.trace.transformer_reuters.Service;
 import com.acuo.collateral.transform.trace.transformer_reuters.ToReutersOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.OutputBuilder;
-import com.acuo.common.util.LocalDateUtils;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
@@ -16,8 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
 import java.util.List;
-
-import static com.acuo.common.util.ArgChecker.notNull;
+import java.util.Objects;
 
 @Slf4j
 public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -28,9 +26,6 @@ public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OU
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {
         try {
-            if (context.getValueDate() == null) {
-                context.setValueDate(LocalDateUtils.valuationDate());
-            }
             ToReutersOutputWrapper outputWrapper = service.toReuters(value.toArray(), context);
             return outputWrapper.getReutersInput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
@@ -42,7 +37,7 @@ public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OU
 
     @Override
     public TransformerOutput<OUTPUT> deserialiseToList(String values) {
-        values = TraceUtils.replaceNewLineToWindows(notNull(values, "values"));
+        values = TraceUtils.replaceNewLineToWindows(Objects.requireNonNull(values, "values"));
         try {
             FromReutersOutputWrapper output = service.fromReuters(values);
             OutputBuilder<OUTPUT> outputBuilder = OutputBuilder.of(output.getOutput(), output.getError());

@@ -1,14 +1,12 @@
 package com.acuo.collateral.transform.trace.lookup;
 
-import com.acuo.common.util.ArgChecker;
 import com.tracegroup.transformer.configfiles.ConfigObject;
 import com.tracegroup.transformer.configfiles.Project;
-import com.tracegroup.transformer.dad.*;
-import com.tracegroup.transformer.dad.smartreferences.SqlQueryDefinitionReference;
+import com.tracegroup.transformer.dad.TBeanConfiguration;
 import com.tracegroup.transformer.lookup.ILookupKeys;
 import com.tracegroup.transformer.tbeans.LookupProviderTBean;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.Map;
 
@@ -23,7 +21,6 @@ public class ConfigFileLookupProvider extends LookupProviderTBean {
 
     @Override
     public ILookupKeys<Object> createLookup() {
-        log.error("createLookup");
         return new ConfigFileLookup(project, configFilePath);
     }
 
@@ -48,8 +45,7 @@ public class ConfigFileLookupProvider extends LookupProviderTBean {
 
     public void setProperties(ConfigObject owner, Map properties, TBeanConfiguration configuration) {
         log.debug("setProperties {}, {}, {}", owner, properties, configuration);
-        String filePath = (String) configuration.getPropertyValue("ConfigFile");
-        this.configFilePath = filePath;
+        this.configFilePath = (String) configuration.getPropertyValue("ConfigFile");
         this.project = owner.getProject();
     }
 }

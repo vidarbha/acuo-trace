@@ -12,8 +12,7 @@ import com.tracegroup.transformer.exposedservices.UnrecognizedMessageException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
-
-import static com.acuo.common.util.ArgChecker.notNull;
+import java.util.Objects;
 
 @Slf4j
 public class CancelTransformer<T> extends BaseMarginCallTransformer<T> {
@@ -33,7 +32,7 @@ public class CancelTransformer<T> extends BaseMarginCallTransformer<T> {
     @Override
     public TransformerOutput<T> deserialiseToList(String values) {
         try {
-            CancelCallResponseOutputWrapper output = marginCall.cancelCallResponse(notNull(values, "values"));
+            CancelCallResponseOutputWrapper output = marginCall.cancelCallResponse(Objects.requireNonNull(values, "values"));
             OutputBuilder<T> outputBuilder = OutputBuilder.of(output.getOutput(), output.getMSError());
             return outputBuilder.build();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {

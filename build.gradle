@@ -13,6 +13,7 @@ group = 'com.acuo.collateral'
 
 ext {
     versions += [
+        model       : '0.1.0-SNAPSHOT',
         common      : '0.14.0-SNAPSHOT',
         transformer : "${project.version}",
         runtime     : '3.6.5',
@@ -23,23 +24,35 @@ ext {
 }
 
 dependencies {
-    compile (
+    implementation (
+            "com.acuo.collateral:acuo-model:${versions.model}"
+    ) { changing = true }
+
+    implementation (
             "com.acuo.collateral:transformer-agreement:${versions.transformer}",
             "com.acuo.collateral:transformer-clarus:${versions.transformer}",
             "com.acuo.collateral:transformer-cme:${versions.transformer}",
             "com.acuo.collateral:transformer-margin:${versions.transformer}",
             "com.acuo.collateral:transformer-markit:${versions.transformer}",
             "com.acuo.collateral:transformer-portfolio:${versions.transformer}",
-            "com.acuo.collateral:transformer-reuters:${versions.transformer}",
-            "com.acuo.collateral:acuo-common:${versions.common}",
+            "com.acuo.collateral:transformer-reuters:${versions.transformer}"
+    )
+
+    implementation (
             "com.tracegroup.transformer:transformer-runtime-complete:${versions.runtime}",
             "com.tracegroup.transformer:transformer-designtime:${versions.design}",
             "com.tracegroup.transformer:currencylib:${versions.currencylib}",
             "com.swift:swift2016lib:${versions.swiftlib}",
-            "com.opengamma.strata:strata-basics:1.0.0"
+            "com.opengamma.strata:strata-basics:${versions.strata}",
+            "commons-lang:commons-lang:${versions.commons_lang}"
     )
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile (
+
+    implementation(
+            "com.google.inject:guice:${versions.guice}"
+    )
+
+    testImplementation (
+        "com.acuo.collateral:acuo-model:${versions.model}:tests",
         "com.acuo.collateral:acuo-common:${versions.common}:tests"
     )
 }
@@ -56,7 +69,7 @@ task fatJar(type: Jar, dependsOn: ":libs:publish") {
     zip64 true
     excludes = ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"]
     from {
-        configurations.compile.collect {
+        configurations.compileClasspath.collect {
             it.isDirectory() ? it : zipTree(it)
         }
     }

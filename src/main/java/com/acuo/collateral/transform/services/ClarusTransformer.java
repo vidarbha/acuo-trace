@@ -20,9 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
-
-import static com.acuo.common.util.ArgChecker.notNull;
 
 @Slf4j
 public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -67,7 +66,7 @@ public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseT
 
     @Override
     public TransformerOutput<OUTPUT> deserialiseToList(String values) {
-        values = TraceUtils.replaceNewLineToWindows(notNull(values, "values"));
+        values = TraceUtils.replaceNewLineToWindows(Objects.requireNonNull(values, "values"));
         try {
             FromClarusOutputWrapper output = clarus.fromClarus(values);
             OutputBuilder<OUTPUT> outputBuilder = OutputBuilder.of(output.getOutput(), output.getError());
