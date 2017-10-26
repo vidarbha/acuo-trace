@@ -11,7 +11,6 @@ import com.google.common.collect.ImmutableList
 import com.google.inject.Injector
 import org.apache.commons.io.IOUtils
 import org.junit.Rule
-import org.neo4j.driver.internal.util.Iterables
 import spock.guice.UseModules
 import spock.lang.Specification
 
