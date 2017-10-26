@@ -7,7 +7,6 @@ import com.acuo.collateral.transform.trace.transformer_reuters.Service;
 import com.acuo.collateral.transform.trace.transformer_reuters.ToSettlementDateOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.OutputBuilder;
-import com.acuo.common.util.ArgChecker;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
@@ -16,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 public class SettlementDateTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -37,7 +37,7 @@ public class SettlementDateTransformer<INPUT, OUTPUT> extends BaseTransformer<IN
 
     @Override
     public TransformerOutput<OUTPUT> deserialiseToList(String values) {
-        ArgChecker.notNull(values, "values");
+        Objects.requireNonNull(values, "values");
         values = TraceUtils.replaceNewLineToWindows(values);
         try {
             FromSettlementDateOutputWrapper output = reuters.fromSettlementDate(values);
