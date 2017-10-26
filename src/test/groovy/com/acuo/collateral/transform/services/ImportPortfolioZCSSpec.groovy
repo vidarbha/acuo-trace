@@ -54,7 +54,7 @@ class ImportPortfolioZCSSpec extends Specification {
         given:
         Transformer<String, SwapTrade> portfolioImportTransformer = injector.getInstance(PortfolioImportTransformer.class)
         TransformerOutput<SwapTrade> output = portfolioImportTransformer.deserialise(IOUtils.toByteArray(zcsTradeFile.getInputStream()))
-        SwapTrade trade = Iterables.single(output.results())
+        SwapTrade trade = output.results().first()
 
         Transformer<SwapTrade, String> clarusTransformer = injector.getInstance(ClarusTransformer.class)
 
