@@ -7,21 +7,20 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>25/10/2017 17:34:13</Timestamp>
-        <Checksum>bf35ed8b</Checksum>
+        <Timestamp>27/10/2017 08:03:52</Timestamp>
+        <Checksum>c5e107db</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="fromCmeFile" serviceName="Service" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="toCmeFileNew" serviceName="Cme" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
-        <Value>String</Value>
-    </Property>
-    <Property name="OutputParameterType" type="option">
         <Value>External Object</Value>
     </Property>
-    <Description>Parse CME ITRS csv file into a collection Acuo IrSwaps</Description>
+    <Property name="OutputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:CME_ACUO">
-            <Mapping>CME_ACUO</Mapping>
+        <ServiceOperationMappingTarget group="Map:ACUO_CME">
+            <Mapping>Trades_to_ITRS</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>
