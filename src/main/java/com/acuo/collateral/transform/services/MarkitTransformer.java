@@ -1,7 +1,7 @@
 package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.trace.transformer_markit.Service;
+import com.acuo.collateral.transform.trace.transformer_markit.Markit;
 import com.acuo.collateral.transform.trace.transformer_markit.ToIRSMarkitOutputWrapper;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -16,7 +16,7 @@ import java.util.List;
 public class MarkitTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
 
     @Inject
-    private Service service = null;
+    private Markit service = null;
 
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {

@@ -4,8 +4,9 @@ import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.TransformerOutput;
 import com.acuo.collateral.transform.inputs.ClarusInput;
 import com.acuo.collateral.transform.inputs.Envelop;
+import com.acuo.collateral.transform.trace.transformer_clarus.Clarus;
 import com.acuo.collateral.transform.trace.transformer_clarus.FromClarusOutputWrapper;
-import com.acuo.collateral.transform.trace.transformer_cme.Service;
+import com.acuo.collateral.transform.trace.transformer_cme.Cme;
 import com.acuo.collateral.transform.trace.transformer_cme.ToCmeFileNewOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.OutputBuilder;
@@ -27,10 +28,10 @@ import java.util.stream.Collectors;
 public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
 
     @Inject
-    private Service cme = null;
+    private Cme cme = null;
 
     @Inject
-    private com.acuo.collateral.transform.trace.transformer_clarus.Service clarus = null;
+    private Clarus clarus = null;
 
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {

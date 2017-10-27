@@ -3,6 +3,8 @@ package com.acuo.collateral.transform.trace;
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.inputs.ClarusInput;
 import com.acuo.collateral.transform.inputs.Envelop;
+import com.acuo.collateral.transform.trace.transformer_cme.Cme;
+import com.acuo.collateral.transform.trace.transformer_markit.Markit;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.common.model.trade.ProductType;
 import com.acuo.common.model.trade.SwapTrade;
@@ -32,11 +34,11 @@ public class TraceTest {
     @Rule
     public ResourceFile itrs43 = new ResourceFile("/cme/IRSTR-43.csv");
 
-    private com.acuo.collateral.transform.trace.transformer_cme.Service cme = new com.acuo.collateral.transform.trace.transformer_cme.Service();
+    private Cme cme = new Cme();
 
-    private com.acuo.collateral.transform.trace.transformer_markit.Service markit = new com.acuo.collateral.transform.trace.transformer_markit.Service();
+    private Markit markit = new Markit();
 
-    TransformerContext context = null;
+    private TransformerContext context = null;
 
     @Before
     public void setup() {
