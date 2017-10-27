@@ -7,20 +7,20 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>25/10/2017 17:51:42</Timestamp>
-        <Checksum>8710a6a5</Checksum>
+        <Timestamp>27/10/2017 07:46:22</Timestamp>
+        <Checksum>524604d1</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="fromSettlementDate" serviceName="Service" operationType="ManyToManyMapping">
-    <Property name="OutputParameterType" type="option">
-        <Value>External Object</Value>
-    </Property>
+<ExposedServiceOperation name="fromAsset" serviceName="Reuters" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>String</Value>
     </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
     <ServiceOperationTargetChoice>
         <ServiceOperationMappingTarget group="Map:Reuters_IN">
-            <Mapping>StringToAssetSettlementDate</Mapping>
+            <Mapping>StringToAssetValuation</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>
