@@ -1,16 +1,15 @@
 package com.acuo.collateral.transform.services
 
-import com.acuo.collateral.transform.Transformer
 import com.acuo.collateral.transform.TransformerContext
 import com.acuo.collateral.transform.modules.TransformerModule
 import com.acuo.common.model.product.SwapHelper
 import com.acuo.common.model.trade.SwapTrade
 import com.acuo.common.util.ResourceFile
 import com.google.common.collect.ImmutableList
-import com.google.inject.Injector
 import org.junit.Rule
 import spock.guice.UseModules
 import spock.lang.Specification
+import spock.lang.Subject
 
 import javax.inject.Inject
 import java.time.LocalDate
@@ -22,8 +21,12 @@ class MarkitTransformerSpec extends Specification {
 
     TransformerContext context = null
 
+    @Subject
     @Inject
-    Injector injector
+    MarkitTransformer markitTransformer
+
+    @Inject
+    PortfolioImportTransformer portfolioImportTransformer
 
     @Rule
     public ResourceFile xxcyTradeFile = new ResourceFile("/portfolio/OneXCCY.xlsx")
@@ -35,11 +38,10 @@ class MarkitTransformerSpec extends Specification {
 
     def "Serialise Vanilla Swap"() {
         given:
-        Transformer<SwapTrade, String> transformer = injector.getInstance(MarkitTransformer)
         SwapTrade trade = SwapHelper.createTrade()
 
         when:
-        String xml = transformer.serialise(ImmutableList.of(trade), context)
+        String xml = markitTransformer.serialise(ImmutableList.of(trade), context)
 
         then:
         xml != null
@@ -47,8 +49,6 @@ class MarkitTransformerSpec extends Specification {
 
     def "Serialise XCCY Swap"() {
         given:
-        Transformer<SwapTrade, String> markitTransformer = injector.getInstance(MarkitTransformer)
-        Transformer<String, SwapTrade> portfolioImportTransformer = injector.getInstance(PortfolioImportTransformer)
         List<SwapTrade> trades = portfolioImportTransformer.deserialise(toByteArray(xxcyTradeFile.getInputStream())).results()
 
         when:

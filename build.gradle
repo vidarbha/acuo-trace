@@ -55,6 +55,8 @@ dependencies {
         "com.acuo.collateral:acuo-model:${versions.model}:tests",
         "com.acuo.collateral:acuo-common:${versions.common}:tests"
     )
+
+    testImplementation ("com.jayway.jsonpath:json-path-assert:${versions.jayway}")
 }
 
 task fatJar(type: Jar, dependsOn: ":libs:publish") {

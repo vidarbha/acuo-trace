@@ -15,8 +15,6 @@ import com.acuo.collateral.transform.modules.TransformerModule;
 import com.acuo.common.model.assets.Assets;
 import com.acuo.common.model.margin.MarginCall;
 import com.acuo.common.model.margin.Recall;
-import com.acuo.common.model.product.SwapHelper;
-import com.acuo.common.model.results.AssetValuation;
 import com.acuo.common.model.results.TradeValuation;
 import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.GuiceJUnitRunner;
@@ -57,7 +55,7 @@ public class TransformerTest {
     public ResourceFile received = new ResourceFile("/call/Received_Call.xml");
 
     @Rule
-    public ResourceFile responsjson = new ResourceFile("/reuters/response.json");
+    public ResourceFile responsjson = new ResourceFile("/reuters/asset/response.json");
 
     @Rule
     public ResourceFile statementItem = new ResourceFile("/mockmc.csv");
@@ -74,54 +72,6 @@ public class TransformerTest {
         context.setValueDate(LocalDate.now());
     }
 
-    @Test
-    public void testSerialiseSwapsWithClarus() throws Exception {
-        Transformer<SwapTrade, String> transformer = injector.getInstance(ClarusTransformer.class);
-
-        SwapTrade trade = SwapHelper.createTrade();
-
-        String csv = transformer.serialise(ImmutableList.of(trade), context);
-
-        assertThat(csv).isNotEmpty();
-    }
-
-    @Test
-    public void testSerialiseSwapsWithMarkit() throws Exception {
-        Transformer<SwapTrade, String> transformer = injector.getInstance(MarkitTransformer.class);
-
-        SwapTrade trade = SwapHelper.createTrade();
-
-        String xml = transformer.serialise(ImmutableList.of(trade), context);
-
-        assertThat(xml).isNotEmpty();
-    }
-
-    @Test
-    public void testSerialiseAssetsWithReuters() throws Exception {
-        Transformer<Assets, String> transformer = injector.getInstance(ReutersTransformer.class);
-
-        Assets assets = new Assets();
-        assets.setAssetId("1231");
-        assets.setAvailableQuantities(11);
-        assets.setCurrency(Currency.USD);
-        assets.setFitchRating("1");
-
-        String json = transformer.serialise(ImmutableList.of(assets), context);
-
-        assertThat(json).isNotEmpty();
-    }
-
-    @Test
-    public void testSerialiseAssetsFromReuters() throws Exception {
-        Transformer<String, AssetValuation> transformer = injector.getInstance(ReutersTransformer.class);
-
-        TransformerOutput<AssetValuation> output = transformer.deserialiseToList(responsjson.getContent());
-        List<AssetValuation> assetsList = output.results();
-
-        Assert.assertTrue(assetsList.size() > 0);
-        AssetValuation valuation = assetsList.get(0);
-        assertThat(valuation).isNotNull();
-    }
 
     @Test
     public void testSerialiseSwapsWithMarginsphere() throws Exception {

@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Slf4j
-public class ReutersTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
+public class ReutersAssetTransformer<INPUT, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
 
     @Inject
     private Reuters service = null;
