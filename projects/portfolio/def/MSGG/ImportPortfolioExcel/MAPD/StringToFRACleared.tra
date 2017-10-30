@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>18/08/2017 12:16:56</Timestamp>
-        <Checksum>3bf403c7</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>30/10/2017 17:14:29</Timestamp>
+        <Checksum>eb79cc9e</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToFRACleared"
@@ -146,6 +146,54 @@
                 </Value>
             </Property>
             <Mapper>TextToDate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Format" type="string">
+                <Value>yyyy/MM/dd</Value>
+            </Property>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="TradeDate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="TradeDate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>TextToDate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="TradeTime"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Format" type="string">
+                <Value>HH:mm:ss.SSS</Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="TradeTime"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>TextToTime</Mapper>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -620,30 +668,6 @@
                 </Value>
             </Property>
             <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="TradeTime"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Format" type="string">
-                <Value>HH:mm:ss.SSS</Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="TradeTime"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>TextToTime</Mapper>
         </FunctionCall>
     </ActionStep>
     <ActionStep>

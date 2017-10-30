@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>27/10/2017 18:39:53</Timestamp>
-        <Checksum>3957450d</Checksum>
+        <Timestamp>30/10/2017 17:10:08</Timestamp>
+        <Checksum>2f4a4939</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="OISCF" group="ImportPortfolioExcel">
@@ -349,7 +349,19 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>TradeDate</NamedComponent>
+                    <LocalComponent name="TradeDate">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Date</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="Format" type="string">
+                                <Value>yyyy/mm/dd</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="TradeTime">
