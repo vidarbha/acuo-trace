@@ -1,0 +1,97 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>30/10/2017 17:45:32</Timestamp>
+        <Checksum>f4798cf7</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="PledgeDateToDate" group="Map:MS_ACUO" category="Acuo">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input1" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Date" pathString="day"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Separator" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>/</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Input2" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Date" pathString="month"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Input3" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Date" pathString="year"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="string"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>Concatenate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="string"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Format" type="string">
+                <Value>dd/MM/yyyy</Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>TextToDate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <InputDefinition name="Date" optional="false" repeating="false">
+        <Type>AcadiaSoft.Pledge.Date.Only</Type>
+    </InputDefinition>
+    <OutputDefinition name="Output" optional="false" repeating="false">
+        <Bot>Date</Bot>
+    </OutputDefinition>
+    <TempVariable name="string" optional="true" repeating="false">
+        <Bot>String</Bot>
+    </TempVariable>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>
