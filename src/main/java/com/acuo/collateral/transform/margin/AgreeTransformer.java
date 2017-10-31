@@ -17,7 +17,7 @@ public class AgreeTransformer extends MarginCallTransformTo {
     @Override
     public String serialise(List<MarginCall> value, TransformerContext context) {
         try {
-            AgreeCallOutputWrapper outputWrapper = marginCall.agreeCall(value.toArray());
+            AgreeCallOutputWrapper outputWrapper = mapper.agreeCall(value.toArray());
             return outputWrapper.getMarginCalls();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of margin calls", value);

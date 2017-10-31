@@ -17,7 +17,7 @@ public class DisputeTransformer extends MarginCallTransformTo {
     @Override
     public String serialise(List<MarginCall> value, TransformerContext context) {
         try {
-            DisputeCallOutputWrapper disputeCallOutputWrapper = marginCall.disputeCall(value.toArray());
+            DisputeCallOutputWrapper disputeCallOutputWrapper = mapper.disputeCall(value.toArray());
             return disputeCallOutputWrapper.getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of margin calls", value);

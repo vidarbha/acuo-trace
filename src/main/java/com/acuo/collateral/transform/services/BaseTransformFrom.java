@@ -6,17 +6,17 @@ import com.acuo.collateral.transform.TransformerOutput;
 public class BaseTransformFrom<OUTPUT> implements TransformFrom<OUTPUT> {
 
     @Override
-    public TransformerOutput<OUTPUT> deserialise(String value) {
+    public OUTPUT deserialise(String value) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public TransformerOutput<OUTPUT> deserialise(byte[] value) {
+    public OUTPUT deserialise(byte[] value) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public TransformerOutput<OUTPUT> deserialiseToList(String values) {
+    public OUTPUT deserialiseToList(String values) {
         throw new UnsupportedOperationException();
     }
 

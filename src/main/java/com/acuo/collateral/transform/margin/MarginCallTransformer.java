@@ -1,10 +1,8 @@
 package com.acuo.collateral.transform.margin;
 
-import com.acuo.collateral.transform.TransformerOutput;
 import com.acuo.collateral.transform.services.BaseTransformFrom;
 import com.acuo.collateral.transform.trace.transformer_margin.FromResponseOutputWrapper;
-import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
-import com.acuo.collateral.transform.utils.OutputBuilder;
+import com.acuo.collateral.transform.trace.transformer_margin.MSMapper;
 import com.acuo.marginsphere.Response;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
@@ -18,19 +16,18 @@ import javax.inject.Inject;
 public class MarginCallTransformer extends BaseTransformFrom<Response> {
 
     @Inject
-    protected MarginCall marginCall = null;
+    protected MSMapper mapper = null;
 
     @Override
-    public final TransformerOutput<Response> deserialise(String value) {
+    public final Response deserialise(String value) {
         return deserialiseToList(value);
     }
 
     @Override
-    public TransformerOutput<Response> deserialiseToList(String values) {
+    public Response deserialiseToList(String values) {
         try {
-            final FromResponseOutputWrapper output = marginCall.fromResponse(values);
-            OutputBuilder<Response> outputBuilder = OutputBuilder.of(output.getResponse(), output.getMSError());
-            return outputBuilder.build();
+            final FromResponseOutputWrapper output = mapper.fromResponse(values);
+            return (Response) output.getResponse()[0];
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of margin calls", values);
             log.error(msg, e);

@@ -17,7 +17,7 @@ public class CancelTransformer extends MarginCallTransformTo {
     @Override
     public String serialise(List<MarginCall> value, TransformerContext context) {
         try {
-            CancelCallOutputWrapper cancelCallOutputWrapper = marginCall.cancelCall(value.toArray());
+            CancelCallOutputWrapper cancelCallOutputWrapper = mapper.cancelCall(value.toArray());
             return cancelCallOutputWrapper.getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of margin calls", value);

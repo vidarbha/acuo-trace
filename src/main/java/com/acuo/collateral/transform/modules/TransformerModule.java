@@ -14,6 +14,7 @@ import com.acuo.collateral.transform.margin.StatementItemTransformer;
 import com.acuo.collateral.transform.trace.transformer_agreement.MarginAgreement;
 import com.acuo.collateral.transform.trace.transformer_clarus.Clarus;
 import com.acuo.collateral.transform.trace.transformer_cme.Cme;
+import com.acuo.collateral.transform.trace.transformer_margin.MSMapper;
 import com.acuo.collateral.transform.trace.transformer_markit.Markit;
 import com.acuo.collateral.transform.trace.transformer_portfolio.Portfolio;
 import com.acuo.collateral.transform.trace.transformer_reuters.Reuters;
@@ -29,7 +30,7 @@ public class TransformerModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        bind(com.acuo.collateral.transform.trace.transformer_margin.MarginCall.class);
+        bind(MSMapper.class);
         bind(Clarus.class);
         bind(Markit.class);
         bind(Reuters.class);

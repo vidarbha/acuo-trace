@@ -17,7 +17,7 @@ public class PledgeAcceptTransformer extends MarginCallTransformTo {
     @Override
     public String serialise(List<MarginCall> value, TransformerContext context) {
         try {
-            PledgeAcceptOutputWrapper pledgeCreateOutputWrapper = marginCall.pledgeAccept(value.toArray());
+            PledgeAcceptOutputWrapper pledgeCreateOutputWrapper = mapper.pledgeAccept(value.toArray());
             return pledgeCreateOutputWrapper.getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of margin calls", value);

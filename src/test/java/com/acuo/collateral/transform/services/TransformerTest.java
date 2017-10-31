@@ -80,8 +80,8 @@ public class TransformerTest {
     public void testSerialiseSwapsWithMarginsphere() throws Exception {
         TransformFrom<Response> transformer = injector.getInstance(MarginCallTransformer.class);
 
-        final TransformerOutput<Response> output = transformer.deserialiseToList(received.getContent());
-        List<Response> marginCalls = output.results();
+        final Response output = transformer.deserialiseToList(received.getContent());
+        List<MarginCall> marginCalls = output.getCalls();
 
         assertThat(marginCalls).isNotEmpty();
     }
@@ -94,8 +94,8 @@ public class TransformerTest {
         if (content != null) {
             content = content.replace("\n", "\r\n");
         }
-        final TransformerOutput<Response> output = transformer.deserialiseToList(content);
-        List<Response> marginCalls = output.results();
+        final Response output = transformer.deserialiseToList(content);
+        List<MarginCall> marginCalls = output.getCalls();
         assertThat(marginCalls).isNotEmpty();
     }
 
