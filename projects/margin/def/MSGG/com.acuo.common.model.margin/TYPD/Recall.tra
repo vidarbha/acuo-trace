@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>30/10/2017 14:36:14</Timestamp>
-        <Checksum>cc78990b</Checksum>
+        <Timestamp>31/10/2017 11:48:01</Timestamp>
+        <Checksum>ef23dabd</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Recall" group="com.acuo.common.model.margin">
@@ -27,10 +27,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="CallAmpId">
+                    <LocalComponent name="Haircut">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -38,7 +38,18 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="RecallAmpId">
+                    <LocalComponent name="Quantity">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="CallAmpId">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -60,28 +71,6 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="DeliveryType">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Quantity">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="FXCurrency">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -93,10 +82,21 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="FXRate">
+                    <LocalComponent name="RecallAmpId">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
+                                <BusinessObjectType>String</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="DeliveryType">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -115,10 +115,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Haircut">
+                    <LocalComponent name="RejectComment">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -126,10 +126,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="RejectComment">
+                    <LocalComponent name="FXRate">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -159,19 +159,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="SecurityIdType">
-                        <TypeSpecification>
-                            <NamedType type="Types.SecurityIdType"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="CurrentMarketValue">
+                    <LocalComponent name="RejectReasonCode">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
+                                <BusinessObjectType>Integer</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -190,11 +181,9 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="RejectReasonCode">
+                    <LocalComponent name="SecurityIdType">
                         <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Integer</BusinessObjectType>
-                            </TypeDefinition>
+                            <NamedType type="Types.SecurityIdType"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
@@ -205,6 +194,17 @@
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Boolean</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="CurrentMarketValue">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>

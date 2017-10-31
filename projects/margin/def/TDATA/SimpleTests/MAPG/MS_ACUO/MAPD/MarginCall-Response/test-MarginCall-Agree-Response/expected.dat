@@ -1,17 +1,17 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
               Test 1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
----
 <?xml version="1.0"?>
 <Response xmlns:margin="com.acuo.common.model.margin"
+    xmlns:results="com.acuo.common.model.results"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="com.acuo.marginsphere">
     <Call>
         <margin:Version>2</margin:Version>
         <margin:Direction>Incoming</margin:Direction>
-        <margin:TotalCallAmount>10000000.0</margin:TotalCallAmount>
-        <margin:MarginAgreementAmpId>m10002012179cc0rc</margin:MarginAgreementAmpId>
         <margin:MarginAgreementShortName>AB001</margin:MarginAgreementShortName>
+        <margin:MarginAgreementAmpId>m10002012179cc0rc</margin:MarginAgreementAmpId>
         <margin:LocalCounterpartyLabel>Acadia Bank USA NA</margin:LocalCounterpartyLabel>
+        <margin:TotalCallAmount>10000000.0</margin:TotalCallAmount>
         <margin:AmpId>c100020121792c0m9</margin:AmpId>
         <margin:BusinessState>Agreed</margin:BusinessState>
         <margin:AgreedAmount>10000000.0</margin:AgreedAmount>
@@ -19,10 +19,10 @@
     <Call>
         <margin:Version>2</margin:Version>
         <margin:Direction>Incoming</margin:Direction>
-        <margin:TotalCallAmount>10000000.0</margin:TotalCallAmount>
-        <margin:MarginAgreementAmpId>m10002012179cc0rc</margin:MarginAgreementAmpId>
         <margin:MarginAgreementShortName>AB001</margin:MarginAgreementShortName>
+        <margin:MarginAgreementAmpId>m10002012179cc0rc</margin:MarginAgreementAmpId>
         <margin:LocalCounterpartyLabel>Acadia Bank USA NA</margin:LocalCounterpartyLabel>
+        <margin:TotalCallAmount>10000000.0</margin:TotalCallAmount>
         <margin:AmpId>c100020121792c0m9</margin:AmpId>
         <margin:BusinessState>Agreed</margin:BusinessState>
         <margin:AgreedAmount>10000000.0</margin:AgreedAmount>
@@ -33,11 +33,14 @@
               Test 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 <?xml version="1.0"?>
-<MSError xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ErrorCode>5002</ErrorCode>
-    <ErrorDescription>JAXB Unmarshaling Error</ErrorDescription>
-    <ErrorMessage>XML Validation exception occured at line [6], column [23], with error message [cvc-complex-type.2.4.a: Invalid content was found starting with element 'tns:callDate'. One of '{"create.margincall.api.acadiasoft.com":exposure, "create.margincall.api.acadiasoft.com":finalTransferAmount, "create.margincall.api.acadiasoft.com":initialMarginAmount, "create.margincall.api.acadiasoft.com":minimumTransferAmount, "create.margincall.api.acadiasoft.com":netRequiredAmount, "create.margincall.api.acadiasoft.com":pendingCollateral, "create.margincall.api.acadiasoft.com":roundingAmount, "create.margincall.api.acadiasoft.com":threshold, "create.margincall.api.acadiasoft.com":valuationDate, "create.margincall.api.acadiasoft.com":externalReference, "create.margincall.api.acadiasoft.com":marginAgreementAmpId, "create.margincall.api.acadiasoft.com":marginAgreementShortName}' is expected.]</ErrorMessage>
-    <StatusCode>400</StatusCode>
-    <HttpStatusDescription>Bad Request</HttpStatusDescription>
-</MSError>
----
+<Response xmlns:margin="com.acuo.common.model.margin"
+    xmlns:results="com.acuo.common.model.results"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="com.acuo.marginsphere">
+    <Error>
+        <results:StatusCode>400</results:StatusCode>
+        <results:ErrorCode>5002</results:ErrorCode>
+        <results:ErrorMessage>XML Validation exception occured at line [6], column [23], with error message [cvc-complex-type.2.4.a: Invalid content was found starting with element 'tns:callDate'. One of '{"create.margincall.api.acadiasoft.com":exposure, "create.margincall.api.acadiasoft.com":finalTransferAmount, "create.margincall.api.acadiasoft.com":initialMarginAmount, "create.margincall.api.acadiasoft.com":minimumTransferAmount, "create.margincall.api.acadiasoft.com":netRequiredAmount, "create.margincall.api.acadiasoft.com":pendingCollateral, "create.margincall.api.acadiasoft.com":roundingAmount, "create.margincall.api.acadiasoft.com":threshold, "create.margincall.api.acadiasoft.com":valuationDate, "create.margincall.api.acadiasoft.com":externalReference, "create.margincall.api.acadiasoft.com":marginAgreementAmpId, "create.margincall.api.acadiasoft.com":marginAgreementShortName}' is expected.]</results:ErrorMessage>
+        <results:ErrorDescription>JAXB Unmarshaling Error</results:ErrorDescription>
+        <results:HttpStatusDescription>Bad Request</results:HttpStatusDescription>
+    </Error>
+</Response>

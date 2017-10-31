@@ -6,9 +6,9 @@
             <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>hicham</User>
-        <Host>dev-box</Host>
-        <Timestamp>05/10/2017 06:55:51</Timestamp>
-        <Checksum>c0560a78</Checksum>
+        <Host>Win7-VM</Host>
+        <Timestamp>31/10/2017 11:47:33</Timestamp>
+        <Checksum>307af3b8</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="MSError" group="com.acuo.common.model.results">
@@ -16,10 +16,10 @@
         <NamedType type="Error">
             <ComplexTypeXsdExtension Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ErrorCode">
+                    <LocalComponent name="StatusCode">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>Integer</BusinessObjectType>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -27,10 +27,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ErrorDescription">
+                    <LocalComponent name="ErrorCode">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
+                                <BusinessObjectType>Integer</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -49,7 +49,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="StatusCode">
+                    <LocalComponent name="ErrorDescription">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>

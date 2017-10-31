@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>30/10/2017 16:54:20</Timestamp>
-        <Checksum>c3fb95c3</Checksum>
+        <Timestamp>31/10/2017 11:56:01</Timestamp>
+        <Checksum>1df6982e</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Response" group="Map:MS_ACUO">
@@ -68,8 +68,8 @@
                             <Value>
                                 <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="MSError"
-                                    contextPosnSpec="[]" pathString="."/>
+                                    contextName="Response"
+                                    contextPosnSpec="1" pathString="Error[]"/>
                                 </NodeSpec>
                             </Value>
                         </Property>
@@ -127,9 +127,6 @@
     <InputDefinition name="Input" optional="false" repeating="false">
         <Bot>String</Bot>
     </InputDefinition>
-    <OutputDefinition name="MSError" optional="true" repeating="true">
-        <Message>results:MSError</Message>
-    </OutputDefinition>
     <OutputDefinition name="Response" optional="false" repeating="true">
         <Type>marginsphere:Response</Type>
     </OutputDefinition>

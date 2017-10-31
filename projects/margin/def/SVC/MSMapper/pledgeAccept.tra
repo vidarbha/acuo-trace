@@ -1,18 +1,17 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Service Operation Form</Program>
+            <Program>Rename File Action</Program>
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>lucie</User>
-        <Host>DESKTOP-OBN2924</Host>
-        <Timestamp>30/08/2017 17:27:01</Timestamp>
-        <Checksum>88bc5531</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>31/10/2017 12:00:54</Timestamp>
+        <Checksum>3ec15d68</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="agreeSubstitution"
-    serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="pledgeAccept" serviceName="MSMapper" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>External Object</Value>
     </Property>
@@ -20,8 +19,8 @@
         <Value>String</Value>
     </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:ACUO_MSSubstitution">
-            <Mapping>Substitution-Accept</Mapping>
+        <ServiceOperationMappingTarget group="Map:ACUO_MS">
+            <Mapping>MarginCall-pledge-accept</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

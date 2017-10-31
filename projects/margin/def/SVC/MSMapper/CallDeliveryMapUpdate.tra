@@ -1,17 +1,18 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Service Operation Form</Program>
-            <VersionNumber>3.5.5</VersionNumber>
-            <BuildNumber>194</BuildNumber>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>29/08/2016 11:08:39</Timestamp>
-        <Checksum>ac78aa4a</Checksum>
+        <Timestamp>31/10/2017 12:00:54</Timestamp>
+        <Checksum>7cee6afc</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="createCall" serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="CallDeliveryMapUpdate"
+    serviceName="MSMapper" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>External Object</Value>
     </Property>
@@ -20,7 +21,7 @@
     </Property>
     <ServiceOperationTargetChoice>
         <ServiceOperationMappingTarget group="Map:ACUO_MS">
-            <Mapping>MarginCall-Create</Mapping>
+            <Mapping>MarginCall-DeliveryMap-update</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

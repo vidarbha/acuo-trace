@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>30/10/2017 14:36:14</Timestamp>
-        <Checksum>c5147839</Checksum>
+        <Timestamp>31/10/2017 11:48:01</Timestamp>
+        <Checksum>b6e26c73</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Dispute" group="com.acuo.common.model.margin">
@@ -49,6 +49,17 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ParentVersion">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Integer</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="MsId">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -60,21 +71,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Comments">
+                    <LocalComponent name="ParentAmpId">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Mtm">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Decimal</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -104,21 +104,10 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ParentAmpId">
+                    <LocalComponent name="Mtm">
                         <TypeSpecification>
                             <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="ParentVersion">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Integer</BusinessObjectType>
+                                <BusinessObjectType>Decimal</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>
@@ -150,6 +139,17 @@
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Decimal</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Comments">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>String</BusinessObjectType>
                             </TypeDefinition>
                         </TypeSpecification>
                         <FormatSpecifications/>

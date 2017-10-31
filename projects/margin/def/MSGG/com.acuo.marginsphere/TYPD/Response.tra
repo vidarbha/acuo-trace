@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>30/10/2017 14:36:14</Timestamp>
-        <Checksum>a580aa91</Checksum>
+        <Timestamp>31/10/2017 11:47:33</Timestamp>
+        <Checksum>4f3a15a4</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Response" group="com.acuo.marginsphere">
@@ -35,8 +35,17 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="Error">
+                        <TypeSpecification>
+                            <NamedType type="results:MSError"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="TotalCount">
+                    <LocalComponent name="Skip">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Integer</BusinessObjectType>
@@ -47,7 +56,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Skip">
+                    <LocalComponent name="TotalCount">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Integer</BusinessObjectType>

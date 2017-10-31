@@ -1,26 +1,27 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Service Operation Form</Program>
+            <Program>Rename File Action</Program>
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>lucie</User>
-        <Host>DESKTOP-OBN2924</Host>
-        <Timestamp>31/08/2017 16:29:08</Timestamp>
-        <Checksum>7aaf3c33</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>31/10/2017 12:00:54</Timestamp>
+        <Checksum>22fa5bae</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="disputeCancel" serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="agreeCall" serviceName="MSMapper" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>External Object</Value>
     </Property>
     <Property name="OutputParameterType" type="option">
         <Value>String</Value>
     </Property>
+    <Description>Mapping from Acuo Agree model to Marginsphere Agree message</Description>
     <ServiceOperationTargetChoice>
         <ServiceOperationMappingTarget group="Map:ACUO_MS">
-            <Mapping>MarginCall-Dispute-Cancel</Mapping>
+            <Mapping>MarginCall-agree</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

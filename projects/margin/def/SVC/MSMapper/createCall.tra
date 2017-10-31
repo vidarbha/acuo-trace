@@ -7,20 +7,20 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>30/10/2017 17:32:32</Timestamp>
-        <Checksum>29c94e3c</Checksum>
+        <Timestamp>31/10/2017 12:00:54</Timestamp>
+        <Checksum>447d3fc5</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="fromResponse" serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="createCall" serviceName="MSMapper" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
-        <Value>String</Value>
-    </Property>
-    <Property name="OutputParameterType" type="option">
         <Value>External Object</Value>
     </Property>
+    <Property name="OutputParameterType" type="option">
+        <Value>String</Value>
+    </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:MS_ACUO">
-            <Mapping>MarginCall-Response</Mapping>
+        <ServiceOperationMappingTarget group="Map:ACUO_MS">
+            <Mapping>MarginCall-Create</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

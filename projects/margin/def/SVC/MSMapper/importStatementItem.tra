@@ -1,27 +1,27 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Service Operation Form</Program>
+            <Program>Rename File Action</Program>
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>30/10/2017 17:30:59</Timestamp>
-        <Checksum>331e29c9</Checksum>
+        <Timestamp>31/10/2017 12:00:54</Timestamp>
+        <Checksum>7b7039c2</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="agreeCall" serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="importStatementItem"
+    serviceName="MSMapper" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
-        <Value>External Object</Value>
-    </Property>
-    <Property name="OutputParameterType" type="option">
         <Value>String</Value>
     </Property>
-    <Description>Mapping from Acuo Agree model to Marginsphere Agree message</Description>
+    <Property name="OutputParameterType" type="option">
+        <Value>External Object</Value>
+    </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:ACUO_MS">
-            <Mapping>MarginCall-agree</Mapping>
+        <ServiceOperationMappingTarget group="Map:Cpty_ACUO">
+            <Mapping>StatementItemImport</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>

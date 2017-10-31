@@ -1,17 +1,17 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Service Operation Form</Program>
+            <Program>Rename File Action</Program>
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>lucie</User>
-        <Host>DESKTOP-OBN2924</Host>
-        <Timestamp>30/08/2017 17:25:26</Timestamp>
-        <Checksum>94230007</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>31/10/2017 12:00:54</Timestamp>
+        <Checksum>369318b7</Checksum>
     </LastModification>
 </Prolog>
-<ExposedServiceOperation name="getSubstitution" serviceName="MarginCall" operationType="ManyToManyMapping">
+<ExposedServiceOperation name="fromResponse" serviceName="MSMapper" operationType="ManyToManyMapping">
     <Property name="InputParameterType" type="option">
         <Value>String</Value>
     </Property>
@@ -19,8 +19,8 @@
         <Value>External Object</Value>
     </Property>
     <ServiceOperationTargetChoice>
-        <ServiceOperationMappingTarget group="Map:MS_ACUOSubstitution">
-            <Mapping>SubstitutionReceive</Mapping>
+        <ServiceOperationMappingTarget group="Map:MS_ACUO">
+            <Mapping>MarginCall-Response</Mapping>
         </ServiceOperationMappingTarget>
     </ServiceOperationTargetChoice>
 </ExposedServiceOperation>
