@@ -2,6 +2,7 @@ package com.acuo.collateral.transform.margin;
 
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.trace.transformer_margin.CallDeliveryMapUpdateOutputWrapper;
+import com.acuo.common.model.margin.MarginCall;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
@@ -11,10 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
 @Slf4j
-public class DeliveryMapTransformer<T> extends BaseMarginCallTransformer<T> {
+public class DeliveryMapTransformer extends MarginCallTransformTo {
 
     @Override
-    public String serialise(List<T> value, TransformerContext context) {
+    public String serialise(List<MarginCall> value, TransformerContext context) {
         try {
             CallDeliveryMapUpdateOutputWrapper outputWrapper = marginCall.callDeliveryMapUpdate(value.toArray());
             return outputWrapper.getOutput();

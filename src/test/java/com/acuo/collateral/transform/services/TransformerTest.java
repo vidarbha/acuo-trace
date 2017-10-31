@@ -1,5 +1,7 @@
 package com.acuo.collateral.transform.services;
 
+import com.acuo.collateral.transform.TransformFrom;
+import com.acuo.collateral.transform.TransformTo;
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.TransformerOutput;
@@ -8,7 +10,7 @@ import com.acuo.collateral.transform.margin.CancelTransformer;
 import com.acuo.collateral.transform.margin.CreateTransformer;
 import com.acuo.collateral.transform.margin.DeliveryMapTransformer;
 import com.acuo.collateral.transform.margin.DisputeTransformer;
-import com.acuo.collateral.transform.margin.MarginSphereTransformer;
+import com.acuo.collateral.transform.margin.MarginCallTransformer;
 import com.acuo.collateral.transform.margin.PledgeCreateTransformer;
 import com.acuo.collateral.transform.margin.StatementItemTransformer;
 import com.acuo.collateral.transform.modules.TransformerModule;
@@ -19,6 +21,7 @@ import com.acuo.common.model.results.TradeValuation;
 import com.acuo.common.model.trade.SwapTrade;
 import com.acuo.common.util.GuiceJUnitRunner;
 import com.acuo.common.util.ResourceFile;
+import com.acuo.marginsphere.Response;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Injector;
 import com.opengamma.strata.basics.currency.Currency;
@@ -75,10 +78,10 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseSwapsWithMarginsphere() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(MarginSphereTransformer.class);
+        TransformFrom<Response> transformer = injector.getInstance(MarginCallTransformer.class);
 
-        TransformerOutput<MarginCall> output = transformer.deserialiseToList(received.getContent());
-        List<MarginCall> marginCalls = output.results();
+        final TransformerOutput<Response> output = transformer.deserialiseToList(received.getContent());
+        List<Response> marginCalls = output.results();
 
         assertThat(marginCalls).isNotEmpty();
     }
@@ -86,19 +89,19 @@ public class TransformerTest {
     @Test
     @Ignore
     public void testStatementItemImport() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(StatementItemTransformer.class);
+        TransformFrom<Response> transformer = injector.getInstance(StatementItemTransformer.class);
         String content = statementItem.getContent();
         if (content != null) {
             content = content.replace("\n", "\r\n");
         }
-        TransformerOutput<MarginCall> output = transformer.deserialiseToList(content);
-        List<MarginCall> marginCalls = output.results();
+        final TransformerOutput<Response> output = transformer.deserialiseToList(content);
+        List<Response> marginCalls = output.results();
         assertThat(marginCalls).isNotEmpty();
     }
 
     @Test
     public void testDisputeRequest() throws Exception {
-        DisputeTransformer<MarginCall> transformer = injector.getInstance(DisputeTransformer.class);
+        DisputeTransformer transformer = injector.getInstance(DisputeTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setId("cantortest");
         List<MarginCall> marginCalls = new ArrayList<>();
@@ -134,7 +137,7 @@ public class TransformerTest {
 
     @Test
     public void testDeliveryMap() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(DeliveryMapTransformer.class);
+        DeliveryMapTransformer transformer = injector.getInstance(DeliveryMapTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testssss");
         marginCall.setModifyDate(LocalDateTime.now());
@@ -158,7 +161,7 @@ public class TransformerTest {
 
     @Test
     public void testAgree() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(AgreeTransformer.class);
+        TransformTo<MarginCall> transformer = injector.getInstance(AgreeTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
         final String result = transformer.serialise(marginCall, null);
@@ -167,7 +170,7 @@ public class TransformerTest {
 
     @Test
     public void testCreate() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(CreateTransformer.class);
+        TransformTo<MarginCall> transformer = injector.getInstance(CreateTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
         marginCall.setRoundingAmount(111d);
@@ -177,7 +180,7 @@ public class TransformerTest {
 
     @Test
     public void testCancel() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(CancelTransformer.class);
+        TransformTo<MarginCall> transformer = injector.getInstance(CancelTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
         marginCall.setRoundingAmount(111d);
@@ -187,7 +190,7 @@ public class TransformerTest {
 
     @Test
     public void testPledgeCreate() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(PledgeCreateTransformer.class);
+        TransformTo<MarginCall> transformer = injector.getInstance(PledgeCreateTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
         marginCall.setVersion(1);
@@ -203,7 +206,7 @@ public class TransformerTest {
 
     @Test
     public void testRejectRecall() throws Exception {
-        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(PledgeCreateTransformer.class);
+        TransformTo<MarginCall> transformer = injector.getInstance(PledgeCreateTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
         marginCall.setVersion(1);
