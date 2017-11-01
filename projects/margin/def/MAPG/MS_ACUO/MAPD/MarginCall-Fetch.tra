@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>30/10/2017 17:50:54</Timestamp>
-        <Checksum>84e5aadc</Checksum>
+        <Timestamp>01/11/2017 09:27:18</Timestamp>
+        <Checksum>a2de10f5</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Fetch" group="Map:MS_ACUO" category="Acuo">
@@ -99,6 +99,27 @@
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
+                <FunctionCall>
+                    <Property name="marginCall" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="marginCall[Counter1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Response" pathString="Call[Out1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <MappingDefinitionInvocation>MarginCall-All</MappingDefinitionInvocation>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep disabled="true">
                 <IfAction>
                     <Condition>
                         <Comparison>
@@ -139,7 +160,7 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
                 <IfAction>
                     <Condition>
                         <Comparison>
@@ -180,7 +201,7 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
                 <IfAction>
                     <Condition>
                         <Comparison>
@@ -221,7 +242,7 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
                 <IfAction>
                     <Condition>
                         <CompoundCondition operator="OR">
@@ -280,7 +301,7 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
                 <IfAction>
                     <Condition>
                         <Comparison>
@@ -321,7 +342,7 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
                 <IfAction>
                     <Condition>
                         <Comparison>
@@ -362,7 +383,7 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
-            <ActionStep>
+            <ActionStep disabled="true">
                 <IfAction>
                     <Condition>
                         <Comparison>
