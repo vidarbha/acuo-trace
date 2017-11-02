@@ -4,64 +4,64 @@
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Type>SWAP</Type>
     <Info>
-        <Portfolio>p1a</Portfolio>
-        <MaturityDate>2024-02-16T00:00:00</MaturityDate>
-        <TradeDate>2014-02-16T00:00:00</TradeDate>
+        <MaturityDate>2023-12-04T00:00:00</MaturityDate>
         <TradeId>455642</TradeId>
+        <TradeDate>2014-02-16T00:00:00</TradeDate>
+        <Portfolio>p6</Portfolio>
+        <TradingAccountId>ACUOUK2046</TradingAccountId>
         <DerivativeType>Bilateral</DerivativeType>
-        <TradingAccountId>ACUOSG8745</TradingAccountId>
     </Info>
     <Product>
         <product:Leg>
             <product:Id>4556421</product:Id>
             <product:Type>FIXED</product:Type>
-            <product:Currency>MXN</product:Currency>
-            <product:Rate>0.08</product:Rate>
+            <product:Currency>SGD</product:Currency>
             <product:StartDate>
-                <model:Date>2014-02-16T00:00:00</model:Date>
+                <model:Date>2013-12-03T00:00:00</model:Date>
             </product:StartDate>
-            <product:MaturityDate>
-                <model:Date>2024-02-16T00:00:00</model:Date>
-            </product:MaturityDate>
-            <product:Notional>10000000.0</product:Notional>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:PayReceive>RECEIVE</product:PayReceive>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                    <model:Holiday>MEXICO</model:Holiday>
+                    <model:Holiday>SGSI</model:Holiday>
                 </model:Adjustment>
                 <model:Frequency>6M</model:Frequency>
             </product:PaymentSchedule>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>1.15</product:Rate>
+            <product:MaturityDate>
+                <model:Date>2023-11-29T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
         </product:Leg>
         <product:Leg>
             <product:Id>4556422</product:Id>
             <product:Type>FLOAT</product:Type>
-            <product:Currency>MXN</product:Currency>
+            <product:Currency>SGD</product:Currency>
             <product:StartDate>
-                <model:Date>2014-02-16T00:00:00</model:Date>
+                <model:Date>2013-12-03T00:00:00</model:Date>
             </product:StartDate>
-            <product:ResetSchedule>
-                <model:Frequency>28D</model:Frequency>
-            </product:ResetSchedule>
-            <product:MaturityDate>
-                <model:Date>2024-02-16T00:00:00</model:Date>
-            </product:MaturityDate>
-            <product:Notional>10000000.0</product:Notional>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:Fixing>
-                <product:Tenor>28D</product:Tenor>
-                <product:FloatingRateName>MXN-TIIE-Banxico</product:FloatingRateName>
-                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
-            </product:Fixing>
-            <product:PayReceive>PAY</product:PayReceive>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                    <model:Holiday>MEXICO</model:Holiday>
+                    <model:Holiday>SGSI</model:Holiday>
                 </model:Adjustment>
-                <model:Frequency>28D</model:Frequency>
+                <model:Frequency>6M</model:Frequency>
             </product:PaymentSchedule>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:FloatingRateName>SGD-SOR-Reuters</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+                <product:Tenor>6M</product:Tenor>
+            </product:Fixing>
+            <product:MaturityDate>
+                <model:Date>2023-11-29T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:ResetSchedule>
+                <model:Frequency>6M</model:Frequency>
+            </product:ResetSchedule>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
         </product:Leg>
     </Product>
 </SwapTrade>
