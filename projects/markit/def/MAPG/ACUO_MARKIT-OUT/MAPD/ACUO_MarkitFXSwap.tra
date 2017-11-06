@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>19/06/2017 15:08:38</Timestamp>
-        <Checksum>53bf3ea5</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>06/11/2017 18:56:25</Timestamp>
+        <Checksum>f78c4915</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_MarkitFXSwap" group="Map:ACUO_MARKIT-OUT">
@@ -52,120 +52,6 @@
             </Property>
             <Copy></Copy>
         </FunctionCall>
-    </ActionStep>
-    <ActionStep disabled="true">
-        <RepeatAction repeatCounter="Counter1">
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Info/TradeId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/tradeid"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Info/TradeDate"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/tradedate"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Info/Book"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/book"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep>
-                <RepeatAction repeatCounter="Counter2">
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/irswap/leg[Out2]"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <MappingDefinitionInvocation>Leg_SwapLeg</MappingDefinitionInvocation>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ScopeB specType="TO_DATA" contextName="Output"
-                        pathString="data/_choice1[Out1]/irswap/leg[]" outputPosnSpecifier="Out2"/>
-                    <RepeatLimit>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input"
-                            contextPosnSpec="Counter1" pathString="Product/Leg[#]"/>
-                    </RepeatLimit>
-                    <ScopeA specType="FROM_DATA" contextName="Input"
-                        contextPosnSpec="Counter1" pathString="Product/Leg[]"/>
-                </RepeatAction>
-            </ActionStep>
-            <ScopeB specType="TO_DATA" contextName="Output"
-                pathString="data/_choice1[]" outputPosnSpecifier="Out1"/>
-            <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input"
-                    contextPosnSpec="[#]" pathString="."/>
-            </RepeatLimit>
-            <ScopeA specType="FROM_DATA" contextName="Input"
-                contextPosnSpec="[]" pathString="."/>
-        </RepeatAction>
     </ActionStep>
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
@@ -236,152 +122,444 @@
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
-                <RepeatAction repeatCounter="Counter2">
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
                                     contextName="FXSwap"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[Out2]"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <MappingDefinitionInvocation>Leg_FXSwapLeg</MappingDefinitionInvocation>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
+                                    contextPosnSpec="Counter1" pathString="Product/NearLeg/BaseCurrencyAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Separator" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal> </Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="base[]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Split</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
                                     contextName="FXSwap"
-                                    contextPosnSpec="Counter1" pathString="Product/Currency1"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    contextPosnSpec="Counter1" pathString="Product/FarLeg/CounterCurrencyAmount"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Separator" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal> </Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="counter[]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Split</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="data/_choice1[Out1]/fxswap/currency"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="base[1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <Comparison>
+                            <FirstTerm>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/NearLeg/NonDeliverable"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>true</Literal>
+                            </SecondTerm>
+                        </Comparison>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="FXSwap"
-                                    contextPosnSpec="Counter1" pathString="Product/Currency2"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/currency2"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="FXSwap"
-                                    contextPosnSpec="Counter1" pathString="Product/Currency1Type"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    specType="TO_DATA"
                                     contextName="Output" pathString="data/_choice1[Out1]/fxswap/currencytype"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
+                                    </Value>
+                                </Property>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>NONDELIVERABLE</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ThenAction>
+                </IfAction>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/currency2"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="counter[1]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <IfAction>
+                    <Condition>
+                        <Comparison>
+                            <FirstTerm>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/FarLeg/NonDeliverable"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>true</Literal>
+                            </SecondTerm>
+                        </Comparison>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>NONDELIVERABLE</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="FXSwap"
-                                    contextPosnSpec="Counter1" pathString="Product/Currency2Type"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    specType="TO_DATA"
                                     contextName="Output" pathString="data/_choice1[Out1]/fxswap/currency2type"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ActionStep disabled="true">
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <Literal>USD</Literal>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/pvreportingccy"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ScopeB specType="TO_DATA" contextName="Output"
-                        pathString="data/_choice1[Out1]/fxswap/fxleg[]" outputPosnSpecifier="Out2"/>
-                    <RepeatLimit>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="FXSwap"
-                            contextPosnSpec="Counter1" pathString="Product/Leg[#]"/>
-                    </RepeatLimit>
-                    <ScopeA specType="FROM_DATA" contextName="FXSwap"
-                        contextPosnSpec="Counter1" pathString="Product/Leg[]"/>
-                </RepeatAction>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ThenAction>
+                </IfAction>
+            </ActionStep>
+            <ActionStep>
+                <Description>#Leg 1</Description>
+                <ActionComment/>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[1]/legid"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>1</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[1]/position"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="base[2]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/NearLeg/PaymentDate/Date"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[1]/settledate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/NearLeg/FixingDate/Date"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[1]/fixingdate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/NearLeg/Rate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[1]/rate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/NearLeg/SpotSource"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[1]/spotfixings/source"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <Description>Leg 2</Description>
+                <ActionComment/>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[2]/legid"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>2</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[2]/position"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="counter[2]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/FarLeg/PaymentDate/Date"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[2]/settledate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/FarLeg/FixingDate/Date"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[2]/fixingdate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/FarLeg/Rate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[2]/rate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="FXSwap"
+                                    contextPosnSpec="Counter1" pathString="Product/FarLeg/SpotSource"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="data/_choice1[Out1]/fxswap/fxleg[2]/spotfixings/source"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
             </ActionStep>
             <ScopeB specType="TO_DATA" contextName="Output"
                 pathString="data/_choice1[]" outputPosnSpecifier="Out1"/>
@@ -394,7 +572,7 @@
         </RepeatAction>
     </ActionStep>
     <InputDefinition name="FXSwap" optional="true" repeating="true">
-        <Type>FXSwapTrade</Type>
+        <Type>FxSwapTrade</Type>
     </InputDefinition>
     <InputDefinition name="Context" optional="false" repeating="false">
         <Type>transform:TransformerContext</Type>
@@ -402,6 +580,12 @@
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Component>presentvalue</Component>
     </OutputDefinition>
+    <TempVariable name="base" optional="true" repeating="true">
+        <Bot>String</Bot>
+    </TempVariable>
+    <TempVariable name="counter" optional="true" repeating="true">
+        <Bot>String</Bot>
+    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>
