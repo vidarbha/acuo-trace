@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>staf</User>
-        <Host>S</Host>
-        <Timestamp>01/11/2017 02:09:49</Timestamp>
-        <Checksum>1c86332</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>06/11/2017 19:29:16</Timestamp>
+        <Checksum>b9198641</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME" group="Map:ACUO_CME" category="Clarus">
@@ -113,28 +113,6 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="Body[Out1]/PRODUCTTYPE"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
-            </ActionStep>
-            <ActionStep disabled="true">
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Currency"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="Body[Out1]/Currency"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -446,7 +424,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -497,7 +475,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -601,7 +579,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -860,7 +838,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1117,7 +1095,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/StartDate/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1168,7 +1146,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/MaturityDate/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1272,7 +1250,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1421,7 +1399,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentSchedule/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -1558,7 +1536,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/CalculationSchedule/Adjustment/Convention"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -2210,7 +2188,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="FRA"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentDate/Adjustment/BusinessDayConvention"/>
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/PaymentDate/Adjustment/Convention"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
