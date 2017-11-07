@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>30/10/2017 17:46:26</Timestamp>
-        <Checksum>cbceb04a</Checksum>
+        <Timestamp>07/11/2017 13:10:25</Timestamp>
+        <Checksum>962104cf</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportIrsCleared"
@@ -831,6 +831,29 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="Info/Portfolio"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Portfolio/IRS-Cleared/DataRow1[1]/TradeStatus"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/TradeStatus"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
