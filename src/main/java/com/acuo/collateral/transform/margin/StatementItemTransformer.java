@@ -14,8 +14,8 @@ public class StatementItemTransformer extends MarginCallTransformer {
     @Override
     public Response deserialiseToList(String values) {
         try {
-            ImportStatementItemOutputWrapper output = mapper.importStatementItem(values);
-            return (Response) output.getOutput()[0];
+            final ImportStatementItemOutputWrapper output = mapper.importStatementItem(values);
+            return (Response) output.getResponse();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of margin calls", values);
             log.error(msg, e);

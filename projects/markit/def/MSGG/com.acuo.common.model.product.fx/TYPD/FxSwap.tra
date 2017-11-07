@@ -7,27 +7,27 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>12/09/2017 14:32:06</Timestamp>
-        <Checksum>5f6897</Checksum>
+        <Timestamp>06/11/2017 18:16:22</Timestamp>
+        <Checksum>d9e31a60</Checksum>
     </LastModification>
 </Prolog>
-<NamedComponentType name="ClarusInput" group="com.acuo.collateral.transform.inputs">
+<NamedComponentType name="FxSwap" group="com.acuo.common.model.product.fx">
     <TypeSpecification>
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Context">
+                    <LocalComponent name="NearLeg">
                         <TypeSpecification>
-                            <NamedType type="transform:TransformerContext"/>
+                            <NamedType type="FxSingle"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="0" maxOccurs="UNBOUNDED">
-                    <LocalComponent name="Envelop">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="FarLeg">
                         <TypeSpecification>
-                            <NamedType type="Envelop"/>
+                            <NamedType type="FxSingle"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
