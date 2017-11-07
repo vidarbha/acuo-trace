@@ -11,7 +11,8 @@ ext {
             margin:     'transformer-margin.jar',
             markit:     'transformer-markit.jar',
             portfolio:  'transformer-portfolio.jar',
-            reuters:    'transformer-reuters.jar'
+            reuters:    'transformer-reuters.jar',
+            global:    'transformer-global.jar'
             // sources:    'api/extlib-src.zip',
             // javadoc:    'api/extlib-doc.zip'
     ]
@@ -56,6 +57,10 @@ publishing {
         reuters(MavenPublication) {
             artifact (file(extFiles.reuters))
             artifactId = 'transformer-reuters'
+        }
+        global(MavenPublication) {
+            artifact (file(extFiles.global))
+            artifactId = 'transformer-global'
         }
     }
 }

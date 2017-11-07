@@ -1,0 +1,59 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>External Object Import</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>07/11/2017 12:42:48</Timestamp>
+        <Checksum>6132ca53</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="Envelop" group="com.acuo.collateral.transform.inputs">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Type">
+                        <TypeSpecification>
+                            <NamedType type="trade:ProductType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="FRATrade">
+                        <TypeSpecification>
+                            <NamedType type="trade:FRATrade"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="SwapTrade">
+                        <TypeSpecification>
+                            <NamedType type="trade:SwapTrade"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="FXSwapTrade">
+                        <TypeSpecification>
+                            <NamedType type="trade:FxSwapTrade"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

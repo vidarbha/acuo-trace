@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>staf</User>
-        <Host>S</Host>
-        <Timestamp>30/10/2017 17:59:31</Timestamp>
-        <Checksum>7543e292</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>07/11/2017 17:19:42</Timestamp>
+        <Checksum>35587b50</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportFXSwapBilateral"
@@ -717,7 +717,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out2" pathString="Product/Leg[1]"/>
+                                    contextPosnSpec="Out2" pathString="Product/NearLeg"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -740,103 +740,11 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out2" pathString="Product/Leg[2]"/>
+                                    contextPosnSpec="Out2" pathString="Product/FarLeg"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <MappingDefinitionInvocation>FXSwapLeg2</MappingDefinitionInvocation>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Out2]/Currency1"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out2" pathString="Product/Currency1"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Out2]/Currency2"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out2" pathString="Product/Currency2"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Out2]/Currency1_type"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out2" pathString="Product/Currency1Type"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Out2]/Currency2_type"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out2" pathString="Product/Currency2Type"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
@@ -880,7 +788,7 @@
         <Message>PortfolioMostRecentString</Message>
     </InputDefinition>
     <OutputDefinition name="Output" optional="true" repeating="true">
-        <Type>FXSwapTrade</Type>
+        <Type>FxSwapTrade</Type>
     </OutputDefinition>
     <OutputDefinition name="Error" optional="true" repeating="true">
         <Message>results:ImportError</Message>
