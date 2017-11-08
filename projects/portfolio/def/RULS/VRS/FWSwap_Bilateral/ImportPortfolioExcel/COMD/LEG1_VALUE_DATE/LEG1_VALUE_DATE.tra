@@ -1,18 +1,18 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Move File</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <Program>Validation Rule Form</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>15/06/2017 14:14:43</Timestamp>
-        <Checksum>4dbb9774</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>08/11/2017 17:40:07</Timestamp>
+        <Checksum>5b838ea8</Checksum>
     </LastModification>
 </Prolog>
-<ValidationRule name="MaturityDate_leg1"
-    group="Msg:ImportPortfolioExcel" ruleSet="FWSwap_Bilateral" disable="false">
+<ValidationRule name="LEG1_VALUE_DATE" group="Msg:ImportPortfolioExcel"
+    ruleSet="FWSwap_Bilateral" disable="false">
     <ActionStep>
         <ConditionalValidationAction mustBeTrue="true">
             <Condition>
@@ -34,8 +34,7 @@
         </ConditionalValidationAction>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">
-        <Component>MaturityDate_leg1</Component>
+        <Component>LEG1_VALUE_DATE</Component>
     </InputDefinition>
-    <ExceptionMessage>MaturityDate_leg1</ExceptionMessage>
-    <ErrorCode>17</ErrorCode>
+    <ExceptionMessage>Value date on LEG1 is not valid</ExceptionMessage>
 </ValidationRule>
