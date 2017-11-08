@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>07/11/2017 16:26:51</Timestamp>
-        <Checksum>816f4f45</Checksum>
+        <Timestamp>08/11/2017 14:54:26</Timestamp>
+        <Checksum>5b5eaa59</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToOISCleared"
@@ -146,6 +146,27 @@
                 </Value>
             </Property>
             <Mapper>TextToDate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="TradeStatus"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="TradeStatus"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>

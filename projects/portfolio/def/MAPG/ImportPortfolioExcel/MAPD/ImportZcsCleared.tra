@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>07/11/2017 16:28:45</Timestamp>
-        <Checksum>8cc8f048</Checksum>
+        <Timestamp>08/11/2017 14:59:06</Timestamp>
+        <Checksum>3b14cafb</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportZcsCleared"
@@ -959,6 +959,29 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="Info/TradeStatus"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Portfolio/ZCS-Cleared/DataRow1[1]/TradeStatus"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -1037,6 +1060,27 @@
             </RepeatLimit>
             <ScopeA specType="FROM_DATA" contextName="xls" pathString="ZCS-Cleared/DataRow1[]"/>
         </RepeatAction>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" contextPosnSpec="1" pathString="Info/TradingAccountId"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" contextPosnSpec="1" pathString="Info/TradingAccountId"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
     </ActionStep>
     <InputDefinition name="xls" optional="false" repeating="false">
         <Message>PortfolioMostRecentString</Message>

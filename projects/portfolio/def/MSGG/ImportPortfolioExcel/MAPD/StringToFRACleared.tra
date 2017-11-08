@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>07/11/2017 16:26:54</Timestamp>
-        <Checksum>3cb1280d</Checksum>
+        <Timestamp>08/11/2017 14:53:33</Timestamp>
+        <Checksum>bee6aeaf</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToFRACleared"
@@ -170,6 +170,27 @@
                 </Value>
             </Property>
             <Mapper>TextToTime</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="TradeStatus"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="TradeStatus"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
