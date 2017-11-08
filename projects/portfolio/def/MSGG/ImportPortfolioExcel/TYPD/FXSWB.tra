@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>staf</User>
-        <Host>S</Host>
-        <Timestamp>08/11/2017 12:27:13</Timestamp>
-        <Checksum>8faa30b5</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>08/11/2017 13:58:53</Timestamp>
+        <Checksum>55dd62e5</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="FXSWB" group="ImportPortfolioExcel">
@@ -364,78 +364,70 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>Currency1</NamedComponent>
+                    <NamedComponent>LEG1_CCY</NamedComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Currency1_type">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG1_TYPE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>Currency2</NamedComponent>
+                    <NamedComponent>LEG1_NOTIONAL</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_FX_RATE</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_SPOT_SRC</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_VALUE_DATE</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_VALUE_ADJ_BUS_DAY_CONV</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_VALUE_ADJ_CAL</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_FIXING_DATE</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_FIXING_ADJ_BUS_DAY_CONV</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG1_FIXING_ADJ_CAL</NamedComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG2_CCY</NamedComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Currency2_type">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                    <NamedComponent>LEG2_TYPE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>Position_leg1</NamedComponent>
+                    <NamedComponent>LEG2_NOTIONAL</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>MaturityDate_leg1</NamedComponent>
+                    <NamedComponent>LEG2_FX_RATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>SettleDate_leg1</NamedComponent>
+                    <NamedComponent>LEG2_SPOT_SRC</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>Rate_leg1</NamedComponent>
+                    <NamedComponent>LEG2_VALUE_DATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>Position_leg2</NamedComponent>
+                    <NamedComponent>LEG2_VALUE_ADJ_BUS_DAY_CONV</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>MaturityDate_leg2</NamedComponent>
+                    <NamedComponent>LEG2_VALUE_ADJ_CAL</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>SettleDate_leg2</NamedComponent>
+                    <NamedComponent>LEG2_FIXING_DATE</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <NamedComponent>Rate_leg2</NamedComponent>
+                    <NamedComponent>LEG2_FIXING_ADJ_BUS_DAY_CONV</NamedComponent>
                 </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="SpotSource_leg1">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="SpotSource_leg2">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>String</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
+                <Child minOccurs="1" maxOccurs="1">
+                    <NamedComponent>LEG2_FIXING_ADJ_CAL</NamedComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="CounterpartID" nillable="true">

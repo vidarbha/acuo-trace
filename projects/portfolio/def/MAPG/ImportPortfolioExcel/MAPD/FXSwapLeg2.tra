@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>07/11/2017 14:24:35</Timestamp>
-        <Checksum>97ec6f72</Checksum>
+        <Timestamp>08/11/2017 13:29:59</Timestamp>
+        <Checksum>3acdf711</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FXSwapLeg2" group="Map:ImportPortfolioExcel" category="Trade">
@@ -18,7 +18,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Currency1"/>
+                            contextName="Input" pathString="LEG1_CCY"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -26,7 +26,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Position_leg1"/>
+                            contextName="Input" pathString="LEG1_NOTIONAL"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -54,7 +54,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Currency2"/>
+                            contextName="Input" pathString="LEG2_CCY"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -62,7 +62,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Position_leg2"/>
+                            contextName="Input" pathString="LEG2_NOTIONAL"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -90,49 +90,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="SettleDate_leg2"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="FixingDate/Date"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="MaturityDate_leg2"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PaymentDate/Date"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Rate_leg2"/>
+                            contextName="Input" pathString="LEG2_FX_RATE"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -153,7 +111,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="SpotSource_leg2"/>
+                            contextName="Input" pathString="LEG2_SPOT_SRC"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -169,12 +127,138 @@
         </FunctionCall>
     </ActionStep>
     <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_VALUE_DATE"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentDate/Date"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_VALUE_ADJ_BUS_DAY_CONV"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentDate/Adjustment/BusinessDayConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_VALUE_ADJ_CAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="PaymentDate/Adjustment/Holiday[1]"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_FIXING_DATE"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="FixingDate/Date"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_FIXING_ADJ_BUS_DAY_CONV"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="FixingDate/Adjustment/BusinessDayConvention"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="LEG2_FIXING_ADJ_CAL"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="FixingDate/Adjustment/Holiday[1]"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
         <IfAction>
             <Condition>
                 <Comparison>
                     <FirstTerm>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Currency1_type"/>
+                            contextName="Input" pathString="LEG2_TYPE"/>
                     </FirstTerm>
                     <Operator>STREQ</Operator>
                     <SecondTerm>
