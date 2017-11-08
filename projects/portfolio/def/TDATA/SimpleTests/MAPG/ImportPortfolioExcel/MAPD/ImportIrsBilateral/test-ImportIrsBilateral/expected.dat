@@ -5,69 +5,67 @@
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Type>SWAP</Type>
     <Info>
-        <TradeId>103000</TradeId>
-        <MaturityDate>2018-12-05T00:00:00</MaturityDate>
-        <TradeDate>2011-12-03T00:00:00</TradeDate>
-        <TradeTime>2011-12-03T12:00:00</TradeTime>
-        <Portfolio>p31</Portfolio>
-        <TradeStatus>CLEARED</TradeStatus>
+        <TradeId>200000</TradeId>
+        <MaturityDate>2024-02-20T00:00:00</MaturityDate>
+        <TradeDate>2014-02-20T00:00:00</TradeDate>
+        <TradeTime>2014-02-20T12:00:00</TradeTime>
+        <Portfolio>p1a</Portfolio>
         <TradingAccountId>ACUOSG8745</TradingAccountId>
-        <DerivativeType>Cleared</DerivativeType>
-        <ClearedTradeDate>2013-11-27T00:00:00</ClearedTradeDate>
+        <DerivativeType>Bilateral</DerivativeType>
     </Info>
     <Product>
         <product:Leg>
-            <product:Id>1030001</product:Id>
+            <product:Id>2000001</product:Id>
             <product:Type>FIXED</product:Type>
             <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Date>2014-02-20T00:00:00</model:Date>
             </product:StartDate>
-            <product:Currency>AUD</product:Currency>
+            <product:Currency>MXN</product:Currency>
             <product:MaturityDate>
-                <model:Date>2018-12-05T00:00:00</model:Date>
+                <model:Date>2024-02-20T00:00:00</model:Date>
             </product:MaturityDate>
             <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Rate>1.25</product:Rate>
-            <product:Daycount>Act/365F</product:Daycount>
+            <product:Rate>0.08</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
             <product:Notional>10000000.0</product:Notional>
-            <product:Notionalxg>NEITHER</product:Notionalxg>
             <product:PaymentSchedule>
                 <model:Adjustment>
-                    <model:Holiday>AUSY</model:Holiday>
+                    <model:Holiday>MEXICO</model:Holiday>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
-                <model:Frequency>Term</model:Frequency>
+                <model:Frequency>28D</model:Frequency>
             </product:PaymentSchedule>
+            <product:VariableCurrency>false</product:VariableCurrency>
         </product:Leg>
         <product:Leg>
-            <product:Id>1030002</product:Id>
+            <product:Id>2000002</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:StartDate>
-                <model:Date>2011-12-05T00:00:00</model:Date>
+                <model:Date>2014-02-20T00:00:00</model:Date>
             </product:StartDate>
             <product:ResetSchedule>
-                <model:Frequency>6M</model:Frequency>
+                <model:Frequency>28D</model:Frequency>
             </product:ResetSchedule>
-            <product:Currency>AUD</product:Currency>
+            <product:Currency>MXN</product:Currency>
             <product:MaturityDate>
-                <model:Date>2018-12-05T00:00:00</model:Date>
+                <model:Date>2024-02-20T00:00:00</model:Date>
             </product:MaturityDate>
             <product:PayReceive>PAY</product:PayReceive>
             <product:Fixing>
-                <product:Tenor>6M</product:Tenor>
-                <product:FloatingRateName>AUD-BBR-BBSW</product:FloatingRateName>
+                <product:Tenor>28D</product:Tenor>
+                <product:FloatingRateName>MXN-TIIE-Banxico</product:FloatingRateName>
                 <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
             </product:Fixing>
-            <product:Daycount>Act/365F</product:Daycount>
+            <product:Daycount>Act/360</product:Daycount>
             <product:Notional>10000000.0</product:Notional>
-            <product:Notionalxg>NEITHER</product:Notionalxg>
             <product:PaymentSchedule>
                 <model:Adjustment>
-                    <model:Holiday>AUSY</model:Holiday>
+                    <model:Holiday>MEXICO</model:Holiday>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
-                <model:Frequency>Term</model:Frequency>
+                <model:Frequency>28D</model:Frequency>
             </product:PaymentSchedule>
+            <product:VariableCurrency>false</product:VariableCurrency>
         </product:Leg>
     </Product>
 </SwapTrade>

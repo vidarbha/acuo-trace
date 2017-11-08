@@ -5,10 +5,10 @@
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Type>SWAP</Type>
     <Info>
-        <TradeId>103000</TradeId>
+        <TradeId>100000</TradeId>
         <MaturityDate>2018-12-05T00:00:00</MaturityDate>
-        <TradeDate>2011-12-03T00:00:00</TradeDate>
-        <TradeTime>2011-12-03T12:00:00</TradeTime>
+        <TradeDate>2011-12-05T00:00:00</TradeDate>
+        <TradeTime>2011-12-05T12:00:00</TradeTime>
         <Portfolio>p31</Portfolio>
         <TradeStatus>CLEARED</TradeStatus>
         <TradingAccountId>ACUOSG8745</TradingAccountId>
@@ -17,7 +17,7 @@
     </Info>
     <Product>
         <product:Leg>
-            <product:Id>1030001</product:Id>
+            <product:Id>1000001</product:Id>
             <product:Type>FIXED</product:Type>
             <product:StartDate>
                 <model:Date>2011-12-05T00:00:00</model:Date>
@@ -30,17 +30,16 @@
             <product:Rate>1.25</product:Rate>
             <product:Daycount>Act/365F</product:Daycount>
             <product:Notional>10000000.0</product:Notional>
-            <product:Notionalxg>NEITHER</product:Notionalxg>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:Holiday>AUSY</model:Holiday>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
-                <model:Frequency>Term</model:Frequency>
+                <model:Frequency>6M</model:Frequency>
             </product:PaymentSchedule>
         </product:Leg>
         <product:Leg>
-            <product:Id>1030002</product:Id>
+            <product:Id>1000002</product:Id>
             <product:Type>FLOAT</product:Type>
             <product:StartDate>
                 <model:Date>2011-12-05T00:00:00</model:Date>
@@ -60,13 +59,12 @@
             </product:Fixing>
             <product:Daycount>Act/365F</product:Daycount>
             <product:Notional>10000000.0</product:Notional>
-            <product:Notionalxg>NEITHER</product:Notionalxg>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:Holiday>AUSY</model:Holiday>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
                 </model:Adjustment>
-                <model:Frequency>Term</model:Frequency>
+                <model:Frequency>6M</model:Frequency>
             </product:PaymentSchedule>
         </product:Leg>
     </Product>

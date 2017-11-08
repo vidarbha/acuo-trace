@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<FxSwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Info>
+        <TradeId>201000</TradeId>
+        <TradeDate>2017-06-14T00:00:00</TradeDate>
+        <TradeTime>2017-06-14T12:00:00</TradeTime>
+        <Portfolio>p1a</Portfolio>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>BILATERAL</DerivativeType>
+    </Info>
+    <Product>
+        <fx:NearLeg>
+            <fx:SpotSource>WMR</fx:SpotSource>
+            <fx:Rate>0.97</fx:Rate>
+            <fx:FixingDate>
+                <model:Date>2017-06-21T00:00:00</model:Date>
+            </fx:FixingDate>
+            <fx:PaymentDate>
+                <model:Date>2017-06-19T00:00:00</model:Date>
+            </fx:PaymentDate>
+            <fx:BaseCurrencyAmount>USD 77000000.0</fx:BaseCurrencyAmount>
+            <fx:CounterCurrencyAmount>CHF -77000000.0</fx:CounterCurrencyAmount>
+        </fx:NearLeg>
+        <fx:FarLeg>
+            <fx:SpotSource>WMR</fx:SpotSource>
+            <fx:Rate>0.95</fx:Rate>
+            <fx:FixingDate>
+                <model:Date>2018-06-21T00:00:00</model:Date>
+            </fx:FixingDate>
+            <fx:PaymentDate>
+                <model:Date>2018-06-19T00:00:00</model:Date>
+            </fx:PaymentDate>
+            <fx:BaseCurrencyAmount>USD 77000000.0</fx:BaseCurrencyAmount>
+            <fx:CounterCurrencyAmount>CHF -77000000.0</fx:CounterCurrencyAmount>
+        </fx:FarLeg>
+    </Product>
+</FxSwapTrade>
+---

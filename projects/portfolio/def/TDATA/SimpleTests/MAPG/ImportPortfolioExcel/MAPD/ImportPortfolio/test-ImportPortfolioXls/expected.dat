@@ -1,496 +1,411 @@
----
 <?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455123</ObjectId>
-    <LineNumber>1</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p31</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455124</ObjectId>
-    <LineNumber>2</LineNumber>
-    <Variable>LEG1_CCY</Variable>
-    <PortfolioId>p32</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455125</ObjectId>
-    <LineNumber>3</LineNumber>
-    <Variable>LEG1_START_DATE</Variable>
-    <PortfolioId>p33</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455126</ObjectId>
-    <LineNumber>4</LineNumber>
-    <Variable>LEG1_MAT_DATE</Variable>
-    <PortfolioId>p31</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455127</ObjectId>
-    <LineNumber>5</LineNumber>
-    <Variable>LEG1_NOTIONAL</Variable>
-    <PortfolioId>p34</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455128</ObjectId>
-    <LineNumber>6</LineNumber>
-    <Variable>LEG2_CCY</Variable>
-    <PortfolioId>p33</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455129</ObjectId>
-    <LineNumber>7</LineNumber>
-    <Variable>LEG2_START_DATE</Variable>
-    <PortfolioId>p31</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455130</ObjectId>
-    <LineNumber>8</LineNumber>
-    <Variable>LEG2_MAT_DATE</Variable>
-    <PortfolioId>p35</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455131</ObjectId>
-    <LineNumber>9</LineNumber>
-    <Variable>LEG2_NOTIONAL</Variable>
-    <PortfolioId>p36</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455132</ObjectId>
-    <LineNumber>10</LineNumber>
-    <Variable>LEG1_FIXED_RATE</Variable>
-    <PortfolioId>p37</PortfolioId>
-    <Sheet>IRS-Cleared</Sheet>
-</ImportError>
+<SwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Type>SWAP</Type>
+    <Info>
+        <TradeId>100000</TradeId>
+        <MaturityDate>2018-12-05T00:00:00</MaturityDate>
+        <TradeDate>2011-12-05T00:00:00</TradeDate>
+        <TradeTime>2011-12-05T12:00:00</TradeTime>
+        <Portfolio>p31</Portfolio>
+        <TradeStatus>CLEARED</TradeStatus>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>Cleared</DerivativeType>
+        <ClearedTradeDate>2013-11-27T00:00:00</ClearedTradeDate>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>1000001</product:Id>
+            <product:Type>FIXED</product:Type>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+            </product:StartDate>
+            <product:Currency>AUD</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2018-12-05T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>1.25</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>AUSY</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>6M</model:Frequency>
+            </product:PaymentSchedule>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>1000002</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+            </product:StartDate>
+            <product:ResetSchedule>
+                <model:Frequency>6M</model:Frequency>
+            </product:ResetSchedule>
+            <product:Currency>AUD</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2018-12-05T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Tenor>6M</product:Tenor>
+                <product:FloatingRateName>AUD-BBR-BBSW</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>AUSY</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>6M</model:Frequency>
+            </product:PaymentSchedule>
+        </product:Leg>
+    </Product>
+</SwapTrade>
 ---
 ---
 <?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455137</ObjectId>
-    <LineNumber>1</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p31</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455138</ObjectId>
-    <LineNumber>2</LineNumber>
-    <Variable>LEG1_CCY</Variable>
-    <PortfolioId>p32</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455139</ObjectId>
-    <LineNumber>3</LineNumber>
-    <Variable>LEG1_START_DATE</Variable>
-    <PortfolioId>p33</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455140</ObjectId>
-    <LineNumber>4</LineNumber>
-    <Variable>LEG1_MAT_DATE</Variable>
-    <PortfolioId>p37</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455141</ObjectId>
-    <LineNumber>5</LineNumber>
-    <Variable>LEG1_NOTIONAL</Variable>
-    <PortfolioId>p34</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455452</ObjectId>
-    <LineNumber>6</LineNumber>
-    <Variable>LEG1_FIXED_RATE</Variable>
-    <PortfolioId>p33</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455453</ObjectId>
-    <LineNumber>7</LineNumber>
-    <Variable>FRA_PAYMENT_DATE</Variable>
-    <PortfolioId>p31</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455454</ObjectId>
-    <LineNumber>8</LineNumber>
-    <Variable>FRA_FIXING_DATE</Variable>
-    <PortfolioId>p32</PortfolioId>
-    <Sheet>FRA-Cleared</Sheet>
-</ImportError>
+<FRATrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Type>FRA</Type>
+    <Info>
+        <TradeId>101000</TradeId>
+        <MaturityDate>2017-08-12T00:00:00</MaturityDate>
+        <TradeDate>2016-02-12T00:00:00</TradeDate>
+        <TradeTime>2016-02-12T12:00:00</TradeTime>
+        <Portfolio>p31</Portfolio>
+        <TradeStatus>CLEARED</TradeStatus>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>Cleared</DerivativeType>
+        <DiscountMethod>ISDA</DiscountMethod>
+        <ClearedTradeDate>2015-12-03T00:00:00</ClearedTradeDate>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>1010001</product:Id>
+            <product:Type>FIXED</product:Type>
+            <product:StartDate>
+                <model:Date>2018-08-13T00:00:00</model:Date>
+            </product:StartDate>
+            <product:Currency>GBP</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Rate>0.25</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>35000000.0</product:Notional>
+            <product:FixingDate>
+                <model:Date>2018-08-13T00:00:00</model:Date>
+            </product:FixingDate>
+            <product:PaymentDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:Holiday>GBLO</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:PaymentDate>
+            <product:PayAtStart>true</product:PayAtStart>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>1010002</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:StartDate>
+                <model:Date>2018-08-13T00:00:00</model:Date>
+            </product:StartDate>
+            <product:Currency>GBP</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Fixing>
+                <product:Tenor>6M</product:Tenor>
+                <product:FloatingRateName>GBP-LIBOR-BBA</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>35000000.0</product:Notional>
+            <product:PaymentDate>
+                <model:Date>2019-02-13T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:Holiday>GBLO</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:PaymentDate>
+            <product:PayAtStart>true</product:PayAtStart>
+        </product:Leg>
+    </Product>
+</FRATrade>
 ---
 ---
 <?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455156</ObjectId>
-    <LineNumber>1</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p1a</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455157</ObjectId>
-    <LineNumber>2</LineNumber>
-    <Variable>LEG1_CCY</Variable>
-    <PortfolioId>p2</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455158</ObjectId>
-    <LineNumber>3</LineNumber>
-    <Variable>LEG1_START_DATE</Variable>
-    <PortfolioId>p3</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455159</ObjectId>
-    <LineNumber>4</LineNumber>
-    <Variable>LEG1_MAT_DATE</Variable>
-    <PortfolioId>p4</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455160</ObjectId>
-    <LineNumber>5</LineNumber>
-    <Variable>LEG1_NOTIONAL</Variable>
-    <PortfolioId>p5</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455547</ObjectId>
-    <LineNumber>6</LineNumber>
-    <Variable>LEG1_FIXED_RATE</Variable>
-    <PortfolioId>p6</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455548</ObjectId>
-    <LineNumber>7</LineNumber>
-    <Variable>LEG2_CCY</Variable>
-    <PortfolioId>p7</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455549</ObjectId>
-    <LineNumber>8</LineNumber>
-    <Variable>LEG2_START_DATE</Variable>
-    <PortfolioId>p8</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455550</ObjectId>
-    <LineNumber>9</LineNumber>
-    <Variable>LEG1_FIXED_RATE</Variable>
-    <PortfolioId>p9</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455551</ObjectId>
-    <LineNumber>10</LineNumber>
-    <Variable>LEG2_MAT_DATE</Variable>
-    <PortfolioId>p10</PortfolioId>
-    <Sheet>IRS-Bilateral</Sheet>
-</ImportError>
+<SwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Type>SWAP</Type>
+    <Info>
+        <TradeId>200000</TradeId>
+        <MaturityDate>2024-02-20T00:00:00</MaturityDate>
+        <TradeDate>2014-02-20T00:00:00</TradeDate>
+        <TradeTime>2014-02-20T12:00:00</TradeTime>
+        <Portfolio>p1a</Portfolio>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>Bilateral</DerivativeType>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>2000001</product:Id>
+            <product:Type>FIXED</product:Type>
+            <product:StartDate>
+                <model:Date>2014-02-20T00:00:00</model:Date>
+            </product:StartDate>
+            <product:Currency>MXN</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2024-02-20T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>0.08</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>MEXICO</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>28D</model:Frequency>
+            </product:PaymentSchedule>
+            <product:VariableCurrency>false</product:VariableCurrency>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>2000002</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:StartDate>
+                <model:Date>2014-02-20T00:00:00</model:Date>
+            </product:StartDate>
+            <product:ResetSchedule>
+                <model:Frequency>28D</model:Frequency>
+            </product:ResetSchedule>
+            <product:Currency>MXN</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2024-02-20T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Tenor>28D</product:Tenor>
+                <product:FloatingRateName>MXN-TIIE-Banxico</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>MEXICO</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>28D</model:Frequency>
+            </product:PaymentSchedule>
+            <product:VariableCurrency>false</product:VariableCurrency>
+        </product:Leg>
+    </Product>
+</SwapTrade>
 ---
 ---
 <?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455156</ObjectId>
-    <LineNumber>1</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p31</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455157</ObjectId>
-    <LineNumber>2</LineNumber>
-    <Variable>LEG1_CCY</Variable>
-    <PortfolioId>p32</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455158</ObjectId>
-    <LineNumber>3</LineNumber>
-    <Variable>LEG1_START_DATE</Variable>
-    <PortfolioId>p33</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455159</ObjectId>
-    <LineNumber>4</LineNumber>
-    <Variable>LEG1_MAT_DATE</Variable>
-    <PortfolioId>p37</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455160</ObjectId>
-    <LineNumber>5</LineNumber>
-    <Variable>LEG1_NOTIONAL</Variable>
-    <PortfolioId>p34</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455547</ObjectId>
-    <LineNumber>6</LineNumber>
-    <Variable>LEG1_FIXED_RATE</Variable>
-    <PortfolioId>p33</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455548</ObjectId>
-    <LineNumber>7</LineNumber>
-    <Variable>LEG2_CCY</Variable>
-    <PortfolioId>p31</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455549</ObjectId>
-    <LineNumber>8</LineNumber>
-    <Variable>LEG2_START_DATE</Variable>
-    <PortfolioId>p32</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455550</ObjectId>
-    <LineNumber>9</LineNumber>
-    <Variable>LEG2_MAT_DATE</Variable>
-    <PortfolioId>p38</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>455551</ObjectId>
-    <LineNumber>10</LineNumber>
-    <Variable>LEG2_NOTIONAL</Variable>
-    <PortfolioId>p37</PortfolioId>
-    <Sheet>OIS-Cleared</Sheet>
-</ImportError>
+<SwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Type>SWAP</Type>
+    <Info>
+        <TradeId>102000</TradeId>
+        <MaturityDate>2019-05-28T00:00:00</MaturityDate>
+        <TradeDate>2016-05-28T00:00:00</TradeDate>
+        <TradeTime>2016-05-28T12:00:00</TradeTime>
+        <Portfolio>p31</Portfolio>
+        <TradeStatus>CLEARED</TradeStatus>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>Cleared</DerivativeType>
+        <ClearedTradeDate>2016-11-03T00:00:00</ClearedTradeDate>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>1020001</product:Id>
+            <product:Type>FIXED</product:Type>
+            <product:StartDate>
+                <model:Date>2016-05-28T00:00:00</model:Date>
+            </product:StartDate>
+            <product:Currency>EUR</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2019-05-28T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>1.77</product:Rate>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>EUTA</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>1Y</model:Frequency>
+            </product:PaymentSchedule>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>1020002</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:StartDate>
+                <model:Date>2016-05-28T00:00:00</model:Date>
+            </product:StartDate>
+            <product:ResetSchedule>
+                <model:Frequency>1Y</model:Frequency>
+            </product:ResetSchedule>
+            <product:Currency>EUR</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2019-05-28T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Tenor>1D</product:Tenor>
+                <product:FloatingRateName>EUR-EONIA-OIS-COMPOUND</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/360</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>EUTA</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>1Y</model:Frequency>
+            </product:PaymentSchedule>
+        </product:Leg>
+    </Product>
+</SwapTrade>
 ---
 ---
 <?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500501</ObjectId>
-    <LineNumber>1</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p1a</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500502</ObjectId>
-    <LineNumber>2</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p2</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500503</ObjectId>
-    <LineNumber>3</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p3</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500504</ObjectId>
-    <LineNumber>4</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p4</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500505</ObjectId>
-    <LineNumber>5</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p5</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500506</ObjectId>
-    <LineNumber>6</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p6</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500507</ObjectId>
-    <LineNumber>7</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p7</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500508</ObjectId>
-    <LineNumber>8</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p8</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500509</ObjectId>
-    <LineNumber>9</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p9</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500510</ObjectId>
-    <LineNumber>10</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p10</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
-%%%
-<?xml version="1.0"?>
-<ImportError xmlns:margin="com.acuo.common.model.margin"
-    xmlns="com.acuo.common.model.results" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ObjectId>500511</ObjectId>
-    <LineNumber>11</LineNumber>
-    <Variable>TradeTime</Variable>
-    <PortfolioId>p11</PortfolioId>
-    <Sheet>FWSwap_Bilateral</Sheet>
-</ImportError>
+<FxSwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Info>
+        <TradeId>201000</TradeId>
+        <TradeDate>2017-06-14T00:00:00</TradeDate>
+        <TradeTime>2017-06-14T12:00:00</TradeTime>
+        <Portfolio>p1a</Portfolio>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>BILATERAL</DerivativeType>
+    </Info>
+    <Product>
+        <fx:NearLeg>
+            <fx:SpotSource>WMR</fx:SpotSource>
+            <fx:Rate>0.97</fx:Rate>
+            <fx:FixingDate>
+                <model:Date>2017-06-21T00:00:00</model:Date>
+            </fx:FixingDate>
+            <fx:PaymentDate>
+                <model:Date>2017-06-19T00:00:00</model:Date>
+            </fx:PaymentDate>
+            <fx:BaseCurrencyAmount>USD 77000000.0</fx:BaseCurrencyAmount>
+            <fx:CounterCurrencyAmount>CHF -77000000.0</fx:CounterCurrencyAmount>
+        </fx:NearLeg>
+        <fx:FarLeg>
+            <fx:SpotSource>WMR</fx:SpotSource>
+            <fx:Rate>0.95</fx:Rate>
+            <fx:FixingDate>
+                <model:Date>2018-06-21T00:00:00</model:Date>
+            </fx:FixingDate>
+            <fx:PaymentDate>
+                <model:Date>2018-06-19T00:00:00</model:Date>
+            </fx:PaymentDate>
+            <fx:BaseCurrencyAmount>USD 77000000.0</fx:BaseCurrencyAmount>
+            <fx:CounterCurrencyAmount>CHF -77000000.0</fx:CounterCurrencyAmount>
+        </fx:FarLeg>
+    </Product>
+</FxSwapTrade>
 ---
+---
+<?xml version="1.0"?>
+<SwapTrade xmlns="com.acuo.common.model.trade"
+    xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
+    xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Type>SWAP</Type>
+    <Info>
+        <TradeId>103000</TradeId>
+        <MaturityDate>2018-12-05T00:00:00</MaturityDate>
+        <TradeDate>2011-12-03T00:00:00</TradeDate>
+        <TradeTime>2011-12-03T12:00:00</TradeTime>
+        <Portfolio>p31</Portfolio>
+        <TradeStatus>CLEARED</TradeStatus>
+        <TradingAccountId>ACUOSG8745</TradingAccountId>
+        <DerivativeType>Cleared</DerivativeType>
+        <ClearedTradeDate>2013-11-27T00:00:00</ClearedTradeDate>
+    </Info>
+    <Product>
+        <product:Leg>
+            <product:Id>1030001</product:Id>
+            <product:Type>FIXED</product:Type>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+            </product:StartDate>
+            <product:Currency>AUD</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2018-12-05T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Rate>1.25</product:Rate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:Notionalxg>NEITHER</product:Notionalxg>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>AUSY</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>Term</model:Frequency>
+            </product:PaymentSchedule>
+        </product:Leg>
+        <product:Leg>
+            <product:Id>1030002</product:Id>
+            <product:Type>FLOAT</product:Type>
+            <product:StartDate>
+                <model:Date>2011-12-05T00:00:00</model:Date>
+            </product:StartDate>
+            <product:ResetSchedule>
+                <model:Frequency>6M</model:Frequency>
+            </product:ResetSchedule>
+            <product:Currency>AUD</product:Currency>
+            <product:MaturityDate>
+                <model:Date>2018-12-05T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:PayReceive>PAY</product:PayReceive>
+            <product:Fixing>
+                <product:Tenor>6M</product:Tenor>
+                <product:FloatingRateName>AUD-BBR-BBSW</product:FloatingRateName>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:Notionalxg>NEITHER</product:Notionalxg>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:Holiday>AUSY</model:Holiday>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                </model:Adjustment>
+                <model:Frequency>Term</model:Frequency>
+            </product:PaymentSchedule>
+        </product:Leg>
+    </Product>
+</SwapTrade>
 ---
