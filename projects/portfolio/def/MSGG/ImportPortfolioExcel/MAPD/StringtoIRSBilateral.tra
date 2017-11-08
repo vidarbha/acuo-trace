@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>30/10/2017 17:07:17</Timestamp>
-        <Checksum>8e605a4d</Checksum>
+        <Timestamp>08/11/2017 12:26:44</Timestamp>
+        <Checksum>8f007546</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringtoIRSBilateral"
@@ -96,30 +96,6 @@
             </Property>
             <Property name="Format" type="string">
                 <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Mapper>TextToDate</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="EffectiveDate"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Format" type="string">
-                <Value>yyyy/MM/dd</Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="EffectiveDate"/>
-                    </NodeSpec>
-                </Value>
             </Property>
             <Mapper>TextToDate</Mapper>
         </FunctionCall>

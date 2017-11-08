@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>07/11/2017 13:25:17</Timestamp>
-        <Checksum>1fef76dc</Checksum>
+        <Timestamp>07/11/2017 16:28:45</Timestamp>
+        <Checksum>8cc8f048</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportZcsCleared"
@@ -813,29 +813,6 @@
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Portfolio/ZCS-Cleared/DataRow1[1]/EffectiveDate"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="Info/EffectiveDate"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
                                     <Property name="Time" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -905,29 +882,6 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out1" pathString="Info/Portfolio"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="Info/TradeStatus"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Portfolio/ZCS-Cleared/DataRow1[1]/TradeStatus"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
