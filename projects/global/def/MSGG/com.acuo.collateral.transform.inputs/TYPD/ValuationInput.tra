@@ -1,0 +1,41 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>External Object Import</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>xps15</Host>
+        <Timestamp>10/11/2017 16:52:08</Timestamp>
+        <Checksum>5c3c96a</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="ValuationInput" group="com.acuo.collateral.transform.inputs">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="ALL">
+                <Child minOccurs="0" maxOccurs="UNBOUNDED">
+                    <LocalComponent name="Envelop">
+                        <TypeSpecification>
+                            <NamedType type="Envelop"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Context">
+                        <TypeSpecification>
+                            <NamedType type="transform:TransformerContext"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>
