@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ClarusInput {
+public class ValuationInput {
 
     private List<Envelop> envelops;
     private TransformerContext context;

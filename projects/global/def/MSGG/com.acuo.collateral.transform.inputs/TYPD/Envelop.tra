@@ -6,9 +6,9 @@
             <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>07/11/2017 12:42:48</Timestamp>
-        <Checksum>6132ca53</Checksum>
+        <Host>xps15</Host>
+        <Timestamp>10/11/2017 16:52:08</Timestamp>
+        <Checksum>eac89feb</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="Envelop" group="com.acuo.collateral.transform.inputs">
@@ -16,18 +16,9 @@
         <TypeDefinition>
             <ComplexContent Compositor="ALL">
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="Type">
+                    <LocalComponent name="FXSwapTrade">
                         <TypeSpecification>
-                            <NamedType type="trade:ProductType"/>
-                        </TypeSpecification>
-                        <FormatSpecifications/>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="FRATrade">
-                        <TypeSpecification>
-                            <NamedType type="trade:FRATrade"/>
+                            <NamedType type="trade:FxSwapTrade"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
@@ -43,9 +34,18 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="0" maxOccurs="1">
-                    <LocalComponent name="FXSwapTrade">
+                    <LocalComponent name="FRATrade">
                         <TypeSpecification>
-                            <NamedType type="trade:FxSwapTrade"/>
+                            <NamedType type="trade:FRATrade"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Type">
+                        <TypeSpecification>
+                            <NamedType type="trade:ProductType"/>
                         </TypeSpecification>
                         <FormatSpecifications/>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>

@@ -2,7 +2,7 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.TransformerOutput;
-import com.acuo.collateral.transform.inputs.ClarusInput;
+import com.acuo.collateral.transform.inputs.ValuationInput;
 import com.acuo.collateral.transform.inputs.Envelop;
 import com.acuo.collateral.transform.trace.transformer_clarus.Clarus;
 import com.acuo.collateral.transform.trace.transformer_clarus.FromClarusOutputWrapper;
@@ -53,7 +53,7 @@ public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseT
                         return envelop;
                     })
                     .collect(Collectors.toList());
-            ClarusInput input = new ClarusInput();
+            ValuationInput input = new ValuationInput();
             input.setEnvelops(envelops);
             input.setContext(context);
             ToCmeFileNewOutputWrapper outputWrapper = cme.toCmeFileNew(input);

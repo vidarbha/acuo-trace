@@ -1,7 +1,7 @@
 package com.acuo.collateral.transform.trace;
 
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.inputs.ClarusInput;
+import com.acuo.collateral.transform.inputs.ValuationInput;
 import com.acuo.collateral.transform.inputs.Envelop;
 import com.acuo.collateral.transform.trace.transformer_cme.Cme;
 import com.acuo.collateral.transform.trace.transformer_markit.Markit;
@@ -59,7 +59,7 @@ public class TraceTest {
             return envelop;
         })
                 .collect(Collectors.toList());
-        ClarusInput clarusInput = new ClarusInput();
+        ValuationInput clarusInput = new ValuationInput();
         clarusInput.setContext(context);
         clarusInput.setEnvelops(envelops);
         String output = cme.toCmeFileNew(clarusInput).getOutput();

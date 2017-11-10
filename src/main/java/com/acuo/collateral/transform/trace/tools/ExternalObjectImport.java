@@ -1,5 +1,6 @@
 package com.acuo.collateral.transform.trace.tools;
 
+import com.acuo.collateral.transform.inputs.ValuationInput;
 import com.acuo.common.model.agreements.Agreement;
 import com.opengamma.strata.basics.currency.Currency;
 import com.opengamma.strata.basics.date.BusinessDayConvention;
@@ -32,7 +33,7 @@ public class ExternalObjectImport {
         private RollConvention rollConvention;
     }
 
-    private static Class[] classes = {Agreement.class};
+    private static Class[] classes = {ValuationInput.class};
 
     public static void main(String[] args) {
         ReqExternalObjectImport req = new ReqExternalObjectImport ("External Import");
