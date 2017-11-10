@@ -9,8 +9,10 @@ import com.acuo.collateral.transform.trace.transformer_clarus.FromClarusOutputWr
 import com.acuo.collateral.transform.trace.transformer_cme.Cme;
 import com.acuo.collateral.transform.trace.transformer_cme.ToCmeFileNewOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
+import com.acuo.collateral.transform.utils.InputBuilder;
 import com.acuo.collateral.transform.utils.OutputBuilder;
 import com.acuo.common.model.trade.FRATrade;
+import com.acuo.common.model.trade.FxSwapTrade;
 import com.acuo.common.model.trade.ProductTrade;
 import com.acuo.common.model.trade.SwapTrade;
 import com.tracegroup.transformer.exposedservices.MomException;
@@ -36,23 +38,7 @@ public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseT
     @Override
     public String serialise(List<INPUT> value, TransformerContext context) {
         try {
-            List<Envelop> envelops = value.stream()
-                    .map(t -> {
-                        Envelop envelop = new Envelop();
-                        envelop.setType(t.getType());
-                        switch (t.getType()) {
-                            case FRA:
-                                envelop.setFRATrade((FRATrade) t);
-                                break;
-                            case SWAP:
-                                envelop.setSwapTrade((SwapTrade) t);
-                                break;
-                            default:
-                                throw new UnsupportedOperationException();
-                        }
-                        return envelop;
-                    })
-                    .collect(Collectors.toList());
+            List<Envelop> envelops = InputBuilder.envelops(value);
             ValuationInput input = new ValuationInput();
             input.setEnvelops(envelops);
             input.setContext(context);

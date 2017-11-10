@@ -59,9 +59,9 @@ class ImportPortfolioZCSSpec extends Specification {
         Transformer<SwapTrade, String> clarusTransformer = injector.getInstance(ClarusTransformer.class)
 
         when:
-        String xml = clarusTransformer.serialise(ImmutableList.of(trade), context)
+        String csv = clarusTransformer.serialise(ImmutableList.of(trade), context)
 
         then:
-        xml != null
+        csv != null
     }
 }

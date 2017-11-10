@@ -57,12 +57,14 @@ public class TraceTest {
             envelop.setSwapTrade((SwapTrade) o);
             envelop.setType(ProductType.SWAP);
             return envelop;
-        })
-                .collect(Collectors.toList());
+        }).collect(Collectors.toList());
+
         ValuationInput clarusInput = new ValuationInput();
         clarusInput.setContext(context);
         clarusInput.setEnvelops(envelops);
+
         String output = cme.toCmeFileNew(clarusInput).getOutput();
+
         assertThat(output).isNotEmpty();
     }
 
@@ -72,7 +74,18 @@ public class TraceTest {
         Object[] trades = cme.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        String output = markit.toIRSMarkit(trades, context).getOutput();
+        final List<Envelop> envelops = Arrays.stream(trades).map(o -> {
+            Envelop envelop = new Envelop();
+            envelop.setSwapTrade((SwapTrade) o);
+            envelop.setType(ProductType.SWAP);
+            return envelop;
+        }).collect(Collectors.toList());
+
+        ValuationInput markitInput = new ValuationInput();
+        markitInput.setContext(context);
+        markitInput.setEnvelops(envelops);
+
+        String output = markit.toMarkit(markitInput).getOutput();
         assertThat(output).isNotEmpty();
     }
 
