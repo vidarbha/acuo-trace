@@ -63,7 +63,7 @@ public class TraceTest {
         clarusInput.setContext(context);
         clarusInput.setEnvelops(envelops);
 
-        String output = cme.toCmeFileNew(clarusInput).getOutput();
+        String output = cme.toCmeFile(clarusInput).getOutput();
 
         assertThat(output).isNotEmpty();
     }
@@ -87,16 +87,5 @@ public class TraceTest {
 
         String output = markit.toMarkit(markitInput).getOutput();
         assertThat(output).isNotEmpty();
-    }
-
-    @Test
-    @Ignore
-    public void testCmeToAcuoAndBackWith43() throws IOException, MomException, StructureException, RuleException, UnrecognizedMessageException {
-        String input = TraceUtils.replaceNewLineToWindows(itrs43.getContent());
-        Object[] trades = cme.fromCmeFile(input).getSwap();
-        assertThat(trades.length).isEqualTo(43);
-
-        String output = cme.toCmeFile(trades, context, null).getOutput();
-        assertThat(output).isEqualTo(itrs43.getContent());
     }
 }

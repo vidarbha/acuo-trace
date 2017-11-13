@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
 <SwapTrade xmlns="com.acuo.common.model.trade"
     xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <Type>ZCS</Type>
     <Info>
         <TradeId>11811165</TradeId>
-        <TradeDate>2013-11-29T00:00:00</TradeDate>
+        <ClearedTradeId>455165</ClearedTradeId>
+        <ClearedTradeDate>2013-11-27T00:00:00</ClearedTradeDate>
         <Book>11811165</Book>
         <TradeStatus>CLEARED</TradeStatus>
-        <ClearedTradeDate>2013-11-27T00:00:00</ClearedTradeDate>
-        <ClearedTradeId>455165</ClearedTradeId>
+        <TradeDate>2013-11-29T00:00:00</TradeDate>
     </Info>
     <Product>
         <product:Leg>
-            <product:Id>1</product:Id>
-            <product:Type>FIXED</product:Type>
             <product:Currency>USD</product:Currency>
             <product:StartDate>
                 <model:Date>2013-11-29T00:00:00</model:Date>
@@ -22,6 +20,16 @@
                     <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
                 </model:Adjustment>
             </product:StartDate>
+            <product:MaturityDate>
+                <model:Date>2025-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>USNY</model:Holiday>
+                    <model:Holiday>GBLO</model:Holiday>
+                </model:Adjustment>
+            </product:MaturityDate>
+            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Notional>1000000.0</product:Notional>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -39,8 +47,19 @@
                 <model:Frequency>6M</model:Frequency>
             </product:CalculationSchedule>
             <product:RollConvention>29</product:RollConvention>
-            <product:PayReceive>RECEIVE</product:PayReceive>
             <product:Rate>1.23</product:Rate>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Id>1</product:Id>
+            <product:Type>FIXED</product:Type>
+        </product:Leg>
+        <product:Leg>
+            <product:Currency>USD</product:Currency>
+            <product:StartDate>
+                <model:Date>2013-11-29T00:00:00</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
+                </model:Adjustment>
+            </product:StartDate>
             <product:MaturityDate>
                 <model:Date>2025-11-29T00:00:00</model:Date>
                 <model:Adjustment>
@@ -49,19 +68,8 @@
                     <model:Holiday>GBLO</model:Holiday>
                 </model:Adjustment>
             </product:MaturityDate>
-            <product:Daycount>30/360 ISDA</product:Daycount>
+            <product:Daycount>Act/360</product:Daycount>
             <product:Notional>1000000.0</product:Notional>
-        </product:Leg>
-        <product:Leg>
-            <product:Id>2</product:Id>
-            <product:Type>FLOAT</product:Type>
-            <product:Currency>USD</product:Currency>
-            <product:StartDate>
-                <model:Date>2013-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>NoAdjust</model:BusinessDayConvention>
-                </model:Adjustment>
-            </product:StartDate>
             <product:PaymentSchedule>
                 <model:Adjustment>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
@@ -82,19 +90,12 @@
             <product:PayReceive>PAY</product:PayReceive>
             <product:Fixing>
                 <product:FloatingRateName>USD-LIBOR-BBA</product:FloatingRateName>
-                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
                 <product:Tenor>3M</product:Tenor>
+                <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
             </product:Fixing>
-            <product:MaturityDate>
-                <model:Date>2025-11-29T00:00:00</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                    <model:Holiday>USNY</model:Holiday>
-                    <model:Holiday>GBLO</model:Holiday>
-                </model:Adjustment>
-            </product:MaturityDate>
-            <product:Daycount>Act/360</product:Daycount>
-            <product:Notional>1000000.0</product:Notional>
+            <product:Id>2</product:Id>
+            <product:Type>FLOAT</product:Type>
         </product:Leg>
     </Product>
+    <Type>ZCS</Type>
 </SwapTrade>

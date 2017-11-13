@@ -2,19 +2,16 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.TransformerContext;
 import com.acuo.collateral.transform.TransformerOutput;
-import com.acuo.collateral.transform.inputs.ValuationInput;
 import com.acuo.collateral.transform.inputs.Envelop;
+import com.acuo.collateral.transform.inputs.ValuationInput;
 import com.acuo.collateral.transform.trace.transformer_clarus.Clarus;
 import com.acuo.collateral.transform.trace.transformer_clarus.FromClarusOutputWrapper;
 import com.acuo.collateral.transform.trace.transformer_cme.Cme;
-import com.acuo.collateral.transform.trace.transformer_cme.ToCmeFileNewOutputWrapper;
+import com.acuo.collateral.transform.trace.transformer_cme.ToCmeFileOutputWrapper;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
 import com.acuo.collateral.transform.utils.InputBuilder;
 import com.acuo.collateral.transform.utils.OutputBuilder;
-import com.acuo.common.model.trade.FRATrade;
-import com.acuo.common.model.trade.FxSwapTrade;
 import com.acuo.common.model.trade.ProductTrade;
-import com.acuo.common.model.trade.SwapTrade;
 import com.tracegroup.transformer.exposedservices.MomException;
 import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
@@ -24,7 +21,6 @@ import lombok.extern.slf4j.Slf4j;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Slf4j
 public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseTransformer<INPUT, OUTPUT> {
@@ -42,7 +38,7 @@ public class ClarusTransformer<INPUT extends ProductTrade, OUTPUT> extends BaseT
             ValuationInput input = new ValuationInput();
             input.setEnvelops(envelops);
             input.setContext(context);
-            ToCmeFileNewOutputWrapper outputWrapper = cme.toCmeFileNew(input);
+            ToCmeFileOutputWrapper outputWrapper = cme.toCmeFile(input);
             return outputWrapper.getOutput();
         } catch (MomException | RuleException | UnrecognizedMessageException | StructureException e) {
             String msg = String.format("error occurred while mapping the data %s to a list of swaps", value);
