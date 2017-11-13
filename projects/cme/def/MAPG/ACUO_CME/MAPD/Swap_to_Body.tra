@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>01/11/2017 02:09:56</Timestamp>
-        <Checksum>e16995aa</Checksum>
+        <Timestamp>13/11/2017 19:56:22</Timestamp>
+        <Checksum>4c3c4748</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Swap_to_Body" group="Map:ACUO_CME" category="Clarus">
@@ -164,28 +164,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="SwapTrade" pathString="Info/EffectiveDate"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="EffectiveDate"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="SwapTrade" pathString="Info/Portfolio"/>
+                            contextName="SwapTrade" pathString="Info/TradingAccountId"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -215,27 +194,6 @@
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
                             contextName="Output" pathString="ClientID"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="SwapTrade" pathString="Info/TradingAccountId"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PlatformID"/>
                     </NodeSpec>
                 </Value>
             </Property>
