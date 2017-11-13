@@ -3,68 +3,68 @@
     xmlns:model="com.acuo.common.model"
     xmlns:fx="com.acuo.common.model.product.fx"
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <Type>SWAP</Type>
     <Info>
-        <Portfolio>p37</Portfolio>
-        <TradeDate>2015-12-03T00:00:00</TradeDate>
-        <MaturityDate>2020-12-03T00:00:00</MaturityDate>
         <TradeId>102003</TradeId>
-        <TradingAccountId>ACUOSG3126</TradingAccountId>
+        <MaturityDate>2020-12-03T00:00:00</MaturityDate>
+        <Portfolio>p37</Portfolio>
         <DerivativeType>Bilateral</DerivativeType>
+        <TradingAccountId>ACUOSG3126</TradingAccountId>
+        <TradeDate>2015-12-03T00:00:00</TradeDate>
     </Info>
     <Product>
         <product:Leg>
-            <product:Id>102003</product:Id>
-            <product:Type>FIXED</product:Type>
             <product:Currency>JPY</product:Currency>
-            <product:Daycount>Act/365F</product:Daycount>
-            <product:PayReceive>RECEIVE</product:PayReceive>
-            <product:Notional>10000000.0</product:Notional>
-            <product:Rate>0.1</product:Rate>
-            <product:MaturityDate>
-                <model:Date>2020-12-03T00:00:00</model:Date>
-            </product:MaturityDate>
             <product:StartDate>
                 <model:Date>2015-12-03T00:00:00</model:Date>
             </product:StartDate>
+            <product:MaturityDate>
+                <model:Date>2020-12-03T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
             <product:PaymentSchedule>
                 <model:Adjustment>
-                    <model:Holiday>JPY</model:Holiday>
                     <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>JPY</model:Holiday>
                 </model:Adjustment>
                 <model:Frequency>6M</model:Frequency>
             </product:PaymentSchedule>
+            <product:Rate>0.1</product:Rate>
+            <product:PayReceive>RECEIVE</product:PayReceive>
+            <product:Id>102003</product:Id>
+            <product:Type>FIXED</product:Type>
         </product:Leg>
         <product:Leg>
-            <product:Id>102003</product:Id>
-            <product:Type>FLOAT</product:Type>
             <product:Currency>JPY</product:Currency>
+            <product:StartDate>
+                <model:Date>2015-12-03T00:00:00</model:Date>
+            </product:StartDate>
+            <product:MaturityDate>
+                <model:Date>2020-12-03T00:00:00</model:Date>
+            </product:MaturityDate>
+            <product:Daycount>Act/365F</product:Daycount>
+            <product:Notional>10000000.0</product:Notional>
+            <product:PaymentSchedule>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>JPTO</model:Holiday>
+                </model:Adjustment>
+                <model:Frequency>6M</model:Frequency>
+            </product:PaymentSchedule>
             <product:ResetSchedule>
                 <model:Frequency>6M</model:Frequency>
             </product:ResetSchedule>
-            <product:Daycount>Act/365F</product:Daycount>
+            <product:PayReceive>PAY</product:PayReceive>
             <product:Fixing>
+                <product:FloatingRateName>JPY-TONA-OIS-COMPOUND</product:FloatingRateName>
                 <product:Tenor>1D</product:Tenor>
-                <product:FloatingRateName>JPY-TONAR-REUTERS</product:FloatingRateName>
                 <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
             </product:Fixing>
-            <product:PayReceive>PAY</product:PayReceive>
-            <product:Notional>10000000.0</product:Notional>
-            <product:MaturityDate>
-                <model:Date>2020-12-03T00:00:00</model:Date>
-            </product:MaturityDate>
-            <product:StartDate>
-                <model:Date>2015-12-03T00:00:00</model:Date>
-            </product:StartDate>
-            <product:PaymentSchedule>
-                <model:Adjustment>
-                    <model:Holiday>JPTO</model:Holiday>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                </model:Adjustment>
-                <model:Frequency>6M</model:Frequency>
-            </product:PaymentSchedule>
+            <product:Id>102003</product:Id>
+            <product:Type>FLOAT</product:Type>
         </product:Leg>
     </Product>
+    <Type>SWAP</Type>
 </SwapTrade>
 %%%
 <?xml version="1.0"?>

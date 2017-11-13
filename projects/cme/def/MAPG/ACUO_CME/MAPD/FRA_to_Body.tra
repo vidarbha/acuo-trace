@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>10/11/2017 13:48:17</Timestamp>
-        <Checksum>1c419318</Checksum>
+        <Timestamp>13/11/2017 20:22:56</Timestamp>
+        <Checksum>241360c0</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FRA_to_Body" group="Map:ACUO_CME" category="Clarus">
@@ -142,7 +142,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="FRATrade" pathString="Info/Portfolio"/>
+                            contextName="FRATrade" pathString="Info/TradingAccountId"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -193,27 +193,6 @@
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
                             contextName="Output" pathString="ClientID"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="FRATrade" pathString="Info/TradingAccountId"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="PlatformID"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -365,6 +344,9 @@
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
+                    <Property name="Table" type="namedlookuptable">
+                        <Value>FloatingRateName</Value>
+                    </Property>
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
@@ -381,20 +363,10 @@
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Property name="Table" type="lookuptable">
-                        <Value>
-                            <LookupTable inLabel="In" outLabel="Out">
-                                <TableEntry>
-                                    <In>SGD-SOR-Reuters</In>
-                                    <Out>SGD-SOR-VWAP</Out>
-                                </TableEntry>
-                            </LookupTable>
-                        </Value>
-                    </Property>
                     <Property name="NoEntryOption" type="option">
                         <Value>Copy Input to Output</Value>
                     </Property>
-                    <Mapper>LocalTableLookup</Mapper>
+                    <Mapper>NamedTableLookup</Mapper>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>

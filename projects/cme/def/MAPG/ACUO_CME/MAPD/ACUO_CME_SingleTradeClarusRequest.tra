@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>13/11/2017 19:20:23</Timestamp>
-        <Checksum>e2aa30e6</Checksum>
+        <Timestamp>13/11/2017 20:39:55</Timestamp>
+        <Checksum>2bedef0b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME_SingleTradeClarusRequest"
@@ -753,30 +753,6 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/FloatingRateName"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output" pathString="Body[Out1]/LEG1INDEX"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input"
                                     contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/Tenor"/>
                                     </NodeSpec>
                                     </Value>
@@ -1436,7 +1412,7 @@
                                     <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
-                                <ActionStep>
+                                <ActionStep disabled="true">
                                     <FunctionCall>
                                     <Property name="Input" type="nodespec">
                                     <Value>
@@ -1458,6 +1434,36 @@
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>FloatingRateName</Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/FloatingRateName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="Body[Out1]/LEG2INDEX"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="NoEntryOption" type="option">
+                                    <Value>Copy Input to Output</Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
