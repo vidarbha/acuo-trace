@@ -2,6 +2,7 @@
 <ClarusInput xmlns:trade="com.acuo.common.model.trade"
     xmlns:transform="com.acuo.collateral.transform"
     xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
     xmlns:product="com.acuo.common.model.product"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="com.acuo.collateral.transform.inputs">
     <Context>
@@ -13,14 +14,13 @@
         <FRATrade>
             <trade:Type>FRA</trade:Type>
             <trade:Info>
+                <trade:Book>A</trade:Book>
                 <trade:TradeStatus>CLEARED</trade:TradeStatus>
                 <trade:Portfolio>p31</trade:Portfolio>
-                <trade:TradeTime>2025-05-26T07:55:33.157</trade:TradeTime>
                 <trade:TradeDate>2044-10-30T01:22:45.424</trade:TradeDate>
-                <trade:EffectiveDate>2044-10-30T01:22:45.424</trade:EffectiveDate>
+                <trade:TradeTime>2025-05-26T07:55:33.157</trade:TradeTime>
+                <trade:MaturityDate>1988-05-16T11:19:15</trade:MaturityDate>
                 <trade:TradeId>111111</trade:TradeId>
-                <trade:MaturityDate>1988-05-16T11:19:15.156</trade:MaturityDate>
-                <trade:Book>A</trade:Book>
                 <trade:TradingAccountId>A</trade:TradingAccountId>
                 <trade:ClearedTradeId>111111</trade:ClearedTradeId>
                 <trade:ClearedTradeDate>2006-02-02T12:55:22.662</trade:ClearedTradeDate>
@@ -32,84 +32,83 @@
                     <product:Id>1</product:Id>
                     <product:Type>FIXED</product:Type>
                     <product:Currency>XOF</product:Currency>
+                    <product:FixingDate>
+                        <model:Date>1990-01-24T01:54:45.827</model:Date>
+                        <model:Adjustment>
+                            <model:Holiday>AUSY</model:Holiday>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                        </model:Adjustment>
+                    </product:FixingDate>
+                    <product:PayAtStart>true</product:PayAtStart>
+                    <product:PaymentDate>
+                        <model:Date>2052-05-21T06:47:25.852</model:Date>
+                        <model:Adjustment>
+                            <model:Holiday>AUSY</model:Holiday>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                        </model:Adjustment>
+                    </product:PaymentDate>
+                    <product:Notionalxg>A</product:Notionalxg>
+                    <product:Daycount>Act/365F</product:Daycount>
+                    <product:Fixing>
+                        <product:Tenor>A</product:Tenor>
+                        <product:FloatingRateName>A</product:FloatingRateName>
+                        <product:FixingRelativeTo>A</product:FixingRelativeTo>
+                    </product:Fixing>
+                    <product:PayReceive>R</product:PayReceive>
+                    <product:Notional>1.0</product:Notional>
+                    <product:Rate>1.0</product:Rate>
+                    <product:Spread>1.0</product:Spread>
                     <product:MaturityDate>
                         <model:Date>1993-04-08T18:32:30.792</model:Date>
                         <model:Adjustment>
-                            <model:BusinessDayConvention>A</model:BusinessDayConvention>
                             <model:Holiday>A</model:Holiday>
+                            <model:BusinessDayConvention>A</model:BusinessDayConvention>
                         </model:Adjustment>
                     </product:MaturityDate>
                     <product:StartDate>
                         <model:Date>2052-05-29T16:16:02.832</model:Date>
                         <model:Adjustment>
-                            <model:BusinessDayConvention>A</model:BusinessDayConvention>
                             <model:Holiday>A</model:Holiday>
+                            <model:BusinessDayConvention>A</model:BusinessDayConvention>
                         </model:Adjustment>
                     </product:StartDate>
-                    <product:PayReceive>R</product:PayReceive>
-                    <product:Fixing>
-                        <product:FloatingRateName>A</product:FloatingRateName>
-                        <product:FixingRelativeTo>A</product:FixingRelativeTo>
-                        <product:Tenor>A</product:Tenor>
-                    </product:Fixing>
-                    <product:Spread>1.0</product:Spread>
-                    <product:Daycount>Act/365F</product:Daycount>
-                    <product:Notional>1.0</product:Notional>
-                    <product:Notionalxg>A</product:Notionalxg>
                     <product:RollConvention>A</product:RollConvention>
-                    <product:Rate>1.0</product:Rate>
-                    <product:PayAtStart>true</product:PayAtStart>
-                    <product:FixingDate>
-                        <model:Date>1990-01-24T01:54:45.827</model:Date>
-                        <model:Adjustment>
-                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                            <model:Holiday>AUSY</model:Holiday>
-                        </model:Adjustment>
-                    </product:FixingDate>
-                    <product:PaymentDate>
-                        <model:Date>2052-05-21T06:47:25.852</model:Date>
-                        <model:Adjustment>
-                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                            <model:Holiday>AUSY</model:Holiday>
-                        </model:Adjustment>
-                    </product:PaymentDate>
                 </product:Leg>
             </trade:Product>
         </FRATrade>
-        </Envelop>
-        <Envelop>
-        	<Type>SWAP</Type>
-        	<SwapTrade>
+    </Envelop>
+    <Envelop>
+        <Type>SWAP</Type>
+        <SwapTrade>
             <trade:Type>SWAP</trade:Type>
             <trade:Info>
                 <trade:Portfolio>p31</trade:Portfolio>
-                <trade:MaturityDate>2018-12-05T00:00:00</trade:MaturityDate>
-                <trade:TradeDate>2011-12-05T00:00:00</trade:TradeDate>
-                <trade:EffectiveDate>2011-12-05T00:00:00</trade:EffectiveDate>
-                <trade:TradeId>455123</trade:TradeId>
-                <trade:DerivativeType>Cleared</trade:DerivativeType>
+                <trade:TradeDate>2013-11-29T00:00:00</trade:TradeDate>
+                <trade:MaturityDate>2020-11-29T00:00:00</trade:MaturityDate>
+                <trade:TradeId>100024</trade:TradeId>
+                <trade:TradingAccountId>ACUOSG9071</trade:TradingAccountId>
                 <trade:ClearedTradeDate>2013-11-27T00:00:00</trade:ClearedTradeDate>
-                <trade:TradingAccountId>ACUOSG8745</trade:TradingAccountId>
+                <trade:DerivativeType>Cleared</trade:DerivativeType>
             </trade:Info>
             <trade:Product>
                 <product:Leg>
                     <product:Id>4551231</product:Id>
                     <product:Type>FIXED</product:Type>
-                    <product:Currency>AUD</product:Currency>
-                    <product:Rate>1.25</product:Rate>
-                    <product:StartDate>
-                        <model:Date>2011-12-05T00:00:00</model:Date>
-                    </product:StartDate>
-                    <product:MaturityDate>
-                        <model:Date>2018-12-05T00:00:00</model:Date>
-                    </product:MaturityDate>
-                    <product:Notional>10000000.0</product:Notional>
+                    <product:Currency>SGD</product:Currency>
                     <product:Daycount>Act/365F</product:Daycount>
                     <product:PayReceive>RECEIVE</product:PayReceive>
+                    <product:Notional>10000000.0</product:Notional>
+                    <product:Rate>1.15</product:Rate>
+                    <product:MaturityDate>
+                        <model:Date>2013-11-29T00:00:00</model:Date>
+                    </product:MaturityDate>
+                    <product:StartDate>
+                        <model:Date>2020-11-29T00:00:00</model:Date>
+                    </product:StartDate>
                     <product:PaymentSchedule>
                         <model:Adjustment>
+                            <model:Holiday>SGSI</model:Holiday>
                             <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                            <model:Holiday>AUSY</model:Holiday>
                         </model:Adjustment>
                         <model:Frequency>6M</model:Frequency>
                     </product:PaymentSchedule>
@@ -117,28 +116,28 @@
                 <product:Leg>
                     <product:Id>4551232</product:Id>
                     <product:Type>FLOAT</product:Type>
-                    <product:Currency>AUD</product:Currency>
-                    <product:StartDate>
-                        <model:Date>2011-12-05T00:00:00</model:Date>
-                    </product:StartDate>
+                    <product:Currency>SGD</product:Currency>
                     <product:ResetSchedule>
                         <model:Frequency>6M</model:Frequency>
                     </product:ResetSchedule>
-                    <product:MaturityDate>
-                        <model:Date>2018-12-05T00:00:00</model:Date>
-                    </product:MaturityDate>
-                    <product:Notional>10000000.0</product:Notional>
                     <product:Daycount>Act/365F</product:Daycount>
                     <product:Fixing>
                         <product:Tenor>6M</product:Tenor>
-                        <product:FloatingRateName>AUD-BBR-BBSW</product:FloatingRateName>
+                        <product:FloatingRateName>SGD-SOR-VWAP</product:FloatingRateName>
                         <product:FixingRelativeTo>PeriodStart</product:FixingRelativeTo>
                     </product:Fixing>
                     <product:PayReceive>PAY</product:PayReceive>
+                    <product:Notional>10000000.0</product:Notional>
+                    <product:MaturityDate>
+                        <model:Date>2013-11-29T00:00:00</model:Date>
+                    </product:MaturityDate>
+                    <product:StartDate>
+                        <model:Date>2020-11-29T00:00:00</model:Date>
+                    </product:StartDate>
                     <product:PaymentSchedule>
                         <model:Adjustment>
+                            <model:Holiday>SGSI</model:Holiday>
                             <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                            <model:Holiday>AUSY</model:Holiday>
                         </model:Adjustment>
                         <model:Frequency>6M</model:Frequency>
                     </product:PaymentSchedule>
