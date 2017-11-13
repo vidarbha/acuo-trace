@@ -1,8 +1,8 @@
 package com.acuo.collateral.transform.trace;
 
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.inputs.ValuationInput;
 import com.acuo.collateral.transform.inputs.Envelop;
+import com.acuo.collateral.transform.inputs.ValuationInput;
 import com.acuo.collateral.transform.trace.transformer_cme.Cme;
 import com.acuo.collateral.transform.trace.transformer_markit.Markit;
 import com.acuo.collateral.transform.trace.utils.TraceUtils;
@@ -14,7 +14,6 @@ import com.tracegroup.transformer.exposedservices.RuleException;
 import com.tracegroup.transformer.exposedservices.StructureException;
 import com.tracegroup.transformer.exposedservices.UnrecognizedMessageException;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -52,12 +51,7 @@ public class TraceTest {
         Object[] trades = cme.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        final List<Envelop> envelops = Arrays.stream(trades).map(o -> {
-            Envelop envelop = new Envelop();
-            envelop.setSwapTrade((SwapTrade) o);
-            envelop.setType(ProductType.SWAP);
-            return envelop;
-        }).collect(Collectors.toList());
+        final List<Envelop> envelops = envelops(trades);
 
         ValuationInput clarusInput = new ValuationInput();
         clarusInput.setContext(context);
@@ -74,12 +68,7 @@ public class TraceTest {
         Object[] trades = cme.fromCmeFile(input).getSwap();
         assertThat(trades.length).isEqualTo(1);
 
-        final List<Envelop> envelops = Arrays.stream(trades).map(o -> {
-            Envelop envelop = new Envelop();
-            envelop.setSwapTrade((SwapTrade) o);
-            envelop.setType(ProductType.SWAP);
-            return envelop;
-        }).collect(Collectors.toList());
+        final List<Envelop> envelops = envelops(trades);
 
         ValuationInput markitInput = new ValuationInput();
         markitInput.setContext(context);
@@ -87,5 +76,14 @@ public class TraceTest {
 
         String output = markit.toMarkit(markitInput).getOutput();
         assertThat(output).isNotEmpty();
+    }
+
+    private List<Envelop> envelops(Object[] trades) {
+        return Arrays.stream(trades).map(o -> {
+            Envelop envelop = new Envelop();
+            envelop.setSwapTrade((SwapTrade) o);
+            envelop.setType(ProductType.SWAP);
+            return envelop;
+        }).collect(Collectors.toList());
     }
 }
