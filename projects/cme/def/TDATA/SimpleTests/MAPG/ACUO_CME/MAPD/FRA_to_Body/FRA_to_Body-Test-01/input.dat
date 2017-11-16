@@ -1,34 +1,25 @@
 <?xml version="1.0"?>
 <FRATrade xmlns="com.acuo.common.model.trade"
     xmlns:model="com.acuo.common.model"
+    xmlns:fx="com.acuo.common.model.product.fx"
     xmlns:product="com.acuo.common.model.product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <Type>FRA</Type>
     <Info>
-        <TradeStatus>CLEARED</TradeStatus>
-        <Portfolio>p31</Portfolio>
-        <TradeTime>2025-05-26T07:55:33.157</TradeTime>
-        <TradeDate>2044-10-30T01:22:45.424</TradeDate>
         <TradeId>111111</TradeId>
+        <TradeTime>2025-05-26T07:55:33.157</TradeTime>
         <MaturityDate>1988-05-16T11:19:15.156</MaturityDate>
-        <Book>A</Book>
-        <TradingAccountId>A</TradingAccountId>
         <ClearedTradeId>111111</ClearedTradeId>
         <ClearedTradeDate>2006-02-02T12:55:22.662</ClearedTradeDate>
+        <Book>A</Book>
+        <Portfolio>p31</Portfolio>
+        <TradeStatus>CLEARED</TradeStatus>
         <DerivativeType>A</DerivativeType>
         <DiscountMethod>A</DiscountMethod>
+        <TradingAccountId>A</TradingAccountId>
+        <TradeDate>2044-10-30T01:22:45.424</TradeDate>
     </Info>
     <Product>
         <product:Leg>
-            <product:Id>1</product:Id>
-            <product:Type>FIXED</product:Type>
             <product:Currency>XOF</product:Currency>
-            <product:MaturityDate>
-                <model:Date>1993-04-08T18:32:30.792</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>A</model:BusinessDayConvention>
-                    <model:Holiday>A</model:Holiday>
-                </model:Adjustment>
-            </product:MaturityDate>
             <product:StartDate>
                 <model:Date>2052-05-29T16:16:02.832</model:Date>
                 <model:Adjustment>
@@ -36,26 +27,18 @@
                     <model:Holiday>A</model:Holiday>
                 </model:Adjustment>
             </product:StartDate>
-            <product:PayReceive>R</product:PayReceive>
-            <product:Fixing>
-                <product:FloatingRateName>A</product:FloatingRateName>
-                <product:FixingRelativeTo>A</product:FixingRelativeTo>
-                <product:Tenor>A</product:Tenor>
-            </product:Fixing>
+            <product:MaturityDate>
+                <model:Date>1993-04-08T18:32:30.792</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>A</model:BusinessDayConvention>
+                    <model:Holiday>A</model:Holiday>
+                </model:Adjustment>
+            </product:MaturityDate>
             <product:Spread>1.0</product:Spread>
             <product:Daycount>Act/365F</product:Daycount>
             <product:Notional>1.0</product:Notional>
             <product:Notionalxg>A</product:Notionalxg>
             <product:RollConvention>A</product:RollConvention>
-            <product:Rate>1.0</product:Rate>
-            <product:PayAtStart>true</product:PayAtStart>
-            <product:FixingDate>
-                <model:Date>1990-01-24T01:54:45.827</model:Date>
-                <model:Adjustment>
-                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
-                    <model:Holiday>AUSY</model:Holiday>
-                </model:Adjustment>
-            </product:FixingDate>
             <product:PaymentDate>
                 <model:Date>2052-05-21T06:47:25.852</model:Date>
                 <model:Adjustment>
@@ -63,8 +46,26 @@
                     <model:Holiday>AUSY</model:Holiday>
                 </model:Adjustment>
             </product:PaymentDate>
+            <product:FixingDate>
+                <model:Date>1990-01-24T01:54:45.827</model:Date>
+                <model:Adjustment>
+                    <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                    <model:Holiday>AUSY</model:Holiday>
+                </model:Adjustment>
+            </product:FixingDate>
+            <product:Rate>1.0</product:Rate>
+            <product:PayAtStart>true</product:PayAtStart>
+            <product:PayReceive>Receive</product:PayReceive>
+            <product:Fixing>
+                <product:FloatingRateName>A</product:FloatingRateName>
+                <product:Tenor>A</product:Tenor>
+                <product:FixingRelativeTo>A</product:FixingRelativeTo>
+            </product:Fixing>
+            <product:Id>1</product:Id>
+            <product:Type>FIXED</product:Type>
         </product:Leg>
     </Product>
+    <Type>FRA</Type>
 </FRATrade>
 ---
 <?xml version="1.0"?>
