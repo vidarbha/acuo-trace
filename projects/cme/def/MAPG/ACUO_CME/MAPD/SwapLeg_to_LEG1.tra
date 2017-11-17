@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>16/11/2017 18:22:17</Timestamp>
-        <Checksum>8664016c</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>17/11/2017 17:31:21</Timestamp>
+        <Checksum>cd7f7eb9</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="SwapLeg_to_LEG1" group="Map:ACUO_CME" category="Acuo">
@@ -356,6 +356,10 @@
             </Property>
             <Mapper>NamedTableLookup</Mapper>
         </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>'Action if not found' configuration differs from other NamedTableLookup because FloatingRateName table is not fixed nor exhaustive</Description>
+        <ActionComment/>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
