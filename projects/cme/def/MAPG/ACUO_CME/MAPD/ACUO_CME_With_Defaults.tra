@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>14/11/2017 19:50:11</Timestamp>
-        <Checksum>99b5feb1</Checksum>
+        <Timestamp>17/11/2017 21:44:21</Timestamp>
+        <Checksum>d6537e86</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME_With_Defaults" group="Map:ACUO_CME" category="Clarus">
@@ -72,6 +72,10 @@
             </ActionStep>
             <ActionStep>
                 <Description>below we default the roll convention to 10 and (for some unknown reasons) we divide the rate by 100</Description>
+                <ActionComment/>
+            </ActionStep>
+            <ActionStep>
+                <Description>Clarus receives fixed rate in whole numbers. Fixed rate from portfolio and persisted in database is in percentage</Description>
                 <ActionComment/>
             </ActionStep>
             <ActionStep>
@@ -165,6 +169,10 @@
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <Description>ROLLCONV unncessary for FRA</Description>
+                                    <ActionComment/>
                                     </ActionStep>
                                     </ThenAction>
                                     </IfAction>

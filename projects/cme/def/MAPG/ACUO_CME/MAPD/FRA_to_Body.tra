@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>16/11/2017 18:22:09</Timestamp>
-        <Checksum>3581baba</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>17/11/2017 21:30:17</Timestamp>
+        <Checksum>ee4cd300</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="FRA_to_Body" group="Map:ACUO_CME" category="Clarus">
@@ -474,7 +474,7 @@
             <Copy></Copy>
         </FunctionCall>
     </ActionStep>
-    <ActionStep>
+    <ActionStep disabled="true">
         <FunctionCall>
             <Property name="Output" type="nodespec">
                 <Value>
@@ -493,6 +493,10 @@
             </Property>
             <Copy></Copy>
         </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>ORIGIN mapping can be removed</Description>
+        <ActionComment/>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
@@ -561,6 +565,10 @@
                     </ThenAction>
                 </IfAction>
             </ActionStep>
+            <ActionStep>
+                <Description>Unsure where the leg information 'FIXED' is orginating. Leg1_TYPE in portfolio shows 'FRA'</Description>
+                <ActionComment/>
+            </ActionStep>
             <RepeatLimit>
                 <PathNodeSpec specType="FROM_DATA"
                     contextName="FRATrade" pathString="Product/Leg[#]"/>
@@ -609,6 +617,10 @@
             </Property>
             <Copy></Copy>
         </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>Indicated as unncessary on Clarus docs, but requested without and request failed </Description>
+        <ActionComment/>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
