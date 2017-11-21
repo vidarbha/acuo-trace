@@ -93,12 +93,114 @@
                             <model:Holiday>AUSY</model:Holiday>
                         </model:Adjustment>
                     </product:ResetSchedule>
-                    <product:RollConvention>11</product:RollConvention>
+                    <product:RollConvention>21</product:RollConvention>
                     <product:VariableCurrency>true</product:VariableCurrency>
                     <product:PayReceive>Receive</product:PayReceive>
                     <product:Fixing>
                         <product:FloatingRateName>AUD-BBR-BBSW</product:FloatingRateName>
-                        <product:Tenor>P6M</product:Tenor>
+                        <product:Tenor>6M</product:Tenor>
+                    </product:Fixing>
+                    <product:Type>FLOAT</product:Type>
+                </product:Leg>
+            </trade:Product>
+            <trade:Type>SWAP</trade:Type>
+        </SwapTrade>
+        <Type>SWAP</Type>
+    </Envelop>
+    <Envelop>
+        <SwapTrade>
+            <trade:Info>
+                <trade:TradeId>12345</trade:TradeId>
+                <trade:ClearedTradeId>12345</trade:ClearedTradeId>
+                <trade:ClearedTradeDate>2013-11-27T02:44:45</trade:ClearedTradeDate>
+                <trade:Book></trade:Book>
+                <trade:Portfolio>p35</trade:Portfolio>
+                <trade:TradeStatus>CLEARED</trade:TradeStatus>
+            </trade:Info>
+            <trade:Product>
+                <product:Leg>
+                    <product:Currency>EUR</product:Currency>
+                    <product:StartDate>
+                        <model:Date>2011-12-05T02:52:17</model:Date>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>EUTA</model:Holiday>
+                        </model:Adjustment>
+                    </product:StartDate>
+                    <product:MaturityDate>
+                        <model:Date>2036-12-05T18:11:40</model:Date>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>EUTA</model:Holiday>
+                        </model:Adjustment>
+                    </product:MaturityDate>
+                    <product:Spread>2.5</product:Spread>
+                    <product:Daycount>Act/360</product:Daycount>
+                    <product:Notional>10000000.0</product:Notional>
+                    <product:PaymentSchedule>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>EUTA</model:Holiday>
+                        </model:Adjustment>
+                        <model:Frequency>Term</model:Frequency>
+                    </product:PaymentSchedule>
+                    <product:CalculationSchedule>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>AUSY</model:Holiday>
+                        </model:Adjustment>
+                        <model:Frequency>P6M</model:Frequency>
+                    </product:CalculationSchedule>
+                    <product:ResetSchedule>
+                        <model:Adjustment/>
+                    </product:ResetSchedule>
+                    <product:PayReceive>Pay</product:PayReceive>
+                    <product:Type>FIXED</product:Type>
+                </product:Leg>
+                <product:Leg>
+                    <product:Currency>EUR</product:Currency>
+                    <product:StartDate>
+                        <model:Date>2011-12-05T02:52:17</model:Date>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>EUTA</model:Holiday>
+                        </model:Adjustment>
+                    </product:StartDate>
+                    <product:MaturityDate>
+                        <model:Date>2036-12-05T18:11:40</model:Date>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>EUTA</model:Holiday>
+                        </model:Adjustment>
+                    </product:MaturityDate>
+                    <product:Daycount>Act/360</product:Daycount>
+                    <product:Notional>100000000.0</product:Notional>
+                    <product:PaymentSchedule>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>AUSY</model:Holiday>
+                        </model:Adjustment>
+                        <model:Frequency>Term</model:Frequency>
+                    </product:PaymentSchedule>
+                    <product:CalculationSchedule>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention>ModifiedFollowing</model:BusinessDayConvention>
+                            <model:Holiday>EUTA</model:Holiday>
+                        </model:Adjustment>
+                        <model:Frequency>P6M</model:Frequency>
+                    </product:CalculationSchedule>
+                    <product:ResetSchedule>
+                        <model:Adjustment>
+                            <model:BusinessDayConvention></model:BusinessDayConvention>
+                            <model:Holiday></model:Holiday>
+                        </model:Adjustment>
+                    </product:ResetSchedule>
+                    <product:RollConvention>21</product:RollConvention>
+                    <product:VariableCurrency>true</product:VariableCurrency>
+                    <product:PayReceive>Receive</product:PayReceive>
+                    <product:Fixing>
+                        <product:FloatingRateName>EUR-EURIBOR-Reuters</product:FloatingRateName>
+                        <product:Tenor>3M</product:Tenor>
                     </product:Fixing>
                     <product:Type>FLOAT</product:Type>
                 </product:Leg>

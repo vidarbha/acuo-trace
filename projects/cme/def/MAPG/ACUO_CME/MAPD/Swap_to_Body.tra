@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>13/11/2017 16:05:47</Timestamp>
-        <Checksum>711b9200</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>20/11/2017 18:20:56</Timestamp>
+        <Checksum>b22f2426</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Swap_to_Body" group="Map:ACUO_CME" category="Clarus">
@@ -228,7 +228,7 @@
                 contextPosnSpec="Counter1" pathString="Product/Leg[]"/>
         </RepeatAction>
     </ActionStep>
-    <ActionStep>
+    <ActionStep disabled="true">
         <FunctionCall>
             <Property name="Output" type="nodespec">
                 <Value>
@@ -247,6 +247,10 @@
             </Property>
             <Copy></Copy>
         </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <Description>ORIGIN mapping can be removed</Description>
+        <ActionComment/>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
