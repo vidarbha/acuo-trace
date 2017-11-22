@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>17/11/2017 21:44:21</Timestamp>
-        <Checksum>d6537e86</Checksum>
+        <Timestamp>22/11/2017 11:08:19</Timestamp>
+        <Checksum>2ad8702d</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_CME_With_Defaults" group="Map:ACUO_CME" category="Clarus">
@@ -47,7 +47,8 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[Counter1]"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[Counter1]"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -55,7 +56,8 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Context"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Context"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -84,7 +86,8 @@
                         <Comparison>
                             <FirstTerm>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[1]/Type"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[1]/Type"/>
                             </FirstTerm>
                             <Operator>EQ</Operator>
                             <SecondTerm>
@@ -131,7 +134,8 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[1]/FRATrade/Product/Leg[Counter2]/Rate"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[1]/FRATrade/Product/Leg[Counter2]/Rate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -179,7 +183,8 @@
                                 </ActionStep>
                                 <RepeatLimit>
                                     <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[1]/FRATrade/Product/Leg[#]"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[1]/FRATrade/Product/Leg[#]"/>
                                 </RepeatLimit>
                                 <ScopeA specType="FROM_DATA"
                                     contextName="Input" pathString="Envelop[1]/FRATrade/Product/Leg[]"/>
@@ -194,7 +199,8 @@
                         <Comparison>
                             <FirstTerm>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[1]/Type"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[1]/Type"/>
                             </FirstTerm>
                             <Operator>EQ</Operator>
                             <SecondTerm>
@@ -241,7 +247,8 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[1]/SwapTrade/Product/Leg[Counter2]/Rate"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[1]/SwapTrade/Product/Leg[Counter2]/Rate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -302,7 +309,8 @@
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[1]/SwapTrade/Product/Leg[Counter2]/Rate"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[1]/SwapTrade/Product/Leg[Counter2]/Rate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -346,7 +354,8 @@
                                 </ActionStep>
                                 <RepeatLimit>
                                     <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="Envelop[1]/SwapTrade/Product/Leg[#]"/>
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="Envelop[1]/SwapTrade/Product/Leg[#]"/>
                                 </RepeatLimit>
                                 <ScopeA specType="FROM_DATA"
                                     contextName="Input" pathString="Envelop[1]/SwapTrade/Product/Leg[]"/>
@@ -358,12 +367,13 @@
             <ScopeB specType="TO_DATA" contextName="Output"
                 pathString="Body[]" outputPosnSpecifier="Out1"/>
             <RepeatLimit>
-                <PathNodeSpec specType="FROM_DATA" contextName="Input" pathString="Envelop[#]"/>
+                <PathNodeSpec specType="FROM_DATA" contextName="Input"
+                    contextPosnSpec="1" pathString="Envelop[#]"/>
             </RepeatLimit>
             <ScopeA specType="FROM_DATA" contextName="Input" pathString="Envelop[]"/>
         </RepeatAction>
     </ActionStep>
-    <InputDefinition name="Input" optional="true" repeating="false">
+    <InputDefinition name="Input" optional="true" repeating="true">
         <Type>inputs:ValuationInput</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">

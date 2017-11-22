@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>20/11/2017 18:20:56</Timestamp>
-        <Checksum>b22f2426</Checksum>
+        <Timestamp>22/11/2017 14:36:26</Timestamp>
+        <Checksum>e71c8504</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Swap_to_Body" group="Map:ACUO_CME" category="Clarus">
@@ -227,30 +227,6 @@
             <ScopeA specType="FROM_DATA" contextName="SwapTrade"
                 contextPosnSpec="Counter1" pathString="Product/Leg[]"/>
         </RepeatAction>
-    </ActionStep>
-    <ActionStep disabled="true">
-        <FunctionCall>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="ORIGIN"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <Literal>HOUS</Literal>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <Description>ORIGIN mapping can be removed</Description>
-        <ActionComment/>
     </ActionStep>
     <ActionStep>
         <FunctionCall>
