@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>20/11/2017 18:41:58</Timestamp>
-        <Checksum>76938fac</Checksum>
+        <Timestamp>23/11/2017 15:33:12</Timestamp>
+        <Checksum>6b749f47</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="SwapLeg_to_LEG2" group="Map:ACUO_CME" category="Acuo">
@@ -380,6 +380,31 @@
     </ActionStep>
     <ActionStep>
         <Description>note that indextenor has to be changed to NamedTableLookup when implementing MXN (involves 4W to 28D conversion) for Clarus</Description>
+        <ActionComment/>
+    </ActionStep>
+    <ActionStep disabled="true">
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="Fixing/FixingRelativeTo"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="LEG2RESETRELTO"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep disabled="true">
+        <Description>FixingRelativeTo field seems to be hardcoded at the back, to be confirmed. If so, should move from hardcode to being present in portfolio.</Description>
         <ActionComment/>
     </ActionStep>
     <ActionStep>

@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>18/10/2017 14:46:07</Timestamp>
-        <Checksum>9587ec21</Checksum>
+        <Timestamp>23/11/2017 15:38:30</Timestamp>
+        <Checksum>64f6df68</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_to_ReutersTrade" group="Map:Reuters_OUT">
@@ -293,6 +293,10 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep>
+                        <Description>why do we copy maturity date twice</Description>
+                        <ActionComment/>
+                    </ActionStep>
+                    <ActionStep>
                         <FunctionCall>
                             <Property name="Table" type="namedlookuptable">
                                 <Value>ReutersTradeFreq</Value>
@@ -401,6 +405,79 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/NotionalExchange"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep disabled="true">
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Notionalxg"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/NotionalExchange"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Table" type="lookuptable">
+                                <Value>
+                                    <LookupTable inLabel="In" outLabel="Out">
+                                    <TableEntry>
+                                    <In>BOTH</In>
+                                    <Out>BOTH</Out>
+                                    </TableEntry>
+                                    <TableEntry>
+                                    <In>NEITHER</In>
+                                    <Out>NONE</Out>
+                                    </TableEntry>
+                                    <TableEntry>
+                                    <In>FRONT</In>
+                                    <Out>START</Out>
+                                    </TableEntry>
+                                    <TableEntry>
+                                    <In>BACK</In>
+                                    <Out>END</Out>
+                                    </TableEntry>
+                                    </LookupTable>
+                                </Value>
+                            </Property>
+                            <Mapper>LocalTableLookup</Mapper>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep disabled="true">
+                        <Description>data currently available in portfolio but not persisted in database, temporarily hardcoding "NONE"
+to change localtablelookup to NamedTableLookup when database convention has been determined. currently assuming data will be persisted as per portfolio (which is following markit conventions)</Description>
+                        <ActionComment/>
+                    </ActionStep>
+                    <ActionStep disabled="true">
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/FixingRelativeTo"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
