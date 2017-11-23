@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>23/11/2017 15:38:30</Timestamp>
-        <Checksum>64f6df68</Checksum>
+        <Timestamp>23/11/2017 17:05:00</Timestamp>
+        <Checksum>8995f271</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_to_ReutersTrade" group="Map:Reuters_OUT">
@@ -236,7 +236,7 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Currency"/>
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/Currency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -461,29 +461,6 @@
 to change localtablelookup to NamedTableLookup when database convention has been determined. currently assuming data will be persisted as per portfolio (which is following markit conventions)</Description>
                         <ActionComment/>
                     </ActionStep>
-                    <ActionStep disabled="true">
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/FixingRelativeTo"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
                     <ActionStep>
                         <FunctionCall>
                             <Property name="Table" type="namedlookuptable">
@@ -612,6 +589,57 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     </Property>
                                     <Mapper>NamedTableLookup</Mapper>
                                     </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>ADVANCE</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep disabled="true">
+                                    <FunctionCall>
+                                    <Property name="Table" type="namedlookuptable">
+                                    <Value>ReutersResetType</Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Fixing/FixingRelativeTo"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep disabled="true">
+                                    <Description>NamedTableLookup for 'ResetType' is based on CME conventions and unfinalised. 
+Conventions can only be finalised when persisted in database. Temporary hardcoding as 'ADVANCE'</Description>
+                                    <ActionComment/>
                                 </ActionStep>
                                 <ActionStep>
                                     <FunctionCall>
