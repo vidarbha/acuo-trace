@@ -1,40 +1,23 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Named Lookup Table</Program>
-            <VersionNumber>3.5.5</VersionNumber>
-            <BuildNumber>194</BuildNumber>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>17/08/2016 19:17:37</Timestamp>
-        <Checksum>ab91d68d</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>24/11/2017 16:22:58</Timestamp>
+        <Checksum>70dd3d75</Checksum>
     </LastModification>
 </Prolog>
 <NamedLookupTable name="BusDayConv" group="Map:ACUO_CME">
     <Description>Business Day Convention from ACUO (Markit) to CME</Description>
     <LookupProvider>
-        <LookupTable inLabel="In" outLabel="Out">
-            <TableEntry>
-                <In>Following</In>
-                <Out>FOLLOWING</Out>
-            </TableEntry>
-            <TableEntry>
-                <In>ModifiedFollowing</In>
-                <Out>MODFOLLOWING</Out>
-            </TableEntry>
-            <TableEntry>
-                <In>Preceding</In>
-                <Out>PRECEDING</Out>
-            </TableEntry>
-            <TableEntry>
-                <In>ModifiedPreceding</In>
-                <Out>MODPRECEDING</Out>
-            </TableEntry>
-            <TableEntry>
-                <In>NoAdjust</In>
-                <Out>NONE</Out>
-            </TableEntry>
-        </LookupTable>
+        <LookupProviderTBeanInvocation lookupProviderInfoReference="ConfigFileLookupProvider">
+            <Property name="ConfigFile" type="string">
+                <Value>/cme/ClarusBusDayConv.ini</Value>
+            </Property>
+        </LookupProviderTBeanInvocation>
     </LookupProvider>
 </NamedLookupTable>

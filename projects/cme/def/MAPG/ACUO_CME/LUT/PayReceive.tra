@@ -1,35 +1,22 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Named Lookup Table</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>30/05/2017 16:21:31</Timestamp>
-        <Checksum>bc390bf4</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>24/11/2017 16:24:03</Timestamp>
+        <Checksum>2a32ce0</Checksum>
     </LastModification>
 </Prolog>
 <NamedLookupTable name="PayReceive" group="Map:ACUO_CME">
     <LookupProvider>
-        <LookupTable inLabel="In" outLabel="Out">
-            <TableEntry>
-                <In>Pay</In>
-                <Out>P</Out>
-            </TableEntry>
-            <TableEntry>
-                <In>Receive</In>
-                <Out>R</Out>
-            </TableEntry>
-            <TableEntry>
-                <In>PAY</In>
-                <Out>P</Out>
-            </TableEntry>
-            <TableEntry>
-                <In>RECEIVE</In>
-                <Out>R</Out>
-            </TableEntry>
-        </LookupTable>
+        <LookupProviderTBeanInvocation lookupProviderInfoReference="ConfigFileLookupProvider">
+            <Property name="ConfigFile" type="string">
+                <Value>/cme/ClarusPayReceive.ini</Value>
+            </Property>
+        </LookupProviderTBeanInvocation>
     </LookupProvider>
 </NamedLookupTable>
