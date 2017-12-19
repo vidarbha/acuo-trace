@@ -7,11 +7,11 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>12/12/2017 13:02:33</Timestamp>
-        <Checksum>db15e56b</Checksum>
+        <Timestamp>19/12/2017 13:31:52</Timestamp>
+        <Checksum>70f21e4f</Checksum>
     </LastModification>
 </Prolog>
-<MappingDefinition name="ACUO_to_ReutersTrade" group="Map:Reuters_OUT">
+<MappingDefinition name="ACUO_to_ReutersTradeUpdated" group="Map:Reuters_OUT">
     <ActionStep>
         <FunctionCall>
             <Property name="Input" type="nodespec">
@@ -25,7 +25,8 @@
             <Property name="Output" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/AsOfDate"/>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="AsOfDate"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -40,25 +41,6 @@
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[1]/SwapDefinition/Legs[1]/InterestRate[1]/CouponType"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[1]/SwapDefinition/Legs[1]/InterestRate[1]/CouponType"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
                         <Literal>USD</Literal>
                     </NodeSpec>
                 </Value>
@@ -66,7 +48,8 @@
             <Property name="Output" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/ReportCurrency"/>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Reuters:ReportCurrency"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -85,45 +68,8 @@
             <Property name="Output" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/Sections/Description"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <Literal>true</Literal>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/Sections/Valuation"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <Literal>true</Literal>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/Sections/pricingAnalysis"/>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Sections/Description"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -142,7 +88,48 @@
             <Property name="Output" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/Sections/RiskMeasures"/>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Sections/RiskMeasures"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>true</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Sections/pricingAnalysis"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>true</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="Sections/Valuation"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -165,7 +152,8 @@
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/id"/>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/id"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -186,11 +174,15 @@
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/StartDate/Date"/>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/StartDate/Date"/>
                             </NodeSpec>
                         </Value>
                     </Property>
-                    <Copy></Copy>
+                    <Property name="Format" type="string">
+                        <Value>yyyy-MM-dd</Value>
+                    </Property>
+                    <Mapper>DateToText</Mapper>
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
@@ -207,14 +199,38 @@
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Maturity/EndDate"/>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Maturity/EndDate"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>yyyy-MM-dd</Value>
+                    </Property>
+                    <Mapper>DateToText</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>None</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Collateral/CollateralType"/>
                             </NodeSpec>
                         </Value>
                     </Property>
                     <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
-            <ActionStep disabled="true">
+            <ActionStep>
                 <FunctionCall>
                     <Property name="Input" type="nodespec">
                         <Value>
@@ -226,7 +242,8 @@
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/IsNonDeliverable"/>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/IsNonDeliverable"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -250,8 +267,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Id"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Id"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -273,8 +290,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Currency"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Currency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -303,8 +320,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Direction"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Direction"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -316,15 +333,15 @@
                             <Property name="Input" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <Literal>null</Literal>
+                                    <NullValue></NullValue>
                                     </NodeSpec>
                                 </Value>
                             </Property>
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/UpfrontPayment"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/UpfrontPayment"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -332,7 +349,7 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep disabled="true">
-                        <Description>Upfront payment is not defined in portfolio, but is mandatory to send to reuters. Temporary hardcoding as 'Null', '0' is also acceptable value</Description>
+                        <Description>Upfront payment is not defined in portfolio, but is mandatory to send to reuters. Temporary setting as 'Null', '0' is also acceptable value</Description>
                         <ActionComment/>
                     </ActionStep>
                     <ActionStep>
@@ -350,12 +367,15 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Maturity/EndDate"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Maturity/EndDate"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
-                            <Copy></Copy>
+                            <Property name="Format" type="string">
+                                <Value>yyyy-MM-dd</Value>
+                            </Property>
+                            <Mapper>DateToText</Mapper>
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep>
@@ -370,8 +390,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Frequency"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Frequency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -406,8 +426,34 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/DateMovingConvention"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Mapper>NamedTableLookup</Mapper>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Table" type="namedlookuptable">
+                                <Value>ReutersTradeDaycount</Value>
+                            </Property>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/DateMovingConvention"/>
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Daycount"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -426,8 +472,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/type"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/type"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -449,8 +495,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/BaseValue"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/BaseValue"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -469,8 +515,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/NotionalExchange"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/NotionalExchange"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -492,8 +538,8 @@
                             <Property name="Output" type="nodespec">
                                 <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/NotionalExchange"/>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/NotionalExchange"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -523,35 +569,9 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep disabled="true">
-                        <Description>default value: NONE
+                        <Description>default value: None
 to change localtablelookup to NamedTableLookup when database convention has been determined. currently assuming data will be persisted as per portfolio (which is following markit conventions)</Description>
                         <ActionComment/>
-                    </ActionStep>
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Table" type="namedlookuptable">
-                                <Value>ReutersTradeDaycount</Value>
-                            </Property>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Daycount"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponType"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Mapper>NamedTableLookup</Mapper>
-                        </FunctionCall>
                     </ActionStep>
                     <ActionStep>
                         <IfAction>
@@ -583,7 +603,8 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/type"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/type"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -603,7 +624,8 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Type"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Type"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -623,14 +645,15 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/type"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/type"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Copy></Copy>
                                     </FunctionCall>
                                 </ActionStep>
-                                <ActionStep>
+                                <ActionStep disabled="true">
                                     <FunctionCall>
                                     <Property name="Table" type="namedlookuptable">
                                     <Value>ReutersHolidayCodes</Value>
@@ -649,11 +672,33 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Calendar"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Calendar"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <Mapper>NamedTableLookup</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <NullValue></NullValue>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Calendar"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
@@ -669,7 +714,8 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -695,7 +741,8 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/ResetType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -726,7 +773,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Name"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Name"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -752,7 +800,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Currency"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Currency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -775,7 +824,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Tenor"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Tenor"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -795,7 +845,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Validate"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Validate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -818,7 +869,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Spread"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Spread"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -840,7 +892,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/type"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/type"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -860,7 +913,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Type"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Type"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -873,7 +927,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponRate"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponRate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -903,7 +958,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponRate"/>
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponRate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -923,8 +979,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                             </ElseAction>
                         </IfAction>
                     </ActionStep>
-                    <ScopeB specType="TEMP_VAR"
-                        pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[]" outputPosnSpecifier="Out2"/>
+                    <ScopeB specType="TO_DATA" contextName="Output"
+                        pathString="MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[]" outputPosnSpecifier="Out2"/>
                     <RepeatLimit>
                         <PathNodeSpec specType="FROM_DATA"
                             contextName="Input"
@@ -934,8 +990,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                         contextPosnSpec="Counter1" pathString="Product/Leg[#]"/>
                 </RepeatAction>
             </ActionStep>
-            <ScopeB specType="TEMP_VAR"
-                pathString="ReutersInput/MtmItems/SwapInputs[]" outputPosnSpecifier="Out1"/>
+            <ScopeB specType="TO_DATA" contextName="Output"
+                pathString="MtmItems/SwapInputs[]" outputPosnSpecifier="Out1"/>
             <RepeatLimit>
                 <PathNodeSpec specType="FROM_DATA" contextName="Input"
                     contextPosnSpec="[#]" pathString="."/>
@@ -944,59 +1000,6 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                 contextPosnSpec="[]" pathString="."/>
         </RepeatAction>
     </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="Type"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>Format</Mapper>
-        </FunctionCall>
-    </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="Type"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="What" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <Literal>"type"</Literal>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="With" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <Literal>"$type"</Literal>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="."/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Mapper>Replace</Mapper>
-        </FunctionCall>
-    </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="true">
         <Type>trade:SwapTrade</Type>
     </InputDefinition>
@@ -1004,14 +1007,8 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
         <Type>transform:TransformerContext</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
-        <Bot>String</Bot>
+        <Message>ReutersTrade:Reuters_UpdatedTradeInput</Message>
     </OutputDefinition>
-    <TempVariable name="ReutersInput" optional="true" repeating="false">
-        <Message>Reuters:ReutersTradeInput</Message>
-    </TempVariable>
-    <TempVariable name="Type" optional="true" repeating="false">
-        <Bot>String</Bot>
-    </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>
             <Scenario>SOURCE_ABSENT</Scenario>

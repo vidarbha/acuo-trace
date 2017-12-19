@@ -7,21 +7,29 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>12/12/2017 13:25:36</Timestamp>
-        <Checksum>68a41668</Checksum>
+        <Timestamp>19/12/2017 16:26:56</Timestamp>
+        <Checksum>d3eb9184</Checksum>
     </LastModification>
 </Prolog>
-<MessageDefinition name="ReutersTradeInput" group="Reuters">
+<MessageDefinition name="Reuters_UpdatedTradeInput" group="ReutersTrade">
     <MessageContent>
-        <LocalComponent name="body">
+        <LocalComponent name="Body">
             <TypeSpecification>
                 <TypeDefinition>
                     <ComplexContent Compositor="ALL">
                         <Child minOccurs="0" maxOccurs="1">
-                            <NamedComponent>AsOfDate</NamedComponent>
+                            <LocalComponent name="AsOfDate" nillable="true">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
                         </Child>
-                        <Child minOccurs="0" maxOccurs="1">
-                            <NamedComponent>ReportCurrency</NamedComponent>
+                        <Child minOccurs="1" maxOccurs="1">
+                            <NamedComponent>Reuters:ReportCurrency</NamedComponent>
                         </Child>
                         <Child minOccurs="0" maxOccurs="1">
                             <LocalComponent name="Sections" nillable="true">
@@ -137,17 +145,10 @@
                                     name="Date" nillable="true">
                                     <TypeSpecification>
                                     <TypeDefinition>
-                                    <BusinessObjectType>Date</BusinessObjectType>
+                                    <BusinessObjectType>String</BusinessObjectType>
                                     </TypeDefinition>
                                     </TypeSpecification>
-
-                                    <FormatSpecifications converterReference="tk:Date">
-
-                                    <Property
-                                    name="Format" type="string">
-                                    <Value>yyyy-MM-dd</Value>
-                                    </Property>
-                                    </FormatSpecifications>
+                                    <FormatSpecifications/>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                                     </LocalComponent>
                                     </Child>
@@ -176,17 +177,10 @@
                                     name="EndDate" nillable="true">
                                     <TypeSpecification>
                                     <TypeDefinition>
-                                    <BusinessObjectType>Date</BusinessObjectType>
+                                    <BusinessObjectType>String</BusinessObjectType>
                                     </TypeDefinition>
                                     </TypeSpecification>
-
-                                    <FormatSpecifications converterReference="tk:Date">
-
-                                    <Property
-                                    name="Format" type="string">
-                                    <Value>yyyy-MM-dd</Value>
-                                    </Property>
-                                    </FormatSpecifications>
+                                    <FormatSpecifications/>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                                     </LocalComponent>
                                     </Child>
@@ -205,7 +199,24 @@
                                     name="Collateral" nillable="true">
                                     <TypeSpecification>
                                     <TypeDefinition>
+
+                                    <ComplexContent Compositor="ALL">
+
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="CollateralType" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
                                     <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+                                    </ComplexContent>
                                     </TypeDefinition>
                                     </TypeSpecification>
                                     <FormatSpecifications/>
@@ -269,7 +280,7 @@
                                     </Child>
 
                                     <Child
-                                    minOccurs="0" maxOccurs="1">
+                                    minOccurs="1" maxOccurs="1">
 
                                     <LocalComponent
                                     name="Direction" nillable="true">
@@ -284,7 +295,7 @@
                                     </Child>
 
                                     <Child
-                                    minOccurs="0" maxOccurs="1">
+                                    minOccurs="1" maxOccurs="1">
 
                                     <LocalComponent
                                     name="UpfrontPayment" nillable="true">
@@ -309,7 +320,7 @@
                                     <ComplexContent Compositor="ALL">
 
                                     <Child
-                                    minOccurs="0" maxOccurs="1">
+                                    minOccurs="1" maxOccurs="1">
 
                                     <LocalComponent
                                     name="type" nillable="true">
@@ -318,13 +329,21 @@
                                     <BusinessObjectType>String</BusinessObjectType>
                                     </TypeDefinition>
                                     </TypeSpecification>
-                                    <FormatSpecifications/>
+
+                                    <FormatSpecifications
+                                    parserReference="ConfigurablePropertyOrValue" converterReference="String">
+
+                                    <Property
+                                    name="JsonName" type="string">
+                                    <Value>$type</Value>
+                                    </Property>
+                                    </FormatSpecifications>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                                     </LocalComponent>
                                     </Child>
 
                                     <Child
-                                    minOccurs="0" maxOccurs="1">
+                                    minOccurs="1" maxOccurs="1">
 
                                     <LocalComponent
                                     name="Type" nillable="true">
@@ -478,13 +497,20 @@
                                     <BusinessObjectType>String</BusinessObjectType>
                                     </TypeDefinition>
                                     </TypeSpecification>
-                                    <FormatSpecifications/>
+
+                                    <FormatSpecifications parserReference="ConfigurablePropertyOrValue">
+
+                                    <Property
+                                    name="JsonName" type="string">
+                                    <Value>$type</Value>
+                                    </Property>
+                                    </FormatSpecifications>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                                     </LocalComponent>
                                     </Child>
 
                                     <Child
-                                    minOccurs="0" maxOccurs="1">
+                                    minOccurs="1" maxOccurs="1">
 
                                     <LocalComponent
                                     name="Calendar" nillable="true">
@@ -759,7 +785,14 @@
                                     <BusinessObjectType>String</BusinessObjectType>
                                     </TypeDefinition>
                                     </TypeSpecification>
-                                    <FormatSpecifications/>
+
+                                    <FormatSpecifications parserReference="ConfigurablePropertyOrValue">
+
+                                    <Property
+                                    name="JsonName" type="string">
+                                    <Value>$type</Value>
+                                    </Property>
+                                    </FormatSpecifications>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                                     </LocalComponent>
                                     </Child>
@@ -774,21 +807,8 @@
                                     <BusinessObjectType>Decimal</BusinessObjectType>
                                     </TypeDefinition>
                                     </TypeSpecification>
-                                    <FormatSpecifications/>
-                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                                    </LocalComponent>
-                                    </Child>
 
-                                    <Child
-                                    minOccurs="0" maxOccurs="1">
-
-                                    <LocalComponent name="Currency">
-                                    <TypeSpecification>
-                                    <TypeDefinition>
-                                    <BusinessObjectType>String</BusinessObjectType>
-                                    </TypeDefinition>
-                                    </TypeSpecification>
-                                    <FormatSpecifications/>
+                                    <FormatSpecifications converterReference="Decimal"/>
                                     <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                                     </LocalComponent>
                                     </Child>
