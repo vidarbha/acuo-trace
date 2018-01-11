@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>19/06/2017 17:09:12</Timestamp>
-        <Checksum>e74de622</Checksum>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>11/01/2018 18:29:55</Timestamp>
+        <Checksum>a3d08250</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Clarus-In_ACUO-New" group="Map:CLARUS-IN_ACUO">
@@ -187,14 +187,65 @@
     <ActionStep>
         <RepeatAction repeatCounter="Counter1">
             <ActionStep>
-                <NewOutputRepetition>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[Name = 'messages']/JsonValue/Array/JsonValue[Counter1]/String"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Separator" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>\n</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="Messages[]"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Mapper>Split</Mapper>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <RepeatAction repeatCounter="Counter2">
                     <ActionStep>
                         <FunctionCall>
                             <Property name="Input" type="nodespec">
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="json/Object/member[Name = 'messages']/JsonValue/Array/JsonValue[Counter1]/String"/>
+                                    specType="TEMP_VAR" pathString="Messages[Counter2]"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Pattern" type="string">
+                                <Value>trade id (.*?)\:</Value>
+                            </Property>
+                            <Property name="SubMatch1" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1" pathString="ObjectId"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Mapper>Regex</Mapper>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Messages[Counter2]"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -210,9 +261,13 @@
                             <Copy></Copy>
                         </FunctionCall>
                     </ActionStep>
-                    <OutputScope specType="TO_DATA" contextName="Error"
-                        contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
-                </NewOutputRepetition>
+                    <ScopeB specType="TO_DATA" contextName="Error"
+                        contextPosnSpec="%" pathString="." outputPosnSpecifier="Out1"/>
+                    <RepeatLimit>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="Messages[#]"/>
+                    </RepeatLimit>
+                    <ScopeA specType="TEMP_VAR" pathString="Messages[]"/>
+                </RepeatAction>
             </ActionStep>
             <RepeatLimit>
                 <PathNodeSpec specType="TEMP_VAR" pathString="json/Object/member[Name = 'messages']/JsonValue/Array/JsonValue[#]"/>
@@ -233,6 +288,9 @@
         <Type>toolkit:JsonValue</Type>
     </TempVariable>
     <TempVariable name="Split" optional="true" repeating="true">
+        <Bot>String</Bot>
+    </TempVariable>
+    <TempVariable name="Messages" optional="true" repeating="true">
         <Bot>String</Bot>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
