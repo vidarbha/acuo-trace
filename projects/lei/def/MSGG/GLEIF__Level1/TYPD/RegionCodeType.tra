@@ -1,0 +1,36 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:01:52</Timestamp>
+        <Checksum>8ea4939c</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="RegionCodeType" group="GLEIF__Level1">
+    <Description>CountryCode
+ values consisting of 2 upper-case
+        Latin letters; some possible combinations may not be valid ISO 3166 entries.
+      </Description>
+    <TypeSpecification>
+        <NamedType type="xsd:string">
+            <SimpleTypeRestriction></SimpleTypeRestriction>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications>
+        <Property name="minLength" type="intFacet">
+            <Value>4</Value>
+        </Property>
+        <Property name="maxLength" type="intFacet">
+            <Value>6</Value>
+        </Property>
+        <Property name="pattern" type="patternFacet">
+            <Value>([A-Z]{2}-[A-Z0-9]{1,3})</Value>
+        </Property>
+    </FormatSpecifications>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

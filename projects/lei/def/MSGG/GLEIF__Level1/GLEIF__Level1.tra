@@ -1,0 +1,387 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:01:52</Timestamp>
+        <Checksum>cc943ce5</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinitionGroup name="GLEIF__Level1" namespacePrefix="lei" template="XML">
+    <Property name="TargetNamespace" type="string">
+        <Value>http://www.gleif.org/data/schema/leidata/2016</Value>
+    </Property>
+    <Property name="ElementFormDefault" type="option">
+        <Value>qualified</Value>
+    </Property>
+    <Property name="AttributeFormDefault" type="option">
+        <Value>unqualified</Value>
+    </Property>
+    <Description>LEI-CDF Version 2.1
+Introduction
+The official name of the legal entity as recorded in the business registry, or with the
+          fund manager for collective investment vehicles, or otherwise in the entity’s constituting
+          documents.
+Where applicable, the name of the business registry in which the entity was formed.
+The identifier of the entity in the business registry.
+The address of the headquarters of the legal entity or the address of the fund
+          manager.
+The address and the country of legal formation as represented in ISO 3166.
+The date of the first LEI assignment.
+The date of last update of the LEI set of information.
+The date of expiry, where applicable.
+The reason for expiry, if applicable.
+For entities with a date of expiry, where applicable, the LEI of the entity or entities
+          that acquired the expired entity.
+
+      
+The semantic content (definitions) of the ISO 17442 attributes.
+Some additional elements, such an indication of the status of the information, necessary
+          for effective use of the data.
+The form the information takes at any given LOU, such that it can be made to conform to
+          a common standard.
+
+      
+Audience for
+        this document
+All Local Operating Units (as well as candidate LOUs) of the GLEIS.
+All users or potential users of LEI data.
+All financial regulators who consume LEI data.
+
+      
+Status of this document
+Terminology and Typographical Conventions
+ALL CAPS type is used for the special terms enumerated above.
+Monospace type
+ is used to denote programming language, UML, and XML
+          identifiers, as well as for the text of XML documents.
+
+      
+Cardinalities
+The cardinality of each element (the number of times it MUST or MAY appear in an XML
+          data file conforming to this schema) is expressed as a number range in the format {minimum
+          occurrences, maximum occurrences} in the XML examples shown below the notes of its
+          containing element. This notation is equivalent to the following explanations in
+          words:
+{1,1}
+ - the element MUST appear, exactly once.
+{1,unbounded}
+ - the element MUST appear at least
+            once. It may be repeated any number of times.
+{0,1}
+ - the element NEED NOT appear; it MAY appear once
+            at most.
+{0,unbounded}
+ - the element NEED NOT appear. It MAY
+            be repeated any number of times.
+
+        
+
+      
+minOccurs
+maxOccurs
+ (maximum occurrences) value, or both. 
+given
+ the presence
+          of the container.
+XML cardinalities enforce a minimum data quality and standards conformance. Other
+          business rules (as explained below) and data quality checks applied by GLEIF may encourage
+          stricter cardinalities in live implementations.
+
+      
+Business Rules
+XML Syntax
+XML Design Rules
+The XSD schema conforms to W3C's XML Schema specification, version 1.0.
+The XML namespace is "http://www.gleif.org/data/schema/leidata/2016".
+All interior XML elements are namespace-qualified (element form = qualified).
+xml:lang
+.
+Element names are upper camel case.
+Attribute name are lower camel case.
+XSD type names are upper camel case.
+Enumeration code list values are all caps with underscores.
+Elements are used in preference to attributes except for language and type
+          qualifiers.
+For a data element specified as having unbounded cardinality, the XML includes a single
+          container element whose subelements are one or more instances of the data element whose
+          cardinality is unbounded. The name of the container element is formed as the plural of the
+          name of the contained elements.
+
+      
+XML Schema
+Release Notes
+Version 2.1
+Cardinality changes:
+OtherValidationAuthority
+{0,1}
+{1,1}
+.
+
+        
+
+      
+Corrections / Bug fixes:
+Extension
+LEIHeader
+.
+
+        
+New or changed elements:
+Extension
+LEIRecords
+.
+
+        
+
+      
+Documentation notes:
+Documentation notes:
+Replaced "RAL" by "RAL" in documentation.
+Replaced "Registration Authorities Code List" by "Registration Authorities List" in
+            documentation.
+
+        
+
+      
+Version 2.0
+Cardinality changes:
+LEIHeader
+{0,1}
+{1,1}
+.
+ContentDate
+{0,1}
+{1,1}
+.
+FileContent
+{0,1}
+{1,1}
+.
+RecordCount
+{0,1}
+{1,1}
+.
+
+        
+New or changed elements:
+OtherRegistrationAuthorityID
+ element to capture interim free-text
+            registration authority information in the process of transition to a RAL entry.
+OtherLegalForm
+ element to capture interim free-text legal form
+            information in the process of transition to an ELF standard code.
+TransliteratedOtherEntityNames
+TransliteratedOtherAddresses
+. These contain the name and address types
+            dealing with transliteration, and their character content is now validated by the XML
+            schema.
+EntityCategory
+.
+ValidationAuthority
+.
+OtherValidationAuthorities
+.
+BusinessRegisterEntityID
+RegistrationAuthority
+.
+Token500Type
+Tokenized500Type
+, has minimum
+            length of one character and may not contain any of: the carriage return (#xD), line feed
+            (#xA) nor tab (#x9) characters, shall not begin or end with a space (#x20) character, or
+            a sequence of two or more adjacent space characters.
+lei:
+xs:dateTime
+LEIDateTimeProfile
+ datatype. This enforces the restrictions specified in
+            the LEI-CDF V1.0 documentation.
+AddressNumber
+.
+AddressNumberWithinBuilding
+.
+MailRouting
+ address field; an optional free text address
+            line to hold content from other address lines containing explicit routing information
+            (presence indicates that this address is a routing / "care of" address).
+Line1
+FirstAddressLine
+Line2
+AdditionalAddressLine
+. The order of the content of these elements
+            follows the order specified by the XML representation.
+RecordCount
+ can now only be equal to or greater than
+            zero.
+
+        
+New or changed attributes:
+xml:lang
+ to specify use of the latest RFC from IETF BCP 47
+            (previously RFC 4646; now RFC 5646 at last schema update).
+
+        
+New or changed enumerated values:
+Following enumerations now validate strongly (only the specified values are allowed at
+            a schema validation level; one element with a non-standard value cause the whole LEI
+            data to fail validation):
+FileContentEnum
+.
+EntityStatusEnum
+.
+EntityExpirationReasonEnum
+.
+RegistrationStatusEnum
+.
+EntityNameTypeEnum
+.
+AddressTypeEnum
+.
+AssociatedEntityTypeEnum
+.
+ValidationSourcesEnum
+.
+
+          
+Following enumeration elements now validate by format (only values with the correct
+            pattern of characters are accepted; conversely, however, some schema-valid character
+            combinations may not be registered allowed values):
+RegistrationAuthority
+.
+LegalForm
+.
+
+          
+BusinessRegisterEnum
+RegistrationAuthorityEnum
+.
+COU_DELTA_PUBLISHED
+GLEIF_DELTA_PUBLISHED
+.
+COU_FULL_PUBLISHED
+GLEIF_FULL_PUBLISHED
+.
+OTHER_LEGAL
+ALTERNATIVE_LANGUAGE_LEGAL_NAME
+.
+PREVIOUS_LEGAL_NAME
+OtherEntityName
+ type.
+TRADING_OR_OPERATING_NAME
+OtherEntityName
+ type.
+TransliteratedOtherEntityNames
+PREFERRED_ASCII_TRANSLITERATED_LEGAL_NAME
+AUTO_ASCII_TRANSLITERATED_LEGAL_NAME
+.
+TransliteratedOtherAddress
+AUTO_ASCII_TRANSLITERATED_LEGAL_ADDRESS
+AUTO_ASCII_TRANSLITERATED_HEADQUARTERS_ADDRESS
+PREFERRED_ASCII_TRANSLITERATED_LEGAL_ADDRESS
+PREFERRED_ASCII_TRANSLITERATED_HEADQUARTERS_ADDRESS
+.
+
+        
+Documentation notes:
+Replaced "pre-LOU" by "LOU" in documentation.
+Renamed all enumeration elements, updating suffix "Enum1.0" to "Enum", indicating that
+            these are the definitive enumerated values.
+
+        
+
+      
+Version 1.0
+Change Management
+Errata Version
+Minor Version
+Major Version
+Minor Version Changes to the XML Schema
+NextVersion
+NextVersion
+NextVersion
+NextVersion
+ element SHALL use the element
+          name "NextVersion", XML data type "lei:NextVersion1Type" and cardinality optional, unique
+          {0,1}. The XML data type allows a sequence of any elements, each of cardinality optional,
+          repeatable (unbounded) and with lax content processing, but in the target namespace.
+NextVersion
+ element allows it to be
+          omitted in files conforming to the first minor version. The schema wildcard xsd:any allows
+          for forward compatibility: a file conforming to a new minor version still validates in the
+          old version because the wildcard matches any new elements introduced in the new minor
+          version.
+A sequence of the new elements introduced in the previous version.
+NextVersionN
+N
+ is an index
+              number starting at 1 and incremented by 1 with each minor version.
+
+          
+Each new element SHALL be declared minOccurs=”0”, to ensure backward compatibility: a
+            file conforming to the old version still validates in the new version because the new
+            schema does not require the presence of elements not defined in the old version. If a
+            new element is mandatory for conformance to the new version, this MUST be enforced
+            outside schema validation.
+NextVersion
+NextVersion
+NextVersion
+ elements is required to satisfy the “unique particle
+            attribution” constraint of XSD 1.0.
+Each code list (Enum types) is implemented in the XML schema simply as the XSD string
+            data type. This provides for forward compatibility because the schema for an older minor
+            version will validate any string, including codes defined in newer minor versions. The
+            schema for each minor version includes the list of valid codes for that minor version as
+            a documentation annotation to the type declaration for each Enum type.
+
+        
+
+      
+Major Version Changes to the XML Schema
+Abstract Data Content
+An LEIHeader.
+Zero or more LEI Data Records.
+
+      
+LEI File Header
+LEI Data Record
+LEI
+LEIType
+Entity
+Entity
+Registration
+Registration
+Extension
+Extension
+Extension
+Extension element
+ SHALL be
+          in an XML namespace that is not null and not equal to the XML namespace of the LEI Data
+          File as specified in this standard.
+Extension
+ element SHALL be a namespace which the
+          creator of the extension element exclusively or jointly controls, or from which the
+          creator re-uses existing elements and their definitions, e.g. a namespace derived from the
+          Internet Domain Name of the creator, a namespace agreed upon by a group of trading
+          partners, etc.
+Extension
+Extension
+Extension
+ elements and still interpret the standard
+          content correctly.
+A recipient of a data file conforming to this standard SHALL NOT reject a file solely
+          because it contains extensions not understood by the recipient. A recipient MUST be
+          prepared to accept a file containing extensions and ignore any it does not understand,
+          provided that the file complies to this standard.
+
+      
+
+    </Description>
+    <NamespaceReference namespacePrefix="xml" group="InbuiltXml"/>
+    <DefaultConverter botReference="Code" converterReference="DescribedCodeConverter"/>
+    <DefaultParser/>
+    <MessageTypeIdentification/>
+</MessageDefinitionGroup>

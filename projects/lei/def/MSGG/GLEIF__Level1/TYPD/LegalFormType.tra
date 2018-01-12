@@ -1,0 +1,46 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:01:52</Timestamp>
+        <Checksum>405af4be</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="LegalFormType" group="GLEIF__Level1">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="EntityLegalFormCode">
+                        <Description>A current code from the GLEIF-maintained list MUST be used. Values of
+            the LegalFormEnum code list are maintained by ISO / GLEIF through the Entity Legal Form
+            (ELF), available from http://www.gleif.org.</Description>
+                        <TypeSpecification>
+                            <NamedType type="LegalFormEnum"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="OtherLegalForm">
+                        <Description>A legacy code or textual description for the legal entity's legal form,
+            used until a current code from the GLEIF-maintained list can be used.</Description>
+                        <TypeSpecification>
+                            <NamedType type="Tokenized500Type"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

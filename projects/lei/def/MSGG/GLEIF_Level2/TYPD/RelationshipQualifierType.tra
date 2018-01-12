@@ -1,0 +1,45 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:02:02</Timestamp>
+        <Checksum>905b0c90</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="RelationshipQualifierType" group="GLEIF_Level2">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="QualifierDimension">
+                        <Description>Designates the optional list of additional qualitative
+                        attributes that help to categorize the relationship. </Description>
+                        <TypeSpecification>
+                            <NamedType type="QualifierDimensionEnum"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="QualifierCategory">
+                        <Description>Specifies the additional qualitative attributes that help to
+                        categorize the relationship. </Description>
+                        <TypeSpecification>
+                            <NamedType type="QualifierCategoryTypeEnum"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

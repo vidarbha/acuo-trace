@@ -1,0 +1,46 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:02:02</Timestamp>
+        <Checksum>f1f48cc0</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="RelationshipDataType" group="GLEIF_Level2">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="Header">
+                        <Description>Contains the file upload information for this RelationshipData
+                        file. </Description>
+                        <TypeSpecification>
+                            <NamedType type="RRHeaderType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="RelationshipRecords">
+                        <Description>RelationshipRecord
+
+                        container elements submitted with this file.</Description>
+                        <TypeSpecification>
+                            <NamedType type="RelationshipRecordsType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

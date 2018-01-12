@@ -1,0 +1,32 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:01:52</Timestamp>
+        <Checksum>43dc6b05</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="LEIType" group="GLEIF__Level1">
+    <TypeSpecification>
+        <NamedType type="xsd:string">
+            <SimpleTypeRestriction></SimpleTypeRestriction>
+        </NamedType>
+    </TypeSpecification>
+    <FormatSpecifications>
+        <Property name="minLength" type="intFacet">
+            <Value>20</Value>
+        </Property>
+        <Property name="maxLength" type="intFacet">
+            <Value>20</Value>
+        </Property>
+        <Property name="pattern" type="patternFacet">
+            <Value>([0-9A-Z]{18}[0-9]{2})</Value>
+        </Property>
+    </FormatSpecifications>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>
