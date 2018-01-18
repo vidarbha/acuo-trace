@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>acer</User>
         <Host>acer-pc</Host>
-        <Timestamp>29/08/2017 10:29:00</Timestamp>
-        <Checksum>5cbc20e0</Checksum>
+        <Timestamp>17/01/2018 13:30:17</Timestamp>
+        <Checksum>bc0368d4</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="SubstitutionReceive" group="Map:MS_ACUOSubstitution">
@@ -140,6 +140,28 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="SecurityIdType"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
+            <ActionStep>
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/currency"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="Currency"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -490,7 +512,7 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="SubstitutionItem[Out2]/FxCurrency"/>
+                                    contextName="Output" pathString="SubstitutionItem[Out2]/Currency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -610,6 +632,49 @@
                                 </Value>
                             </Property>
                             <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="day" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/substitutionItems/substitutionItem[Counter3]/expectedSettlementDate/day"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="month" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/substitutionItems/substitutionItem[Counter3]/expectedSettlementDate/month"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="year" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/substitutionItems/substitutionItem[Counter3]/expectedSettlementDate/year"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="date" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="SubstitutionItem[Out2]/SettlementDate"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
                         </FunctionCall>
                     </ActionStep>
                     <ScopeB specType="TO_DATA" contextName="Output"
