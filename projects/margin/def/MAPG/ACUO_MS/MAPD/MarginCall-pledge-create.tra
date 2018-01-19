@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
         </Transformer>
         <User>acer</User>
         <Host>acer-pc</Host>
-        <Timestamp>28/08/2017 10:50:16</Timestamp>
-        <Checksum>1cedb19e</Checksum>
+        <Timestamp>19/01/2018 15:28:18</Timestamp>
+        <Checksum>94e9a7dd</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-pledge-create" group="Map:ACUO_MS">
@@ -212,7 +212,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/FXCurrency"/>
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/Currency"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -238,7 +238,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/FXRate"/>
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/FxRate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -256,19 +256,35 @@
                                     </FunctionCall>
                                     </ActionStep>
                                     <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
 
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/SecurityId"/>
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/AssetIdType"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>CASH</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>CASH</Literal>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="Output" type="nodespec">
+                                    <Property
+                                    name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
 
@@ -281,6 +297,39 @@
                                     <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
+                                    </ThenAction>
+                                    <ElseAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/pledges/pledge[Out3]/securityId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    </ElseAction>
+                                    </IfAction>
+                                    </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
                                     <Property name="Input" type="nodespec">
@@ -290,7 +339,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/SecurityIdType"/>
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/AssetIdType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -577,7 +626,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/FXCurrency"/>
+                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/Currency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -600,7 +649,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/FXRate"/>
+                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/FxRate"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -685,27 +734,71 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
+                        <IfAction>
+                            <Condition>
+                                <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/AssetIdType"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>CASH</Literal>
+                                    </SecondTerm>
+                                </Comparison>
+                            </Condition>
+                            <ThenAction>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>CASH</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/pledges/pledge[Out2]/securityId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                            </ThenAction>
+                            <ElseAction>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/SecurityId"/>
+                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/AssetId"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output" pathString="marginCall[Out1]/pledges/pledge[Out2]/securityId"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                            </ElseAction>
+                        </IfAction>
                     </ActionStep>
                     <ActionStep>
                         <FunctionCall>
@@ -715,7 +808,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/SecurityIdType"/>
+                                    contextPosnSpec="Counter1" pathString="Pledge[Counter2]/AssetIdType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
