@@ -7,8 +7,8 @@
         </Transformer>
         <User>acer</User>
         <Host>acer-pc</Host>
-        <Timestamp>10/10/2017 16:05:54</Timestamp>
-        <Checksum>f1286141</Checksum>
+        <Timestamp>24/01/2018 12:47:51</Timestamp>
+        <Checksum>a871a100</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Agreement-ClientDetail-Reponse" group="Map:MS_ACUOAgreement">
@@ -4233,7 +4233,7 @@
                                     <NodeSpec>
 
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceMultipleCallsPerDayCheck"/>
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/ampId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4246,94 +4246,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceMultipleCallsPerDayCheck"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceNoMaterialChangeCheck"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceNoMaterialChangeCheck"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceManual"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceManual"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceSchedule"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceSchedule"/>
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/AmpId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4378,7 +4291,7 @@
                                     <NodeSpec>
 
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuancePrimaryToValidatorTolerance"/>
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/marginTermPrimary"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4391,7 +4304,36 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuancePrimaryToValidatorTolerance"/>
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/MarginTermPrimary"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/marginTermCalculationType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/MarginTermCalculationType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
