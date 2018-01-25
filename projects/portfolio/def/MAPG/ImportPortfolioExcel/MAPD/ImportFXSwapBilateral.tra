@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>08/11/2017 13:36:24</Timestamp>
-        <Checksum>e9189327</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>23/01/2018 11:46:23</Timestamp>
+        <Checksum>2a9f6d1b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportFXSwapBilateral"
@@ -649,6 +649,29 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out2" pathString="Info/TradeDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out2" pathString="Info/EffectiveDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[1]/EffectiveDate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>

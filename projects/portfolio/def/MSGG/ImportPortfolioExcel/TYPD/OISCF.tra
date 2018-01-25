@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>08/11/2017 12:16:53</Timestamp>
-        <Checksum>4962115c</Checksum>
+        <Timestamp>23/01/2018 14:58:59</Timestamp>
+        <Checksum>2cdd38ec</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="OISCF" group="ImportPortfolioExcel">
@@ -291,7 +291,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="TradeDate">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -316,6 +316,63 @@
                         <FormatSpecifications>
                             <Property name="Format" type="string">
                                 <Value>HH:mm:ss.SSS</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="EffectiveDate" nillable="true">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Date</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="HeaderValue" type="string">
+                                <Value>Maturity Date</Value>
+                            </Property>
+                            <Property name="HorizontalAlignment" type="enum">
+                                <Value>GENERAL</Value>
+                            </Property>
+                            <Property name="VerticalAlignment" type="enum">
+                                <Value>BOTTOM</Value>
+                            </Property>
+                            <Property name="FontColor" type="enum">
+                                <Value>BLACK</Value>
+                            </Property>
+                            <Property name="FontSize" type="integer">
+                                <Value>10</Value>
+                            </Property>
+                            <Property name="FontName" type="string">
+                                <Value>Arial</Value>
+                            </Property>
+                            <Property name="TopBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="LeftBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="BottomBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="RightBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="BorderColor" type="enum">
+                                <Value>BLACK</Value>
+                            </Property>
+                            <Property name="Rotation" type="integer">
+                                <Value>0</Value>
+                            </Property>
+                            <Property name="Indentation" type="integer">
+                                <Value>0</Value>
+                            </Property>
+                            <Property name="Format" type="string">
+                                <Value>yyyy/mm/dd</Value>
+                            </Property>
+                            <Property name="CellWidth" type="decimal">
+                                <Value>11.86</Value>
                             </Property>
                         </FormatSpecifications>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
