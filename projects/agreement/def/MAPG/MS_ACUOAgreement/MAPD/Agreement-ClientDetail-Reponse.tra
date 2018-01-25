@@ -7,8 +7,8 @@
         </Transformer>
         <User>acer</User>
         <Host>acer-pc</Host>
-        <Timestamp>10/10/2017 16:05:54</Timestamp>
-        <Checksum>f1286141</Checksum>
+        <Timestamp>25/01/2018 18:00:25</Timestamp>
+        <Checksum>3a180886</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Agreement-ClientDetail-Reponse" group="Map:MS_ACUOAgreement">
@@ -1913,7 +1913,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/CallType[1]"/>
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/CallType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -3456,6 +3456,373 @@
                                     <FunctionCall>
 
                                     <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/ampId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/agreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal> </Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="With" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>_</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AgreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Replace</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/callType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/CallType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/Role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermStartDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermEndDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingStartDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingStartDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingStartDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MessagingStartDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingEndDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingEndDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingEndDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MessagingEndDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/exposureTreatment"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/ExposureTreatment"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
                                     name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
@@ -4233,7 +4600,7 @@
                                     <NodeSpec>
 
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceMultipleCallsPerDayCheck"/>
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/ampId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4246,7 +4613,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceMultipleCallsPerDayCheck"/>
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/AmpId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4262,7 +4629,25 @@
                                     <NodeSpec>
 
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceNoMaterialChangeCheck"/>
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/agreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal> </Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="With" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>_</Literal>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4275,7 +4660,36 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceNoMaterialChangeCheck"/>
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/AgreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Replace</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/callType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4291,7 +4705,7 @@
                                     <NodeSpec>
 
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceManual"/>
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/role"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4304,7 +4718,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceManual"/>
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/Role"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4320,7 +4734,7 @@
                                     <NodeSpec>
 
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceSchedule"/>
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/ampId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4333,7 +4747,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceSchedule"/>
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/AmpId"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4378,7 +4792,7 @@
                                     <NodeSpec>
 
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuancePrimaryToValidatorTolerance"/>
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/marginTermPrimary"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4391,7 +4805,36 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuancePrimaryToValidatorTolerance"/>
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/MarginTermPrimary"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/marginTermCalculationType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/MarginTermCalculationType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -4410,6 +4853,576 @@
                                     </RepeatLimit>
                                     <ScopeA
                                     specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[]"/>
+                                    </RepeatAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/agreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/AgreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal> </Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="With" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>_</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Replace</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/Role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpAction"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Pledge</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpAction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpAction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Call Type</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionCallType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+
+                                    <CompoundCondition operator="OR">
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Pledge Currency</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    </CompoundCondition>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Tri-Party</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <RepeatLimit>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[#]"/>
+                                    </RepeatLimit>
+
+                                    <ScopeA
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[]"/>
+                                    </RepeatAction>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpAction"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Pledge Accept</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpAction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpAction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+
+                                    <RepeatAction repeatCounter="Counter3">
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Call Type</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionCallType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+
+                                    <CompoundCondition operator="OR">
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Pledge Currency</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    </CompoundCondition>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionValue"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Tri-Party</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[Counter3]/stpOptionName"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/StpOptionType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <RepeatLimit>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[#]"/>
+                                    </RepeatLimit>
+
+                                    <ScopeA
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/stpOptions/stpOption[]"/>
+                                    </RepeatAction>
+                                    </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                    <ScopeB
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1"
+                                    pathString="StpConfiguration[]" outputPosnSpecifier="Out2"/>
+                                    <RepeatLimit>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[]"/>
                                     </RepeatAction>
                                     </ActionStep>
                                     <ActionStep>
@@ -5418,8 +6431,1525 @@
                                     specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/nettingCallTypes/nettingCallType[]"/>
                                     </RepeatAction>
                                     </ActionStep>
+                                    </ThenAction>
+                                    </IfAction>
+                                    </ActionStep>
+                                </ThenAction>
+                            </IfAction>
+                        </ActionStep>
+                        <ActionStep>
+                            <IfAction>
+                                <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/agreementType"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Group</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                </Condition>
+                                <ThenAction>
+                                    <ActionStep>
+                                    <IfAction>
+                                    <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/businessState"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>Active</Literal>
+                                    </SecondTerm>
+                                    </Comparison>
+                                    </Condition>
+                                    <ThenAction>
                                     <ActionStep>
                                     <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/ampId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/agreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal> </Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="With" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>_</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AgreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Replace</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/callType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/CallType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/Role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermStartDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermEndDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingStartDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingStartDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingStartDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MessagingStartDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingEndDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingEndDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/messagingEndDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MessagingEndDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/exposureTreatment"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/ExposureTreatment"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AccountBaseCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/accountBaseCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermReturnMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermReturnMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermDeliverMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermDeliverMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermReturnRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermReturnRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermDeliverRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermDeliverRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermDeliverRoundingMethod"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermDeliverRoundingMethod"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermReturnRoundingMethod"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermReturnRoundingMethod"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermNotificationTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermNotificationTime"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermNotificationTimezone"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermNotificationTimeZone"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermThresholdAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermThresholdAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermThresholdTreatment"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermThresholdTreatment"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermStartDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermStartDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Day" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermEndDate/day"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Month" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermEndDate/month"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Year" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermEndDate/year"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Datetime" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermEndDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ScopeB
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1"
+                                    pathString="BilateralDetail[]" outputPosnSpecifier="Out2"/>
+                                    <RepeatLimit>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[]"/>
+                                    </RepeatAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/ampId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/agreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal> </Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="With" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>_</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/AgreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Replace</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/callType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/Role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/ampId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/AmpId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[1]/callIssuanceOwnVsCptyTolerance"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/CallIssuanceOwnVsCptyTolerance"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/marginTermPrimary"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/MarginTermPrimary"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[Counter2]/marginTermCalculationType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="LocalDetail[Out2]/MarginTermCalculationType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ScopeB
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1"
+                                    pathString="LocalDetail[]" outputPosnSpecifier="Out2"/>
+                                    <RepeatLimit>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/localDetails/localDetail[]"/>
+                                    </RepeatAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/callType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/CallType[1]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoAgreeLowerTotalCallAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoAgreeLowerTotalCallAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoAgreeWithinTolerance"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoAgreeWithinTolerance"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoFullDisputeForNoAction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoFullDisputeForNoAction"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/currency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/Currency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/deliverMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/DeliverMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/deliverRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/DeliverRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/returnMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/ReturnMinimumTransferAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/returnRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/ReturnRoundingAmount"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoPartialDisputeMismatched"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoPartialDisputeMismatched"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoPledgeTolerancePercentage"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoPledgeTolerancePercentage"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ScopeB
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1"
+                                    pathString="DefaultValue[]" outputPosnSpecifier="Out2"/>
+                                    <RepeatLimit>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues[#]"/>
+                                    </RepeatLimit>
+                                    <ScopeA
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues[]"/>
+                                    </RepeatAction>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/agreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/AgreementType"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal> </Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="With" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>_</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Mapper>Replace</Mapper>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[Counter2]/role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="StpConfiguration[Out2]/Role"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
                                     <ActionStep>
                                     <IfAction>
                                     <Condition>
@@ -5912,681 +8442,6 @@
                                     specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/stpConfigurations/stpConfiguration[]"/>
                                     </RepeatAction>
                                     </ActionStep>
-                                    </ThenAction>
-                                    </IfAction>
-                                    </ActionStep>
-                                </ThenAction>
-                            </IfAction>
-                        </ActionStep>
-                        <ActionStep>
-                            <IfAction>
-                                <Condition>
-                                    <Comparison>
-                                    <FirstTerm>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/agreementType"/>
-                                    </FirstTerm>
-                                    <Operator>EQ</Operator>
-                                    <SecondTerm>
-                                    <Literal>Group</Literal>
-                                    </SecondTerm>
-                                    </Comparison>
-                                </Condition>
-                                <ThenAction>
-                                    <ActionStep>
-                                    <IfAction>
-                                    <Condition>
-                                    <Comparison>
-                                    <FirstTerm>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/businessState"/>
-                                    </FirstTerm>
-                                    <Operator>EQ</Operator>
-                                    <SecondTerm>
-                                    <Literal>Active</Literal>
-                                    </SecondTerm>
-                                    </Comparison>
-                                    </Condition>
-                                    <ThenAction>
-                                    <ActionStep>
-                                    <FunctionCall>
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/accountBaseCurrency"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="AccountBaseCurrency"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <RepeatAction repeatCounter="Counter2">
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/ampId"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AmpId"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/agreementType"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AgreementType"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/role"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/Role"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/AccountBaseCurrency"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/accountBaseCurrency"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/CallType[1]"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/callType"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermReturnMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermReturnMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermDeliverMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermDeliverMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermReturnRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermReturnRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[Counter2]/marginTermDeliverRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="BilateralDetail[Out2]/MarginTermDeliverRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ScopeB
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1"
-                                    pathString="BilateralDetail[]" outputPosnSpecifier="Out2"/>
-                                    <RepeatLimit>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[#]"/>
-                                    </RepeatLimit>
-                                    <ScopeA
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/bilateralDetails/bilateralDetail[]"/>
-                                    </RepeatAction>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <RepeatAction repeatCounter="Counter2">
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/callType"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/CallType[1]"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoAgreeLowerTotalCallAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoAgreeLowerTotalCallAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoAgreeWithinTolerance"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoAgreeWithinTolerance"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoFullDisputeForNoAction"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoFullDisputeForNoAction"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/currency"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/Currency"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/deliverMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/DeliverMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/deliverRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/DeliverRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/returnMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/ReturnMinimumTransferAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/returnRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/ReturnRoundingAmount"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoPartialDisputeMismatched"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoPartialDisputeMismatched"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ActionStep>
-                                    <FunctionCall>
-
-                                    <Property
-                                    name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues/defaultValue[1]/autoPledgeTolerancePercentage"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-
-                                    <Property
-                                    name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-
-                                    <PathNodeSpec
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1" pathString="DefaultValue[Out2]/AutoPledgeTolerancePercentage"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                    </ActionStep>
-                                    <ScopeB
-                                    specType="TO_DATA"
-                                    contextName="Output"
-                                    contextPosnSpec="Out1"
-                                    pathString="DefaultValue[]" outputPosnSpecifier="Out2"/>
-                                    <RepeatLimit>
-
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues[#]"/>
-                                    </RepeatLimit>
-                                    <ScopeA
-                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/defaultValues[]"/>
-                                    </RepeatAction>
-                                    </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
                                     <Property
@@ -6632,6 +8487,33 @@
                                     </Value>
                                     </Property>
                                     <MappingDefinitionInvocation>IntegerToDate</MappingDefinitionInvocation>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Agreement/marginAgreement[Counter1]/accountBaseCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AccountBaseCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
                                     </FunctionCall>
                                     </ActionStep>
                                     <ActionStep>
