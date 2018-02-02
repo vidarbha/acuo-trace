@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>04/01/2018 17:42:05</Timestamp>
-        <Checksum>3828c6fc</Checksum>
+        <Timestamp>26/01/2018 12:14:17</Timestamp>
+        <Checksum>d61b54d8</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_to_ReutersTradeUpdated" group="Map:Reuters_OUT">
@@ -49,7 +49,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="Reuters:ReportCurrency"/>
+                            contextName="Output" pathString="ReportCurrency"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -299,7 +299,7 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep>
-                        <Description>leg.currency is mandatory but not leg.notional.currency. both fields should only differ when settlement and notional ccy are different. need to account for settlement ccy in internal model.</Description>
+                        <Description>leg.currency is mandatory but not leg.notional.currency. If settlement ccy is different, reflected in settlement field</Description>
                         <ActionComment/>
                     </ActionStep>
                     <ActionStep>
@@ -1007,7 +1007,7 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
         <Type>transform:TransformerContext</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
-        <Message>ReutersTrade:Reuters_UpdatedTradeInput</Message>
+        <Message>ReutersTrade:ReutersUpdatedTradeInput</Message>
     </OutputDefinition>
     <CalledAsSubmappingActionExceptionRules>
         <ActionExceptionRule>

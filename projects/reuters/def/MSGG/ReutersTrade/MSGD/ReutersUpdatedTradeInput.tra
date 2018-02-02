@@ -1,17 +1,17 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Component Form</Program>
+            <Program>Rename File Action</Program>
             <VersionNumber>3.7.1</VersionNumber>
             <BuildNumber>3.7.1-SNAPSHOT.16978</BuildNumber>
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>19/12/2017 16:26:56</Timestamp>
-        <Checksum>d3eb9184</Checksum>
+        <Timestamp>25/01/2018 17:45:50</Timestamp>
+        <Checksum>ea68a89d</Checksum>
     </LastModification>
 </Prolog>
-<MessageDefinition name="Reuters_UpdatedTradeInput" group="ReutersTrade">
+<MessageDefinition name="ReutersUpdatedTradeInput" group="ReutersTrade">
     <MessageContent>
         <LocalComponent name="Body">
             <TypeSpecification>
@@ -28,8 +28,20 @@
                                 <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                             </LocalComponent>
                         </Child>
-                        <Child minOccurs="1" maxOccurs="1">
-                            <NamedComponent>Reuters:ReportCurrency</NamedComponent>
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="ReportCurrency">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications parserReference="ConfigurablePropertyOrValue">
+                                    <Property name="JsonName" type="string">
+                                    <Value>ReportCurrency</Value>
+                                    </Property>
+                                </FormatSpecifications>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
                         </Child>
                         <Child minOccurs="0" maxOccurs="1">
                             <LocalComponent name="Sections" nillable="true">
@@ -232,6 +244,21 @@
                                     <TypeSpecification>
                                     <TypeDefinition>
                                     <BusinessObjectType>Boolean</BusinessObjectType>
+                                    </TypeDefinition>
+                                    </TypeSpecification>
+                                    <FormatSpecifications/>
+                                    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                                    </LocalComponent>
+                                    </Child>
+
+                                    <Child
+                                    minOccurs="0" maxOccurs="1">
+
+                                    <LocalComponent
+                                    name="SettlementCurrency" nillable="true">
+                                    <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
                                     </TypeDefinition>
                                     </TypeSpecification>
                                     <FormatSpecifications/>
