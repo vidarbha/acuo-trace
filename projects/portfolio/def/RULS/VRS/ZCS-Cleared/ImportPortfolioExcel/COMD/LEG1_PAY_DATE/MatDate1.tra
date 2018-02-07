@@ -1,0 +1,40 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>07/02/2018 07:05:38</Timestamp>
+        <Checksum>b26a33d9</Checksum>
+    </LastModification>
+</Prolog>
+<ValidationRule name="MatDate1" group="Msg:ImportPortfolioExcel"
+    ruleSet="ZCS-Cleared" disable="false">
+    <ActionStep>
+        <ConditionalValidationAction mustBeTrue="true">
+            <Condition>
+                <DeciderCall>
+                    <Property name="Element" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="FROM_DATA"
+                                    contextName="Input" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Format" type="string">
+                        <Value>yyyy/MM/dd</Value>
+                    </Property>
+                    <Decider>IsDate</Decider>
+                </DeciderCall>
+            </Condition>
+        </ConditionalValidationAction>
+    </ActionStep>
+    <InputDefinition name="Input" optional="false" repeating="false">
+        <Component>LEG1_PAY_DATE</Component>
+    </InputDefinition>
+    <ExceptionMessage>LEG1_MAT_DATE</ExceptionMessage>
+</ValidationRule>
