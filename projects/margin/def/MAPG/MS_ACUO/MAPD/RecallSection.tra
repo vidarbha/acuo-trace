@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Copy File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>01/11/2017 09:06:48</Timestamp>
-        <Checksum>8e0823f4</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>19/01/2018 15:24:30</Timestamp>
+        <Checksum>1ff69d8</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="RecallSection" group="Map:MS_ACUO" category="Acuo">
@@ -122,7 +122,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="FXCurrency"/>
+                                    contextPosnSpec="Out1" pathString="Currency"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -130,27 +130,75 @@
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
+                <IfAction>
+                    <Condition>
+                        <Comparison>
+                            <FirstTerm>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="securityId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
+                                    contextPosnSpec="Counter1" pathString="securityIdType"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>CASH</Literal>
+                            </SecondTerm>
+                        </Comparison>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="fxCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="SecurityId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
+                                    contextPosnSpec="Out1" pathString="AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ThenAction>
+                    <ElseAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="securityId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ElseAction>
+                </IfAction>
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
@@ -168,7 +216,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="SecurityIdType"/>
+                                    contextPosnSpec="Out1" pathString="AssetIdType"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -306,7 +354,7 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="FXRate"/>
+                                    contextPosnSpec="Out1" pathString="FxRate"/>
                             </NodeSpec>
                         </Value>
                     </Property>

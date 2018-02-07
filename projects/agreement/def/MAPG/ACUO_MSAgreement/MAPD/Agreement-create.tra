@@ -1,14 +1,14 @@
 <Prolog>
     <LastModification>
         <Transformer>
-            <Program>Rename File Action</Program>
+            <Program>Mapping Form</Program>
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>staf</User>
-        <Host>S</Host>
-        <Timestamp>27/10/2017 12:04:24</Timestamp>
-        <Checksum>16ff6819</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>25/01/2018 18:01:49</Timestamp>
+        <Checksum>fd203ebb</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Agreement-create" group="Map:ACUO_MSAgreement">
@@ -72,7 +72,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/AccountBaseCurrency"/>
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/AgreementType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -80,7 +80,44 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/accountBaseCurrency"/>
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/agreementType"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="What" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <Literal>_</Literal>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="With" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <Literal> </Literal>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Mapper>Replace</Mapper>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/CallType"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/callType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -95,7 +132,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/CallType[1]"/>
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/Role"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -103,7 +140,30 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/callType"/>
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/role"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/AccountBaseCurrency"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/accountBaseCurrency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -187,6 +247,153 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermNotificationTimeZone"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermNotificationTimezone"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermDeliverRoundingMethod"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermDeliverRoundingMethod"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermReturnRoundingMethod"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermReturnRoundingMethod"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MessagingStartDate"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Year" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/messagingStartDate/year"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Month" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/messagingStartDate/month"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Day" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/messagingStartDate/day"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <MappingDefinitionInvocation>DateToInteger</MappingDefinitionInvocation>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MessagingEndDate"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Year" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/messagingEndDate/year"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Month" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/messagingEndDate/month"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Day" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/messagingEndDate/day"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <MappingDefinitionInvocation>DateToInteger</MappingDefinitionInvocation>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
                                     contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermDeliverRoundingAmount"/>
                                     </NodeSpec>
                                 </Value>
@@ -196,6 +403,174 @@
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermDeliverRoundingAmount"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/ExposureTreatment"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/exposureTreatment"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermNotificationTime"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermNotificationTime"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermEndDate"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Year" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermEndDate/year"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Month" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermEndDate/month"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Day" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermEndDate/day"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <MappingDefinitionInvocation>DateToInteger</MappingDefinitionInvocation>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermStartDate"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Year" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermStartDate/year"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Month" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermStartDate/month"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Day" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermStartDate/day"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <MappingDefinitionInvocation>DateToInteger</MappingDefinitionInvocation>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermStartDate"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermStartDate"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="BilateralDetail[Counter2]/MarginTermThresholdTreatment"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec specType="TO_DATA"
+                                    contextName="Output" pathString="marginAgreement[Out1]/bilateralDetails/bilateralDetail[Out2]/marginTermThresholdTreatment"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
