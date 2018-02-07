@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.5</VersionNumber>
-            <BuildNumber>98</BuildNumber>
+            <VersionNumber>3.7.1</VersionNumber>
+            <BuildNumber>3.7.1-SNAPSHOT.16978</BuildNumber>
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>23/11/2017 17:05:00</Timestamp>
-        <Checksum>8995f271</Checksum>
+        <Timestamp>12/12/2017 13:02:33</Timestamp>
+        <Checksum>db15e56b</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ACUO_to_ReutersTrade" group="Map:Reuters_OUT">
@@ -33,6 +33,25 @@
                 <Value>yyyy-MM-dd</Value>
             </Property>
             <Mapper>DateToText</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[1]/SwapDefinition/Legs[1]/InterestRate[1]/CouponType"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[1]/SwapDefinition/Legs[1]/InterestRate[1]/CouponType"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <ActionStep>
@@ -195,6 +214,25 @@
                     <Copy></Copy>
                 </FunctionCall>
             </ActionStep>
+            <ActionStep disabled="true">
+                <FunctionCall>
+                    <Property name="Input" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <Literal>false</Literal>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Output" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/IsNonDeliverable"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Copy></Copy>
+                </FunctionCall>
+            </ActionStep>
             <ActionStep>
                 <RepeatAction repeatCounter="Counter2">
                     <ActionStep>
@@ -236,12 +274,16 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Notional[1]/Currency"/>
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/Currency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
                             <Copy></Copy>
                         </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <Description>leg.currency is mandatory but not leg.notional.currency. both fields should only differ when settlement and notional ccy are different. need to account for settlement ccy in internal model.</Description>
+                        <ActionComment/>
                     </ActionStep>
                     <ActionStep>
                         <FunctionCall>
@@ -268,6 +310,30 @@
                             </Property>
                             <Mapper>NamedTableLookup</Mapper>
                         </FunctionCall>
+                    </ActionStep>
+                    <ActionStep>
+                        <FunctionCall>
+                            <Property name="Input" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <Literal>null</Literal>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Property name="Output" type="nodespec">
+                                <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/UpfrontPayment"/>
+                                    </NodeSpec>
+                                </Value>
+                            </Property>
+                            <Copy></Copy>
+                        </FunctionCall>
+                    </ActionStep>
+                    <ActionStep disabled="true">
+                        <Description>Upfront payment is not defined in portfolio, but is mandatory to send to reuters. Temporary hardcoding as 'Null', '0' is also acceptable value</Description>
+                        <ActionComment/>
                     </ActionStep>
                     <ActionStep>
                         <FunctionCall>
@@ -457,7 +523,7 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep disabled="true">
-                        <Description>data currently available in portfolio but not persisted in database, temporarily hardcoding "NONE"
+                        <Description>default value: NONE
 to change localtablelookup to NamedTableLookup when database convention has been determined. currently assuming data will be persisted as per portfolio (which is following markit conventions)</Description>
                         <ActionComment/>
                     </ActionStep>
@@ -595,7 +661,7 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
-                                    <Literal>ADVANCE</Literal>
+                                    <Literal>InAdvance</Literal>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -638,7 +704,7 @@ to change localtablelookup to NamedTableLookup when database convention has been
                                 </ActionStep>
                                 <ActionStep disabled="true">
                                     <Description>NamedTableLookup for 'ResetType' is based on CME conventions and unfinalised. 
-Conventions can only be finalised when persisted in database. Temporary hardcoding as 'ADVANCE'</Description>
+Conventions can only be finalised when persisted in database. Temporary hardcoding as 'InAdvance'</Description>
                                     <ActionComment/>
                                 </ActionStep>
                                 <ActionStep>
@@ -721,6 +787,26 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+                                    <Literal>true</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/FloatRateIndex/Validate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
@@ -746,26 +832,6 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     <Property name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
-                                    <Literal>Fixed</Literal>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Property name="Output" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Type"/>
-                                    </NodeSpec>
-                                    </Value>
-                                    </Property>
-                                    <Copy></Copy>
-                                    </FunctionCall>
-                                </ActionStep>
-                                <ActionStep>
-                                    <FunctionCall>
-                                    <Property name="Input" type="nodespec">
-                                    <Value>
-                                    <NodeSpec>
                                     <Literal>ThomsonReuters.TracsCommon.Ird.Definitions.Swaps.FixedInterestRateDefinitionElement, InterestRateDerivativesCbo</Literal>
                                     </NodeSpec>
                                     </Value>
@@ -782,6 +848,26 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     </FunctionCall>
                                 </ActionStep>
                                 <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>Fixed</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/Type"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep disabled="true">
                                     <FunctionCall>
                                     <Property name="Output" type="nodespec">
                                     <Value>
@@ -809,6 +895,29 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
                                     </Value>
                                     </Property>
                                     <Mapper>Division</Mapper>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersInput/MtmItems/SwapInputs[Out1]/SwapDefinition/Legs[Out2]/InterestRate[1]/CouponRate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Product/Leg[Counter2]/Rate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
                                     </FunctionCall>
                                 </ActionStep>
                             </ElseAction>
@@ -847,7 +956,7 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
             <Property name="Output" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="temp"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="Type"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -859,7 +968,7 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
-                        <PathNodeSpec specType="TEMP_VAR" pathString="temp"/>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="Type"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -900,7 +1009,7 @@ Conventions can only be finalised when persisted in database. Temporary hardcodi
     <TempVariable name="ReutersInput" optional="true" repeating="false">
         <Message>Reuters:ReutersTradeInput</Message>
     </TempVariable>
-    <TempVariable name="temp" optional="true" repeating="false">
+    <TempVariable name="Type" optional="true" repeating="false">
         <Bot>String</Bot>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>

@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Component Form</Program>
-            <VersionNumber>3.6.5</VersionNumber>
-            <BuildNumber>98</BuildNumber>
+            <VersionNumber>3.7.1</VersionNumber>
+            <BuildNumber>3.7.1-SNAPSHOT.16978</BuildNumber>
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>23/11/2017 16:39:14</Timestamp>
-        <Checksum>65ce5366</Checksum>
+        <Timestamp>12/12/2017 13:25:36</Timestamp>
+        <Checksum>68a41668</Checksum>
     </LastModification>
 </Prolog>
 <MessageDefinition name="ReutersTradeInput" group="Reuters">
@@ -18,26 +18,10 @@
                 <TypeDefinition>
                     <ComplexContent Compositor="ALL">
                         <Child minOccurs="0" maxOccurs="1">
-                            <LocalComponent name="AsOfDate" nillable="true">
-                                <TypeSpecification>
-                                    <TypeDefinition>
-                                    <BusinessObjectType>String</BusinessObjectType>
-                                    </TypeDefinition>
-                                </TypeSpecification>
-                                <FormatSpecifications/>
-                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                            </LocalComponent>
+                            <NamedComponent>AsOfDate</NamedComponent>
                         </Child>
                         <Child minOccurs="0" maxOccurs="1">
-                            <LocalComponent name="ReportCurrency">
-                                <TypeSpecification>
-                                    <TypeDefinition>
-                                    <BusinessObjectType>Currency</BusinessObjectType>
-                                    </TypeDefinition>
-                                </TypeSpecification>
-                                <FormatSpecifications converterReference="tk:Currency"/>
-                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                            </LocalComponent>
+                            <NamedComponent>ReportCurrency</NamedComponent>
                         </Child>
                         <Child minOccurs="0" maxOccurs="1">
                             <LocalComponent name="Sections" nillable="true">

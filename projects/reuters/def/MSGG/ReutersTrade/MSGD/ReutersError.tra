@@ -1,0 +1,38 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Message Import</Program>
+            <VersionNumber>3.7.1</VersionNumber>
+            <BuildNumber>3.7.1-SNAPSHOT.16978</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>30/01/2018 12:12:04</Timestamp>
+        <Checksum>1af22683</Checksum>
+    </LastModification>
+</Prolog>
+<MessageDefinition name="ReutersError" group="ReutersTrade">
+    <MessageContent>
+        <LocalComponent name="Body">
+            <TypeSpecification>
+                <TypeDefinition>
+                    <ComplexContent Compositor="ALL">
+                        <Child minOccurs="0" maxOccurs="1">
+                            <LocalComponent name="ErrorMessage">
+                                <TypeSpecification>
+                                    <TypeDefinition>
+                                    <BusinessObjectType>String</BusinessObjectType>
+                                    </TypeDefinition>
+                                </TypeSpecification>
+                                <FormatSpecifications/>
+                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                            </LocalComponent>
+                        </Child>
+                    </ComplexContent>
+                </TypeDefinition>
+            </TypeSpecification>
+            <FormatSpecifications/>
+            <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+        </LocalComponent>
+    </MessageContent>
+</MessageDefinition>

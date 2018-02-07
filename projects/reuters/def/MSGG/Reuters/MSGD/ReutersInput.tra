@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Component Form</Program>
-            <VersionNumber>3.6.3</VersionNumber>
-            <BuildNumber>47</BuildNumber>
+            <VersionNumber>3.7.1</VersionNumber>
+            <BuildNumber>3.7.1-SNAPSHOT.16978</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>11/04/2017 11:13:46</Timestamp>
-        <Checksum>bca97e92</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>25/01/2018 00:47:46</Timestamp>
+        <Checksum>8f42503e</Checksum>
     </LastModification>
 </Prolog>
 <MessageDefinition name="ReutersInput" group="Reuters">
@@ -24,20 +24,12 @@
                                     <BusinessObjectType>Date</BusinessObjectType>
                                     </TypeDefinition>
                                 </TypeSpecification>
-                                <FormatSpecifications converterReference="XsdDate"/>
+                                <FormatSpecifications/>
                                 <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                             </LocalComponent>
                         </Child>
                         <Child minOccurs="0" maxOccurs="1">
-                            <LocalComponent name="ReportCurrency">
-                                <TypeSpecification>
-                                    <TypeDefinition>
-                                    <BusinessObjectType>Currency</BusinessObjectType>
-                                    </TypeDefinition>
-                                </TypeSpecification>
-                                <FormatSpecifications converterReference="tk:Currency"/>
-                                <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                            </LocalComponent>
+                            <NamedComponent>ReportCurrency</NamedComponent>
                         </Child>
                         <Child minOccurs="0" maxOccurs="1">
                             <LocalComponent name="Sections" nillable="true">
