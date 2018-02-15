@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>02/02/2018 16:35:53</Timestamp>
-        <Checksum>caaac0c2</Checksum>
+        <Timestamp>14/02/2018 07:09:06</Timestamp>
+        <Checksum>6581d853</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToUpdatedTradeValuation" group="Map:Reuters_IN">
@@ -35,34 +35,28 @@
     <ActionStep>
         <IfAction>
             <Condition>
-                <CompoundCondition operator="OR">
+                <CompoundCondition operator="AND">
                     <Condition>
-                        <CompoundCondition operator="AND">
-                            <Condition>
-                                <Comparison>
-                                    <FirstTerm>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="anyValue/Object/Property[#]"/>
-                                    </FirstTerm>
-                                    <Operator>EQ</Operator>
-                                    <SecondTerm>
-                                    <Literal>1</Literal>
-                                    </SecondTerm>
-                                </Comparison>
-                            </Condition>
-                            <Condition>
-                                <Comparison>
-                                    <FirstTerm>
-                                    <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="anyValue/Object/Property[1]/Name"/>
-                                    </FirstTerm>
-                                    <Operator>EQ</Operator>
-                                    <SecondTerm>
-                                    <Literal>ErrorMessage</Literal>
-                                    </SecondTerm>
-                                </Comparison>
-                            </Condition>
-                        </CompoundCondition>
+                        <Comparison>
+                            <FirstTerm>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="anyValue/Object/Property[#]"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>1</Literal>
+                            </SecondTerm>
+                        </Comparison>
+                    </Condition>
+                    <Condition>
+                        <Comparison>
+                            <FirstTerm>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="anyValue/Object/Property[1]/Name"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>ErrorMessage</Literal>
+                            </SecondTerm>
+                        </Comparison>
                     </Condition>
                 </CompoundCondition>
             </Condition>
@@ -88,147 +82,164 @@
                     </FunctionCall>
                 </ActionStep>
                 <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="ReutersError/ErrorMessage"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Separator" type="nodespec">
-                            <Value>
-                                <NodeSpec>
+                    <NewOutputRepetition>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersError/ErrorMessage"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Separator" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
                                     <Literal>\r\n</Literal>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="ErrorLines[]"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Mapper>Split</Mapper>
-                    </FunctionCall>
-                </ActionStep>
-                <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="ErrorLines[1]"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ErrorLines[]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Mapper>Split</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ErrorLines[1]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Error"
                                     contextPosnSpec="1" pathString="ReutersMessage[1]/ErrorMessage"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Copy></Copy>
-                    </FunctionCall>
-                </ActionStep>
-                <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="ErrorLines[.LAST]"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ErrorLines[.LAST]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Error"
                                     contextPosnSpec="1" pathString="ReutersMessage[1]/ErrorType"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Copy></Copy>
-                    </FunctionCall>
-                </ActionStep>
-                <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="ErrorLines[13]"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="Error_tradeIdPunctuation"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Copy></Copy>
-                    </FunctionCall>
-                </ActionStep>
-                <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="Error_tradeIdPunctuation"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="What" type="nodespec">
-                            <Value>
-                                <NodeSpec>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ErrorLines[13]"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Error_tradeIdPunctuation"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Error_tradeIdPunctuation"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
                                     <Literal>"</Literal>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Error"
-                                    contextPosnSpec="1" pathString="ObjectId"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Mapper>Replace</Mapper>
-                    </FunctionCall>
-                </ActionStep>
-                <ActionStep>
-                    <FunctionCall>
-                        <Property name="Input" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="Error_tradeIdNoPunctuation"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="What" type="nodespec">
-                            <Value>
-                                <NodeSpec>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Error_tradeIdNoPunctuation"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Mapper>Replace</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="Error_tradeIdNoPunctuation"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="What" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
                                     <Literal>,</Literal>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Property name="Output" type="nodespec">
-                            <Value>
-                                <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
                                     contextName="Error"
                                     contextPosnSpec="1" pathString="ObjectId"/>
-                                </NodeSpec>
-                            </Value>
-                        </Property>
-                        <Mapper>Replace</Mapper>
-                    </FunctionCall>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Mapper>Replace</Mapper>
+                            </FunctionCall>
+                        </ActionStep>
+                        <OutputScope specType="TO_DATA"
+                            contextName="Error" contextPosnSpec="1"
+                            pathString="ReutersMessage[]" outputPosnSpecifier="Out1"/>
+                    </NewOutputRepetition>
                 </ActionStep>
             </ThenAction>
             <ElseIfAction>
@@ -253,38 +264,74 @@
                     </FunctionCall>
                 </ActionStep>
                 <ActionStep>
-                    <IfAction>
-                        <Condition>
-                            <Comparison>
-                                <FirstTerm>
-                                    <PathNodeSpec specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/Trade[1]/status/priceStatus"/>
-                                </FirstTerm>
-                                <Operator>EQ</Operator>
-                                <SecondTerm>
+                    <RepeatAction repeatCounter="Counter1">
+                        <ActionStep>
+                            <IfAction>
+                                <Condition>
+                                    <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[Counter1]/status/priceStatus"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
                                     <Literal>NOK</Literal>
-                                </SecondTerm>
-                            </Comparison>
-                        </Condition>
-                        <ThenAction>
-                            <ActionStep>
-                                <RepeatAction repeatCounter="Counter1">
+                                    </SecondTerm>
+                                    </Comparison>
+                                </Condition>
+                                <ThenAction>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
                                     <ActionStep>
                                     <FunctionCall>
-                                    <Property name="Input" type="nodespec">
+                                    <Property
+                                    name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/Trade[1]/status/message[Counter1]/Value"/>
+                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[Counter1]/Name"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="Output" type="nodespec">
+                                    <Property
+                                    name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="1" pathString="ReutersMessage[1]/ErrorMessage"/>
+                                    contextPosnSpec="Out1" pathString="ObjectId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <ActionStep>
+                                    <RepeatAction repeatCounter="Counter2">
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[Counter1]/status/message[Counter2]/Value"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[1]/ErrorMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -293,21 +340,25 @@
                                     </ActionStep>
                                     <ActionStep>
                                     <FunctionCall>
-                                    <Property name="Input" type="nodespec">
+                                    <Property
+                                    name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/Trade[1]/status/message[Counter1]/TechnicalMessage"/>
+                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[Counter1]/status/message[Counter2]/TechnicalMessage"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="Output" type="nodespec">
+                                    <Property
+                                    name="Output" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Error"
-                                    contextPosnSpec="1" pathString="ReutersMessage[1]/ErrorType"/>
+                                    contextPosnSpec="Out1" pathString="ReutersMessage[1]/ErrorType"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -316,74 +367,125 @@
                                     </ActionStep>
                                     <RepeatLimit>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/Trade[1]/status/message[#]"/>
+                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[Counter1]/status/message[#]"/>
                                     </RepeatLimit>
-                                    <ScopeA specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/Trade[1]/status/message[]"/>
-                                </RepeatAction>
-                            </ActionStep>
-                        </ThenAction>
-                        <ElseAction>
-                            <ActionStep>
-                                <FunctionCall>
-                                    <Property name="Input" type="nodespec">
+                                    <ScopeA
+                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[Counter1]/status/message[]"/>
+                                    </RepeatAction>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ThenAction>
+                                <ElseAction>
+                                    <ActionStep>
+                                    <NewOutputRepetition>
+                                    <ActionStep>
+                                    <FunctionCall>
+                                    <Property
+                                    name="Input" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="ReutersTradeResponse"/>
+                                    specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[Counter1]"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="CleanPVReport" type="nodespec">
+                                    <Property
+                                    name="CleanPVReport" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="CleanPVReport" pathString="."/>
+                                    contextName="CleanPVReport"
+                                    contextPosnSpec=".NEW" pathString="."/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="CleanPVDeal" type="nodespec">
+                                    <Property
+                                    name="CleanPVDeal" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="CleanPVDeal" pathString="."/>
+                                    contextName="CleanPVDeal"
+                                    contextPosnSpec=".NEW" pathString="."/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="LegType" type="nodespec">
+                                    <Property
+                                    name="LegType" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="LegType" pathString="."/>
+                                    contextName="LegType"
+                                    contextPosnSpec=".NEW" pathString="."/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="CleanPrice" type="nodespec">
+                                    <Property
+                                    name="CleanPrice" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
-                                    contextName="CleanPrice" pathString="."/>
+                                    contextName="CleanPrice"
+                                    contextPosnSpec=".NEW" pathString="."/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
-                                    <Property name="TradeValuation" type="nodespec">
+                                    <Property
+                                    name="TradeValuation" type="nodespec">
                                     <Value>
                                     <NodeSpec>
+
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="1" pathString="."/>
+                                    contextPosnSpec="Out1" pathString="."/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property
+                                    name="FXrate" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="FXRate"
+                                    contextPosnSpec=".NEW" pathString="."/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
                                     <MappingDefinitionInvocation>TradeValuation_to_ACUO</MappingDefinitionInvocation>
-                                </FunctionCall>
-                            </ActionStep>
-                        </ElseAction>
-                    </IfAction>
+                                    </FunctionCall>
+                                    </ActionStep>
+                                    <OutputScope
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="[]"
+                                    pathString="." outputPosnSpecifier="Out1"/>
+                                    </NewOutputRepetition>
+                                    </ActionStep>
+                                </ElseAction>
+                            </IfAction>
+                        </ActionStep>
+                        <RepeatLimit>
+                            <PathNodeSpec specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[#]"/>
+                        </RepeatLimit>
+                        <ScopeA specType="TEMP_VAR" pathString="ReutersTradeResponse/portfolio/customPortfolio/swapOutputs/TradeResponse_Trade[]"/>
+                    </RepeatAction>
                 </ActionStep>
                 <Condition>
                     <CompoundCondition operator="AND">
@@ -441,16 +543,19 @@
     <OutputDefinition name="Error" optional="true" repeating="true">
         <Message>ReutersError</Message>
     </OutputDefinition>
-    <OutputDefinition name="CleanPVReport" optional="false" repeating="false">
+    <OutputDefinition name="CleanPVReport" optional="false" repeating="true">
         <Bot>Decimal</Bot>
     </OutputDefinition>
-    <OutputDefinition name="CleanPVDeal" optional="false" repeating="false">
+    <OutputDefinition name="CleanPVDeal" optional="false" repeating="true">
         <Bot>Decimal</Bot>
     </OutputDefinition>
-    <OutputDefinition name="LegType" optional="false" repeating="false">
+    <OutputDefinition name="LegType" optional="false" repeating="true">
         <Bot>String</Bot>
     </OutputDefinition>
-    <OutputDefinition name="CleanPrice" optional="false" repeating="false">
+    <OutputDefinition name="CleanPrice" optional="false" repeating="true">
+        <Bot>Decimal</Bot>
+    </OutputDefinition>
+    <OutputDefinition name="FXRate" optional="true" repeating="true">
         <Bot>Decimal</Bot>
     </OutputDefinition>
     <TempVariable name="anyValue" optional="true" repeating="false">
