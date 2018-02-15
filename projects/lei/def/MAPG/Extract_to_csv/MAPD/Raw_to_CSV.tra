@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>16/01/2018 17:24:42</Timestamp>
-        <Checksum>ee9b3d9a</Checksum>
+        <Timestamp>15/02/2018 15:55:03</Timestamp>
+        <Checksum>fb12eae6</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Raw_to_CSV" group="Map:Extract_to_csv">
@@ -53,9 +53,12 @@
                     <Property name="Output" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord[Counter1]"/>
                             </NodeSpec>
                         </Value>
+                    </Property>
+                    <Property name="AbortIfInvalid" type="boolean">
+                        <Value>false</Value>
                     </Property>
                     <Mapper>Parse</Mapper>
                 </FunctionCall>
@@ -65,21 +68,21 @@
                     <Property name="FormatString" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <Literal>%\t%\n</Literal>
+                                <Literal>%\t%\t%\n</Literal>
                             </NodeSpec>
                         </Value>
                     </Property>
                     <Property name="Input" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord/LEIRecords/LEIRecord[1]/LEI"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord[Counter1]/LEIRecords/LEIRecord[1]/LEI"/>
                             </NodeSpec>
                         </Value>
                     </Property>
                     <Property name="Input2" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord/LEIRecords/LEIRecord[1]/Entity/LegalName/#value"/>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord[Counter1]/LEIRecords/LEIRecord[1]/Entity/LegalName/#value"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -88,6 +91,13 @@
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="."/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input3" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord[1]/LEIRecords/LEIRecord[1]/Entity/LegalJurisdiction"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -109,7 +119,7 @@
     <TempVariable name="Records" optional="true" repeating="true">
         <Bot>String</Bot>
     </TempVariable>
-    <TempVariable name="LEIRecord" optional="true" repeating="false">
+    <TempVariable name="LEIRecord" optional="true" repeating="true">
         <Type>lei:LEIData</Type>
     </TempVariable>
     <CalledAsSubmappingActionExceptionRules>
