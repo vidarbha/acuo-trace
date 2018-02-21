@@ -2,13 +2,13 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.6.5</VersionNumber>
-            <BuildNumber>98</BuildNumber>
+            <VersionNumber>3.6.7</VersionNumber>
+            <BuildNumber>122</BuildNumber>
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>15/02/2018 15:55:03</Timestamp>
-        <Checksum>fb12eae6</Checksum>
+        <Timestamp>21/02/2018 15:27:02</Timestamp>
+        <Checksum>1cee29b7</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Raw_to_CSV" group="Map:Extract_to_csv">
@@ -68,7 +68,7 @@
                     <Property name="FormatString" type="nodespec">
                         <Value>
                             <NodeSpec>
-                                <Literal>%\t%\t%\n</Literal>
+                                <Literal>%\t%\t%\t%\n</Literal>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -98,6 +98,13 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord[1]/LEIRecords/LEIRecord[1]/Entity/LegalJurisdiction"/>
+                            </NodeSpec>
+                        </Value>
+                    </Property>
+                    <Property name="Input4" type="nodespec">
+                        <Value>
+                            <NodeSpec>
+                                <PathNodeSpec specType="TEMP_VAR" pathString="LEIRecord[1]/LEIRecords/LEIRecord[1]/Entity/OtherEntityNames/OtherEntityName[1]/#value"/>
                             </NodeSpec>
                         </Value>
                     </Property>
