@@ -2,23 +2,23 @@
     <LastModification>
         <Transformer>
             <Program>Mapping Form</Program>
-            <VersionNumber>3.7.1</VersionNumber>
-            <BuildNumber>3.7.1-SNAPSHOT.16978</BuildNumber>
+            <VersionNumber>3.6.7</VersionNumber>
+            <BuildNumber>122</BuildNumber>
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>21/02/2018 15:03:07</Timestamp>
-        <Checksum>f00340ca</Checksum>
+        <Timestamp>22/02/2018 13:40:44</Timestamp>
+        <Checksum>54fb29c0</Checksum>
     </LastModification>
 </Prolog>
-<MappingDefinition name="ToRecord" group="Map:XmlToCsv">
+<MappingDefinition name="ToRecord_Lvl2" group="Map:XmlToCsv">
     <ActionStep>
         <FunctionCall>
             <Property name="Input" type="nodespec">
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="LEI"/>
+                            contextName="RelationshipRecordType" pathString="Relationship/StartNode/NodeID"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -26,7 +26,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="LEI_ID"/>
+                            contextName="Output" pathString="RELATIONSHIP_STARTNODE"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -39,7 +39,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Entity/LegalName/#value"/>
+                            contextName="RelationshipRecordType" pathString="Relationship/EndNode/NodeID"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -47,7 +47,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="LEI_NAME"/>
+                            contextName="Output" pathString="RELATIONSHIP_ENDNODE"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -60,7 +60,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Entity/LegalJurisdiction"/>
+                            contextName="RelationshipRecordType" pathString="Relationship/RelationshipType"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -68,7 +68,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="COUNTRY"/>
+                            contextName="Output" pathString="RELATIONSHIP_TYPE"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -81,7 +81,7 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Entity/OtherEntityNames/OtherEntityName[1]/#value"/>
+                            contextName="RelationshipRecordType" pathString="Relationship/RelationshipStatus"/>
                     </NodeSpec>
                 </Value>
             </Property>
@@ -89,36 +89,15 @@
                 <Value>
                     <NodeSpec>
                         <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="OTHER_ENTITY_NAME"/>
+                            contextName="Output" pathString="RELATIONSHIP_STATUS"/>
                     </NodeSpec>
                 </Value>
             </Property>
             <Copy></Copy>
         </FunctionCall>
     </ActionStep>
-    <ActionStep>
-        <FunctionCall>
-            <Property name="Input" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="FROM_DATA"
-                            contextName="Input" pathString="Entity/TransliteratedOtherEntityNames/TransliteratedOtherEntityName[1]/#value"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Property name="Output" type="nodespec">
-                <Value>
-                    <NodeSpec>
-                        <PathNodeSpec specType="TO_DATA"
-                            contextName="Output" pathString="TRANSLITERATED_OTHER_ENTITY_NAME"/>
-                    </NodeSpec>
-                </Value>
-            </Property>
-            <Copy></Copy>
-        </FunctionCall>
-    </ActionStep>
-    <InputDefinition name="Input" optional="false" repeating="false">
-        <Component>LEIRecord</Component>
+    <InputDefinition name="RelationshipRecordType" optional="false" repeating="false">
+        <Type>GLEIF_Level2:RelationshipRecordType</Type>
     </InputDefinition>
     <OutputDefinition name="Output" optional="false" repeating="false">
         <Message>CSVRecord</Message>
