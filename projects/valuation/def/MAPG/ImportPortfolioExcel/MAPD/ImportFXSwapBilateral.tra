@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>17/08/2017 18:47:21</Timestamp>
-        <Checksum>f7c0b3b6</Checksum>
+        <User>lucie</User>
+        <Host>DESKTOP-OBN2924</Host>
+        <Timestamp>04/09/2017 17:08:32</Timestamp>
+        <Checksum>4e4797fc</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportFXSwapBilateral"
@@ -500,6 +500,30 @@
                                     <Copy></Copy>
                                     </FunctionCall>
                                 </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/PortfolioID"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Error"
+                                    contextPosnSpec="Out1" pathString="PortfolioId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
                                 <OutputScope specType="TO_DATA"
                                     contextName="Error"
                                     contextPosnSpec="[]" pathString="." outputPosnSpecifier="Out1"/>
@@ -560,7 +584,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Counter1]/TradeDate"/>
+                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Out2]/TradeDate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -568,7 +592,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Counter1]/TradeTime"/>
+                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Out2]/TradeTime"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -798,7 +822,7 @@
                                     <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
-                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[1]/PortfolioID"/>
+                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[Out2]/PortfolioID"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>

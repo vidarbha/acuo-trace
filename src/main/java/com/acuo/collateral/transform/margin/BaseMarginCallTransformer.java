@@ -1,27 +1,19 @@
 package com.acuo.collateral.transform.margin;
 
-import com.acuo.collateral.transform.Transformer;
+import com.acuo.collateral.transform.TransformerOutput;
+import com.acuo.collateral.transform.services.BaseTransformer;
 import com.acuo.collateral.transform.trace.transformer_margin.MarginCall;
 
-import java.util.List;
+import javax.inject.Inject;
 
-public abstract class BaseMarginCallTransformer<T> implements Transformer<T> {
+public abstract class BaseMarginCallTransformer<INOUT> extends BaseTransformer<INOUT, INOUT> {
 
-    private final MarginCall marginCall;
-
-
-    public BaseMarginCallTransformer(MarginCall marginCall) {
-        this.marginCall = marginCall;
-    }
-
-
-    public MarginCall getMarginCall() {
-        return marginCall;
-    }
-
+    @Inject
+    protected MarginCall marginCall = null;
 
     @Override
-    public List<T> deserialise(byte[] value) {
-        return null;
+    public TransformerOutput<INOUT> deserialise(String value) {
+        return deserialiseToList(value);
     }
+
 }

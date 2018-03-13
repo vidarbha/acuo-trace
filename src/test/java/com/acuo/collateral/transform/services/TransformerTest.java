@@ -2,35 +2,56 @@ package com.acuo.collateral.transform.services;
 
 import com.acuo.collateral.transform.Transformer;
 import com.acuo.collateral.transform.TransformerContext;
-import com.acuo.collateral.transform.margin.*;
-import com.acuo.collateral.transform.trace.transformer_valuations.Mapper;
+import com.acuo.collateral.transform.TransformerOutput;
+import com.acuo.collateral.transform.margin.AgreeTransformer;
+import com.acuo.collateral.transform.margin.CancelTransformer;
+import com.acuo.collateral.transform.margin.CreateTransformer;
+import com.acuo.collateral.transform.margin.DeliveryMapTransformer;
+import com.acuo.collateral.transform.margin.DisputeTransformer;
+import com.acuo.collateral.transform.margin.MarginSphereTransformer;
+import com.acuo.collateral.transform.margin.PledgeCreateTransformer;
+import com.acuo.collateral.transform.margin.StatementItemTransformer;
+import com.acuo.collateral.transform.modules.TransformerModule;
 import com.acuo.common.model.assets.Assets;
 import com.acuo.common.model.margin.MarginCall;
+import com.acuo.common.model.margin.Recall;
 import com.acuo.common.model.product.SwapHelper;
 import com.acuo.common.model.results.AssetValuation;
 import com.acuo.common.model.results.TradeValuation;
 import com.acuo.common.model.trade.SwapTrade;
+import com.acuo.common.util.GuiceJUnitRunner;
 import com.acuo.common.util.ResourceFile;
 import com.google.common.collect.ImmutableList;
+import com.google.inject.Injector;
 import com.opengamma.strata.basics.currency.Currency;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import javax.inject.Inject;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Slf4j
+@RunWith(GuiceJUnitRunner.class)
+@GuiceJUnitRunner.GuiceModules({
+        TransformerModule.class
+})
 public class TransformerTest {
 
     private TransformerContext context = null;
+
+    @Inject
+    private Injector injector = null;
 
     @Rule
     public ResourceFile received = new ResourceFile("/call/Received_Call.xml");
@@ -45,7 +66,7 @@ public class TransformerTest {
     public ResourceFile oneTradeFile = new ResourceFile("/portfolio/OneIRS.xlsx");
 
     @Rule
-    public ResourceFile tradePortfolio = new ResourceFile("/portfolio/TradePortfolio_OW-742.xlsx");
+    public ResourceFile tradePortfolio = new ResourceFile("/portfolio/TradePortfolio-OW-650.xlsx");
 
     @Before
     public void setup() {
@@ -55,7 +76,7 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseSwapsWithClarus() throws Exception {
-        Transformer<SwapTrade> transformer = new ClarusTransformer<>(new Mapper());
+        Transformer<SwapTrade, String> transformer = injector.getInstance(ClarusTransformer.class);
 
         SwapTrade trade = SwapHelper.createTrade();
 
@@ -66,7 +87,7 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseSwapsWithMarkit() throws Exception {
-        Transformer<SwapTrade> transformer = new MarkitTransformer<>(new Mapper());
+        Transformer<SwapTrade, String> transformer = injector.getInstance(MarkitTransformer.class);
 
         SwapTrade trade = SwapHelper.createTrade();
 
@@ -77,7 +98,7 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseAssetsWithReuters() throws Exception {
-        Transformer<Assets> transformer = new ReutersTransformer<>();
+        Transformer<Assets, String> transformer = injector.getInstance(ReutersTransformer.class);
 
         Assets assets = new Assets();
         assets.setAssetId("1231");
@@ -92,9 +113,10 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseAssetsFromReuters() throws Exception {
-        Transformer<AssetValuation> transformer = new ReutersTransformer<>();
+        Transformer<String, AssetValuation> transformer = injector.getInstance(ReutersTransformer.class);
 
-        List<AssetValuation> assetsList = transformer.deserialiseToList(responsjson.getContent());
+        TransformerOutput<AssetValuation> output = transformer.deserialiseToList(responsjson.getContent());
+        List<AssetValuation> assetsList = output.results();
 
         Assert.assertTrue(assetsList.size() > 0);
         AssetValuation valuation = assetsList.get(0);
@@ -103,27 +125,30 @@ public class TransformerTest {
 
     @Test
     public void testSerialiseSwapsWithMarginsphere() throws Exception {
-        Transformer<MarginCall> transformer = new MarginSphereTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(MarginSphereTransformer.class);
 
-        List<MarginCall> marginCalls = transformer.deserialiseToList(received.getContent());
+        TransformerOutput<MarginCall> output = transformer.deserialiseToList(received.getContent());
+        List<MarginCall> marginCalls = output.results();
 
         assertThat(marginCalls).isNotEmpty();
     }
 
     @Test
+    @Ignore
     public void testStatementItemImport() throws Exception {
-        Transformer<MarginCall> transformer = new StatementItemTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(StatementItemTransformer.class);
         String content = statementItem.getContent();
         if (content != null) {
             content = content.replace("\n", "\r\n");
         }
-        List<MarginCall> marginCalls = transformer.deserialiseToList(content);
+        TransformerOutput<MarginCall> output = transformer.deserialiseToList(content);
+        List<MarginCall> marginCalls = output.results();
         assertThat(marginCalls).isNotEmpty();
     }
 
     @Test
     public void testDisputeRequest() throws Exception {
-        DisputeTransformer<MarginCall> transformer = new DisputeTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+        DisputeTransformer<MarginCall> transformer = injector.getInstance(DisputeTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setId("cantortest");
         List<MarginCall> marginCalls = new ArrayList<>();
@@ -135,38 +160,41 @@ public class TransformerTest {
 
     @Test
     public void testTradePortfolio() throws Exception {
-        Transformer<SwapTrade> transformer = new PortfolioImportTransformer<>(new Mapper());
-        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        Transformer<String, SwapTrade> transformer = injector.getInstance(PortfolioImportTransformer.class);
+        TransformerOutput<SwapTrade> output = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        List<SwapTrade> trades = output.results();
         assertThat(trades).isNotEmpty();
     }
 
     @Test
     public void testOneTradePortfolio() throws Exception {
-        Transformer<SwapTrade> transformer = new PortfolioImportTransformer<>(new Mapper());
-        List<SwapTrade> trades = transformer.deserialise(IOUtils.toByteArray(oneTradeFile.getInputStream()));
+        Transformer<String, SwapTrade> transformer = injector.getInstance(PortfolioImportTransformer.class);
+        TransformerOutput<SwapTrade> output = transformer.deserialise(IOUtils.toByteArray(oneTradeFile.getInputStream()));
+        List<SwapTrade> trades = output.results();
         assertThat(trades).isNotEmpty();
     }
 
     @Test
     public void testNPV() throws Exception {
-        Transformer<TradeValuation> transformer = new TradeValuationTransformer<>(new Mapper());
-        List<TradeValuation> tradeValuations = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        Transformer<String, TradeValuation> transformer = injector.getInstance(TradeValuationTransformer.class);
+        TransformerOutput<TradeValuation> output = transformer.deserialise(IOUtils.toByteArray(tradePortfolio.getInputStream()));
+        List<TradeValuation> tradeValuations = output.results();
         assertThat(tradeValuations).isNotEmpty();
     }
 
     @Test
-    public void testDeliveryMap() throws Exception
-    {
-        Transformer<MarginCall> transformer = new DeliveryMapTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+    public void testDeliveryMap() throws Exception {
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(DeliveryMapTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testssss");
         marginCall.setModifyDate(LocalDateTime.now());
-        log.info(transformer.serialise(marginCall, null));
+        final String result = transformer.serialise(marginCall, null);
+        assertThat(result).isNotNull();
     }
 
     @Test
     public void testSerialiseSettlementDate() throws Exception {
-        Transformer<Assets> transformer = new SettlementDateTransformer<>();
+        Transformer<Assets, String> transformer = injector.getInstance(SettlementDateTransformer.class);
 
         Assets assets = new Assets();
         assets.setAssetId("1231");
@@ -175,36 +203,69 @@ public class TransformerTest {
         assets.setFitchRating("1");
 
         String json = transformer.serialise(ImmutableList.of(assets), context);
-        log.info(json);
         assertThat(json).isNotEmpty();
     }
 
     @Test
-    public void testAgree() throws Exception
-    {
-        Transformer<MarginCall> transformer = new AgreeTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+    public void testAgree() throws Exception {
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(AgreeTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
-        log.info(transformer.serialise(marginCall, null));
+        final String result = transformer.serialise(marginCall, null);
+        assertThat(result).isNotNull();
     }
 
     @Test
-    public void testCreate() throws Exception
-    {
-        Transformer<MarginCall> transformer = new CreateTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+    public void testCreate() throws Exception {
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(CreateTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
-        marginCall.setRoundingAmount(111);
-        log.info(transformer.serialise(marginCall, null));
+        marginCall.setRoundingAmount(111d);
+        final String result = transformer.serialise(marginCall, null);
+        assertThat(result).isNotNull();
     }
 
     @Test
-    public void testCancel() throws Exception
-    {
-        Transformer<MarginCall> transformer = new CancelTransformer<>(new com.acuo.collateral.transform.trace.transformer_margin.MarginCall());
+    public void testCancel() throws Exception {
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(CancelTransformer.class);
         MarginCall marginCall = new MarginCall();
         marginCall.setAmpId("testss");
-        marginCall.setRoundingAmount(111);
-        log.info(transformer.serialise(marginCall, null));
+        marginCall.setRoundingAmount(111d);
+        final String result = transformer.serialise(marginCall, null);
+        assertThat(result).isNotNull();
+    }
+
+    @Test
+    public void testPledgeCreate() throws Exception {
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(PledgeCreateTransformer.class);
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setVersion(1);
+        Recall recall = new Recall();
+        recall.setRecallAmpId("ampidrecall");
+        recall.setRecallIsAccepted(true);
+        Set<Recall> recallSet = new HashSet<Recall>();
+        recallSet.add(recall);
+        marginCall.setRecalls(recallSet);
+        String xml = transformer.serialise(marginCall, null);
+        Assert.assertTrue(xml.contains("recallItem"));
+    }
+
+    @Test
+    public void testRejectRecall() throws Exception {
+        Transformer<MarginCall, MarginCall> transformer = injector.getInstance(PledgeCreateTransformer.class);
+        MarginCall marginCall = new MarginCall();
+        marginCall.setAmpId("testss");
+        marginCall.setVersion(1);
+        Recall recall = new Recall();
+        recall.setRecallAmpId("ampidrecall");
+        recall.setRecallIsAccepted(false);
+        recall.setRejectReasonCode(999);
+        recall.setRejectComment("cantortest");
+        Set<Recall> recallSet = new HashSet<Recall>();
+        recallSet.add(recall);
+        marginCall.setRecalls(recallSet);
+        String xml = transformer.serialise(marginCall, null);
+        Assert.assertTrue(xml.contains("cantortest"));
     }
 }

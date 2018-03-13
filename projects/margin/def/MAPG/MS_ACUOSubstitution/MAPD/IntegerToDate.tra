@@ -1,0 +1,103 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Mapping Form</Program>
+            <VersionNumber>3.6.3</VersionNumber>
+            <BuildNumber>47</BuildNumber>
+        </Transformer>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>28/08/2017 16:42:05</Timestamp>
+        <Checksum>4aa053a3</Checksum>
+    </LastModification>
+</Prolog>
+<MappingDefinition name="IntegerToDate" group="Map:MS_ACUOSubstitution">
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input1" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="day" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Input2" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="month" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Input3" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="year" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="stringDate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Separator" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <Literal>/</Literal>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>Concatenate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TEMP_VAR" pathString="stringDate"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="date" pathString="."/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Format" type="string">
+                <Value>dd/MM/yyyy</Value>
+            </Property>
+            <Mapper>TextToDate</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <InputDefinition name="day" optional="false" repeating="false">
+        <Bot>Integer</Bot>
+    </InputDefinition>
+    <InputDefinition name="month" optional="false" repeating="false">
+        <Bot>Integer</Bot>
+    </InputDefinition>
+    <InputDefinition name="year" optional="false" repeating="false">
+        <Bot>Integer</Bot>
+    </InputDefinition>
+    <OutputDefinition name="date" optional="false" repeating="false">
+        <Bot>Date</Bot>
+    </OutputDefinition>
+    <TempVariable name="stringDate" optional="true" repeating="false">
+        <Bot>String</Bot>
+    </TempVariable>
+    <CalledAsSubmappingActionExceptionRules>
+        <ActionExceptionRule>
+            <Scenario>SOURCE_ABSENT</Scenario>
+            <UseDefaultValue>false</UseDefaultValue>
+            <Action>SMART_SKIP</Action>
+        </ActionExceptionRule>
+    </CalledAsSubmappingActionExceptionRules>
+</MappingDefinition>

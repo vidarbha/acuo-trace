@@ -7,8 +7,8 @@
         </Transformer>
         <User>IEUser</User>
         <Host>IE11Win7</Host>
-        <Timestamp>17/08/2017 17:35:19</Timestamp>
-        <Checksum>548e3579</Checksum>
+        <Timestamp>18/08/2017 12:16:56</Timestamp>
+        <Checksum>3bf403c7</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="StringToFRACleared"
@@ -644,6 +644,113 @@
                 </Value>
             </Property>
             <Mapper>TextToTime</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="FIXEDLEG_PAYATSTART"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Table" type="lookuptable">
+                <Value>
+                    <LookupTable inLabel="In" outLabel="Out">
+                        <TableEntry>
+                            <In>TRUE</In>
+                            <Out>TRUE</Out>
+                        </TableEntry>
+                        <TableEntry>
+                            <In>FALSE</In>
+                            <Out>FALSE</Out>
+                        </TableEntry>
+                        <TableEntry>
+                            <In>1</In>
+                            <Out>TRUE</Out>
+                        </TableEntry>
+                        <TableEntry>
+                            <In>0</In>
+                            <Out>FALSE</Out>
+                        </TableEntry>
+                    </LookupTable>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="FIXEDLEG_PAYATSTART"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>LocalTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="FLOATLEG_PAYATSTART"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Table" type="lookuptable">
+                <Value>
+                    <LookupTable inLabel="In" outLabel="Out">
+                        <TableEntry>
+                            <In>TRUE</In>
+                            <Out>TRUE</Out>
+                        </TableEntry>
+                        <TableEntry>
+                            <In>FALSE</In>
+                            <Out>FALSE</Out>
+                        </TableEntry>
+                        <TableEntry>
+                            <In>1</In>
+                            <Out>TRUE</Out>
+                        </TableEntry>
+                        <TableEntry>
+                            <In>0</In>
+                            <Out>FALSE</Out>
+                        </TableEntry>
+                    </LookupTable>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="FLOATLEG_PAYATSTART"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Mapper>LocalTableLookup</Mapper>
+        </FunctionCall>
+    </ActionStep>
+    <ActionStep>
+        <FunctionCall>
+            <Property name="Input" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="FROM_DATA"
+                            contextName="Input" pathString="DiscountMethod"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Property name="Output" type="nodespec">
+                <Value>
+                    <NodeSpec>
+                        <PathNodeSpec specType="TO_DATA"
+                            contextName="Output" pathString="DiscountMethod"/>
+                    </NodeSpec>
+                </Value>
+            </Property>
+            <Copy></Copy>
         </FunctionCall>
     </ActionStep>
     <InputDefinition name="Input" optional="false" repeating="false">

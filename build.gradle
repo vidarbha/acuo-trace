@@ -13,7 +13,7 @@ group = 'com.acuo.collateral'
 
 ext {
     versions += [
-        common      : '0.12.0',
+        common      : '0.13.1',
         transformer : "${project.version}",
         runtime     : '3.6.5',
         design      : '3.6.5',
@@ -50,7 +50,12 @@ task fatJar(type: Jar, dependsOn: ":libs:publish") {
     version = ''
     classifier = ''
     zip64 true
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    excludes = ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"]
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
     with jar
 }
 
