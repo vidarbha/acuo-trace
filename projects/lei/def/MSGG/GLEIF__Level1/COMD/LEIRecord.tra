@@ -1,0 +1,81 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Component Form</Program>
+            <VersionNumber>3.6.7</VersionNumber>
+            <BuildNumber>122</BuildNumber>
+        </Transformer>
+        <User>hicham</User>
+        <Host>Win7-VM</Host>
+        <Timestamp>19/02/2018 15:08:16</Timestamp>
+        <Checksum>ace6670b</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponent name="LEIRecord" group="GLEIF__Level1">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="LEI">
+                        <Description>Entity
+ section.</Description>
+                        <TypeSpecification>
+                            <NamedType type="LEIType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="Entity">
+                        <Description>The Entity container element contains the legal entity's reference data,
+            enabling identification.</Description>
+                        <TypeSpecification>
+                            <NamedType type="EntityType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="Registration">
+                        <Description>Registration
+ManagingLOU
+.</Description>
+                        <TypeSpecification>
+                            <NamedType type="RegistrationType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="NextVersion">
+                        <Description>NextVersion
+ element, one for each new minor version of the
+            schema, postpending a serial number (1,2,3...) to the element name upon each
+            iteration.</Description>
+                        <TypeSpecification>
+                            <NamedType type="LEIRecordNextVersionType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="Extension">
+                        <Description>This lei:Extension element may contain any additional elements required
+            to extend the LEIRecord.</Description>
+                        <TypeSpecification>
+                            <NamedType type="ExtensionType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+</NamedComponent>

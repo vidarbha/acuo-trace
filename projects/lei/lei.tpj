@@ -1,0 +1,90 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:02:02</Timestamp>
+        <Checksum>a2d60ade</Checksum>
+    </LastModification>
+</Prolog>
+<ProjectProperties>
+    <Property name="rootDirectory" type="rootcontainer">
+        <Value>
+            <RootContainerDefinition>
+                <LocalConfigServerDefinition parent="Project File" path="def"/>
+            </RootContainerDefinition>
+        </Value>
+    </Property>
+    <Property name="buildDirectory" type="diskfile">
+        <Value>
+            <DiskFilePropertyValue parent="Project File" path="build"/>
+        </Value>
+    </Property>
+    <Property name="libraries" type="lookuptable">
+        <Value>
+            <LookupTable inLabel="Logical Name" outLabel="Path">
+                <OutputDefinition name="outType" type="rootcontainer">
+                    <MetaProperty name="Description" type="string">
+                        <Value>Select a Library File or Directory</Value>
+                    </MetaProperty>
+                    <MetaProperty name="FileSelectionMode" type="option">
+                        <Value>FILES_AND_DIRECTORIES</Value>
+                    </MetaProperty>
+                    <MetaProperty name="FileSuffix" type="string">
+                        <Value>.jar</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ChooserFilterDescription" type="string">
+                        <Value>Library Jar or Directory</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ParentTypes" type="list">
+                        <Value>
+                            <List>
+                                <Enumeration>Project File</Enumeration>
+                                <Enumeration>Projects Directory</Enumeration>
+                                <Enumeration>Project Root Directory</Enumeration>
+                                <Enumeration>Libraries Directory</Enumeration>
+                                <Enumeration>Absolute</Enumeration>
+                            </List>
+                        </Value>
+                    </MetaProperty>
+                </OutputDefinition>
+            </LookupTable>
+        </Value>
+    </Property>
+    <Property name="schemaLocations" type="lookuptable">
+        <Value>
+            <LookupTable inLabel="Message Definition Group" outLabel="Schema Location"/>
+        </Value>
+    </Property>
+    <Property name="externalLibraries" type="lookuptable">
+        <Value>
+            <LookupTable inLabel="Logical Name" outLabel="Path">
+                <OutputDefinition name="outType" type="diskfile">
+                    <MetaProperty name="FileSelectionMode" type="option">
+                        <Value>FILES_AND_DIRECTORIES</Value>
+                    </MetaProperty>
+                    <MetaProperty name="FileSuffix" type="string">
+                        <Value>.jar,.zip</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ChooserFilterDescription" type="string">
+                        <Value>class directory, zip or jar</Value>
+                    </MetaProperty>
+                    <MetaProperty name="ParentTypes" type="list">
+                        <Value>
+                            <List>
+                                <Enumeration>Projects Directory</Enumeration>
+                                <Enumeration>Project Root Directory</Enumeration>
+                                <Enumeration>Libraries Directory</Enumeration>
+                                <Enumeration>Absolute</Enumeration>
+                            </List>
+                        </Value>
+                    </MetaProperty>
+                </OutputDefinition>
+            </LookupTable>
+        </Value>
+    </Property>
+</ProjectProperties>

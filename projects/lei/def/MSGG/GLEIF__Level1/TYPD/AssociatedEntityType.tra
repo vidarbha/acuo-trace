@@ -1,0 +1,55 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:01:52</Timestamp>
+        <Checksum>46e136</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="AssociatedEntityType" group="GLEIF__Level1">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="CHOICE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="AssociatedLEI">
+                        <Description>The LEI of an entity associated with the LEI of this
+            registration.</Description>
+                        <TypeSpecification>
+                            <NamedType type="LEIType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="AssociatedEntityName">
+                        <Description>The name of an entity associated with the LEI of this
+            registration.</Description>
+                        <TypeSpecification>
+                            <NamedType type="NameType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="@type">
+                        <Description>The type of association represented by this AssociatedEntity instance. </Description>
+                        <TypeSpecification>
+                            <NamedType type="AssociatedEntityTypeEnum"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ATTRIBUTE</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

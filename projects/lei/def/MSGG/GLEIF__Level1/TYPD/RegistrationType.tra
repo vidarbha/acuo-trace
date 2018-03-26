@@ -1,0 +1,123 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:01:52</Timestamp>
+        <Checksum>a3f533dc</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="RegistrationType" group="GLEIF__Level1">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="InitialRegistrationDate">
+                        <Description>Date/time the LEI record was created. </Description>
+                        <TypeSpecification>
+                            <NamedType type="LEIDateTimeProfile"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="LastUpdateDate">
+                        <Description>Date/time the LEI record was most recently updated.</Description>
+                        <TypeSpecification>
+                            <NamedType type="LEIDateTimeProfile"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="RegistrationStatus">
+                        <Description>ManagingLOU
+.</Description>
+                        <TypeSpecification>
+                            <NamedType type="RegistrationStatusEnum"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="NextRenewalDate">
+                        <Description>The next date by which the LEI registration should be renewed and
+            re-certified by the legal entity.</Description>
+                        <TypeSpecification>
+                            <NamedType type="LEIDateTimeProfile"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="ManagingLOU">
+                        <Description>The LEI of the LOU that is responsible for administering this LEI
+            registration.</Description>
+                        <TypeSpecification>
+                            <NamedType type="LEIType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ValidationSources">
+                        <Description>The level of validation of the reference data provided by the
+            registrant.</Description>
+                        <TypeSpecification>
+                            <NamedType type="ValidationSourcesEnum"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ValidationAuthority">
+                        <Description>The (primary) registration authority used by the LOU to validate the
+            entity data.</Description>
+                        <TypeSpecification>
+                            <NamedType type="ValidationAuthorityType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="OtherValidationAuthorities">
+                        <Description>An optional list of additional registration authorities used by the LEI
+            Issuer to validate the entity data.</Description>
+                        <TypeSpecification>
+                            <NamedType type="OtherValidationAuthoritiesType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="NextVersion">
+                        <Description>Registration
+NextVersion
+ element, one for each new minor version of the schema,
+            postpending a serial number (1,2,3...) to the element name upon each
+            iteration.</Description>
+                        <TypeSpecification>
+                            <NamedType type="RegistrationNextVersionType"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>

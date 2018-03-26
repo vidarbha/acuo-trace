@@ -1,0 +1,62 @@
+<Prolog>
+    <LastModification>
+        <Transformer>
+            <Program>Rename File Action</Program>
+            <VersionNumber>3.6.5</VersionNumber>
+            <BuildNumber>98</BuildNumber>
+        </Transformer>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>12/01/2018 19:01:52</Timestamp>
+        <Checksum>1e73cc9f</Checksum>
+    </LastModification>
+</Prolog>
+<NamedComponentType name="ValidationAuthorityType" group="GLEIF__Level1">
+    <TypeSpecification>
+        <TypeDefinition>
+            <ComplexContent Compositor="SEQUENCE">
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="ValidationAuthorityID">
+                        <Description>The reference code of the registration authority, taken from the
+            Registration Authorities Code List (RAL) maintained by GLEIF. </Description>
+                        <TypeSpecification>
+                            <NamedType type="RegistrationAuthorityEnum"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="OtherValidationAuthorityID">
+                        <Description>A legacy / historical reference code of a registration authority which
+            is not yet entered in the Registration Authorities Code List (RAL) maintained by GLEIF,
+            or the designation of an interim register until such time as an entry from RAL can be
+            delivered. </Description>
+                        <TypeSpecification>
+                            <NamedType type="Tokenized500Type"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="ValidationAuthorityEntityID">
+                        <Description>The identifier of the entity at the indicated registration authority.
+            Typically, the identifier of the legal entity as maintained by a business registry in
+            the jurisdiction of legal registration, or if the entity is one that is not recorded in
+            a business registry (e.g. one of the varieties of funds registered instead with
+            financial regulators), the identifier of the entity in the appropriate registration
+            authority.</Description>
+                        <TypeSpecification>
+                            <NamedType type="Tokenized500Type"/>
+                        </TypeSpecification>
+                        <FormatSpecifications/>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+            </ComplexContent>
+        </TypeDefinition>
+    </TypeSpecification>
+    <FormatSpecifications/>
+    <SchemaEquivalent>TYPE</SchemaEquivalent>
+</NamedComponentType>
