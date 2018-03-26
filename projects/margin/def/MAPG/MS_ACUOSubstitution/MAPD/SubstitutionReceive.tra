@@ -7,8 +7,8 @@
         </Transformer>
         <User>acer</User>
         <Host>acer-pc</Host>
-        <Timestamp>17/01/2018 13:30:17</Timestamp>
-        <Checksum>bc0368d4</Checksum>
+        <Timestamp>19/01/2018 12:11:44</Timestamp>
+        <Checksum>33c8b61</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="SubstitutionReceive" group="Map:MS_ACUOSubstitution">
@@ -103,26 +103,73 @@
                 </FunctionCall>
             </ActionStep>
             <ActionStep>
-                <FunctionCall>
-                    <Property name="Input" type="nodespec">
-                        <Value>
-                            <NodeSpec>
+                <IfAction>
+                    <Condition>
+                        <Comparison>
+                            <FirstTerm>
                                 <PathNodeSpec specType="FROM_DATA"
                                     contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/securityIdType"/>
+                            </FirstTerm>
+                            <Operator>EQ</Operator>
+                            <SecondTerm>
+                                <Literal>CASH</Literal>
+                            </SecondTerm>
+                        </Comparison>
+                    </Condition>
+                    <ThenAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/currency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ThenAction>
+                    <ElseAction>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
                                     contextPosnSpec="1" pathString="substitution[Counter1]/securityId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Property name="Output" type="nodespec">
-                        <Value>
-                            <NodeSpec>
-                                <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="SecurityId"/>
-                            </NodeSpec>
-                        </Value>
-                    </Property>
-                    <Copy></Copy>
-                </FunctionCall>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                    </ElseAction>
+                </IfAction>
             </ActionStep>
             <ActionStep>
                 <FunctionCall>
@@ -139,7 +186,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="SecurityIdType"/>
+                                    contextName="Output" pathString="AssetIdType"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -428,27 +475,74 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
+                        <IfAction>
+                            <Condition>
+                                <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/substitutionItems/substitutionItem[Counter3]/securityIdType"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>CASH</Literal>
+                                    </SecondTerm>
+                                </Comparison>
+                            </Condition>
+                            <ThenAction>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="1" pathString="substitution[Counter1]/substitutionItems/substitutionItem[Counter3]/fxCurrency"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="SubstitutionItem[Out2]/AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                            </ThenAction>
+                            <ElseAction>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
                                     contextPosnSpec="1" pathString="substitution[Counter1]/substitutionItems/substitutionItem[Counter3]/securityId"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
                                     <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="SubstitutionItem[Out2]/SecurityId"/>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="SubstitutionItem[Out2]/AssetId"/>
                                     </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                            </ElseAction>
+                        </IfAction>
                     </ActionStep>
                     <ActionStep>
                         <FunctionCall>
@@ -466,7 +560,7 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="SubstitutionItem[Out2]/SecurityIdType"/>
+                                    contextName="Output" pathString="SubstitutionItem[Out2]/AssetIdType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -535,7 +629,7 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="SubstitutionItem[Out2]/FXRate"/>
+                                    contextName="Output" pathString="SubstitutionItem[Out2]/FxRate"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>

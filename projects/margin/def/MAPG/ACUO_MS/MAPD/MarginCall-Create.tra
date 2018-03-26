@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>IEUser</User>
-        <Host>IE11Win7</Host>
-        <Timestamp>09/08/2017 11:37:16</Timestamp>
-        <Checksum>4271f3c2</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>19/01/2018 15:31:16</Timestamp>
+        <Checksum>97ffd114</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="MarginCall-Create" group="Map:ACUO_MS">
@@ -551,6 +551,73 @@
                         </FunctionCall>
                     </ActionStep>
                     <ActionStep>
+                        <IfAction>
+                            <Condition>
+                                <Comparison>
+                                    <FirstTerm>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/AssetIdType"/>
+                                    </FirstTerm>
+                                    <Operator>EQ</Operator>
+                                    <SecondTerm>
+                                    <Literal>CASH</Literal>
+                                    </SecondTerm>
+                                </Comparison>
+                            </Condition>
+                            <ThenAction>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>CASH</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/recallItems/recallItem[Out2]/securityId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                            </ThenAction>
+                            <ElseAction>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="FROM_DATA"
+                                    contextName="Input"
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/AssetId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output" pathString="marginCall[Out1]/recallItems/recallItem[Out2]/securityId"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                            </ElseAction>
+                        </IfAction>
+                    </ActionStep>
+                    <ActionStep>
                         <FunctionCall>
                             <Property name="Input" type="nodespec">
                                 <Value>
@@ -558,7 +625,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/SecurityId"/>
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/AssetIdType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -566,7 +633,7 @@
                                 <Value>
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginCall[Out1]/recallItems/recallItem[Out2]/securityId"/>
+                                    contextName="Output" pathString="marginCall[Out1]/recallItems/recallItem[Out2]/securityIdType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -604,7 +671,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/FXCurrency"/>
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/Currency"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -627,7 +694,7 @@
                                     <PathNodeSpec
                                     specType="FROM_DATA"
                                     contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/FXRate"/>
+                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/FxRate"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>
@@ -659,29 +726,6 @@
                                     <NodeSpec>
                                     <PathNodeSpec specType="TO_DATA"
                                     contextName="Output" pathString="marginCall[Out1]/recallItems/recallItem[Out2]/haircut"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Copy></Copy>
-                        </FunctionCall>
-                    </ActionStep>
-                    <ActionStep>
-                        <FunctionCall>
-                            <Property name="Input" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec
-                                    specType="FROM_DATA"
-                                    contextName="Input"
-                                    contextPosnSpec="Counter1" pathString="Recall[Counter2]/SecurityIdType"/>
-                                    </NodeSpec>
-                                </Value>
-                            </Property>
-                            <Property name="Output" type="nodespec">
-                                <Value>
-                                    <NodeSpec>
-                                    <PathNodeSpec specType="TO_DATA"
-                                    contextName="Output" pathString="marginCall[Out1]/recallItems/recallItem[Out2]/securityIdType"/>
                                     </NodeSpec>
                                 </Value>
                             </Property>

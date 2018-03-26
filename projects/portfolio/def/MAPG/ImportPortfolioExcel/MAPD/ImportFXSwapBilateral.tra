@@ -7,8 +7,8 @@
         </Transformer>
         <User>hicham</User>
         <Host>Win7-VM</Host>
-        <Timestamp>08/11/2017 13:36:24</Timestamp>
-        <Checksum>e9189327</Checksum>
+        <Timestamp>07/02/2018 07:17:51</Timestamp>
+        <Checksum>8c8bcc25</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="ImportFXSwapBilateral"
@@ -85,7 +85,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_VALUE_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_PAY_DATE"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -101,7 +101,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG2_VALUE_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG2_PAY_DATE"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -117,7 +117,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_FIXING_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_MAT_DATE"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -133,7 +133,7 @@
                         <Value>
                             <NodeSpec>
                                 <PathNodeSpec specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG2_FIXING_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG2_MAT_DATE"/>
                             </NodeSpec>
                         </Value>
                     </Property>
@@ -260,7 +260,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_VALUE_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_PAY_DATE"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -274,7 +274,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_FIXING_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_MAT_DATE"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -316,7 +316,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_VALUE_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG1_PAY_DATE"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -330,7 +330,7 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="FROM_DATA"
-                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG2_FIXING_DATE"/>
+                                    contextName="Input" pathString="FXSwap-Bilateral/DataRow1[Counter1]/LEG2_MAT_DATE"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>
@@ -649,6 +649,29 @@
                                     specType="TO_DATA"
                                     contextName="Output"
                                     contextPosnSpec="Out2" pathString="Info/TradeDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Copy></Copy>
+                                    </FunctionCall>
+                                </ActionStep>
+                                <ActionStep>
+                                    <FunctionCall>
+                                    <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out2" pathString="Info/EffectiveDate"/>
+                                    </NodeSpec>
+                                    </Value>
+                                    </Property>
+                                    <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TEMP_VAR" pathString="FXSwap/FXSwap-Bilateral/DataRow1[1]/EffectiveDate"/>
                                     </NodeSpec>
                                     </Value>
                                     </Property>

@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>hicham</User>
-        <Host>Win7-VM</Host>
-        <Timestamp>08/11/2017 13:12:59</Timestamp>
-        <Checksum>69d9465d</Checksum>
+        <User>staf</User>
+        <Host>S</Host>
+        <Timestamp>23/01/2018 14:57:20</Timestamp>
+        <Checksum>a51c6110</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="FXSWBF" group="ImportPortfolioExcel">
@@ -198,7 +198,7 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
-                <Child minOccurs="1" maxOccurs="1">
+                <Child minOccurs="0" maxOccurs="1">
                     <LocalComponent name="TradeDate" nillable="true">
                         <TypeSpecification>
                             <TypeDefinition>
@@ -265,6 +265,63 @@
                         <FormatSpecifications>
                             <Property name="Format" type="string">
                                 <Value>HH:mm:ss.SSS</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="EffectiveDate" nillable="true">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Date</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="HeaderValue" type="string">
+                                <Value>Effective Date</Value>
+                            </Property>
+                            <Property name="HorizontalAlignment" type="enum">
+                                <Value>GENERAL</Value>
+                            </Property>
+                            <Property name="VerticalAlignment" type="enum">
+                                <Value>BOTTOM</Value>
+                            </Property>
+                            <Property name="FontColor" type="enum">
+                                <Value>BLACK</Value>
+                            </Property>
+                            <Property name="FontSize" type="integer">
+                                <Value>10</Value>
+                            </Property>
+                            <Property name="FontName" type="string">
+                                <Value>Arial</Value>
+                            </Property>
+                            <Property name="TopBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="LeftBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="BottomBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="RightBorder" type="enum">
+                                <Value>NONE</Value>
+                            </Property>
+                            <Property name="BorderColor" type="enum">
+                                <Value>BLACK</Value>
+                            </Property>
+                            <Property name="Rotation" type="integer">
+                                <Value>0</Value>
+                            </Property>
+                            <Property name="Indentation" type="integer">
+                                <Value>0</Value>
+                            </Property>
+                            <Property name="Format" type="string">
+                                <Value>yyyy/mm/dd</Value>
+                            </Property>
+                            <Property name="CellWidth" type="decimal">
+                                <Value>12.57</Value>
                             </Property>
                         </FormatSpecifications>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
@@ -505,7 +562,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_VALUE_DATE">
+                    <LocalComponent name="LEG1_PAY_DATE">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Date</BusinessObjectType>
@@ -520,7 +577,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_VALUE_ADJ_BUS_DAY_CONV">
+                    <LocalComponent name="LEG1_PAY_ADJ_BUS_DAY_CONV">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -531,7 +588,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_VALUE_ADJ_CAL">
+                    <LocalComponent name="LEG1_PAY_ADJ_CAL">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -542,7 +599,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_FIXING_DATE">
+                    <LocalComponent name="LEG1_MAT_DATE">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Date</BusinessObjectType>
@@ -557,7 +614,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_FIXING_ADJ_BUS_DAY_CONV">
+                    <LocalComponent name="LEG1_MAT_ADJ_BUS_DAY_CONV">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -568,7 +625,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG1_FIXING_ADJ_CAL">
+                    <LocalComponent name="LEG1_MAT_ADJ_CAL">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -634,7 +691,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_VALUE_DATE">
+                    <LocalComponent name="LEG2_PAY_DATE">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Date</BusinessObjectType>
@@ -649,7 +706,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_VALUE_ADJ_BUS_DAY_CONV">
+                    <LocalComponent name="LEG2_PAY_ADJ_BUS_DAY_CONV">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -660,7 +717,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_VALUE_ADJ_CAL">
+                    <LocalComponent name="LEG2_PAY_ADJ_CAL">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -671,7 +728,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_FIXING_DATE">
+                    <LocalComponent name="LEG2_MAT_DATE">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>Date</BusinessObjectType>
@@ -686,7 +743,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_FIXING_ADJ_BUS_DAY_CONV">
+                    <LocalComponent name="LEG2_MAT_ADJ_BUS_DAY_CONV">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>
@@ -697,7 +754,7 @@
                     </LocalComponent>
                 </Child>
                 <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="LEG2_FIXING_ADJ_CAL">
+                    <LocalComponent name="LEG2_MAT_ADJ_CAL">
                         <TypeSpecification>
                             <TypeDefinition>
                                 <BusinessObjectType>String</BusinessObjectType>

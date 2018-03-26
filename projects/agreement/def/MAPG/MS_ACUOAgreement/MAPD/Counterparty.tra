@@ -5,10 +5,10 @@
             <VersionNumber>3.6.5</VersionNumber>
             <BuildNumber>98</BuildNumber>
         </Transformer>
-        <User>staf</User>
-        <Host>S</Host>
-        <Timestamp>13/10/2017 12:24:22</Timestamp>
-        <Checksum>fe858aac</Checksum>
+        <User>acer</User>
+        <Host>acer-pc</Host>
+        <Timestamp>25/01/2018 17:06:46</Timestamp>
+        <Checksum>c05bfd0a</Checksum>
     </LastModification>
 </Prolog>
 <MappingDefinition name="Counterparty" group="Map:MS_ACUOAgreement">
@@ -373,7 +373,7 @@
                                     <PathNodeSpec
                                     specType="TO_DATA"
                                     contextName="Output"
-                                    contextPosnSpec="Out1" pathString="LegalEntityIdentifier"/>
+                                    contextPosnSpec="Out1" pathString="Id"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>
@@ -382,6 +382,28 @@
                                     <NodeSpec>
                                     <PathNodeSpec
                                     specType="TEMP_VAR" pathString="Counterparty/counterparty[Counter1]/legalEntityIdentifier"/>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Copy></Copy>
+                            </FunctionCall>
+                        </ActionStep>
+                        <ActionStep>
+                            <FunctionCall>
+                                <Property name="Input" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <Literal>LEI</Literal>
+                                    </NodeSpec>
+                                    </Value>
+                                </Property>
+                                <Property name="Output" type="nodespec">
+                                    <Value>
+                                    <NodeSpec>
+                                    <PathNodeSpec
+                                    specType="TO_DATA"
+                                    contextName="Output"
+                                    contextPosnSpec="Out1" pathString="IdType"/>
                                     </NodeSpec>
                                     </Value>
                                 </Property>

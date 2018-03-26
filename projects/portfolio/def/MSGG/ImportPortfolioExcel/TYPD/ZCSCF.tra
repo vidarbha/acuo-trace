@@ -7,8 +7,8 @@
         </Transformer>
         <User>staf</User>
         <Host>S</Host>
-        <Timestamp>07/11/2017 13:22:45</Timestamp>
-        <Checksum>dc370d17</Checksum>
+        <Timestamp>23/01/2018 14:59:10</Timestamp>
+        <Checksum>d1dc350e</Checksum>
     </LastModification>
 </Prolog>
 <NamedComponentType name="ZCSCF" group="ImportPortfolioExcel">
@@ -234,6 +234,36 @@
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
                     </LocalComponent>
                 </Child>
+                <Child minOccurs="0" maxOccurs="1">
+                    <LocalComponent name="TradeDate">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Date</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="Format" type="string">
+                                <Value>yyyy/mm/dd</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
+                <Child minOccurs="1" maxOccurs="1">
+                    <LocalComponent name="TradeTime">
+                        <TypeSpecification>
+                            <TypeDefinition>
+                                <BusinessObjectType>Time</BusinessObjectType>
+                            </TypeDefinition>
+                        </TypeSpecification>
+                        <FormatSpecifications>
+                            <Property name="Format" type="string">
+                                <Value>HH:mm:ss.SSS</Value>
+                            </Property>
+                        </FormatSpecifications>
+                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
+                    </LocalComponent>
+                </Child>
                 <Child minOccurs="1" maxOccurs="1">
                     <LocalComponent name="EffectiveDate" nillable="true">
                         <TypeSpecification>
@@ -286,36 +316,6 @@
                             </Property>
                             <Property name="CellWidth" type="decimal">
                                 <Value>12.57</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="TradeDate">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Date</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="Format" type="string">
-                                <Value>yyyy/mm/dd</Value>
-                            </Property>
-                        </FormatSpecifications>
-                        <SchemaEquivalent>ELEMENT</SchemaEquivalent>
-                    </LocalComponent>
-                </Child>
-                <Child minOccurs="1" maxOccurs="1">
-                    <LocalComponent name="TradeTime">
-                        <TypeSpecification>
-                            <TypeDefinition>
-                                <BusinessObjectType>Time</BusinessObjectType>
-                            </TypeDefinition>
-                        </TypeSpecification>
-                        <FormatSpecifications>
-                            <Property name="Format" type="string">
-                                <Value>HH:mm:ss.SSS</Value>
                             </Property>
                         </FormatSpecifications>
                         <SchemaEquivalent>ELEMENT</SchemaEquivalent>
