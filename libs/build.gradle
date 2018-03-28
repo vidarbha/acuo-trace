@@ -11,8 +11,7 @@ ext {
             markit:     'transformer-markit.jar',
             portfolio:  'transformer-portfolio.jar',
             reuters:    'transformer-reuters.jar',
-            global:     'transformer-global.jar',
-            lei:        'parser-level1.jar'
+            global:     'transformer-global.jar'
             // sources:    'api/extlib-src.zip',
             // javadoc:    'api/extlib-doc.zip'
     ]
@@ -61,10 +60,6 @@ publishing {
         global(MavenPublication) {
             artifact (file(extFiles.global))
             artifactId = 'transformer-global'
-        }
-        lei(MavenPublication) {
-            artifact (file(extFiles.lei))
-            artifactId = 'parser-level1'
         }
     }
 }
